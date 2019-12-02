@@ -2,12 +2,10 @@
 
 (provide coaches)
 
-(require metacoders-dot-org-lib
-         "./training.rkt")
+(require metacoders-dot-org-lib)
 
 (define (coaches)
-  (list (coaches-top)
-        (training)))
+  (list (coaches-top)))
 
 (define (employment-section)
   (employment-page #:position-title "Coding Coach"
@@ -34,7 +32,7 @@
         (email-signup)
         (begin-training
           (p "Whether you're interested in being hired as a Coding Coach, or you're interested in starting free classes in your area, you can start your training to become a coach now!") 
-          (training-top)))))
+          (list "coaches" "training.html")))))
 
 
 (define (coaches-top)
