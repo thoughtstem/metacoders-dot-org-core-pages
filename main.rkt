@@ -6,6 +6,9 @@
           "coaches.rkt"
           "donate.rkt"
           "partners.rkt"
+          "scientists.rkt"
+          "terms-and-conditions.rkt"
+          "tech-coords.rkt"
           "learn-more.rkt"
           )
 
@@ -13,6 +16,9 @@
                        "coaches.rkt"
                        "donate.rkt"
                        "partners.rkt"
+                       "scientists.rkt"
+                       "terms-and-conditions.rkt"
+                       "tech-coords.rkt"
                        "learn-more.rkt"
                        ))
 
@@ -26,4 +32,7 @@
       (coaches)
       (partners)
       (learn-more)
+      (scientists)
+      (terms-and-conditions)
+      (tech-coords)
       (donate))))
