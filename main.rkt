@@ -8,7 +8,13 @@
           "partners.rkt"
           "scientists.rkt"
           "terms-and-conditions.rkt"
+          "join-our-team.rkt"
           "tech-coords.rkt"
+          "summer-interns.rkt"
+          "coders.rkt"
+          "city-search.rkt"
+          "checkout-fail.rkt"
+          "checkout-success.rkt"
           "learn-more.rkt"
           )
 
@@ -18,7 +24,13 @@
                        "partners.rkt"
                        "scientists.rkt"
                        "terms-and-conditions.rkt"
+                       "join-our-team.rkt"
                        "tech-coords.rkt"
+                       "summer-interns.rkt"
+                       "coders.rkt"
+                       "city-search.rkt"
+                       "checkout-fail.rkt"
+                       "checkout-success.rkt"
                        "learn-more.rkt"
                        ))
 
@@ -30,9 +42,17 @@
       (css)
       (index)
       (coaches)
+      (donate)
       (partners)
-      (learn-more)
       (scientists)
       (terms-and-conditions)
+      (join-our-team)
       (tech-coords)
-      (donate))))
+      (summer-interns)
+      (coders)
+      (city-search)
+      (cities)
+      (checkout-fail)
+      (checkout-success)
+      (learn-more)
+      )))
