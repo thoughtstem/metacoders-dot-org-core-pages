@@ -49,7 +49,7 @@
             (link-to coaches-top-path 
               (button-primary "Learn More"))))
         (card class: "h-100"
-          (card-img-top src: (prefix/pathify equipment-img-path))
+          (card-img-top src: (prefix/pathify tech-coordinator-img-path))
           (card-body
             (card-title "Become a Technology Coordinator")
             (card-text "Help us connect coaches and students in your area!")

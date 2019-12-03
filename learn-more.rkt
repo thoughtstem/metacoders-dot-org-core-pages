@@ -25,7 +25,7 @@
   (jumbotron  style: (properties
                       text-align: "center"
                       margin-bottom: 0
-                      background-image: (string-append "url(" (prefix/pathify join-our-team-banner-path) ")")
+                      background-image: (string-append "url(" (prefix/pathify learn-more-banner-path) ")")
                       background-position: "center"
                       background-size: "cover"
                       height: "80%")
@@ -56,7 +56,7 @@
       (h2 "We Teach Coding Year-Round")
         (responsive-row #:columns 3
           (card class: "h-100"
-            (card-img-top src: (prefix/pathify takes-a-village-4-path))
+            (card-img-top src: (prefix/pathify summer-camps-img-path))
             (card-body
               (card-title "Summer Camps")
               (card-text "Fun, flexible, reasonably-priced summer camps are a great way to spark a lifetime interest in coding!")))
@@ -84,7 +84,12 @@
             (h5 style: (properties display: "inline-block" margin-bottom: 0) "  A focus on cutting-edge research from the learning sciences.")))
         (div id: "collapseOne" class: "collapse show" 'aria-labelledby: "headingOne" 'data-parent: "#accordion"
           (card-body
-            "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."))
+            (p "The founders of MetaCoders, having graduated from UC San Diego with PhDs in the sciences, wanted to bring all the recent developments in learning science research and computer science education research to students around the country. While it's very difficult for the American education system to keep up with the latest science, MetaCoders hopes to share these life-changing educational developments with our students:")
+            (ol
+              (li "Metacognition: The word \"meta\" is in our name for a reason. Metacognition means thinking about your own thinking, and science shows that a metacognitive approach to instruction can help students learn to take control of their own learning by defining learning goals and monitoring their progress in achieving them. Although this isn't a skill people are born with, it's a skill that a major game-changer in the life of anyone trying to learn anything!")
+              (li "Mindset: Many parents might be familiar with the concepts of \"growth mindset\" vs. \"fixed mindset\" popularized by renowned research, Carol Dweck. Essentially, students with a fixed mindset believe their intelligence is \"fixed\", so they are less likely to take risks while learning because they don't want to be seen making mistakes. Students with growth mindsets on the other hand are less afraid of making mistakes and are more willing to struggle through challenges and persist through hard problems. We encourage students towards growth mindsets.")
+              (li "Second Language Acquisition: Recent fMRI studies suggest that as we become more and more expert programmers, the part of our brain that comprehends English and other foreign languages also becomes better at comprehending")
+              (li "So much more!"))))
         (card
           (button class: "btn btn-primary p-3 text-left collapsed" 'data-toggle: "collapse" 'data-target: "#collapseTwo" 'aria-expanded: "false" 'aria-controls: "collapseTwo" 
             (i class: "fas fa-plus pr-2") 

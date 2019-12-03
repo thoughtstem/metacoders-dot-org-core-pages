@@ -52,9 +52,9 @@
    style: (properties
            text-align: "center"
            margin-bottom: 0
-           background-image: (string-append "url(" (prefix/pathify homepage-banner-path) ")")
+           background-image: (string-append "url(" (prefix/pathify donate-banner-path) ")")
            background-size: "cover"
-           'min-height: "60%")
+           'min-height: "80%")
    class: "d-flex align-items-center"
    (container
     (col-sm-8 class: "p-4 mx-auto"

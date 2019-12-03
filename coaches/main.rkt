@@ -9,7 +9,7 @@
 
 (define (employment-section)
   (employment-page #:position-title "Coding Coach"
-                   #:image-path coding-coach-img-path
+                   #:image-path coding-coach-banner-path
                    #:jumbotron-tagline "Work at home and prepare supplies for local classes!"
                    #:locations-hiring (list "Dallas, Texas" "Minneapolis, Minnesota" "Temecula, CA" "Poway, CA" "Chula Vista, CA" "Reno, Nevada")
                    #:job-description 

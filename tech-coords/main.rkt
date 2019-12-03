@@ -30,7 +30,7 @@
 
 (define (tech-coord-page)
   (employment-page  #:position-title "Technology Coordinator"
-                    #:image-path tech-coordinator-img-path
+                    #:image-path tech-coordinator-banner-path
                     #:jumbotron-tagline "Help us connect coaches and students!"
                     #:locations-hiring (list "Dallas, Texas" "Minneapolis, Minnesota" "Raleigh, North Carolina" "Reno, Nevada")
                     #:job-description 

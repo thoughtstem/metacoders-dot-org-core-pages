@@ -77,13 +77,7 @@
                   class: "img-fluid rounded d-block w-100" 'alt: "First Slide"))
                 (carousel-item 'alt: "Second Slide"
                   (img src: (prefix/pathify takes-a-village-2-path) 
-                  class: "img-fluid rounded d-block w-100" 'alt: "Second Slide"))
-                (carousel-item 'alt: "Third Slide"
-                  (img src: (prefix/pathify takes-a-village-3-path) 
-                  class: "img-fluid rounded d-block w-100" 'alt: "Third Slide"))
-                (carousel-item 'alt: "Fourth Slide"
-                  (img src: (prefix/pathify takes-a-village-4-path) 
-                  class: "img-fluid rounded d-block w-100" 'alt: "Fourth Slide")))
+                  class: "img-fluid rounded d-block w-100" 'alt: "Second Slide")))
               (a class: "carousel-control-prev" href: "#carouselExampleControls" 'role: "button" 'data-slide: "prev"
                 (span class: "carousel-control-prev-icon" 'aria-hidden: "true")
                 (span class: "sr-only" "Previous"))
