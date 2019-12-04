@@ -41,21 +41,21 @@
                   (br)
                   (responsive-row #:columns 3
                       (card class:"h-100"
-                      (card-img-top class: "gradient-effect"
+                      (card-img-top class: "gradient-effect-green"
                                     src: (prefix/pathify games-svg-path)
                                     style: (properties background-color: "#00C851")) 
                       (card-body
                         (card-title "Meta Games")
                         (card-text "Our students stay motivated with badges and prizes.")))
                       (card class:"h-100"
-                        (card-img-top class: "gradient-effect"
+                        (card-img-top class: "gradient-effect-yellow"
                                       src: (prefix/pathify brain-svg-path)
                                       style: (properties background-color: "#ffbb33")) 
                         (card-body
                           (card-title "Metacognition")
                           (card-text "By reflecting on how we learn, we are able to learn more efficiently.")))
                       (card class:"h-100"
-                        (card-img-top class: "gradient-effect"
+                        (card-img-top class: "gradient-effect-blue"
                                       src: (prefix/pathify story-svg-path)
                                       style: (properties background-color: "#33b5e5")) 
                         (card-body
@@ -77,7 +77,10 @@
                   class: "img-fluid rounded d-block w-100" 'alt: "First Slide"))
                 (carousel-item 'alt: "Second Slide"
                   (img src: (prefix/pathify takes-a-village-2-path) 
-                  class: "img-fluid rounded d-block w-100" 'alt: "Second Slide")))
+                  class: "img-fluid rounded d-block w-100" 'alt: "Second Slide"))
+                (carousel-item 'alt: "Second Slide"
+                  (img src: (prefix/pathify takes-a-village-3-path) 
+                  class: "img-fluid rounded d-block w-100" 'alt: "Third Slide")))
               (a class: "carousel-control-prev" href: "#carouselExampleControls" 'role: "button" 'data-slide: "prev"
                 (span class: "carousel-control-prev-icon" 'aria-hidden: "true")
                 (span class: "sr-only" "Previous"))
@@ -162,7 +165,14 @@
                                 background-position: 0% 50%;
                               }
                             }"
-                            ".gradient-effect:hover {background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                              ".gradient-effect-green:hover {background: linear-gradient(-45deg, #7fe3a8, #7fe3a8, #00C851, #00C851);
+                                                    background-size: 400% 400%;
+                                                    animation: flow 10s ease infinite;}"
+                              ".gradient-effect-yellow:hover {background: linear-gradient(-45deg, #ffdd99, #ffdd99,#ffbb33, #ffbb33);
+                                                    background-size: 400% 400%;
+                                                    animation: flow 10s ease infinite;}"                           
+
+                              ".gradient-effect-blue:hover {background: linear-gradient(-45deg, #99daf2, #99daf2, #33b5e5, #33b5e5);
                                                     background-size: 400% 400%;
                                                     animation: flow 10s ease infinite;}"))
           (jumbotron-header-section)
