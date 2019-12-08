@@ -48,29 +48,46 @@
               "MONTHLY")))
 
 (define (jumbotron-main-section)
-  (mc-jumbotron-header
-    #:title "Help Students Code Today"
-    #:tagline ""
-    #:percent-height "80%"
-    #:image-path donate-banner-path
-     (div style: (properties color: "black")
-      (donate-toggle)
-      (br)
-      (carousel id: "donate-carousel"
-                class: "slide"
-                (div class: "carousel-inner" style: (properties 'min-height: 250)
-                     (donate-card #:class "carousel-item active"
-                                  #:items (list (cons 50  "sku_GD6NBPpcmYF6fR")
-                                                (cons 100 "sku_GD6OrlkqZLH3K3")
-                                                (cons 150 "sku_GD6OcHeBdyHpuT")
-                                                (cons 200 "sku_GD6PFx9kiwqUuA")))
-                     (donate-card #:class "carousel-item"
-                                  #:mode 'monthly
-                                  #:items (list (cons 30  "plan_GD4oRQ1V1LVp4i")
-                                                (cons 60  "plan_GD4plj20Iywhi7")
-                                                (cons 90  "plan_GD4pLEXRTNJDjd")
-                                                (cons 120 "plan_GD4qJmEqRQehal")))
-                 )))))
+  (jumbotron
+   style: (properties
+           text-align: "center"
+           margin-bottom: 0
+           background-image: (string-append "url(" (prefix/pathify donate-banner-path) ")")
+           background-size: "cover"
+           background-position: "center"
+           'min-height: "80%"
+           position: "relative")
+   class: "d-flex align-items-center"
+   (div style: (properties background-color: "rgba(0,0,0,0.6)"
+                           width: "100%"
+                           position: "absolute"
+                           top: 0
+                           left: 0
+                           bottom: 0
+                           right: 0
+                           float: "left"))
+   (container
+    (col-sm-8 class: "p-4 mx-auto"
+         style: (properties color: "white")
+         (h1 id: "donate-header" class: "mb-4 text-white"
+             "Help Students Code Today")
+         (div style: (properties color: "black")
+          (donate-toggle)
+          (br)
+          (carousel id: "donate-carousel"
+                    class: "slide"
+                    (div class: "carousel-inner" style: (properties 'min-height: 250)
+                         (donate-card #:class "carousel-item active"
+                                      #:items (list (cons 50  "sku_GD6NBPpcmYF6fR")
+                                                    (cons 100 "sku_GD6OrlkqZLH3K3")
+                                                    (cons 150 "sku_GD6OcHeBdyHpuT")
+                                                    (cons 200 "sku_GD6PFx9kiwqUuA")))
+                         (donate-card #:class "carousel-item"
+                                      #:mode 'monthly
+                                      #:items (list (cons 30  "plan_GD4oRQ1V1LVp4i")
+                                                    (cons 60  "plan_GD4plj20Iywhi7")
+                                                    (cons 90  "plan_GD4pLEXRTNJDjd")
+                                                    (cons 120 "plan_GD4qJmEqRQehal"))))))))))
 
 (define (what-your-donations-support)
   (jumbotron class: "mb-0 text-center"

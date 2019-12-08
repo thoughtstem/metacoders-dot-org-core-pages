@@ -13,22 +13,11 @@
           (our-values))))
 
 (define (jumbotron-header-section)
-  (jumbotron  style: (properties
-                      text-align: "center"
-                      margin-bottom: 0
-                      background-image: (string-append "url(" (prefix/pathify join-our-team-banner-path) ")")
-                      background-position: "center"
-                      background-size: "cover"
-                      height: "80%")
-              class: "d-flex align-items-center"
-              (container
-                (div style: (properties
-                                    display: "inline-block"
-                                    padding: 15
-                                    color: "white"
-                                    background: "rgba(0, 0, 0, 0.5)")
-              (h1 "Join Our Team")
-              (h6 "You can make a difference in your community by bringing coding education to local students.")))))
+  (mc-jumbotron-header
+    #:title "Join Our Team"
+    #:tagline "You can make a difference in your community by bringing coding education to local students."
+    #:percent-height "80%" 
+    #:image-path join-our-team-banner-path))
 
 (define (two-ways-to-work-with-metacoders)
   (jumbotron  style: (properties

@@ -6,24 +6,11 @@
 (provide index)
 
 (define (jumbotron-header-section)
-  (jumbotron  style: (properties
-                      text-align: "center"
-                      margin-bottom: 0
-                      background-image: (string-append "url(" (prefix/pathify homepage-banner-path) ")")
-                      background-position: "center"
-                      background-size: "cover"
-                      height: "80%")
-              class: "d-flex align-items-center"
-              (container
-                (div style: (properties
-                                    display: "inline-block"
-                                    padding: 15
-                                    color: "white"
-                                    background: "rgba(0, 0, 0, 0.5)")
-                  (h1 "A Different Kind of Coding Education")
-                  (row class: "justify-content-center"
-                    (col-7
-                      (h6 "Cutting-edge learning science, with grass-roots community support to prepare kids for the future.")))))))
+  (mc-jumbotron-header
+    #:title "A Different Kind of Coding Education"
+    #:tagline "Cutting-edge learning science, with grass-roots community support to prepare kids for the future."
+    #:percent-height "80%"
+    #:image-path homepage-banner-path))
 
 (define (jumbotron-code-the-meta-way)
   (jumbotron  style: (properties

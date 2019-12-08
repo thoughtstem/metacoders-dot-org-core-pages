@@ -4,21 +4,11 @@
 (require metacoders-dot-org-lib)
 
 (define (jumbotron-header-section)
-  (jumbotron  style: (properties
-                      background-image: (string-append "url(" (prefix/pathify partners-img-path) ")")
-                      text-align: "center"
-                      background-position: "center"
-                      background-size: "cover"
-                      height: "60%")
-              class: "d-flex align-items-center"
-              (container
-                (div style: (properties
-                                    display: "inline-block"
-                                    padding: 15
-                                    color: "white"
-                                    background: "rgba(0, 0, 0, 0.5)")
-              (h1 "Become Our Partner")
-              (h6 "Make a difference by bringing MetaCoders to your community!")))))
+  (mc-jumbotron-header
+      #:title "Become Our Partner"
+      #:tagline "Make a difference by bringing MetaCoders to your community!"
+      #:percent-height "60%"
+      #:image-path partners-img-path))
 
 (define (what-we-do-section)
   (jumbotron  class: "mb-0"

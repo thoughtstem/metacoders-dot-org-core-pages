@@ -7,6 +7,7 @@
 (define (terms-and-conditions)
   (page terms-and-conditions-path
         (normal-content
+          (br)
           (h1 "Terms and Conditions")
           (terms-for-refunds)
           (terms-for-late-pickup-fees)
@@ -16,8 +17,9 @@
           (terms-for-phonecalls-texts)
           (terms-for-media-policy)
           (privacy-policy)
-          (miscellaneous)         
-)))
+          (miscellaneous)
+          (br)
+          )))
 
 
 
