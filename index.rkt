@@ -37,7 +37,7 @@
                   (br)
                   (row class: "justify-content-center"
                     (col-8
-                      (h6 "We teach kids coding the “meta” way. We bring the latest scientific research to the table to make sure kids are getting the most out of our classes.")))
+                      (h6 "We teach kids coding the “meta“ way. We bring the latest scientific research to the table to make sure kids are getting the most out of our classes.")))
                   (br)
                   (responsive-row #:columns 3
                       (card class:"h-100"

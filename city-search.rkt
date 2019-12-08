@@ -159,21 +159,11 @@
             color: "white !important"))))
 
 (define (jumbotron-header-section)
-  (jumbotron  style: (properties
-                      background-image: (string-append "url(" (prefix/pathify world-img-path) ")")
-                      background-position: "center"
-                      background-size: "cover"
-                      height: "60%")
-              class: "d-flex align-items-center mb-0 text-center"
-              (container
-               (div style: (properties
-                            display: "inline-block"
-                            padding: 15
-                            color: "white"
-                            background: "rgba(0, 0, 0, 0.5)")
-                    (h1 "Cities That Went Meta")
-                    (h6 "MetaCoders is expanding rapidly throughout the world.
-")))))
+  (mc-jumbotron-header
+    #:title "Cities That Went Meta"
+    #:tagline "MetaCoders is expanding rapidly throughout the world."
+    #:percent-height "60%"
+    #:image-path world-img-path))
 
 (define (cities-section)
   (jumbotron  class: "mb-0 text-center"

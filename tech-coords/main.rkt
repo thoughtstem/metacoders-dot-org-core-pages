@@ -32,6 +32,7 @@
   (employment-page  #:position-title "Technology Coordinator"
                     #:image-path tech-coordinator-banner-path
                     #:jumbotron-tagline "Help us connect coaches and students!"
+                    #:percent-height "60%"
                     #:locations-hiring (list "Dallas, Texas" "Minneapolis, Minnesota" "Raleigh, North Carolina" "Reno, Nevada")
                     #:job-description 
     (div
