@@ -66,7 +66,7 @@
       (div class: "text-center" 
         (h2 "What Makes MetaCoders Different?"))
       (br)
-      (accordion
+      (accordion id: "accordion"
         (card
           (button class: "btn btn-primary p-3 text-left collapsed" 'data-toggle: "collapse" 'data-target: "#collapseOne" 'aria-expanded: "false" 'aria-controls: "collapseOne" 
             (i class: "fas fa-plus pr-2") 
