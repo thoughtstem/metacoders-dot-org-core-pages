@@ -12,7 +12,7 @@
                    #:image-path coding-coach-banner-path
                    #:jumbotron-tagline "Work at home and prepare supplies for local classes!"
                    #:percent-height "60%"
-                   #:locations-hiring (list "Dallas, Texas" "Minneapolis, Minnesota" "Temecula, CA" "Poway, CA" "Chula Vista, CA" "Reno, Nevada")
+                   #:locations-hiring (list "Dallas, Texas")
                    #:job-description 
   (div
     (h6 "Description")
@@ -20,7 +20,8 @@
     (h6 "Schedule")
     (ul
       (li "School Year: approximately 2-5 hours per week to start.")
-      (li "Summer: 40 hours/week for 5 weeks.")))))
+      (li "Summer: 40 hours/week for 5 weeks.")))
+                    #:job-link "https://www.indeedjobs.com/thoughtstem-llc/_hl/en"))
 
 
 (define (start-now-section)

@@ -33,7 +33,7 @@
                     #:image-path tech-coordinator-banner-path
                     #:jumbotron-tagline "Help us connect coaches and students!"
                     #:percent-height "60%"
-                    #:locations-hiring (list "Dallas, Texas" "Minneapolis, Minnesota" "Raleigh, North Carolina" "Reno, Nevada")
+                    #:locations-hiring (list "Dallas, Texas" "Phoenix, Arizona" "Reno, Nevada" "Temecula, California")
                     #:job-description 
     (div
       (h6 "Description")
@@ -44,4 +44,5 @@
       (h6 "Schedule")
       (ul
         (li "School Year: approximately 1.5-4 hours per week to start.")
-        (li "Summer: approximately 4 hours/week for 5 weeks.")))))
+        (li "Summer: approximately 4 hours/week for 5 weeks.")))
+                  #:job-link "https://www.indeedjobs.com/thoughtstem-llc/_hl/en"))

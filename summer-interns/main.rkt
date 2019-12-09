@@ -21,9 +21,9 @@
       (h6 "Job Description")
       (p "MetaCoders' internship program is designed for incoming high school seniors through college students interested in pursuing careers in education. This is an unpaid internship with a focus on developing skills as an educator and leader.")
       (p "")
-      (button-primary class: "mb-4"
+      (a href: "https://docs.google.com/forms/d/e/1FAIpQLSfx3BAy-y1We-pvXtXEU096Tys_7xPrphyedmS4RcWI00RzJw/viewform" (button-primary class: "mb-4"
                       id: "main-button" 
-                      "Apply Here"))))
+                      "Apply Here")))))
 
 (define (bottom-section)
   (container

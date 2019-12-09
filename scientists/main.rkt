@@ -26,7 +26,8 @@
     (ul
       (li "School Year: at least 2 hours per week.")
       (li "Summer: flexible schedule")
-      ))))
+      ))
+    #:application-link "https://docs.google.com/forms/d/e/1FAIpQLSf-MUudmDv-bAHZ0ey3LqjUE-sqlZiX6IbKwDyKW82pggWcLw/viewform"))
 
 (define (bottom-section)
   (container
