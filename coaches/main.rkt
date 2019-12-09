@@ -31,10 +31,11 @@
     (p class: "mt-3"
        "All of MetaCoders training and curriculum are open source, meaning you can access them and start teaching in your community for free today! We also love to hear from people who want us to come to their community, so reach out to us using the form below and help us bring innovative, science-based coding education to your city!")
     (card-deck
-        (email-signup)
+        (email-signup #:title "Have Questions? Email us!")
         (begin-training
           (p "Whether you're interested in being hired as a Coding Coach, or you're interested in starting free classes in your area, you can start your training to become a coach now!") 
-          (list "coaches" "training.html")))))
+          (list "coaches" "training.html")))
+    (br)))
 
 
 (define (coaches-top)

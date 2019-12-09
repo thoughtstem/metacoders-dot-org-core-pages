@@ -18,15 +18,13 @@
 
 (define (start-now-section)
   (container
-    (hr)
-    (h3 "Not Hiring in Your City?")
-    (p class: "mt-3"
-       "All of MetaCoders training and curriculum are open source, meaning you can access them and start teaching in your community for free today! We also love to hear from people who want us to come to their community, so reach out to us using the form below and help us bring innovative, science-based coding education to your city!")
     (card-deck
-        (email-signup)
+        (email-signup #:title "Have Questions? Email us!")
         (begin-training
+          #:training-exists? #f
           (p "Whether you're interested in being hired as a Technology Coordinator, or you're interested in bringing classes to your area, you can start your training to become a Technology Coordinator now!") 
-          (training)))))
+          (training)))
+    (br)))
 
 (define (tech-coord-page)
   (employment-page  #:position-title "Technology Coordinator"

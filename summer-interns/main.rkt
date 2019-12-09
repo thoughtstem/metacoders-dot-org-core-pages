@@ -28,10 +28,12 @@
 (define (bottom-section)
   (container
     (card-deck
-      (email-signup)
+      (email-signup #:title "Have Questions? Email us!")
       (begin-training
+        #:training-exists? #f
         (p "Whether you're interested in becoming a Summer Camp Team Leader Intern, or if you just want to learn more, you can start your training to become a Summer Camp Team Leader now!") 
-        (training)))))
+        (training)))
+    (br)))
 
 (define (summer-camp-interns-top)
   (page summer-camp-intern-top-path

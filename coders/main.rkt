@@ -26,10 +26,12 @@
 (define (bottom-section)          
   (container
     (card-deck
-      (email-signup)
+      (email-signup #:title "Have Questions? Email us!")
       (begin-training
+        #:training-exists? #f
         (p "Whether you're interested in becoming a Volunteer Coder, or if you just want to learn more, you can start your training to become a Volunteer Coder now!") 
-        (training)))))
+        (training)))
+    (br)))
 
 (define (coders-top)
   (page coders-top-path
