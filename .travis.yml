@@ -40,7 +40,7 @@ before_script:
 # `raco pkg install --deps search-auto` to install any required
 # packages without it getting stuck on a confirmation prompt.
 script:
- - cd thoughtstem/metacoders-dot-org-core-pages
+ - cd $TRAVIS_BUILD_DIR 
  - racket main.rkt
 
 after_success:
