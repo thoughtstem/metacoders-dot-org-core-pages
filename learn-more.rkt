@@ -68,9 +68,27 @@
       (br)
       (accordion id: "accordion"
         (card
-          (button class: "btn btn-primary p-3 text-left collapsed" 'data-toggle: "collapse" 'data-target: "#collapseOne" 'aria-expanded: "false" 'aria-controls: "collapseOne" 
-            (i class: "fas fa-plus pr-2") 
-            (h5 style: (properties display: "inline-block" margin-bottom: 0) "  A focus on cutting-edge research from the learning sciences.")))
+          (button id: "acc-btn-1"
+                  'onclick: "toggleAccBtn1();"
+                  class: "btn btn-primary p-3 text-left d-flex align-items-center collapsed" 'data-toggle: "collapse" 'data-target: "#collapseOne" 'aria-expanded: "false" 'aria-controls: "collapseOne" 
+            (i id: "acc-icon-1" class: "fas fa-plus mr-2")
+            @script/inline{
+function toggleAccBtn1() {
+  var cardDiv = document.getElementById('collapseOne');
+  var buttonIcon1 = document.getElementById('acc-icon-1');
+  var buttonIcon2 = document.getElementById('acc-icon-2');
+  var buttonIcon3 = document.getElementById('acc-icon-3');
+  if (cardDiv.classList.contains("show"))
+  {
+   buttonIcon1.classList = "fas fa-plus mr-2";
+  }
+  else if (!cardDiv.classList.contains("collapsing")){
+   buttonIcon1.classList = "fas fa-minus mr-2";
+   buttonIcon2.classList = "fas fa-plus mr-2";
+   buttonIcon3.classList = "fas fa-plus mr-2";
+  }
+}}
+            (h5 class: "mb-0" style: (properties display: "inline-block" white-space: "normal") "  A focus on cutting-edge research from the learning sciences.")))
         (div id: "collapseOne" class: "collapse" 'aria-labelledby: "headingOne" 'data-parent: "#accordion"
           (card-body
             (p "MetaCoders wants to bring all the recent developments in learning science research and computer science education research to students around the country. While it's very difficult for the American education system to keep up with the latest science, MetaCoders hopes to share these life-changing educational developments with our students in our classes and camps:")
@@ -80,16 +98,52 @@
               @li{@strong{Second Language Acquisition:} Recent fMRI studies suggest that as we become more and more expert programmers, the part of our brain that comprehends English and other foreign languages also becomes better at comprehending code; when we're expert programmers, it's as if our brain does the same thing whether we're reading English prose OR computer code! @u{This suggests we should be teaching coding more like a foreign language}, and less like math or science. Although we can't have students "speak" in a programming language in classrooms, we can immerse students in code, just like we immerse students in Spanish classes. We use the decades of 2nd language acquisition research to make our students fluent in the second language of code!}
               @li{@strong{And so much more!}})))
         (card
-          (button class: "btn btn-primary p-3 text-left collapsed" 'data-toggle: "collapse" 'data-target: "#collapseTwo" 'aria-expanded: "false" 'aria-controls: "collapseTwo" 
-            (i class: "fas fa-plus pr-2") 
-            (h5 style: (properties display: "inline-block" margin-bottom: 0)"  Building communities of learning around the country.")))
+          (button id: "acc-btn-2"
+                  'onclick: "toggleAccBtn2();"
+                  class: "btn btn-primary p-3 text-left d-flex align-items-center collapsed" 'data-toggle: "collapse" 'data-target: "#collapseTwo" 'aria-expanded: "false" 'aria-controls: "collapseTwo" 
+            (i id: "acc-icon-2" class: "fas fa-plus mr-2")
+            @script/inline{
+function toggleAccBtn2() {
+  var cardDiv = document.getElementById('collapseTwo');
+  var buttonIcon1 = document.getElementById('acc-icon-1');
+  var buttonIcon2 = document.getElementById('acc-icon-2');
+  var buttonIcon3 = document.getElementById('acc-icon-3');
+  if (cardDiv.classList.contains("show"))
+  {
+   buttonIcon2.classList = "fas fa-plus mr-2";
+  }
+  else if (!cardDiv.classList.contains("collapsing")){
+   buttonIcon1.classList = "fas fa-plus mr-2";
+   buttonIcon2.classList = "fas fa-minus mr-2";
+   buttonIcon3.classList = "fas fa-plus mr-2";
+  }
+}}
+            (h5 class: "mb-0" style: (properties display: "inline-block" white-space: "normal")"  Building communities of learning around the country.")))
         (div id: "collapseTwo" class: "collapse" 'aria-labelledby: "headingTwo" 'data-parent: "#accordion"
           (card-body
             @p{More and more computer science jobs are opening up every day, and we don't have enough programmers to fill them. @u{In 2020, there will be approximately 1 million unfilled coding jobs!} And these are good jobs with high salaries. Therefore, to meet this challenge, we're forming communities of learning across the country so that students have access to teachers and teachers have access to students. Because many communities have a shortage of coders, one of our challenges is to train teachers so that they can provide this expertise to local students. We're also providing all of our curriculum and training materials @u{for free} so that anyone can start teaching local students in their area with our help.}))
         (card
-          (button class: "btn btn-primary p-3 text-left collapsed" 'data-toggle: "collapse" 'data-target: "#collapseThree" 'aria-expanded: "false" 'aria-controls: "collapseThree"  
-            (i class: "fas fa-plus pr-2") 
-            (h5 style: (properties display: "inline-block" margin-bottom: 0)  "  A non-profit worldview, but with for-profit quality.")))
+          (button id: "acc-btn-3"
+                  'onclick: "toggleAccBtn3();"
+                  class: "btn btn-primary p-3 text-left d-flex align-items-center collapsed" 'data-toggle: "collapse" 'data-target: "#collapseThree" 'aria-expanded: "false" 'aria-controls: "collapseThree"  
+            (i id: "acc-icon-3" class: "fas fa-plus mr-2")
+            @script/inline{
+function toggleAccBtn3() {
+  var cardDiv = document.getElementById('collapseThree');
+  var buttonIcon1 = document.getElementById('acc-icon-1');
+  var buttonIcon2 = document.getElementById('acc-icon-2');
+  var buttonIcon3 = document.getElementById('acc-icon-3');
+  if (cardDiv.classList.contains("show"))
+  {
+   buttonIcon3.classList = "fas fa-plus mr-2";
+  }
+  else if (!cardDiv.classList.contains("collapsing")){
+   buttonIcon1.classList = "fas fa-plus mr-2";
+   buttonIcon2.classList = "fas fa-plus mr-2";
+   buttonIcon3.classList = "fas fa-minus mr-2";
+  }
+}}
+            (h5 class: "mb-0" style: (properties display: "inline-block" white-space: "normal")  "  A non-profit worldview, but with for-profit quality.")))
         (div id: "collapseThree" class: "collapse" 'aria-labelledby: "headingOne" 'data-parent: "#accordion"
           (card-body
             @p{We've run coding classes, camps, and workshops for the past 7 years under a for-profit named ThoughtSTEM. We've worked with tens of thousands of children and learned so much about how to create classrooms that inspire and motivate students to keep learning. As a for-profit, however, we were always limited to working with students in certain areas who could afford our classes. That's why we started MetaCoders: @u{because students shouldn't be prevented from learning coding just because of their family's situation.} We are bringing quality for-profit education at a non-profit price.}))))))
