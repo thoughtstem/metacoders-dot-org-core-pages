@@ -55,7 +55,7 @@
            background-image: (string-append "url(" (prefix/pathify donate-banner-path) ")")
            background-size: "cover"
            background-position: "center"
-           'min-height: "80%"
+           'min-height: "80vh"
            position: "relative")
    class: "d-flex align-items-center"
    (div style: (properties background-color: "rgba(0,0,0,0.6)"

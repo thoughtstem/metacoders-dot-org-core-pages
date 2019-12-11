@@ -16,7 +16,7 @@
   (mc-jumbotron-header
     #:title "Join Our Team"
     #:tagline "You can make a difference in your community by bringing coding education to local students."
-    #:percent-height "80%" 
+    #:percent-height "80vh" 
     #:image-path join-our-team-banner-path))
 
 (define (two-ways-to-work-with-metacoders)

@@ -30,7 +30,7 @@
   (employment-page  #:position-title "Technology Coordinator"
                     #:image-path tech-coordinator-banner-path
                     #:jumbotron-tagline "Help us connect coaches and students!"
-                    #:percent-height "60%"
+                    #:percent-height "60vh"
                     #:locations-hiring (list "Dallas, Texas" "Phoenix, Arizona" "Reno, Nevada" "Temecula, California")
                     #:job-description 
     (div

@@ -9,7 +9,7 @@
   (mc-jumbotron-header
     #:title "A Different Kind of Coding Education"
     #:tagline "Cutting-edge learning science, with grass-roots community support to prepare kids for the future."
-    #:percent-height "80%"
+    #:percent-height "80vh"
     #:image-path homepage-banner-path))
 
 (define (jumbotron-code-the-meta-way)

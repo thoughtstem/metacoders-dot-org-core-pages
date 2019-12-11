@@ -11,7 +11,7 @@
   (employment-page #:position-title "Coding Coach"
                    #:image-path coding-coach-banner-path
                    #:jumbotron-tagline "Work at home and prepare supplies for local classes!"
-                   #:percent-height "60%"
+                   #:percent-height "60vh"
                    #:locations-hiring (list "Dallas, Texas")
                    #:job-description 
   (div
