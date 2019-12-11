@@ -15,7 +15,7 @@
     #:position-title "Learning Scientist"
     #:image-path volunteer-scientist-banner-path
     #:jumbotron-tagline "Study and monitor MetaCoders classes in your local area to make sure kids have the best classroom experiences."
-    #:percent-height "60%"
+    #:percent-height "60vh"
     #:locations-hiring (list "Dallas, Texas" "Minneapolis, Minnesota" "Temecula, CA" "Poway, CA" "Chula Vista, CA" "Reno, Nevada")
     #:volunteer-description 
     (div 

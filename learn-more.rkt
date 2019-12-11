@@ -25,7 +25,7 @@
   (mc-jumbotron-header
     #:title "Bringing the World Together Through Coding"
     #:tagline "We prepare students for the future by making sure they are fluent in one of the most powerful languages of today: code."
-    #:percent-height "80%"
+    #:percent-height "80vh"
     #:image-path learn-more-banner-path))
 
 (define (about-and-mission)

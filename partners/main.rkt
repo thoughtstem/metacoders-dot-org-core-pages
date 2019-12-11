@@ -7,7 +7,7 @@
   (mc-jumbotron-header
       #:title "Become Our Partner"
       #:tagline "Make a difference by bringing MetaCoders to your community!"
-      #:percent-height "60%"
+      #:percent-height "60vh"
       #:image-path partners-img-path))
 
 (define (what-we-do-section)

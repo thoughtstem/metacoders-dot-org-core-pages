@@ -162,7 +162,7 @@
   (mc-jumbotron-header
     #:title "Cities That Went Meta"
     #:tagline "MetaCoders is expanding rapidly throughout the world."
-    #:percent-height "60%"
+    #:percent-height "60vh"
     #:image-path world-img-path))
 
 (define (cities-section)
