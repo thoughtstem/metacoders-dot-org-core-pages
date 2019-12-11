@@ -78,16 +78,16 @@
                     class: "slide"
                     (div class: "carousel-inner" style: (properties 'min-height: 250)
                          (donate-card #:class "carousel-item active"
-                                      #:items (list (cons 50  "sku_GD6NBPpcmYF6fR")
-                                                    (cons 100 "sku_GD6OrlkqZLH3K3")
-                                                    (cons 150 "sku_GD6OcHeBdyHpuT")
-                                                    (cons 200 "sku_GD6PFx9kiwqUuA")))
+                                      #:items (list (cons 50  "sku_GLHtNM0O5C5NyD")
+                                                    (cons 100 "sku_GLHt1DcczksoCJ")
+                                                    (cons 150 "sku_GLHucz0VJ2mjhQ")
+                                                    (cons 200 "sku_GLHx11kMc9SFUd")))
                          (donate-card #:class "carousel-item"
                                       #:mode 'monthly
-                                      #:items (list (cons 30  "plan_GD4oRQ1V1LVp4i")
-                                                    (cons 60  "plan_GD4plj20Iywhi7")
-                                                    (cons 90  "plan_GD4pLEXRTNJDjd")
-                                                    (cons 120 "plan_GD4qJmEqRQehal"))))))))))
+                                      #:items (list (cons 30  "plan_GLI9nfpfvXdxKJ")
+                                                    (cons 60  "plan_GLI9iQPh4YLsbP")
+                                                    (cons 90  "plan_GLI98MLFTbLtGS")
+                                                    (cons 120 "plan_GLIAgOq5MjRN64"))))))))))
 
 (define (what-your-donations-support)
   (jumbotron class: "mb-0 text-center"
