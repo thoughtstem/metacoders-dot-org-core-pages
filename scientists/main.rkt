@@ -32,7 +32,7 @@
 (define (bottom-section)
   (container
     (card-deck
-      (email-signup #:title "Have Questions? Email us!")
+      (email-signup #:title "Have Questions? Email us!" #:interest "Becoming a Learning Scientist")
       (begin-training
         #:training-exists? #f
         (p "Whether you're interested in becoming a Volunteer Scientist, or if you just want to learn more, you can start your training to become a Volunteer Scientist now!") 

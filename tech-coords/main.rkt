@@ -19,7 +19,7 @@
 (define (start-now-section)
   (container
     (card-deck
-        (email-signup #:title "Have Questions? Email us!")
+        (email-signup #:title "Have Questions? Email us!" #:interest "Becoming a Tech Coordinator")
         (begin-training
           #:training-exists? #f
           (p "Whether you're interested in being hired as a Technology Coordinator, or you're interested in bringing classes to your area, you can start your training to become a Technology Coordinator now!") 

@@ -30,7 +30,7 @@
               (br)
               (p "If you administer a location at which you would like us to consider teaching coding classes or camps, please reach out to us below! You can start by letting us know a little bit about your location and what days of the week and times your location would be available:")
               (div  class: "col-9 mx-auto"
-                (email-signup)))))
+                (email-signup #:interest "Becoming a Partner")))))
 
 (define (partners)
   (page partners-top-path
