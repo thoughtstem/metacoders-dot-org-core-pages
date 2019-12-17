@@ -4,7 +4,10 @@
          cities)
 
 (require metacoders-dot-org-lib
-         threading)
+         threading
+         website-js/components/gradient
+         website-js/components/boids
+         website-js/components/pointillism)
 (require (only-in pict scale text filled-rectangle cc-superimpose colorize))
 
 ; --- require cities and define index
@@ -195,7 +198,11 @@
                                 (cities/dc:index))))))
 
 (define (learn-more-section)
-  (jumbotron  class: "mb-0 text-center"
+  (pointillism #:bg-color "#6c757d"
+               id: "learn-more-card"
+               class: "card p-5 bg-transparent mb-0 text-center"
+               style: (properties 'overflow: "hidden")
+  ;(jumbotron  class: "mb-0 text-center"
               (container
                (h2 "If you don't see your city listed, you can still go meta.")
                (br)
@@ -207,6 +214,7 @@
 (define (city-search)
   (page city-search-path
         (normal-content-wide
+          (include-p5-js)
           (invert-color-change-style)
           (jumbotron-header-section)
           (cities-section)

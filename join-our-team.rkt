@@ -2,11 +2,15 @@
 
 (provide join-our-team)
 
-(require metacoders-dot-org-lib)
+(require metacoders-dot-org-lib
+         website-js/components/gradient
+         website-js/components/boids
+         website-js/components/pointillism)
 
 (define (join-our-team)
   (page join-our-team-path
         (normal-content-wide
+         (include-p5-js)
           (jumbotron-header-section)
           (two-ways-to-work-with-metacoders)
           (two-other-ways-to-help-metacoders)
@@ -35,16 +39,16 @@
           (card-body
             (card-title "Become a Coding Coach")
             (card-text "Teach kids in your community how to code!"))
-          (card-footer class: "p-0 m-0" style: (properties text-decoration: "none")
-            (link-to coaches-top-path 
+          (card-footer class: "p-0 m-0"
+            (a style: (properties text-decoration: "none") href: coaches-top-path 
                      (button-primary class: "btn-block rounded-0" "Learn More"))))
         (card class: "h-100" style: (properties overflow: "hidden")
           (card-img-top src: (prefix/pathify tech-coordinator-img-path))
           (card-body
             (card-title "Become a Technology Coordinator")
             (card-text "Help us connect coaches and students in your area!"))
-          (card-footer class: "p-0 m-0" style: (properties text-decoration: "none")
-            (link-to tech-coords-top-path 
+          (card-footer class: "p-0 m-0" 
+            (a style: (properties text-decoration: "none") href: tech-coords-top-path 
                      (button-primary class: "btn-block rounded-0" "Learn More"))))))))
 
 
@@ -63,31 +67,34 @@
           (card-body
             (card-title "Volunteer as a Learning Scientist")
             (card-text "Study and monitor MetaCoders classes in your local area to make sure kids have the best classroom experiences."))
-          (card-footer class: "p-0 m-0" style: (properties text-decoration: "none")
-            (link-to scientists-top-path
+          (card-footer class: "p-0 m-0"
+            (a style: (properties text-decoration: "none") href: scientists-top-path
               (button-primary class: "btn-block rounded-0" "Learn More"))))
         (card class: "h-100" style: (properties overflow: "hidden")
           (card-img-top src: (prefix/pathify volunteer-coder-img-path))
           (card-body
             (card-title "Volunteer as a Coder")
             (card-text "Help us code open-source educational software that kids around the world can use to create video games, apps, and more!"))
-          (card-footer class: "p-0 m-0" style: (properties text-decoration: "none")
-            (link-to coders-top-path 
+          (card-footer class: "p-0 m-0"
+            (a style: (properties text-decoration: "none") href: coders-top-path 
               (button-primary class: "btn-block rounded-0" "Learn More"))))
         (card class: "h-100" style: (properties overflow: "hidden")
           (card-img-top src: (prefix/pathify summer-camp-intern-img-path))
           (card-body
             (card-title "Intern as a Summer Camp Team Leader")
             (card-text "Lead students in our summer camps in coding exercises and make sure they have a great first experience with coding!"))
-          (card-footer class: "p-0 m-0" style: (properties text-decoration: "none")
-            (link-to summer-camp-intern-top-path 
+          (card-footer class: "p-0 m-0"
+            (a style: (properties text-decoration: "none") href: summer-camp-intern-top-path 
               (button-primary class: "btn-block rounded-0" "Learn More"))))))))
 
 (define (our-values)
-  (jumbotron  style: (properties
-                           text-align: "center"
-                           margin-bottom: 0
-                           background: "white")
+  (boids #:color "#ffc107"
+         class: "card p-5 bg-transparent text-center mb-0"
+         style: (properties 'overflow: "hidden")
+  ;(jumbotron  style: (properties
+  ;                         text-align: "center"
+  ;                         margin-bottom: 0
+  ;                         background: "white")
     (container
       (h1 "Our Core Values")
       (br)
