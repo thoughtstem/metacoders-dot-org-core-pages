@@ -3,9 +3,10 @@
 (provide join-our-team)
 
 (require metacoders-dot-org-lib
-         website-js/components/gradient
-         website-js/components/boids
-         website-js/components/pointillism)
+         ;website-js/components/gradient
+         ;website-js/components/boids
+         ;website-js/components/pointillism
+         website-js/components/l-system)
 
 (define (join-our-team)
   (page join-our-team-path
@@ -88,9 +89,12 @@
               (button-primary class: "btn-block rounded-0" "Learn More"))))))))
 
 (define (our-values)
-  (boids #:color "#ffc107"
-         class: "card p-5 bg-transparent text-center mb-0"
-         style: (properties 'overflow: "hidden")
+  (l-system  #:step 50
+             #:loops 4
+             #:max-radius 0
+             #:line-color "rgba(255,193,7,0.4)"
+            class: "card p-5 bg-transparent text-center mb-0"
+            style: (properties 'overflow: "hidden")
   ;(jumbotron  style: (properties
   ;                         text-align: "center"
   ;                         margin-bottom: 0

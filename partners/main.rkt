@@ -1,7 +1,8 @@
 #lang at-exp racket
 
 (provide partners)
-(require metacoders-dot-org-lib)
+(require metacoders-dot-org-lib
+         website-js/components/l-system)
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
@@ -23,7 +24,21 @@
 )
 
 (define (email-section)
-  (jumbotron class: "mb-0"
+  (l-system   #:x "240"
+              #:y "p.height/3*2"
+              #:start-angle -150
+              #:step 18
+              #:angle 90
+              #:axiom "FX"
+              #:loops 16
+              #:rules (list (cons "X" "X+YF+")
+                            (cons "Y" "-FX-Y"))
+              #:bg-color "#e9ecef"
+              #:line-color "rgba(255,193,7,0.4)"
+              #:max-radius 0
+            class: "card p-5 bg-transparent text-center mb-0"
+            style: (properties 'overflow: "hidden")
+  ;(jumbotron class: "mb-0"
              (container
               (h2 style: (properties text-align: "center") 
                   "Reach Out to Get Started")
@@ -35,6 +50,7 @@
 (define (partners)
   (page partners-top-path
         (normal-content-wide
+         (include-p5-js)
           (jumbotron-header-section)
           (what-we-do-section)
           (email-section))))

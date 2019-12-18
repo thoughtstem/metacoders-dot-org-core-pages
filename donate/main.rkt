@@ -4,8 +4,8 @@
 
 (require metacoders-dot-org-lib
          racket/runtime-path
-         website-js/components/gradient
-         website-js/components/boids
+         ;website-js/components/gradient
+         ;website-js/components/boids
          website-js/components/pointillism)
 
 (define-runtime-path grad-cap-path "./graduation-cap.svg")
