@@ -7,7 +7,8 @@
          threading
          website-js/components/gradient
          website-js/components/boids
-         website-js/components/pointillism)
+         website-js/components/pointillism
+         website-js/components/recursive-trees)
 (require (only-in pict scale text filled-rectangle cc-superimpose colorize))
 
 ; --- require cities and define index
@@ -198,7 +199,9 @@
                                 (cities/dc:index))))))
 
 (define (learn-more-section)
-  (pointillism #:bg-color "#6c757d"
+  (recursive-trees #:bg-color "#6c757d"
+                   #:color-1 "rgba(255,193,7,0.5)"
+                   #:color-2 "rgba(253,126,20,0.5)"
                id: "learn-more-card"
                class: "card p-5 bg-transparent mb-0 text-center"
                style: (properties 'overflow: "hidden")
