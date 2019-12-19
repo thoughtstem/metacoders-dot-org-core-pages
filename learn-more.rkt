@@ -6,7 +6,10 @@
          (only-in 2htdp/image circle)
          metacoders-dot-org-lib  
          racket/runtime-path
-         "./learn-more/main.rkt")
+         "./learn-more/main.rkt"
+         website-js/components/gradient
+         website-js/components/boids
+         website-js/components/pointillism)
 
 (define-runtime-path js "learn-more/js")
 
@@ -150,7 +153,11 @@ function toggleAccBtn3() {
 
 
 (define (where-do-you-fit-in)
-  (jumbotron style: (properties margin-bottom: 0)
+  (boids #:color "#ffc107"
+         #:bg-color "#e9ecef"
+         class: "card p-5 bg-transparent"
+         style: (properties 'overflow: "hidden")
+  ;(jumbotron style: (properties margin-bottom: 0)
     (container
       (div class: "text-center"
         (h2 "Where Do You Fit In With MetaCoders?")
@@ -165,6 +172,7 @@ function toggleAccBtn3() {
           (file->string (build-path js "name-replace-effect.js"))) 
     (page learn-more-path
       (normal-content-wide #:head (include-css "css/custom.css")
+        (include-p5-js)
         (jumbotron-header)
         (about-and-mission)
         (programs-we-offer)
