@@ -12,7 +12,7 @@
                    #:image-path coding-coach-banner-path
                    #:jumbotron-tagline "Work at home and prepare supplies for local classes!"
                    #:percent-height "60vh"
-                   #:locations-hiring (list "Dallas, Texas")
+                   #:locations-hiring (list "Dallas, Texas" "New Orleans, LA" "Reno, NV" "Minneapolis, MN")
                    #:job-description 
   (div
     (h6 "Description")

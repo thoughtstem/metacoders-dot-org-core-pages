@@ -31,7 +31,7 @@
                     #:image-path tech-coordinator-banner-path
                     #:jumbotron-tagline "Help us connect coaches and students!"
                     #:percent-height "60vh"
-                    #:locations-hiring (list "Dallas, Texas" "Phoenix, Arizona" "Reno, Nevada" "Temecula, California")
+                    #:locations-hiring (list "Dallas, Texas" "Phoenix, Arizona" "Reno, Nevada" "Temecula, California" "Minneapolis, MN" "New Orleans, LA")
                     #:job-description 
     (div
       (h6 "Description")
