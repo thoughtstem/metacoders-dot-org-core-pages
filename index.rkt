@@ -1,7 +1,10 @@
 #lang at-exp racket
 
 (require metacoders-dot-org-lib
-         racket/runtime-path)
+         racket/runtime-path
+         website-js/components/gradient
+         website-js/components/boids
+         website-js/components/pointillism)
 
 (provide index)
 
@@ -13,10 +16,8 @@
     #:image-path homepage-banner-path))
 
 (define (jumbotron-code-the-meta-way)
-  (jumbotron  style: (properties
-                           text-align: "center"
-                           margin-bottom: 0
-                           background: "white")
+  (jumbotron class: "text-center mb-0 bg-white"
+               style: (properties 'overflow: "hidden")
       (container
                   (h1 "Code the Meta Way")
                   (br)
@@ -51,8 +52,8 @@
 )
 
 (define (jumbotron-it-takes-a-village)
-  (jumbotron
-    style: (properties margin-bottom: 0)
+  (jumbotron class: "text-center mb-0"
+         style: (properties 'overflow: "hidden")
       (container
         (row 
           class: "align-items-center"
@@ -82,9 +83,10 @@
                                             "Join Our Team")))))))
 
 (define (jumbotron-save-the-world)
-  (jumbotron
+  (gradient class: "jumbotron"
     style: (properties margin-bottom: 0
-                       background: "white")
+                       ;background: "white"
+                       )
     (container
       (row
         class: "align-items-center"
@@ -137,6 +139,7 @@
 (define (index)
   (page index-path
         (normal-content-wide
+         (include-p5-js)
           (style/inline type: "text/css" 
                         (~a ".img-link:hover {
                             opacity: 0.5;

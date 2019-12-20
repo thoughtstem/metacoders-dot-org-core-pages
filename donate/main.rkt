@@ -3,7 +3,10 @@
 (provide donate)
 
 (require metacoders-dot-org-lib
-         racket/runtime-path)
+         racket/runtime-path
+         ;website-js/components/gradient
+         ;website-js/components/boids
+         website-js/components/pointillism)
 
 (define-runtime-path grad-cap-path "./graduation-cap.svg")
 (define-runtime-path laptop-path "./laptop.svg")
@@ -106,7 +109,11 @@
                  (td (h6 (b "Classroom supplies") " and learning materials that help keep students engaged. This includes things like badges to earn, toys to earn, kata cards, and more!")))))))
 
 (define (more-ways-to-donate-deck-section)
-  (jumbotron  class: "mb-0 text-center"
+  (pointillism #:color-1 "rgba(255, 200, 0, 0.024)"
+               #:color-2 "rgba(237, 70, 41, 0.004)"
+               class: "card p-5 bg-transparent mb-0 text-center"
+               style: (properties 'overflow: "hidden")
+  ;(jumbotron  class: "mb-0 text-center"
               (container ;class: "col-sm-8 mx-auto"
                          (h3 "Other Ways to Donate")
                          (br)
@@ -133,6 +140,7 @@
 (define (donate) 
   (page donate-path
     (normal-content-wide
+     (include-p5-js)
      (style/inline type: "text/css"
                    (~a ".donate-color { height: 42px; width: 42px; margin-right:10px; fill: #28a745; }"
                        ".btn.btn-secondary:not(:disabled):not(.disabled).active {background-color:#222;}"
