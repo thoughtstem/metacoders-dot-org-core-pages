@@ -19,6 +19,7 @@
 (require (prefix-in minneapolis: metacoders-dot-org-minneapolis-site))
 (require (prefix-in poway: metacoders-dot-org-poway-site))
 (require (prefix-in chula-vista: metacoders-dot-org-chula-vista-site))
+(require (prefix-in new-orleans: metacoders-dot-org-new-orleans-site))
 
 (define (cities/dallas:index)
   (push-path 
@@ -62,6 +63,12 @@
     (push-path "chula-vista"
                (chula-vista:index))))
 
+(define (cities/new-orleans:index)
+  (push-path 
+    "cities"
+    (push-path "new-orleans"
+               (new-orleans:index))))
+
 (define (cities)
   (list
    (push-path "cities" 
@@ -77,7 +84,9 @@
    (push-path "cities" 
               (push-path "poway" (poway:pages)))
    (push-path "cities" 
-              (push-path "chula-vista" (chula-vista:pages)))))
+              (push-path "chula-vista" (chula-vista:pages)))
+   (push-path "cities" 
+              (push-path "new-orleans" (new-orleans:pages)))))
 ; -----------------------------------
 
 (define (index-page->banner-img index-page)
@@ -185,6 +194,9 @@
                                (index-page->city-card 
                                 "Minneapolis, MN"
                                 (cities/minneapolis:index))
+                               (index-page->city-card 
+                                "New Orleans, LA"
+                                (cities/new-orleans:index))
                                (index-page->city-card 
                                 "Poway, CA"
                                 (cities/poway:index))
