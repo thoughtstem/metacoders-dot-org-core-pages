@@ -6,17 +6,87 @@
 (define (checkout-success)
   (page checkout-success-top-path
         (normal-content
-          (div style: (properties
-                       text-align: "center"
-                       height: 500
-                       padding-top: 50)(h1 "Payment Success!")
-          (p "You will receive an email with your receipt shortly.")
-          (br)
-          (h4 "Now we need the student's details!")
-          (p "Click here to fill out the registration information for your student:")
-          (a href:"https://docs.google.com/forms/d/e/1FAIpQLSeo6vHe7gyNLl-BLNfOWIGmHyj3tN7Y7WNhsfH49DokINyt5Q/viewform"
-             class:"btn btn-info"
-             'role: "button"
-             "Finish Enrollment")
-          (br)
-          ))))
+          (div class: "text-center p-4"
+               (h1 "Payment Success")
+               (card class: "border-primary m-2"
+                (card-header class: "bg-primary text-white"
+                             (h5 class: "m-0"
+                                 (span id: "header-location" "Location") " - "
+                                 (span id: "header-topic" "Topic")))
+                (card-body
+                 (div class: "row text-left"
+                      (col-lg-6 class: "col-xs-12"
+                                (table class: "table table-striped table-bordered"
+                                       ;(tr (td (b "City: " )) (td id: "city" "City"))
+                                       ;(tr (td (b "Topic: " )) (td id: "topic" "Topic"))
+                                       (tr (td (b "Grades: ")) (td id: "grades" "Grades")) ;grade-range
+                                       (tr (td (b "Total Meetings: ")) (td id: "total-meetings" "Total Meetings")) ;(length meeting-dates)))
+                                       (tr (td (b "Meets on: ")) (td id: "meets-on" "Day of Week"))                ;(~a (meeting-date->weekday (first meeting-dates)) "s")))
+                                       (tr (td (b "Time: ")) (td id: "time" "Time"))                               ;start-time " - " end-time))
+                                       (tr (td (b "Start Date: ")) (td id: "start-date"))                          ;(first meeting-dates)))
+                                       (tr (td (b "Location: ")) (td (span id: "location" "Location") (br)
+                                                                     (a id: "address" target:"_blank" href: "http://maps.google.com" "Address")))
+                                       (tr (td (b "Price: ")) (td id: "price" "Price")) ;(if (> discount 0)
+                                                                                        ;    (list (s class: "text-danger"
+                                                                                        ;             (~a "$" price))
+                                                                                        ;          " $" (- price discount) "/student")
+                                                                                        ;    (~a "$" price "/student"))))
+                                       (tr (td (b "Schedule: ")) (td id: "meeting-dates" "Meeting Dates"))        ;(print-dates meeting-dates)))
+                                       ))
+                      (col-lg-6 class: "col-xs-12 d-flex flex-column justify-content-between"
+                                (div (h5 "Course Description:")
+                                     (p id: "description" "Description")))
+                      )))
+               (p "You will receive an email with your receipt shortly.")
+               (br)
+               (h4 "Now we need the student's details!")
+               (p "Click here to fill out the registration information for your student:")
+               (a id: "formUrl"
+                  href:"https://docs.google.com/forms/d/e/1FAIpQLSeo6vHe7gyNLl-BLNfOWIGmHyj3tN7Y7WNhsfH49DokINyt5Q/viewform"
+                  class:"btn btn-primary"
+                  'role: "button"
+                  "Finish Enrollment")
+               (br)
+               @script/inline{
+ function setValues(){
+  var urlObject = (new URL(window.location.href));
+  
+  var cityValue = urlObject.searchParams.get('city');
+  var locationValue = urlObject.searchParams.get('location');
+  var topicValue = urlObject.searchParams.get('topic');
+
+  var gradesValue = urlObject.searchParams.get('grades');
+  var totalMeetingsValue = urlObject.searchParams.get('total-meetings');
+  var meetsOnValue = urlObject.searchParams.get('meets-on');
+  var timeValue = urlObject.searchParams.get('time');
+  var startDateValue = urlObject.searchParams.get('start-date');
+  var addressValue = urlObject.searchParams.get('address');
+  var addressLinkValue = urlObject.searchParams.get('address-link');
+  var priceValue = urlObject.searchParams.get('price');
+  var scheduleValue = urlObject.searchParams.get('meeting-dates');
+  var descriptionValue = urlObject.searchParams.get('description');
+  
+  document.getElementById('header-location').innerHTML = locationValue;
+  document.getElementById('header-topic').innerHTML = topicValue;
+  
+  document.getElementById('grades').innerHTML = gradesValue;
+  document.getElementById('total-meetings').innerHTML = totalMeetingsValue;
+  document.getElementById('meets-on').innerHTML = meetsOnValue;
+  document.getElementById('time').innerHTML = timeValue;
+  document.getElementById('start-date').innerHTML = startDateValue;
+  document.getElementById('location').innerHTML = locationValue;
+  document.getElementById('address').innerHTML = addressValue;
+  document.getElementById('address').href = addressLinkValue;
+  document.getElementById('price').innerHTML = priceValue;
+  document.getElementById('meeting-dates').innerHTML = scheduleValue;
+  document.getElementById('description').innerHTML = descriptionValue;
+  
+  document.getElementById('formUrl').href = 
+  'https://docs.google.com/forms/d/e/1FAIpQLSeo6vHe7gyNLl-BLNfOWIGmHyj3tN7Y7WNhsfH49DokINyt5Q/viewform?usp=pp_url&' + 
+  '&entry.1401296940=' + encodeURI(cityValue) + 
+  '&entry.672430774=' + encodeURI(locationValue) + 
+  '&entry.1595827644=' + encodeURI(topicValue);
+ }
+ setValues();
+}
+               ))))
