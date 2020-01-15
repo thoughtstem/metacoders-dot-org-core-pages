@@ -54,5 +54,7 @@
       (cities)
       (checkout-fail)
       (checkout-success)
+      (camp-checkout-success)
+      (donate-success)
       (learn-more)
       )))
