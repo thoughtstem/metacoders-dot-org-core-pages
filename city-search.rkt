@@ -215,7 +215,7 @@
                    #:color-1 "rgba(255,193,7,0.5)"
                    #:color-2 "rgba(253,126,20,0.5)"
                id: "learn-more-card"
-               class: "card p-5 bg-transparent mb-0 text-center"
+               class: "card px-3 py-5 bg-transparent mb-0 text-center"
                style: (properties 'overflow: "hidden")
   ;(jumbotron  class: "mb-0 text-center"
               (container

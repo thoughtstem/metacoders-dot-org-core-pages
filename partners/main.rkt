@@ -36,7 +36,7 @@
               #:bg-color "#e9ecef"
               #:line-color "rgba(255,193,7,0.4)"
               #:max-radius 0
-            class: "card p-5 bg-transparent text-center mb-0"
+            class: "card px-3 py-5 bg-transparent text-center mb-0"
             style: (properties 'overflow: "hidden")
   ;(jumbotron class: "mb-0"
              (container
