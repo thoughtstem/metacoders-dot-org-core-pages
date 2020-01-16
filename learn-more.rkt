@@ -7,9 +7,10 @@
          metacoders-dot-org-lib  
          racket/runtime-path
          "./learn-more/main.rkt"
-         website-js/components/gradient
-         website-js/components/boids
-         website-js/components/pointillism)
+         ;website-js/components/gradient
+         ;website-js/components/boids
+         ;website-js/components/pointillism
+         website-js/components/l-system)
 
 (define-runtime-path js "learn-more/js")
 
@@ -35,10 +36,10 @@
   (jumbotron style: (properties background: "white" margin-bottom: 0)
     (container
       (row
-        (col-6 class: "pr-5"
+        (col-md-6 class: "pr-md-5"
           (h2 "About MetaCoders")
           (p "For the past 7 years, the founders of MetaCoders have been pioneering innovative approaches to teaching students coding. MetaCoders operated as a for-profit for several years as we honed our skills as educators and developed new technologies to better engage our students. Now, MetaCoders is teaching students nationwide!"))
-        (col-6 class: "pl-5"
+        (col-md-6 class: "pl-md-5"
           (h2 "Our Mission")
           (p "MetaCoders’ mission is to prepare students for the future by not just teaching coding, but teaching students how to learn new programming languages. Programming languages come and go, so students need to be ready to learn the next language - whatever that may be! This means MetaCoders spends time teaching students about their brains and how they learn!"))))))
 
@@ -73,7 +74,7 @@
         (card
           (button id: "acc-btn-1"
                   'onclick: "toggleAccBtn1();"
-                  class: "btn btn-primary p-3 text-left d-flex align-items-center collapsed" 'data-toggle: "collapse" 'data-target: "#collapseOne" 'aria-expanded: "false" 'aria-controls: "collapseOne" 
+                  class: "btn btn-primary p-2 text-left d-flex align-items-center collapsed" 'data-toggle: "collapse" 'data-target: "#collapseOne" 'aria-expanded: "false" 'aria-controls: "collapseOne" 
             (i id: "acc-icon-1" class: "fas fa-plus mr-2")
             @script/inline{
 function toggleAccBtn1() {
@@ -103,7 +104,7 @@ function toggleAccBtn1() {
         (card
           (button id: "acc-btn-2"
                   'onclick: "toggleAccBtn2();"
-                  class: "btn btn-primary p-3 text-left d-flex align-items-center collapsed" 'data-toggle: "collapse" 'data-target: "#collapseTwo" 'aria-expanded: "false" 'aria-controls: "collapseTwo" 
+                  class: "btn btn-primary p-2 text-left d-flex align-items-center collapsed" 'data-toggle: "collapse" 'data-target: "#collapseTwo" 'aria-expanded: "false" 'aria-controls: "collapseTwo" 
             (i id: "acc-icon-2" class: "fas fa-plus mr-2")
             @script/inline{
 function toggleAccBtn2() {
@@ -128,7 +129,7 @@ function toggleAccBtn2() {
         (card
           (button id: "acc-btn-3"
                   'onclick: "toggleAccBtn3();"
-                  class: "btn btn-primary p-3 text-left d-flex align-items-center collapsed" 'data-toggle: "collapse" 'data-target: "#collapseThree" 'aria-expanded: "false" 'aria-controls: "collapseThree"  
+                  class: "btn btn-primary p-2 text-left d-flex align-items-center collapsed" 'data-toggle: "collapse" 'data-target: "#collapseThree" 'aria-expanded: "false" 'aria-controls: "collapseThree"  
             (i id: "acc-icon-3" class: "fas fa-plus mr-2")
             @script/inline{
 function toggleAccBtn3() {
@@ -153,10 +154,22 @@ function toggleAccBtn3() {
 
 
 (define (where-do-you-fit-in)
-  (boids #:color "#ffc107"
-         #:bg-color "#e9ecef"
-         class: "card p-5 bg-transparent"
-         style: (properties 'overflow: "hidden")
+  (l-system   #:x "240"
+              #:y "p.height/3*2"
+              #:start-angle -150
+              #:step 18
+              #:angle 90
+              #:axiom "FX"
+              #:loops 16
+              #:rules (list (cons "X" "X+YF+")
+                            (cons "Y" "-FX-Y"))
+              #:bg-color "#e9ecef"
+              #:line-color "rgba(255,193,7,0.4)"
+              #:max-radius 0
+  ;(boids #:color "#ffc107"
+  ;       #:bg-color "#e9ecef"
+              class: "card px-3 py-5 mb-0 bg-transparent"
+              style: (properties 'overflow: "hidden")
   ;(jumbotron style: (properties margin-bottom: 0)
     (container
       (div class: "text-center"

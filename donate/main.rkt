@@ -111,7 +111,8 @@
 (define (more-ways-to-donate-deck-section)
   (pointillism #:color-1 "rgba(255, 200, 0, 0.024)"
                #:color-2 "rgba(237, 70, 41, 0.004)"
-               class: "card p-5 bg-transparent mb-0 text-center"
+               #:bg-color "#f8f9fa"
+               class: "card px-3 py-5 bg-transparent mb-0 text-center"
                style: (properties 'overflow: "hidden")
   ;(jumbotron  class: "mb-0 text-center"
               (container ;class: "col-sm-8 mx-auto"
