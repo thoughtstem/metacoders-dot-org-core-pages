@@ -147,7 +147,7 @@ function toggleAccBtn3() {
    buttonIcon3.classList = "fas fa-minus mr-2";
   }
 }}
-            (h5 class: "mb-0" style: (properties display: "inline-block" white-space: "normal")  "  A non-profit worldview, but with for-profit quality.")))
+            (h5 class: "mb-0" style: (properties display: "inline-block" white-space: "normal")  "  A non-profit worldview, but with for-profit resources.")))
         (div id: "collapseThree" class: "collapse" 'aria-labelledby: "headingOne" 'data-parent: "#accordion"
           (card-body
             @p{We've run coding classes, camps, and workshops for the past 7 years under a for-profit named ThoughtSTEM. We've worked with tens of thousands of children and learned so much about how to create classrooms that inspire and motivate students to keep learning. As a for-profit, however, we were always limited to working with students in certain areas who could afford our classes. That's why we started MetaCoders: @u{because students shouldn't be prevented from learning coding just because of their family's situation.} We are bringing quality for-profit education at a non-profit price.}))))))
