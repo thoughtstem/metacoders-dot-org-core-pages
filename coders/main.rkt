@@ -12,7 +12,7 @@
 (define (volunteer-description)
   (volunteer-page
     #:position-title "Volunteer Coder"
-    #:image-path volunteer-coder-img-path
+    #:image-path volunteer-coder-banner-path
     #:jumbotron-tagline "Design and build educational software that inspires the next generation of computer scientists!"
     #:percent-height "60vh"
     #:locations-hiring (list "Anywhere!")
