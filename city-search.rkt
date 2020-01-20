@@ -228,7 +228,7 @@
 
 (define (city-search)
   (page city-search-path
-        (normal-content-wide
+        (normal-content-wide #:head (title "Locations | Coding Summer Camps and Weekly Classes | MetaCoders")
           (include-p5-js)
           (invert-color-change-style)
           (jumbotron-header-section)

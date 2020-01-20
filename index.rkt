@@ -137,7 +137,7 @@
 
 (define (index)
   (page index-path
-        (normal-content-wide
+        (normal-content-wide #:head (title "MetaCoders | Coding Camps and Year-Round Classes for K-12")
          (include-p5-js)
           (style/inline type: "text/css" 
                         (~a ".img-link:hover {

@@ -140,7 +140,8 @@
 
 (define (donate) 
   (page donate-path
-    (normal-content-wide #:head (list (link 'rel: "preconnect" href:"https://q.stripe.com")
+    (normal-content-wide #:head (list (title "Donate | Help Us Provide Coding Education to Kids Around U.S. | MetaCoders")
+                                      (link 'rel: "preconnect" href:"https://q.stripe.com")
                                       (link 'rel: "preconnect" href:"https://m.stripe.com"))                                    
      (include-p5-js)
      (style/inline type: "text/css"
