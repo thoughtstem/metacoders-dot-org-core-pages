@@ -35,6 +35,6 @@
 
 (define (coders-top)
   (page coders-top-path
-        (normal-content-wide
+        (normal-content-wide #:head (title "Volunteer to Code Educational Technologies | MetaCoders")
           (volunteer-description)
           (bottom-section))))

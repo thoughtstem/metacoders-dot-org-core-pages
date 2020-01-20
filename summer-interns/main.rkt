@@ -37,6 +37,6 @@
 
 (define (summer-camp-interns-top)
   (page summer-camp-intern-top-path
-        (normal-content-wide
+        (normal-content-wide #:head (title "Summer Camp Team Leader Internship | Teach Kids Code | MetaCoders")
           (intern-description)
           (bottom-section))))

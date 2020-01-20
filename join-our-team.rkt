@@ -10,7 +10,7 @@
 
 (define (join-our-team)
   (page join-our-team-path
-        (normal-content-wide
+        (normal-content-wide #:head (title "Part-time Jobs in Computer Science Education | MetaCoders")
          (include-p5-js)
           (jumbotron-header-section)
           (two-ways-to-work-with-metacoders)

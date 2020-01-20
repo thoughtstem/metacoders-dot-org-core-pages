@@ -91,6 +91,6 @@
 
 (define (coaches-top)
   (page coaches-top-path
-        (normal-content-wide
+        (normal-content-wide #:head (title "Coding Coaches | Apply to Teach Kids Code | MetaCoders")
           (employment-section)
           (start-now-section))))
