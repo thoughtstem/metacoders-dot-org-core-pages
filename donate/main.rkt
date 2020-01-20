@@ -142,7 +142,9 @@
   (page donate-path
     (normal-content-wide #:head (list (title "Donate | Help Us Provide Coding Education to Kids Around U.S. | MetaCoders")
                                       (link 'rel: "preconnect" href:"https://q.stripe.com")
-                                      (link 'rel: "preconnect" href:"https://m.stripe.com"))                                    
+                                      (link 'rel: "preconnect" href:"https://m.stripe.com") 
+                                      (script src:"https://js.stripe.com/v3"))                                     
+
      (include-p5-js)
      (style/inline type: "text/css"
                    (~a ".donate-color { height: 42px; width: 42px; margin-right:10px; fill: #28a745; }"
