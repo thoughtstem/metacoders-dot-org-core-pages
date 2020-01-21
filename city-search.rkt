@@ -168,7 +168,7 @@
   (style/inline
    (rule ".card:hover"
          (properties
-            background-color: "#007bff"
+            background-color: primary
             color: "white !important"))))
 
 (define (jumbotron-header-section)
@@ -212,8 +212,8 @@
 
 (define (learn-more-section)
   (recursive-trees #:bg-color "#6c757d"
-                   #:color-1 "rgba(255,193,7,0.5)"
-                   #:color-2 "rgba(253,126,20,0.5)"
+                   #:color-1 (~a warning 80) ;"rgba(255,193,7,0.5)"
+                   #:color-2 (~a primary 80) ;"rgba(253,126,20,0.5)"
                id: "learn-more-card"
                class: "card px-3 py-5 bg-transparent mb-0 text-center"
                style: (properties 'overflow: "hidden")

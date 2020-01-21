@@ -164,7 +164,7 @@ function toggleAccBtn3() {
               #:rules (list (cons "X" "X+YF+")
                             (cons "Y" "-FX-Y"))
               #:bg-color "#e9ecef"
-              #:line-color "rgba(255,193,7,0.4)"
+              #:line-color (~a warning 66);"rgba(255,193,7,0.4)"
               #:max-radius 0
   ;(boids #:color "#ffc107"
   ;       #:bg-color "#e9ecef"
@@ -184,7 +184,7 @@ function toggleAccBtn3() {
     (page js/name-replace-effect.js
           (file->string (build-path js "name-replace-effect.js"))) 
     (page learn-more-path
-      (normal-content-wide #:head (include-css "css/custom.css")
+      (normal-content-wide ;#:head (include-css "css/custom.css") ; THIS FILE IS BLANK?
         (include-p5-js)
         (jumbotron-header)
         (about-and-mission)
