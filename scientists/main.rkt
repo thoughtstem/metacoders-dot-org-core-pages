@@ -41,6 +41,6 @@
 
 (define (scientists-top)
   (page scientists-top-path
-        (normal-content-wide
+        (normal-content-wide #:head (title "Volunteer to be a Learning Scientist in Our Classrooms | MetaCoders")
           (volunteer-description)
           (bottom-section))))

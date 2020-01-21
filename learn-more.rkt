@@ -184,7 +184,8 @@ function toggleAccBtn3() {
     (page js/name-replace-effect.js
           (file->string (build-path js "name-replace-effect.js"))) 
     (page learn-more-path
-      (normal-content-wide ;#:head (include-css "css/custom.css") ; THIS FILE IS BLANK?
+      (normal-content-wide #:head (list ;(include-css "css/custom.css") ; THIS FILE IS BLANK?
+                                        (title "Learn More | Non-Profit Computer Science Education | MetaCoders"))
         (include-p5-js)
         (jumbotron-header)
         (about-and-mission)

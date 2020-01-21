@@ -12,7 +12,7 @@
 
 (define (tech-coords-top)
   (page tech-coords-top-path
-        (normal-content-wide
+        (normal-content-wide #:head (title "Tech Coordinators | Apply to Support CS Education | MetaCoders")
           (tech-coord-page)
           (start-now-section))))
 

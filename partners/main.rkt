@@ -49,7 +49,7 @@
 
 (define (partners)
   (page partners-top-path
-        (normal-content-wide
+        (normal-content-wide #:head (title "Partner with Us to Bring CSEd to Your Community | MetaCoders")
          (include-p5-js)
           (jumbotron-header-section)
           (what-we-do-section)

@@ -137,7 +137,8 @@
 
 (define (index)
   (page index-path
-        (normal-content-wide #:head (index-critical-style)
+        (normal-content-wide #:head (list (title "MetaCoders | Coding Camps and Year-Round Classes for K-12")
+                                          (index-critical-style))
           (style/inline type: "text/css" 
                         (~a ".img-link:hover {
                             opacity: 0.5;
