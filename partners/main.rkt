@@ -34,7 +34,7 @@
               #:rules (list (cons "X" "X+YF+")
                             (cons "Y" "-FX-Y"))
               #:bg-color "#e9ecef"
-              #:line-color "rgba(255,193,7,0.4)"
+              #:line-color (~a primary 66);"rgba(255,193,7,0.4)"
               #:max-radius 0
             class: "card px-3 py-5 bg-transparent text-center mb-0"
             style: (properties 'overflow: "hidden")

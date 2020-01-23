@@ -6,7 +6,8 @@
          racket/runtime-path
          ;website-js/components/gradient
          ;website-js/components/boids
-         website-js/components/pointillism)
+         ;website-js/components/pointillism
+         website-js/components/l-system)
 
 (define-runtime-path grad-cap-path "./graduation-cap.svg")
 (define-runtime-path laptop-path "./laptop.svg")
@@ -109,11 +110,18 @@
                  (td (h6 (b "Classroom supplies") " and learning materials that help keep students engaged. This includes things like badges to earn, toys to earn, kata cards, and more!")))))))
 
 (define (more-ways-to-donate-deck-section)
-  (pointillism #:color-1 "rgba(255, 200, 0, 0.024)"
-               #:color-2 "rgba(237, 70, 41, 0.004)"
-               #:bg-color "#f8f9fa"
-               class: "card px-3 py-5 bg-transparent mb-0 text-center"
-               style: (properties 'overflow: "hidden")
+  (l-system  #:step 50
+             #:loops 4
+             #:max-radius 0
+             #:bg-color "#e9ecef" ;"#f8f9fa"
+             #:line-color (~a warning "80")
+            class: "card px-3 py-5 bg-transparent text-center mb-0"
+            style: (properties 'overflow: "hidden")
+  ;(pointillism #:color-1 (~a primary "03") ;"rgba(255, 200, 0, 0.024)"
+  ;             #:color-2 (~a warning "01") ;"rgba(237, 70, 41, 0.004)"
+  ;             #:bg-color "#f8f9fa"
+  ;             class: "card px-3 py-5 bg-transparent mb-0 text-center"
+  ;             style: (properties 'overflow: "hidden")
   ;(jumbotron  class: "mb-0 text-center"
               (container ;class: "col-sm-8 mx-auto"
                          (h3 "Other Ways to Donate")
@@ -138,6 +146,7 @@
                                                 " to see if we are able to accept your donation."))
                                )))))
 
+;success color : #28a745
 (define (donate) 
   (page donate-path
     (normal-content-wide #:head (list (title "Donate | Help Us Provide Coding Education to Kids Around U.S. | MetaCoders")
@@ -146,12 +155,12 @@
                                       (script src:"https://js.stripe.com/v3"))                                     
 
      (include-p5-js)
-     (style/inline type: "text/css"
-                   (~a ".donate-color { height: 42px; width: 42px; margin-right:10px; fill: #28a745; }"
-                       ".btn.btn-secondary:not(:disabled):not(.disabled).active {background-color:#222;}"
-                       ".card-header {background-color: #28a745; color: white;}"
-                       
-                       "tr {height: 60px;}"))
+     @style/inline[type: "text/css"]{
+      .donate-color { height: 42px; width: 42px; margin-right:10px; fill: @primary; }
+      .btn.btn-secondary:not(:disabled):not(.disabled).active {background-color:#222;}
+      .card-header {background-color: @primary; color: white;}            
+      tr {height: 60px;}
+     }
       (jumbotron-main-section)
       (what-your-donations-support)
       (more-ways-to-donate-deck-section)
