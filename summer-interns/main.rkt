@@ -37,6 +37,8 @@
 
 (define (summer-camp-interns-top)
   (page summer-camp-intern-top-path
-        (normal-content-wide #:head (title "Summer Camp Team Leader Internship | Teach Kids Code | MetaCoders")
+        (normal-content-wide #:head (list
+            (title "Summer Camp Team Leader Internship | Teach Kids Code | MetaCoders")
+            (meta name: "description" content: "Summer Camp Team Leaders are high school or college students with a passion for computer science education who want to give back to their communities!"))
           (intern-description)
           (bottom-section))))

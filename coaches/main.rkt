@@ -91,6 +91,8 @@
 
 (define (coaches-top)
   (page coaches-top-path
-        (normal-content-wide #:head (title "Coding Coaches | Apply to Teach Kids Code | MetaCoders")
+        (normal-content-wide #:head (list
+            (title "Coding Coaches | Apply to Teach Kids Code | MetaCoders")
+            (meta name: "description" content: "Coding Coaches teach MetaCoders students in grades K-12th how to code in classes and camps. Coding Coaches are energetic and passionate about coding. Apply today!"))
           (employment-section)
           (start-now-section))))

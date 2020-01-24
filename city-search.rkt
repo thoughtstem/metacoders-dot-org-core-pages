@@ -228,7 +228,9 @@
 
 (define (city-search)
   (page city-search-path
-        (normal-content-wide #:head (title "Locations | Coding Summer Camps and Weekly Classes | MetaCoders")
+        (normal-content-wide #:head (list
+                                      (title "Locations | Coding Summer Camps and Weekly Classes | MetaCoders")
+                                      (meta name: "description" content: "MetaCoders teaches K-12 kids how to code in cities across the United States, including in California, Texas, Nevada, Minnesota, North Carolina, and Louisiana."))
           (include-p5-js)
           (invert-color-change-style)
           (jumbotron-header-section)

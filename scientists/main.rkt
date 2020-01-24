@@ -41,6 +41,8 @@
 
 (define (scientists-top)
   (page scientists-top-path
-        (normal-content-wide #:head (title "Volunteer to be a Learning Scientist in Our Classrooms | MetaCoders")
+        (normal-content-wide #:head (list
+              (title "Volunteer to be a Learning Scientist in Our Classrooms | MetaCoders")
+              (meta name: "description" content: "Learning Scientists are volunteers who help support Coding Coaches in classrooms and identify interventions for students. They make MetaCoders classes the best!"))
           (volunteer-description)
           (bottom-section))))

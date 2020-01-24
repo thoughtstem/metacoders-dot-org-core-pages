@@ -10,7 +10,9 @@
 
 (define (join-our-team)
   (page join-our-team-path
-        (normal-content-wide #:head (title "Part-time Jobs in Computer Science Education | MetaCoders")
+        (normal-content-wide #:head (list
+            (title "Part-time Jobs in Computer Science Education | MetaCoders")
+            (meta name: "description" content: "There are many employment and volunteer opportunities at MetaCoders for individuals passionate about computer science and coding education for kids. Apply today!"))
          (include-p5-js)
           (jumbotron-header-section)
           (two-ways-to-work-with-metacoders)

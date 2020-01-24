@@ -6,7 +6,9 @@
 
 (define (terms-and-conditions)
   (page terms-and-conditions-path
-        (normal-content
+        (normal-content #:head (list
+            (title "Terms and Conditions for Classes and Camps | MetaCoders")
+            (meta name: "description" content: "MetaCoders’ Terms and Conditions apply to all camps and classes purchased through metacoders.org."))
           (br)
           (h1 "Terms and Conditions")
           (terms-for-refunds)
