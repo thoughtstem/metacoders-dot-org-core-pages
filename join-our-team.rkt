@@ -92,7 +92,7 @@
   (l-system  #:step 50
              #:loops 4
              #:max-radius 0
-             #:line-color "rgba(255,193,7,0.4)"
+             #:line-color (~a warning "80") ;"rgba(255,193,7,0.4)"
             class: "card px-3 py-5 bg-transparent text-center mb-0"
             style: (properties 'overflow: "hidden")
   ;(jumbotron  style: (properties
