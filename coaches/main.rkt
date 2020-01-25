@@ -12,7 +12,7 @@
                    #:image-path coding-coach-banner-path
                    #:jumbotron-tagline "Work at home and prepare supplies for local classes!"
                    #:percent-height "60vh"
-                   #:locations-hiring (list "Dallas, Texas" "New Orleans, LA" "Reno, NV" "Minneapolis, MN")
+                   #:locations-hiring (list "Dallas, Texas" "New Orleans, LA" "Temecula, CA" "Minneapolis, MN")
                    #:short-job-description 
   (div
     (h6 "Description")
@@ -91,6 +91,8 @@
 
 (define (coaches-top)
   (page coaches-top-path
-        (normal-content-wide #:head (title "Coding Coaches | Apply to Teach Kids Code | MetaCoders")
+        (normal-content-wide #:head (list
+            (title "Coding Coaches | Apply to Teach Kids Code | MetaCoders")
+            (meta name: "description" content: "Coding Coaches teach MetaCoders students in grades K-12th how to code in classes and camps. Coding Coaches are energetic and passionate about coding. Apply today!"))
           (employment-section)
           (start-now-section))))

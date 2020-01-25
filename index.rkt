@@ -137,8 +137,10 @@
 
 (define (index)
   (page index-path
-        (normal-content-wide #:head (list (title "MetaCoders | Coding Camps and Year-Round Classes for K-12")
-                                          (index-critical-style))
+        (normal-content-wide #:head (list 
+                                      (title "MetaCoders | Coding Camps and Year-Round Classes for K-12")
+                                      (meta name: "description" content: "MetaCoders teaches kids in K-12 how to code through cutting-edge learning science. MetaCoders’ classes and summer camps operate at locations across the country.")
+                                      (index-critical-style))
                              #:defer-css #t
           (style/inline type: "text/css" 
                         (~a ".img-link:hover {

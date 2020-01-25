@@ -12,7 +12,9 @@
 
 (define (tech-coords-top)
   (page tech-coords-top-path
-        (normal-content-wide #:head (title "Tech Coordinators | Apply to Support CS Education | MetaCoders")
+        (normal-content-wide #:head (list
+            (title "Tech Coordinators | Apply to Support CS Education | MetaCoders")
+            (meta name: "description" content: "Tech Coordinators are part-time staff who maintain hardware for Coding Coaches near class locations in their area. They advocate for CS education in their area."))
           (tech-coord-page)
           (start-now-section))))
 

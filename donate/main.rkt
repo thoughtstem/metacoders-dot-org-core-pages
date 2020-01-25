@@ -150,6 +150,7 @@
 (define (donate) 
   (page donate-path
     (normal-content-wide #:head (list (title "Donate | Help Us Provide Coding Education to Kids Around U.S. | MetaCoders")
+                                      (meta name: "description" content: "By donating to MetaCoders, you make computer science education more affordable and more accessible to K-12 students around the country. Donate today!")
                                       (link 'rel: "preconnect" href:"https://q.stripe.com")
                                       (link 'rel: "preconnect" href:"https://m.stripe.com") 
                                       (script src:"https://js.stripe.com/v3"))                                     

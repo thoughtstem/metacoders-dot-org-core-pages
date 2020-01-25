@@ -185,7 +185,8 @@ function toggleAccBtn3() {
           (file->string (build-path js "name-replace-effect.js"))) 
     (page learn-more-path
       (normal-content-wide #:head (list ;(include-css "css/custom.css") ; THIS FILE IS BLANK?
-                                        (title "Learn More | Non-Profit Computer Science Education | MetaCoders"))
+                                        (title "Learn More | Non-Profit Computer Science Education | MetaCoders")
+                                        (meta name: "description" content: "As a nonprofit, MetaCoders’ mission is to prepare students for the future by not just teaching coding, but teaching students how to learn new programming languages. "))
         (include-p5-js)
         (jumbotron-header)
         (about-and-mission)

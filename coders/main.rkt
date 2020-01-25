@@ -35,6 +35,8 @@
 
 (define (coders-top)
   (page coders-top-path
-        (normal-content-wide #:head (title "Volunteer to Code Educational Technologies | MetaCoders")
+        (normal-content-wide #:head (list
+            (title "Volunteer to Code Educational Technologies | MetaCoders")
+            (meta name: "description" content: "Volunteer Coders build computer science educational resources and technologies for K-12 students. They are helping train the next generation of coders!"))
           (volunteer-description)
           (bottom-section))))
