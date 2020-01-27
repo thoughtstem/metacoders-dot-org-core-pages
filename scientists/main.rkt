@@ -14,6 +14,7 @@
   (volunteer-page
     #:position-title "Learning Scientist"
     #:image-path volunteer-scientist-banner-path
+    #:alt-tag "Volunteer scientist observes a coding classroom and documents student progress"
     #:jumbotron-tagline "Study and monitor MetaCoders classes in your local area to make sure kids have the best classroom experiences."
     #:percent-height "60vh"
     #:locations-hiring (list "Dallas, Texas" "Minneapolis, Minnesota" "Temecula, CA" "Poway, CA" "Chula Vista, CA" "Reno, Nevada")

@@ -62,6 +62,8 @@
            'min-height: "80vh"
            position: "relative")
    class: "d-flex align-items-center"
+   role: "img"
+   'aria-label: "Students and instructors of a computer science, coding, and technology summer camp"
    (div style: (properties background-color: "rgba(0,0,0,0.6)"
                            width: "100%"
                            position: "absolute"

@@ -123,7 +123,7 @@
       (string-replace _ "." "")
       (string-replace _ " " "-")))
 
-(define (index-page->city-card title index-page)
+(define (index-page->city-card title alt-tag index-page)
   (a href: (pathify (add-path-prefix (page-path index-page)))
      style: (properties 'text-decoration: "none")
      (card id: (title->id title)
@@ -133,6 +133,8 @@
                               ;background-position: "center"
                               ;background-size: "cover"
                               )
+           role: "img"
+           'aria-label: alt-tag
            (bg-color-change-style (title->id title) (index-page->banner-img index-page))
            (card-footer class: "p-0 border-primary"
                         (h5 class: "m-0 p-3" title)))
@@ -176,7 +178,8 @@
     #:title "Cities That Went Meta"
     #:tagline "MetaCoders is expanding rapidly throughout the world."
     #:percent-height "60vh"
-    #:image-path world-img-path))
+    #:image-path world-img-path
+    #:alt-tag "A map of the world with pins densely covering North America and hand pointing"))
 
 (define (cities-section)
   (jumbotron  class: "mb-0 text-center"
@@ -187,27 +190,35 @@
                (responsive-row #:columns 3
                                (index-page->city-card 
                                 "Chula Vista, CA"
+                                "City of Chula Vista, California with mountains and colorful signs"
                                 (cities/chula-vista:index))
                                (index-page->city-card 
                                 "Dallas, TX"
+                                "City of Dallas, Texas with a view of downtown on a cloudy day"
                                 (cities/dallas:index))
                                (index-page->city-card 
                                 "Minneapolis, MN"
+                                "City of Minneapolis, Minnesota with a view of the downtown skyline and trees"
                                 (cities/minneapolis:index))
                                (index-page->city-card 
                                 "New Orleans, LA"
+                                "City of New Orleans, Louisiana with busy streets and trolley"
                                 (cities/new-orleans:index))
                                (index-page->city-card 
                                 "Poway, CA"
+                                "City of Poway, California with a view of Lake Poway and natural preserve"
                                 (cities/poway:index))
                                (index-page->city-card 
                                 "Reno, NV"
+                                "City of Reno, Nevada with busy streets and welcome sign"
                                 (cities/reno:index))
                                (index-page->city-card 
                                 "Temecula, CA"
+                                "City of Temecula, California on a cloudy day with view of pond"
                                 (cities/temecula:index))
                                (index-page->city-card 
                                 "Washington, D.C."
+                                "City of Washington, D.C. with view of capital and cherry blossom trees"
                                 (cities/dc:index))))))
 
 (define (learn-more-section)

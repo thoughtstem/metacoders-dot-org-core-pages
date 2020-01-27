@@ -30,7 +30,8 @@
     #:title "Bringing the World Together Through Coding"
     #:tagline "We prepare students for the future by making sure they are fluent in one of the most powerful languages of today: code."
     #:percent-height "80vh"
-    #:image-path learn-more-banner-path))
+    #:image-path learn-more-banner-path
+    #:alt-tag "A silly, fun summer coding camp group photo with students and teachers"))
 
 (define (about-and-mission)
   (jumbotron style: (properties background: "white" margin-bottom: 0)
@@ -49,17 +50,20 @@
       (h2 "We Teach Coding Year-Round")
         (responsive-row #:columns 3
           (card class: "h-100"
-            (card-img-top src: (prefix/pathify summer-camps-img-path))
+            (card-img-top src: (prefix/pathify summer-camps-img-path)
+                          'alt: "Female summer coding camp leader poses for a selfie with a happy group of young girls")
             (card-body
               (card-title "Summer Camps")
               (card-text "Fun, flexible, reasonably-priced summer camps are a great way to spark a lifetime interest in coding!")))
           (card class: "h-100"
-            (card-img-top src: (prefix/pathify weekly-classes-img-path))
+            (card-img-top src: (prefix/pathify weekly-classes-img-path)
+                          'alt: "Elementary school-aged boy shows off the digital artwork he made for video game")
             (card-body
               (card-title "Weekly Classes")
               (card-text "Weekend classes at a local university or after-school at the local rec center, weekly classes keep students engaged throughout the year.")))
           (card class: "h-100"
-            (card-img-top src: (prefix/pathify in-school-img-path))
+            (card-img-top src: (prefix/pathify in-school-img-path)
+                          'alt: "A computer science instructor teaching engaged elementary students using white board")
             (card-body
               (card-title "In-School Workshops")
               (card-text "Many schools aren’t teaching coding, so we help schools integrate coding into the school day!")))))))

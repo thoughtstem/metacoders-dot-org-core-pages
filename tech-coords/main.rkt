@@ -31,6 +31,7 @@
 (define (tech-coord-page)
   (employment-page  #:position-title "Technology Coordinator"
                     #:image-path tech-coordinator-banner-path
+                    #:alt-tag "Technology coordinator installs software on chromebooks in her comfortable home"
                     #:jumbotron-tagline "Help us connect coaches and students!"
                     #:percent-height "60vh"
                     #:locations-hiring (list "Dallas, Texas" "Phoenix, Arizona" "Reno, Nevada" "Temecula, California" "Minneapolis, MN" "New Orleans, LA")

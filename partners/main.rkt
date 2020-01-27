@@ -9,7 +9,8 @@
       #:title "Become Our Partner"
       #:tagline "Make a difference by bringing MetaCoders to your community!"
       #:percent-height "60vh"
-      #:image-path partners-img-path))
+      #:image-path partners-img-path
+      #:alt-tag "Two young girls become friends while they were enrolled in a coding camp"))
 
 (define (what-we-do-section)
   (jumbotron  class: "mb-0"

@@ -13,6 +13,7 @@
   (volunteer-page
     #:position-title "Volunteer Coder"
     #:image-path volunteer-coder-banner-path
+    #:alt-tag "Programmer developing a drag-and-drop educational programming language for kids in K-12"
     #:jumbotron-tagline "Design and build educational software that inspires the next generation of computer scientists!"
     #:percent-height "60vh"
     #:locations-hiring (list "Anywhere!")

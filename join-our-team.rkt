@@ -24,7 +24,8 @@
     #:title "Join Our Team"
     #:tagline "You can make a difference in your community by bringing coding education to local students."
     #:percent-height "80vh" 
-    #:image-path join-our-team-banner-path))
+    #:image-path join-our-team-banner-path
+    #:alt-tag "College student mentoring junior high school boy in computer science and coding at university"))
 
 (define (two-ways-to-work-with-metacoders)
   (jumbotron  style: (properties
@@ -38,7 +39,8 @@
       (br)
       (responsive-row #:columns 2
         (card class: "h-100" style: (properties overflow: "hidden")
-          (card-img-top src: (prefix/pathify coding-coach-img-path))
+          (card-img-top src: (prefix/pathify coding-coach-img-path)
+                        'alt: "Computer science teacher works with young boy enthusiastic about coding video games")
           (card-body
             (card-title "Become a Coding Coach")
             (card-text "Teach kids in your community how to code!"))
@@ -46,7 +48,8 @@
             (a style: (properties text-decoration: "none") href: coaches-top-path 
                      (button-primary class: "btn-block rounded-0" "Learn More"))))
         (card class: "h-100" style: (properties overflow: "hidden")
-          (card-img-top src: (prefix/pathify tech-coordinator-img-path))
+          (card-img-top src: (prefix/pathify tech-coordinator-img-path)
+                        'alt: "Technology coordinator updating and installing software on lots of chromebooks in office")
           (card-body
             (card-title "Become a Technology Coordinator")
             (card-text "Help us connect coaches and students in your area!"))
@@ -66,7 +69,8 @@
       (br)
       (responsive-row #:columns 3
         (card class: "h-100" style: (properties overflow: "hidden")
-          (card-img-top src: (prefix/pathify volunteer-scientist-img-path))
+          (card-img-top src: (prefix/pathify volunteer-scientist-img-path)
+                        'alt: "Learning scientists writes notes about student progress and monitors computer science classroom")
           (card-body
             (card-title "Volunteer as a Learning Scientist")
             (card-text "Study and monitor MetaCoders classes in your local area to make sure kids have the best classroom experiences."))
@@ -74,7 +78,8 @@
             (a style: (properties text-decoration: "none") href: scientists-top-path
               (button-primary class: "btn-block rounded-0" "Learn More"))))
         (card class: "h-100" style: (properties overflow: "hidden")
-          (card-img-top src: (prefix/pathify volunteer-coder-img-path))
+          (card-img-top src: (prefix/pathify volunteer-coder-img-path)
+                        'alt: "Volunteer programmer codes drag-and-drop educational technologies for K-12 students")
           (card-body
             (card-title "Volunteer as a Coder")
             (card-text "Help us code open-source educational software that kids around the world can use to create video games, apps, and more!"))
@@ -82,7 +87,8 @@
             (a style: (properties text-decoration: "none") href: coders-top-path 
               (button-primary class: "btn-block rounded-0" "Learn More"))))
         (card class: "h-100" style: (properties overflow: "hidden")
-          (card-img-top src: (prefix/pathify summer-camp-intern-img-path))
+          (card-img-top src: (prefix/pathify summer-camp-intern-img-path)
+                        'alt: "Summer camp intern in computer science education bonds with a young boy at camp")
           (card-body
             (card-title "Intern as a Summer Camp Team Leader")
             (card-text "Lead students in our summer camps in coding exercises and make sure they have a great first experience with coding!"))
