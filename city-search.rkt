@@ -1,4 +1,4 @@
-#lang racket
+#lang at-exp racket
 
 (provide city-search
          cities)
@@ -97,12 +97,26 @@
                                               c))))
 
 (define (bg-color-change-style id bg-url)
+  ;take in webp and fallback to jpg
+  (define webp-url bg-url)
+  (define jpg-url (string-replace webp-url "webp" "jpg"))
   (style/inline
-   (rule (~a "#" id ".card:before") ;".card-img-top"
+   (rule (~a ".no-webp #" id ".card:before") ;".card-img-top"
          (properties
             'content: "' '" 
             height: "100%"
-            background-image: bg-url
+            background-image: jpg-url
+            background-position: "center"
+            background-size: "cover"
+            filter: "grayscale(100%)"
+            'border-top-left-radius: "calc(.25rem - 1px)"
+            'border-top-right-radius: "calc(.25rem - 1px)"
+            ))
+   (rule (~a ".webp #" id ".card:before") ;".card-img-top"
+         (properties
+            'content: "' '" 
+            height: "100%"
+            background-image: webp-url
             background-position: "center"
             background-size: "cover"
             filter: "grayscale(100%)"
@@ -242,6 +256,7 @@
         (normal-content-wide #:head (list
                                       (title "Locations | Coding Summer Camps and Weekly Classes | MetaCoders")
                                       (meta name: "description" content: "MetaCoders teaches K-12 kids how to code in cities across the United States, including in California, Texas, Nevada, Minnesota, North Carolina, and Louisiana."))
+                             #:defer-css #t
           (include-p5-js)
           (invert-color-change-style)
           (jumbotron-header-section)
