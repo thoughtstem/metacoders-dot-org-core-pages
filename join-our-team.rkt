@@ -11,8 +11,11 @@
 (define (join-our-team)
   (page join-our-team-path
         (normal-content-wide #:head (list
-            (title "Part-time Jobs in Computer Science Education | MetaCoders")
-            (meta name: "description" content: "There are many employment and volunteer opportunities at MetaCoders for individuals passionate about computer science and coding education for kids. Apply today!"))
+                                     (title "Part-time Jobs in Computer Science Education | MetaCoders")
+                                     (meta name: "description" content: "There are many employment and volunteer opportunities at MetaCoders for individuals passionate about computer science and coding education for kids. Apply today!")
+                                     (common-critical-css)
+                                     )
+                             #:defer-css #t
          (include-p5-js)
           (jumbotron-header-section)
           (two-ways-to-work-with-metacoders)
@@ -40,7 +43,7 @@
       (responsive-row #:columns 2
         (card class: "h-100" style: (properties overflow: "hidden")
           (card-img-top src: (prefix/pathify coding-coach-img-path)
-                        'alt: "Computer science teacher works with young boy enthusiastic about coding video games")
+                        alt: "Computer science teacher works with young boy enthusiastic about coding video games")
           (card-body
             (card-title "Become a Coding Coach")
             (card-text "Teach kids in your community how to code!"))
@@ -49,7 +52,7 @@
                      (button-primary class: "btn-block rounded-0" "Learn More"))))
         (card class: "h-100" style: (properties overflow: "hidden")
           (card-img-top src: (prefix/pathify tech-coordinator-img-path)
-                        'alt: "Technology coordinator updating and installing software on lots of chromebooks in office")
+                        alt: "Technology coordinator updating and installing software on lots of chromebooks in office")
           (card-body
             (card-title "Become a Technology Coordinator")
             (card-text "Help us connect coaches and students in your area!"))
@@ -70,7 +73,7 @@
       (responsive-row #:columns 3
         (card class: "h-100" style: (properties overflow: "hidden")
           (card-img-top src: (prefix/pathify volunteer-scientist-img-path)
-                        'alt: "Learning scientists writes notes about student progress and monitors computer science classroom")
+                        alt: "Learning scientists writes notes about student progress and monitors computer science classroom")
           (card-body
             (card-title "Volunteer as a Learning Scientist")
             (card-text "Study and monitor MetaCoders classes in your local area to make sure kids have the best classroom experiences."))
@@ -79,7 +82,7 @@
               (button-primary class: "btn-block rounded-0" "Learn More"))))
         (card class: "h-100" style: (properties overflow: "hidden")
           (card-img-top src: (prefix/pathify volunteer-coder-img-path)
-                        'alt: "Volunteer programmer codes drag-and-drop educational technologies for K-12 students")
+                        alt: "Volunteer programmer codes drag-and-drop educational technologies for K-12 students")
           (card-body
             (card-title "Volunteer as a Coder")
             (card-text "Help us code open-source educational software that kids around the world can use to create video games, apps, and more!"))
@@ -88,7 +91,7 @@
               (button-primary class: "btn-block rounded-0" "Learn More"))))
         (card class: "h-100" style: (properties overflow: "hidden")
           (card-img-top src: (prefix/pathify summer-camp-intern-img-path)
-                        'alt: "Summer camp intern in computer science education bonds with a young boy at camp")
+                        alt: "Summer camp intern in computer science education bonds with a young boy at camp")
           (card-body
             (card-title "Intern as a Summer Camp Team Leader")
             (card-text "Lead students in our summer camps in coding exercises and make sure they have a great first experience with coding!"))
