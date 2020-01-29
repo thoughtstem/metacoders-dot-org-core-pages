@@ -50,10 +50,14 @@
 
 (define (partners)
   (page partners-top-path
-        (normal-content-wide #:head (title "Partner with Us to Bring CSEd to Your Community | MetaCoders")
-          (meta name: "description" content: "MetaCoders is looking for location partners! Send us an email if you want to see coding classes and camps at a location you operate or administer.")
-          (include-p5-js)
-          (jumbotron-header-section)
-          (what-we-do-section)
-          (email-section))))
+        (normal-content-wide
+         #:head (list (title "Partner with Us to Bring CSEd to Your Community | MetaCoders")
+                      (meta name: "description" content: "MetaCoders is looking for location partners! Send us an email if you want to see coding classes and camps at a location you operate or administer.")
+                      (common-critical-css)
+                      )
+         #:defer-css #t
+         (include-p5-js)
+         (jumbotron-header-section)
+         (what-we-do-section)
+         (email-section))))
         
