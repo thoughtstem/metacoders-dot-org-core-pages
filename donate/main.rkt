@@ -130,18 +130,18 @@
                          (br)
                          (div class: "text-left"
                               (p "At this time, MetaCoders primarily accepts monetary donations to support our efforts in computer science education. There are a few other ways you can donate besides through the donation form above:")
-                              (responsive-row #:columns 3
-                                    (card class: "h-100"
+                              (responsive-row #:columns 3 #:d-flex? #t
+                                    (card style: (properties 'flex: 1) ;class: "h-100"
                                      (card-header (h6 class: "m-0" "Donate by Mail"))
                                      (card-body (p "Mail a check to our headquarters:")
                                                 (p (b "2635 Camino del Rio South, Ste 103, San Diego, CA 92108"))
                                                 (p "Please include your return mailing address and phone number so that we can send you a donation receipt.")))
-                                    (card class: "h-100"
+                                    (card style: (properties 'flex: 1) ;class: "h-100"
                                      (card-header (h6 class: "m-0" "Donate by Phone"))
                                      (card-body "Call us at "
                                                 (b "858-869-9430")
                                                 " with payment details and we can take your donation over the phone."))
-                                    (card class: "h-100"
+                                    (card style: (properties 'flex: 1) ;class: "h-100"
                                      (card-header (h6 class: "m-0" "Donate by Email"))
                                      (card-body "If you have a non-monetary donation, please email us at "
                                                 (a href: "mailto:contact@metacoders.org" "contact@metacoders.org")

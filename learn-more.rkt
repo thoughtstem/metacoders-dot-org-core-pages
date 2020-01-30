@@ -16,7 +16,7 @@
 
 
 (define (six-ways-to-go-meta)
-  (responsive-row #:columns 3
+  (responsive-row #:columns 3 #:d-flex? #t
     (enroll-call-to-action)
     (join-our-team-call-to-action)
     (donate-call-to-action)
@@ -48,22 +48,31 @@
   (jumbotron style: (properties margin-bottom: 0)
     (container class: "text-center"
       (h2 "We Teach Coding Year-Round")
-        (responsive-row #:columns 3
-          (card class: "h-100"
-            (card-img-top src: (prefix/pathify summer-camps-img-path)
-                          alt: "Female summer coding camp leader poses for a selfie with a happy group of young girls")
+        (responsive-row #:columns 3 #:d-flex? #t
+          (card style: (properties 'flex: 1) ;class: "h-100"
+            (picture 
+                 (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path summer-camps-img-path)))
+                 (source type: "image/jpeg" srcset: (prefix/pathify summer-camps-img-path))
+                 (card-img-top src: (prefix/pathify summer-camps-img-path)
+                               alt: "Female summer coding camp leader poses for a selfie with a happy group of young girls"))
             (card-body
               (card-title "Summer Camps")
               (card-text "Fun, flexible, reasonably-priced summer camps are a great way to spark a lifetime interest in coding!")))
-          (card class: "h-100"
-            (card-img-top src: (prefix/pathify weekly-classes-img-path)
-                          alt: "Elementary school-aged boy shows off the digital artwork he made for video game")
+          (card style: (properties 'flex: 1) ;class: "h-100"
+            (picture 
+                 (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path weekly-classes-img-path)))
+                 (source type: "image/jpeg" srcset: (prefix/pathify weekly-classes-img-path))
+                 (card-img-top src: (prefix/pathify weekly-classes-img-path)
+                          alt: "Elementary school-aged boy shows off the digital artwork he made for video game"))
             (card-body
               (card-title "Weekly Classes")
               (card-text "Weekend classes at a local university or after-school at the local rec center, weekly classes keep students engaged throughout the year.")))
-          (card class: "h-100"
-            (card-img-top src: (prefix/pathify in-school-img-path)
-                          alt: "A computer science instructor teaching engaged elementary students using white board")
+          (card style: (properties 'flex: 1) ;class: "h-100"
+            (picture 
+                 (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path in-school-img-path)))
+                 (source type: "image/jpeg" srcset: (prefix/pathify in-school-img-path))
+                 (card-img-top src: (prefix/pathify in-school-img-path)
+                          alt: "A computer science instructor teaching engaged elementary students using white board"))
             (card-body
               (card-title "In-School Workshops")
               (card-text "Many schools aren’t teaching coding, so we help schools integrate coding into the school day!")))))))
