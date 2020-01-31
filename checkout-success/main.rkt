@@ -22,7 +22,7 @@
                      href:"https://docs.google.com/forms/d/e/1FAIpQLSeo6vHe7gyNLl-BLNfOWIGmHyj3tN7Y7WNhsfH49DokINyt5Q/viewform"
                      class:"btn btn-primary"
                      'role: "button"
-                     "Finish Enrollment")))
+                     "CLICK HERE")))
                (h4 class: "mt-5 mb-4" "Purchase Summary")
                (card class: "border-secondary m-2"
                 (card-header class: "bg-secondary text-white"
@@ -113,7 +113,7 @@
                      href:"https://docs.google.com/forms/d/e/1FAIpQLSeo6vHe7gyNLl-BLNfOWIGmHyj3tN7Y7WNhsfH49DokINyt5Q/viewform"
                      class:"btn btn-primary"
                      'role: "button"
-                     "Finish Enrollment")))
+                     "CLICK HERE")))
                (h4 class: "mt-5 mb-4" "Purchase Summary")
                (card class: "border-secondary m-2"
                 (card-header class: "bg-secondary text-white"
