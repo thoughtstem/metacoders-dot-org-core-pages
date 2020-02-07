@@ -11,8 +11,11 @@
 (define (join-our-team)
   (page join-our-team-path
         (normal-content-wide #:head (list
-            (title "Part-time Jobs in Computer Science Education | MetaCoders")
-            (meta name: "description" content: "There are many employment and volunteer opportunities at MetaCoders for individuals passionate about computer science and coding education for kids. Apply today!"))
+                                     (title "Part-time Jobs in Computer Science Education | MetaCoders")
+                                     (meta name: "description" content: "There are many employment and volunteer opportunities at MetaCoders for individuals passionate about computer science and coding education for kids. Apply today!")
+                                     (common-critical-css)
+                                     )
+                             #:defer-css #t
          (include-p5-js)
           (jumbotron-header-section)
           (two-ways-to-work-with-metacoders)
@@ -37,19 +40,29 @@
       (br)
       (p "MetaCoders is in communities throughout the United States, and we are continuing to grow.  We are looking for candidates who support our mission of a world with more computer science education. Our current employment opportunities are:")
       (br)
-      (responsive-row #:columns 2
-        (card class: "h-100" style: (properties overflow: "hidden")
-          (card-img-top src: (prefix/pathify coding-coach-img-path)
-                        'alt: "Computer science teacher works with young boy enthusiastic about coding video games")
+      (responsive-row #:columns 2 #:d-flex? #t
+        (card ;class: "h-100"
+              style: (properties overflow: "hidden"
+                                 'flex: 1)
+              (picture 
+               (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path coding-coach-img-path)))
+               (source type: "image/jpeg" srcset: (prefix/pathify coding-coach-img-path))
+               (card-img-top src: (prefix/pathify coding-coach-img-path)
+                             alt: "Computer science teacher works with young boy enthusiastic about coding video games"))
           (card-body
             (card-title "Become a Coding Coach")
             (card-text "Teach kids in your community how to code!"))
           (card-footer class: "p-0 m-0"
             (a style: (properties text-decoration: "none") href: coaches-top-path 
                      (button-primary class: "btn-block rounded-0" "Learn More"))))
-        (card class: "h-100" style: (properties overflow: "hidden")
-          (card-img-top src: (prefix/pathify tech-coordinator-img-path)
-                        'alt: "Technology coordinator updating and installing software on lots of chromebooks in office")
+        (card ;class: "h-100"
+              style: (properties overflow: "hidden"
+                                 'flex: 1)
+              (picture 
+               (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path tech-coordinator-img-path)))
+               (source type: "image/jpeg" srcset: (prefix/pathify tech-coordinator-img-path))
+               (card-img-top src: (prefix/pathify tech-coordinator-img-path)
+                             alt: "Technology coordinator updating and installing software on lots of chromebooks in office"))
           (card-body
             (card-title "Become a Technology Coordinator")
             (card-text "Help us connect coaches and students in your area!"))
@@ -67,28 +80,43 @@
       (br)
       (p "In addition to employment opportunities, we're always looking for volunteers and interns to help us maximize student outcomes in our classrooms.")
       (br)
-      (responsive-row #:columns 3
-        (card class: "h-100" style: (properties overflow: "hidden")
-          (card-img-top src: (prefix/pathify volunteer-scientist-img-path)
-                        'alt: "Learning scientists writes notes about student progress and monitors computer science classroom")
+      (responsive-row #:columns 3 #:d-flex? #t
+        (card ;class: "h-100"
+              style: (properties overflow: "hidden"
+                                 'flex: 1)
+              (picture 
+               (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path volunteer-scientist-img-path)))
+               (source type: "image/jpeg" srcset: (prefix/pathify volunteer-scientist-img-path))
+               (card-img-top src: (prefix/pathify volunteer-scientist-img-path)
+                             alt: "Learning scientists writes notes about student progress and monitors computer science classroom"))
           (card-body
             (card-title "Volunteer as a Learning Scientist")
             (card-text "Study and monitor MetaCoders classes in your local area to make sure kids have the best classroom experiences."))
           (card-footer class: "p-0 m-0"
             (a style: (properties text-decoration: "none") href: scientists-top-path
               (button-primary class: "btn-block rounded-0" "Learn More"))))
-        (card class: "h-100" style: (properties overflow: "hidden")
-          (card-img-top src: (prefix/pathify volunteer-coder-img-path)
-                        'alt: "Volunteer programmer codes drag-and-drop educational technologies for K-12 students")
+        (card ;class: "h-100"
+              style: (properties overflow: "hidden"
+                                 'flex: 1)
+              (picture 
+               (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path volunteer-coder-img-path)))
+               (source type: "image/jpeg" srcset: (prefix/pathify volunteer-coder-img-path))
+               (card-img-top src: (prefix/pathify volunteer-coder-img-path)
+                             alt: "Volunteer programmer codes drag-and-drop educational technologies for K-12 students"))
           (card-body
             (card-title "Volunteer as a Coder")
             (card-text "Help us code open-source educational software that kids around the world can use to create video games, apps, and more!"))
           (card-footer class: "p-0 m-0"
             (a style: (properties text-decoration: "none") href: coders-top-path 
               (button-primary class: "btn-block rounded-0" "Learn More"))))
-        (card class: "h-100" style: (properties overflow: "hidden")
-          (card-img-top src: (prefix/pathify summer-camp-intern-img-path)
-                        'alt: "Summer camp intern in computer science education bonds with a young boy at camp")
+        (card ;class: "h-100"
+              style: (properties overflow: "hidden"
+                                 'flex: 1)
+              (picture 
+               (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path summer-camp-intern-img-path)))
+               (source type: "image/jpeg" srcset: (prefix/pathify summer-camp-intern-img-path))
+               (card-img-top src: (prefix/pathify summer-camp-intern-img-path)
+                             alt: "Summer camp intern in computer science education bonds with a young boy at camp"))
           (card-body
             (card-title "Intern as a Summer Camp Team Leader")
             (card-text "Lead students in our summer camps in coding exercises and make sure they have a great first experience with coding!"))
@@ -112,20 +140,20 @@
       (br)
       (p "We're all in this together! Our core values help us accomplish our mission of creating a world where everyone knows how to code.")
       (br)
-      (responsive-row #:columns 4
-        (card class: "text-white bg-primary h-100" style: (properties overflow: "hidden")
+      (responsive-row #:columns 4 #:d-flex? #t
+        (card class: "text-white bg-primary" style: (properties overflow: "hidden" 'flex: 1)
           (card-header class: "font-weight-bold" "Compassion")
           (card-body
             (card-text "A common phrase we use: \"we be good people\". We always exercise compassion when working with our employees, volunteers, parent customers, and students.")))
-        (card class: "text-white bg-primary h-100" style: (properties overflow: "hidden")
+        (card class: "text-white bg-primary" style: (properties overflow: "hidden" 'flex: 1)
           (card-header class: "font-weight-bold" "Resourcefulness")
           (card-body
             (card-text "It doesn't take the most expensive equipment or the flashiest software to teach coding. Many of us learned at home on our own! Resourcefulness is one way we offer better classes at lower costs.")))
-        (card class: "text-white bg-primary h-100" style: (properties overflow: "hidden")
+        (card class: "text-white bg-primary" style: (properties overflow: "hidden" 'flex: 1)
           (card-header class: "font-weight-bold" "Adaptability")
           (card-body
             (card-text "We use coding in everything. Our entire team, from coaches to administrators, is always looking for ways to be even more adaptable using the power of code.")))
-        (card class: "text-white bg-primary h-100" style: (properties overflow: "hidden")
+        (card class: "text-white bg-primary" style: (properties overflow: "hidden" 'flex: 1)
           (card-header class: "font-weight-bold" "Respect")
           (card-body
             (card-text "We respect people of all backgrounds. Respect between teachers and students is paramount in the classroom. The same goes for respect between all levels of staff at MetaCoders.")))))))

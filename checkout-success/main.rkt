@@ -11,8 +11,21 @@
         (normal-content
           (div class: "text-center p-4"
                (h1 "Payment Success")
+               (p "You will receive an email with your receipt shortly.")
                (card class: "border-primary m-2"
-                (card-header class: "bg-primary text-white"
+                 (card-header class: "bg-primary text-white"                  
+                              (h5 class: "m-0"
+                                  "Finish Enrollment"))
+                 (card-body
+                  (p "Now we need your student's info! Please fill out the registration information for each student:")
+                  (a id: "formUrl"
+                     href:"https://docs.google.com/forms/d/e/1FAIpQLSeo6vHe7gyNLl-BLNfOWIGmHyj3tN7Y7WNhsfH49DokINyt5Q/viewform"
+                     class:"btn btn-primary"
+                     'role: "button"
+                     "CLICK HERE")))
+               (h4 class: "mt-5 mb-4" "Purchase Summary")
+               (card class: "border-secondary m-2"
+                (card-header class: "bg-secondary text-white"
                              (h5 class: "m-0"
                                  (span id: "header-location" "Location") " - "
                                  (span id: "header-topic" "Topic")))
@@ -40,16 +53,6 @@
                                 (div (h5 "Course Description:")
                                      (p id: "description" "Description")))
                       )))
-               (p "You will receive an email with your receipt shortly.")
-               (br)
-               (h4 "Now we need the student's details!")
-               (p "Click below to fill out the registration information for each student:")
-               (a id: "formUrl"
-                  href:"https://docs.google.com/forms/d/e/1FAIpQLSeo6vHe7gyNLl-BLNfOWIGmHyj3tN7Y7WNhsfH49DokINyt5Q/viewform"
-                  class:"btn btn-primary"
-                  'role: "button"
-                  "Finish Enrollment")
-               (br)
                @script/inline{
  function setValues(){
   var urlObject = (new URL(window.location.href));
@@ -99,8 +102,21 @@
         (normal-content
           (div class: "text-center p-4"
                (h1 "Payment Success")
+               (p "You will receive an email with your receipt shortly.")
                (card class: "border-primary m-2"
-                (card-header class: "bg-primary text-white"
+                 (card-header class: "bg-primary text-white"                  
+                              (h5 class: "m-0"
+                                  "Finish Enrollment"))
+                 (card-body
+                  (p "Now we need your student's info! Please fill out the registration information for each student:")
+                  (a id: "formUrl"
+                     href:"https://docs.google.com/forms/d/e/1FAIpQLSeo6vHe7gyNLl-BLNfOWIGmHyj3tN7Y7WNhsfH49DokINyt5Q/viewform"
+                     class:"btn btn-primary"
+                     'role: "button"
+                     "CLICK HERE")))
+               (h4 class: "mt-5 mb-4" "Purchase Summary")
+               (card class: "border-secondary m-2"
+                (card-header class: "bg-secondary text-white"
                              (h5 class: "m-0"
                                  (span id: "header-location" "Location") " - "
                                  (span id: "header-topic" "Topic")))
@@ -121,16 +137,6 @@
                                 (div (h5 "Camp Description:")
                                      (p id: "description" "Description")))
                       )))
-               (p "You will receive an email with your receipt shortly.")
-               (br)
-               (h4 "Now we need the student's details!")
-               (p "Click below to fill out the registration information for each student:")
-               (a id: "formUrl"
-                  href:"https://docs.google.com/forms/d/e/1FAIpQLSeo6vHe7gyNLl-BLNfOWIGmHyj3tN7Y7WNhsfH49DokINyt5Q/viewform"
-                  class:"btn btn-primary"
-                  'role: "button"
-                  "Finish Enrollment")
-               (br)
                @script/inline{
  function setValues(){
   var urlObject = (new URL(window.location.href));

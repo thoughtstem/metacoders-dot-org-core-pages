@@ -28,28 +28,28 @@
                     (col-sm-8
                       (h6 "We teach kids coding the “meta“ way. We bring the latest scientific research to the table to make sure kids are getting the most out of our classes.")))
                   (br)
-                  (responsive-row #:columns 3
-                      (card class:"h-100"
+                  (responsive-row #:columns 3 #:d-flex? #t
+                      (card style: (properties 'flex: 1) ;class:"h-100"
                       (card-img-top class: "gradient-effect-green"
                                     src: (prefix/pathify games-svg-path)
                                     style: (properties background-color: "#00C851")
-                                    'alt: "Simple video game clipart") 
+                                    alt: "Simple video game clipart") 
                       (card-body
                         (card-title "Meta Games")
                         (card-text "Our students stay motivated with badges and prizes.")))
-                      (card class:"h-100"
+                      (card style: (properties 'flex: 1) ;class:"h-100"
                         (card-img-top class: "gradient-effect-yellow"
                                       src: (prefix/pathify brain-svg-path)
                                       style: (properties background-color: "#ffbb33")
-                                      'alt: "Simple brain clipart") 
+                                      alt: "Simple brain clipart") 
                         (card-body
                           (card-title "Metacognition")
                           (card-text "By reflecting on how we learn, we are able to learn more efficiently.")))
-                      (card class:"h-100"
+                      (card style: (properties 'flex: 1) ;class:"h-100"
                         (card-img-top class: "gradient-effect-blue"
                                       src: (prefix/pathify story-svg-path)
                                       style: (properties background-color: "#33b5e5")
-                                      'alt: "Simple storybook clipart") 
+                                      alt: "Simple storybook clipart") 
                         (card-body
                           (card-title "Meta Stories")
                           (card-text "Stories are powerful tools for teaching values and communicating ideas."))))))
@@ -62,24 +62,33 @@
         (row 
           class: "align-items-center"
           (col-md-6 class: "my-2"
-            (carousel class: "slide" 'data-ride:"carousel" id: "carouselExampleControls"
+            (carousel class: "slide" data-ride: "carousel" id: "carouselExampleControls"
              (carousel-inner
-              (carousel-item class: "active" 
-               (img src: (prefix/pathify takes-a-village-path) 
-                class: "img-fluid rounded d-block w-100"
-                'alt: "Summer coding camp leaders having fun outdoors around tree"))
-              (carousel-item 'alt: "Second Slide"
-               (img src: (prefix/pathify takes-a-village-2-path) 
-                class: "img-fluid rounded d-block w-100"
-                'alt: "A collage of a diverse group of coding and computer science summer interns"))
-              (carousel-item 'alt: "Second Slide"
-               (img src: (prefix/pathify takes-a-village-3-path) 
-                class: "img-fluid rounded d-block w-100"
-                'alt: "A collage of a diverse group of coding and computer science instructors")))
-             (a class: "carousel-control-prev" href: "#carouselExampleControls" 'role: "button" 'data-slide: "prev"
+              (carousel-item class: "active"
+               (picture 
+                (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path takes-a-village-path)))
+                (source type: "image/jpeg" srcset: (prefix/pathify takes-a-village-path))
+                (img src: (prefix/pathify takes-a-village-path) 
+                     class: "img-fluid rounded d-block w-100"
+                     alt: "Summer coding camp leaders having fun outdoors around tree")))
+              (carousel-item alt: "Second Slide"
+               (picture 
+                (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path takes-a-village-2-path)))
+                (source type: "image/jpeg" srcset: (prefix/pathify takes-a-village-2-path))
+                (img src: (prefix/pathify takes-a-village-2-path) 
+                     class: "img-fluid rounded d-block w-100"
+                     alt: "A collage of a diverse group of coding and computer science summer interns")))
+              (carousel-item alt: "Second Slide"
+               (picture 
+                (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path takes-a-village-3-path)))
+                (source type: "image/jpeg" srcset: (prefix/pathify takes-a-village-3-path))
+                (img src: (prefix/pathify takes-a-village-3-path) 
+                     class: "img-fluid rounded d-block w-100"
+                     alt: "A collage of a diverse group of coding and computer science instructors"))))
+             (a class: "carousel-control-prev" href: "#carouselExampleControls" role: "button" data-slide: "prev"
               (span class: "carousel-control-prev-icon" 'aria-hidden: "true")
               (span class: "sr-only" "Previous"))
-             (a class: "carousel-control-next" href: "#carouselExampleControls" 'role: "button" 'data-slide: "next"
+             (a class: "carousel-control-next" href: "#carouselExampleControls" role: "button" data-slide: "next"
               (span class: "carousel-control-next-icon" 'aria-hidden: "true")
               (span class: "sr-only" "Next"))))
           (col-md-6 class: "my-2"
@@ -104,26 +113,38 @@
         (col-md-5 class: "text-center"
           (row
             (col-6 class: "my-3"
-              (a href: "#" `data-toggle: "modal" `data-target: "#Modal-Sonny"
-                (img src: (prefix/pathify sonny-img-path) 
-                     class: "img-fluid rounded img-link"
-                     'alt: "Portrait of Sonny Najar, a programming language developer and coding teacher")))
+              (a href: "#" data-toggle: "modal" data-target: "#Modal-Sonny"
+                (picture 
+                 (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path sonny-img-path)))
+                 (source type: "image/jpeg" srcset: (prefix/pathify sonny-img-path))
+                 (img src: (prefix/pathify sonny-img-path) 
+                      class: "img-fluid rounded img-link"
+                      alt: "Portrait of Sonny Najar, a programming language developer and coding teacher"))))
             (col-6 class: "my-3"
-              (a href: "#" `data-toggle: "modal" `data-target: "#Modal-Lindsey"
-                (img src: (prefix/pathify lindsey-img-path) 
+              (a href: "#" data-toggle: "modal" data-target: "#Modal-Lindsey"
+                (picture 
+                 (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path lindsey-img-path)))
+                 (source type: "image/jpeg" srcset: (prefix/pathify lindsey-img-path))
+                 (img src: (prefix/pathify lindsey-img-path) 
                      class: "img-fluid rounded img-link"
-                     'alt: "Portrait of Lindsey Handley, the MetaCoders Co-Founder and Vice President"))))
+                     alt: "Portrait of Lindsey Handley, the MetaCoders Co-Founder and Vice President")))))
           (row
             (col-6 class: "my-3"
-              (a href: "#" `data-toggle: "modal" `data-target: "#Modal-Sara"
-                (img src: (prefix/pathify sara-img-path) 
-                     class: "img-fluid rounded img-link"
-                     'alt: "Portrait of Sara Lucchini, a computer science curriculum developer and teacher")))
+              (a href: "#" data-toggle: "modal" data-target: "#Modal-Sara"
+                (picture 
+                 (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path sara-img-path)))
+                 (source type: "image/jpeg" srcset: (prefix/pathify sara-img-path))
+                 (img src: (prefix/pathify sara-img-path) 
+                      class: "img-fluid rounded img-link"
+                      alt: "Portrait of Sara Lucchini, a computer science curriculum developer and teacher"))))
             (col-6 class: "my-3"
-              (a href: "#" `data-toggle: "modal" `data-target: "#Modal-Judith"
-                (img src: (prefix/pathify judith-img-path) 
+              (a href: "#" data-toggle: "modal" data-target: "#Modal-Judith"
+                (picture 
+                 (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path judith-img-path)))
+                 (source type: "image/jpeg" srcset: (prefix/pathify judith-img-path))
+                 (img src: (prefix/pathify judith-img-path) 
                      class: "img-fluid rounded img-link"
-                     'alt: "Portrait of Judith Eisenberg, a coding educator"))))
+                     alt: "Portrait of Judith Eisenberg, a coding educator")))))
           (staff-modal #:id "Modal-Sonny"
                        #:path sonny-img-path
                        #:name "Sonny Najar"
