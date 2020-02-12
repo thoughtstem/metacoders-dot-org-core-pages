@@ -16,7 +16,7 @@
     #:alt-tag "Summer camp intern in computer science education bonds with a young boy at camp"
     #:jumbotron-tagline "Lead students in our summer camps in coding exercises and make sure they have a great first experience with coding!"
     #:percent-height "60vh"
-    #:locations-hiring (list "Dallas, TX" "Minneapolis, MN" "Temecula, CA" "Reno, NV" "Phoenix, AR" "New Orleans, LA" "Charlotte, NC")
+    #:locations-hiring (list "Dallas, TX" "Minneapolis, MN" "Temecula, CA" "Reno, NV" "Phoenix, AZ" "New Orleans, LA" "Charlotte, NC")
     #:intern-description 
     (div 
       (h6 "Job Description")

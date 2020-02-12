@@ -38,7 +38,7 @@
                     #:alt-tag "Technology coordinator installs software on chromebooks in her comfortable home"
                     #:jumbotron-tagline "Help us connect coaches and students!"
                     #:percent-height "60vh"
-                    #:locations-hiring (list "Charlotte, NC" "Phoenix, Arizona" "Minneapolis, MN" "New Orleans, LA")
+                    #:locations-hiring (list "Charlotte, NC" "Phoenix, AZ" "Minneapolis, MN" "New Orleans, LA")
                     #:short-job-description 
     (div
       (h6 "Description")
