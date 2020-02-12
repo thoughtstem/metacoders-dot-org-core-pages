@@ -20,6 +20,7 @@
 (require (prefix-in poway: metacoders-dot-org-poway-site))
 (require (prefix-in chula-vista: metacoders-dot-org-chula-vista-site))
 (require (prefix-in new-orleans: metacoders-dot-org-new-orleans-site))
+(require (prefix-in phoenix: metacoders-dot-org-phoenix-site))
 
 (define (cities/dallas:index)
   (push-path 
@@ -69,6 +70,12 @@
     (push-path "new-orleans"
                (new-orleans:index))))
 
+(define (cities/phoenix:index)
+  (push-path 
+    "cities"
+    (push-path "phoenix"
+               (phoenix:index))))
+
 (define (cities)
   (list
    (push-path "cities" 
@@ -85,6 +92,8 @@
               (push-path "poway" (poway:pages)))
    (push-path "cities" 
               (push-path "chula-vista" (chula-vista:pages)))
+   (push-path "cities" 
+              (push-path "phoenix" (phoenix:pages)))
    (push-path "cities" 
               (push-path "new-orleans" (new-orleans:pages)))))
 ; -----------------------------------
@@ -218,6 +227,10 @@
                                 "New Orleans, LA"
                                 "City of New Orleans, Louisiana with busy streets and trolley"
                                 (cities/new-orleans:index))
+                               (index-page->city-card 
+                                "Phoenix, AZ"
+                                "City of Phoenix, Arizona panorama view from afar with mountains"
+                                (cities/phoenix:index))
                                (index-page->city-card 
                                 "Poway, CA"
                                 "City of Poway, California with a view of Lake Poway and natural preserve"
