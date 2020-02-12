@@ -13,7 +13,7 @@
                    #:alt-tag "Coding instructor teaching elementary school students how to code at UC San Diego summer camp"
                    #:jumbotron-tagline "Work at home and prepare supplies for local classes!"
                    #:percent-height "60vh"
-                   #:locations-hiring (list "Dallas, Texas" "New Orleans, LA" "Charlotte, NC" "Minneapolis, MN" "Phoenix, AZ")
+                   #:locations-hiring (list "Dallas, Texas" "New Orleans, LA" "Charlotte, NC" "Minneapolis, MN" "Phoenix, AR")
                    #:short-job-description 
   (div
     (h6 "Description")
