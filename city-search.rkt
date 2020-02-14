@@ -21,6 +21,7 @@
 (require (prefix-in chula-vista: metacoders-dot-org-chula-vista-site))
 (require (prefix-in new-orleans: metacoders-dot-org-new-orleans-site))
 (require (prefix-in phoenix: metacoders-dot-org-phoenix-site))
+(require (prefix-in charlotte: metacoders-dot-org-charlotte-site))
 
 (define (cities/dallas:index)
   (push-path 
@@ -76,6 +77,12 @@
     (push-path "phoenix"
                (phoenix:index))))
 
+(define (cities/charlotte:index)
+  (push-path 
+    "cities"
+    (push-path "charlotte"
+               (charlotte:index))))
+
 (define (cities)
   (list
    (push-path "cities" 
@@ -93,9 +100,12 @@
    (push-path "cities" 
               (push-path "chula-vista" (chula-vista:pages)))
    (push-path "cities" 
+              (push-path "new-orleans" (new-orleans:pages)))
+   (push-path "cities" 
               (push-path "phoenix" (phoenix:pages)))
    (push-path "cities" 
-              (push-path "new-orleans" (new-orleans:pages)))))
+              (push-path "charlotte" (charlotte:pages)))
+   ))
 ; -----------------------------------
 
 (define (index-page->banner-img index-page)
@@ -211,6 +221,10 @@
                (h2 "MetaCoders is excited to bring coding education to:")
                (br)
                (responsive-row #:columns 3
+                               (index-page->city-card 
+                                "Charlotte, NC"
+                                "City of Charlotte, North Carolina with green trees and blue sky"
+                                (cities/charlotte:index))
                                (index-page->city-card 
                                 "Chula Vista, CA"
                                 "City of Chula Vista, California with mountains and colorful signs"

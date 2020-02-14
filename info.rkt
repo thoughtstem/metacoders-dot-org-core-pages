@@ -8,10 +8,11 @@
                "https://github.com/thoughtstem/metacoders-dot-org-dallas.git?path=metacoders-dot-org-dallas-site"
                "https://github.com/thoughtstem/metacoders-dot-org-temecula.git?path=metacoders-dot-org-temecula-site"
                "https://github.com/thoughtstem/metacoders-dot-org-minneapolis.git?path=metacoders-dot-org-minneapolis-site"
-               "https://github.com/thoughtstem/metacoders-dot-org-phoenix.git?path=metacoders-dot-org-phoenix-site"
                "https://github.com/thoughtstem/metacoders-dot-org-poway.git?path=metacoders-dot-org-poway-site"
                "https://github.com/thoughtstem/metacoders-dot-org-chula-vista.git?path=metacoders-dot-org-chula-vista-site"
-               "https://github.com/thoughtstem/metacoders-dot-org-new-orleans.git?path=metacoders-dot-org-new-orleans-site"))
+               "https://github.com/thoughtstem/metacoders-dot-org-new-orleans.git?path=metacoders-dot-org-new-orleans-site"
+               "https://github.com/thoughtstem/metacoders-dot-org-phoenix.git?path=metacoders-dot-org-phoenix-site"
+               "https://github.com/thoughtstem/metacoders-dot-org-charlotte.git?path=metacoders-dot-org-charlotte-site"))
 (define build-deps '("scribble-lib" "racket-doc" "rackunit-lib"))
 (define scribblings '(("scribblings/metacoders-dot-org-core-pages.scrbl" ())))
 (define pkg-desc "Description Here")
