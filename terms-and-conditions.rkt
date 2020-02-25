@@ -28,11 +28,12 @@
 (define (terms-for-refunds)
   (container
     (h3 "MetaCoders Refund/Cancellation Policy")
-    (p "Parents who wish to cancel an enrollment for a future class may do so for a full refund except as follows:")
+    (p "Parents who wish to cancel an enrollment for a future class may do so for a full refund minus the following cancellation fees:")
     (ul
-      (li "Cancellations less than 24 hours before class start will be eligible for a full refund minus a $40 cancellation fee.")
-      (li "Cancellations less than 1 week before class start will be eligible for a full refund minus a $20 cancellation fee.")
-      (li "Cancellations/withdrawals after the first meeting but before the second class meeting will be a partial refund (we will charge for the cost of the single class) minus a $40 cancellation fee.")
+      (li "Cancellations more than 1 week in advance of the first class will be eligible for a full refund minus non-refundable credit card transaction fees (generally 2.9% + 30 cents.)")
+      (li "Cancellations between 1 week and 24 hours in advance of the first class will be eligible for a full refund minus a $20 cancellation fee.")
+      (li "Cancellations less than 24 hours in advance of the first class start will be eligible for a full refund minus a $40 cancellation fee.")
+      (li "Cancellations/withdrawals after the first meeting but before the second class meeting will be a partial refund (we will charge for the pro-rated cost of the single class) minus a $40 cancellation fee.")
       (li "Cancellations from the second class meeting to the halfway point of the session will be a refund of 50% of the tuition.")
       (li "No refund after the halfway point of the session."))
     (p "NOTE: These terms and conditions only apply when purchases are made on the MetaCoders website (www.metacoders.org). Purchases of MetaCoders programs made on other websites have their own Terms and Conditions which supersede these.")))
