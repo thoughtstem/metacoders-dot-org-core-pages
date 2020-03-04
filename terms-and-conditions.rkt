@@ -16,6 +16,7 @@
           ;(terms-for-multi-session-discounts)
           (terms-for-students-arriving-to-class)
           (terms-for-student-pickup-after-class)
+          (parents-in-classroom-policy)
           (terms-for-phonecalls-texts)
           (terms-for-media-policy)
           (privacy-policy)
@@ -64,6 +65,12 @@
     (h3 "Student Pick-up After Class Policy")
     (p "Because we want student pick-up after class to be as seamless as possible, we generally do not check parent IDs at student pick-up. However, MetaCoders instructors always ensure that students go home with an adult they know - whether that may be a mom, dad, grandparent, or a friend’s parent who is managing the carpool that day. For this reason, there’s no need to inform us in advance about carpools.")
     (p "However, if you have any concerns with your child’s ability to recognize the adult picking them up OR if there are certain adults who are not allowed to pick up your child, please email us at contact@metacoders.org with a list of adults who are allowed or not allowed to pick-up your child. For students who have adults listed as “allowed” or “not allowed”, we will check IDs of adults at pick-up and if a disallowed adult or an adult not listed as allowed tries to pick up your child, we will keep your student with us and try to reach you by phone for confirmation. (Note: in this unlikely situation, if we are unable to reach you by phone, you may incur late pick-up fees - see the late pick-up policy for more information.)")))
+
+(define (parents-in-classroom-policy)
+  (container
+    (h3 "Parents Visiting Classroom Policy")
+    (p "ThoughtSTEM strives for both transparency in the classroom for parents and the safest learning environment for our students. Many schools do not allow parents to visit after-school program classrooms for student safety reasons, and these school policies will always override ThoughtSTEM’s own policy herein. However, if a school does allow parents to visit our classrooms, we welcome parents to observe for the last 10 minutes of class. While the class is in progress, we ask parents to be mindful to not distract their student or the class, but once the end of class when the Coding Coach (teacher) has dismissed everyone, you’re welcome to check in with your student, ask them questions, and have them show you what they’ve been working on!")
+    (p "If parents would like to visit our classrooms for longer than the last 10 minutes of class, please contact us at 858–869–9430. We may require a background check (many schools require this of parents assisting in their classrooms during the school day), as well as a short online training so that you can help support our Coding Coaches throughout the class as a volunteer. In order for us to serve all students in our classes fairly, our Coding Coaches and staff reserve the right to ask any parents who are disrupting the class to no longer visit the classroom.")))
 
 (define (terms-for-phonecalls-texts)
   (container
