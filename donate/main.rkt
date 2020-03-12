@@ -139,7 +139,7 @@
                                     (card style: (properties 'flex: 1) ;class: "h-100"
                                      (card-header (h6 class: "m-0" "Donate by Phone"))
                                      (card-body "Call us at "
-                                                (b "858-869-9430")
+                                                (b "858-375-4097")
                                                 " with payment details and we can take your donation over the phone."))
                                     (card style: (properties 'flex: 1) ;class: "h-100"
                                      (card-header (h6 class: "m-0" "Donate by Email"))
