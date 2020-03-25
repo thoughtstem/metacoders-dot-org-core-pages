@@ -9,6 +9,7 @@
           "scientists.rkt"
           "terms-and-conditions.rkt"
           "join-our-team.rkt"
+          "online.rkt"
           "tech-coords.rkt"
           "summer-interns.rkt"
           "coders.rkt"
@@ -25,6 +26,7 @@
                        "scientists.rkt"
                        "terms-and-conditions.rkt"
                        "join-our-team.rkt"
+                       "online.rkt"
                        "tech-coords.rkt"
                        "summer-interns.rkt"
                        "coders.rkt"
@@ -47,6 +49,7 @@
       (scientists)
       (terms-and-conditions)
       (join-our-team)
+      (online)
       (tech-coords)
       (summer-interns)
       (coders)
