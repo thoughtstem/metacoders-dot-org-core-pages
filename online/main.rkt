@@ -112,7 +112,7 @@
       (h2 class: "text-center" "Quarantine Coding Club Schedule")
       (br)
 
-      (calendar2 (date 2020 04)
+      (calendar (date 2020 04)
                 (hash
                   6 (list (timeslot-chip-a "3pm-4pm" "COVID A")
                           (timeslot-chip-b "3pm-4pm" "COVID B"))

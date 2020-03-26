@@ -11,6 +11,7 @@
             (meta name: "description" content: "MetaCoders’ Terms and Conditions apply to all camps and classes purchased through metacoders.org."))
           (br)
           (h1 "Terms and Conditions")
+          (terms-for-online-coding-club)
           (terms-for-refunds)
           (terms-for-late-pickup-fees)
           ;(terms-for-multi-session-discounts)
@@ -28,7 +29,7 @@
 
 (define (terms-for-refunds)
   (container
-    (h3 "MetaCoders Refund/Cancellation Policy")
+    (h3 "MetaCoders Refund/Cancellation Policy for In-Person Classes & Camps")
     (p "Parents who wish to cancel an enrollment for a future class may do so for a full refund minus the following cancellation fees:")
     (ul
       (li "Cancellations more than 1 week in advance of the first class will be eligible for a full refund minus non-refundable credit card transaction fees (generally 2.9% + 30 cents.)")
@@ -72,6 +73,29 @@
     (h3 "Parents Visiting Classroom Policy")
     (p "ThoughtSTEM strives for both transparency in the classroom for parents and the safest learning environment for our students. Many schools do not allow parents to visit after-school program classrooms for student safety reasons, and these school policies will always override ThoughtSTEM’s own policy herein. However, if a school does allow parents to visit our classrooms, we welcome parents to observe for the last 10 minutes of class. While the class is in progress, we ask parents to be mindful to not distract their student or the class, but once the end of class when the Coding Coach (teacher) has dismissed everyone, you’re welcome to check in with your student, ask them questions, and have them show you what they’ve been working on!")
     (p "If parents would like to visit our classrooms for longer than the last 10 minutes of class, please contact us at 858–869–9430. We may require a background check (many schools require this of parents assisting in their classrooms during the school day), as well as a short online training so that you can help support our Coding Coaches throughout the class as a volunteer. In order for us to serve all students in our classes fairly, our Coding Coaches and staff reserve the right to ask any parents who are disrupting the class to no longer visit the classroom.")))
+
+(define (terms-for-online-coding-club)
+  (container
+    (h3 "Quarantine Coding Club Terms and Conditions")
+    (b "Student Behavior Policy and Expectations")
+    (ul
+      (li "Students should always be respectful of both other students and the instructor.")
+      (li "Only classroom appropriate language and messages are to be used/sent during class in the chatroom or through audio.")
+      (li "Students are to log on with positive and supportive attitudes.")
+      (li "Have fun!")
+      )
+    (b "Video Publishing and Privacy")
+    (p "Sessions will be recorded and posted online for educational purposes. Student privacy and safety are always our utmost concern. Student’s faces will never be shown in any session posted online. If you have any further concerns, please contact us at contact@metacoders.org.")
+    (b "Quarantine Credits")
+    (p "Any Quarantine Credits purchased through MetaCoders have no expiration date.")
+    (p "If a student misses a session they were scheduled to join and you would like to reschedule, please contact us at (858) 375-4097 or contact@metacoders.org, and we can transfer your purchased Quarantine Credits to another session.")
+    (p "If for any reason a customer wishes to receive a refund for their purchase of Quarantine Credits, they may do so for a full refund except as follows:")
+    (ul
+      (li "If the parent has purchased the credits in a bulk package in advance, any credits they have used will be converted to the normal $15 per credit rate. They will instead receive a refund for the balance after that conversion.")
+      (li "If one year or longer has passed since the date of purchasing, no refund will be given for those credits.")
+      )
+    (p "We understand that the current COVID-19 situation is evolving rapidly and changing day to day. Therefore, if you would like to transfer any of your online credits in the future toward tuition for an in person class or camp, you may do so without a fee by letting us know at contact@metacoders.org or by calling (858) 375-4097.")
+    ))
 
 (define (terms-for-phonecalls-texts)
   (container
