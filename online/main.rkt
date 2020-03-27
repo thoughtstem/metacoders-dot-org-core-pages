@@ -32,21 +32,29 @@
 (define (jumbotron-header-section)
   (mc-jumbotron-header
       #:title "Quarantine Coding Club"
-      #:tagline "Learn coding alongside interdisciplinary subjects from home while you quarantine!"
+      #:tagline "Learn Coding in Context from Live Instructors in our Digital Classrooms while we're all in Quarantine!"
       #:percent-height "60vh"
       #:image-path online-banner-path
-      #:alt-tag "Two young girls become friends while they were enrolled in a coding camp"))
+      #:alt-tag "Young boy coding a video game on his laptop while he's in quarantine during the COVID-19 pandemic."))
 
 (define (club-description-section)
   (jumbotron  class: "mb-0"
               style: (properties background: "white")
               (container
                 (row
-                  (col-md-6 class: "pl-md-5"
+                  (col-lg-6 class: "pl-lg-5"
                             (h2 "Stuck at Home? Learn with Us!")
                             (br)
-                            @list{Join us for @b{Quarantine Coding Club}, and learn new coding skills every day, Monday - Friday. With a 1:5 teacher to student ratio, our expert Coding Coaches deliver @b{interactive, personalized, interdisplinary experiences} to kids, teens, and young adults at home while we all shelter-in-place together. Using @b{Quarantine Credits}, sign up for any 1-hr session that fits your schedule; there will be @b{different skills and topics covered each day}. Our Quarantine Coding Club is great for coders of all skill levels from 2nd grade through young adults. Our goal is to @b{make learning coding fun} while we're all stuck at home.})
-                            (col-md-6 class: "pr-md-5"
+                            @list{
+                            Developed for the current needs of the community, @b{Quarantine Coding Club} is a chance to explore @b{coding in the context of real-world scenarios} with the guidance of @b{skilled instructors} that can provide @b{real-time} feedback.
+                            @br
+                              @ul{
+                                @li{Join us and learn @b{new coding skills } every weekday. Our flexible curriculum allows you to join on the days that work best for you.}
+                                @li{With a @b{1:5 teacher to student ratio}, our expert Coding Coaches deliver @b{interactive, personalized, interdisciplinary experiences} to kids, teens, and young adults at home while we all shelter-in-place together.}
+                                @li{Using @b{Quarantine Credits}, sign up for any 1-hr session that fits your schedule; there will be @b{different skills and topics covered each day}.}
+                                @li{Our Quarantine Coding Club is great for coders of all skill levels from 2nd grade through young adults. Our goal is to @b{make learning coding fun} while we're all stuck at home.}
+                            }})
+                            (col-lg-6 class: "pr-lg-5"
                                       (picture 
                                         (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path coding-club-img-path)))
                                         (source type: "image/jpeg" srcset: (prefix/pathify coding-club-img-path))
@@ -62,9 +70,10 @@
 (define (subject-description-section)
   (jumbotron  class: "mb-0"
     (container
-      (h2 class: "text-center" "Coding Club Subjects")
+      (h2 class: "text-center" "Coding Club Subjects Currently Available")
+      (br)
       (row
-        (col-md-4 class: "pl-md-5"
+        (col-lg-4 class: "pl-lg-5"
                   (picture 
                     (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path covid-class-img-path)))
                     (source type: "image/jpeg" srcset: (prefix/pathify covid-class-img-path))
@@ -72,7 +81,7 @@
                          class: "img-fluid rounded d-block w-100"
                          alt: "Child's drawing of a superhero coder fighting off COVID-19")) 
                   )
-        (col-md-8 class: "pr-md-5"
+        (col-lg-8 class: "pr-lg-5"
                   (br)
                   (h4 "Conquer COVID with Coding")
                   (p "We have 2 different sessions you can join each day: A or B. In "
@@ -93,10 +102,9 @@
                      (b "developing a better understanding")
                      " of how you can be apart of the solution!")
                   ))
-      (row 
-        (col-md-4 class: "pl-md-5")
-        (col-md-8 class: "pr-md-5" 
-                  (h4 "More Subjects are coming soon!")))
+      (br)
+      
+      (h4 style: (properties text-align: "center") "More Subjects are coming soon!")
       )
   )
 )
@@ -289,7 +297,10 @@
   (badge-pill-primary (~a timeframe ": " subject)))
 
 (define (timeslot-chip-b timeframe subject)
-  (badge-pill-warning (~a timeframe ": " subject)))
+  (badge-pill-warning style: (properties background-color: "#f37a1f"
+                                         color: "#fff"
+                                         ) 
+                      (~a timeframe ": " subject)))
 
 (define (credits-section)
   (jumbotron  class: "mb-0"
@@ -343,6 +354,7 @@
         (li (b "What equipment do I need in order to participate?") " All you need to participate in our Quarantine Coding Club is a computer, a keyboard, and an internet connection!") 
         (li (b "Can my 2 or more children share the credits I purchase?") " Students who live within the same household can share credits.") 
         (li (b "Can parents sit in on the session?") " Yes! Parents observation and participation is welcome and encouraged!") 
+        (li (b "What if I don't use all my Quarantine Credits before this whole COVID-19 thing blows over?") " We will be continuing our Online Coding Club long after quarantines end. We are also happy to help transfer your remaining Quarantine Credits to in-person classes and camps that will be happening again after quarantines end. You can review our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") " for more details.") 
       )
   )
 ))
@@ -350,7 +362,7 @@
 
 (define (credits-buy-button price num discount sku key #:suffix [suffix ""])
   (list (button-primary id:(~a "checkout-button-" sku)
-                        class: "m-0 col-sm-12"
+                        class: "mt-md-0 mt-2 col-sm-12"
                         style: (properties border-radius: "0 0 0.18rem 0"
                                            white-space: "normal")
                         (if (> discount 0)
@@ -387,11 +399,11 @@
 
 (define (credits-subscription-buy-button price num discount sku key #:suffix [suffix ""])
   (list (button-primary id:(~a "checkout-button-" sku)
-                        class: "m-0 col-sm-12" 
+                        class: "mt-md-0 mt-2 col-sm-12" 
                         style: (properties border-radius: "0 0 0.18rem 0"
                                            white-space: "normal")
                         (if (> discount 0)
-                              (list "Monthly Subscription:" (br) num " Credits for "
+                              (list "Monthly Subscription:" num " Credits for "
                                     (s class: "text-danger"
                                        (~p price))
                                     " " (~p (- price discount)) "/Month"
