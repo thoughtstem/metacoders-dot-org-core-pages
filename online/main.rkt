@@ -94,7 +94,7 @@
                                (b "maps")
                                " that show where coronavirus lives right now. "
                                (b "Learn coding,")
-                               " while developing a better understanding of how you can be apart of the solution!"
+                               " while developing a better understanding of how you can be a part of the solution!"
                                )                               (p 
                                "We have 2 different sessions you can join each day: A or B. In "
                                (b class: "text-primary" "Session A")
