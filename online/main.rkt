@@ -316,24 +316,28 @@
               (container
                 (h2 class: "text-center" "Purchase Quarantine Credits")
                 (br)
-                (row 
+                (row class: "d-flex justify-content-center" 
                   (col-md-4
                     (credits-buy-button 15 1 0 "sku_GyG3n6kfimeXl9" KEY)
                     )
                   (col-md-4
                     (credits-buy-button 100 10 0 "sku_GyG4rL6NDcH2SX" KEY)
                     )
+                  #;
                   (col-md-4
                     (credits-buy-button 210 30 0 "sku_GyG5ryZxuC66T0" KEY)
-                    ))
+                    )
+                  
+                  )
                 (br)
-                (row 
+                (row class: "d-flex justify-content-center"
                   (col-md-4
                     (credits-subscription-buy-button 60 5 0 "plan_GyG8bSagiSzGYL" KEY)
                     )
                   (col-md-4
                     (credits-subscription-buy-button 90 10 0 "plan_GyG7sMQhs4yHp2" KEY)
                     )
+                  #;
                   (col-md-4
                     (credits-subscription-buy-button 160 20 0 "plan_GyG88V93YibSkE" KEY)
                     )
