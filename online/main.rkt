@@ -75,11 +75,11 @@
                 (row
                   (col-lg-4 class: "pr-lg-5"
                             (picture 
-                              (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path city-summer-camp-pricing-img-path)))
-                              (source type: "image/jpeg" srcset: (prefix/pathify city-summer-camp-pricing-img-path))
-                              (img src: (prefix/pathify city-summer-camp-pricing-img-path) 
+                              (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path adventures-in-coding-img-path)))
+                              (source type: "image/jpeg" srcset: (prefix/pathify adventures-in-coding-img-path))
+                              (img src: (prefix/pathify adventures-in-coding-img-path) 
                                    class: "img-fluid rounded d-block w-100"
-                                   alt: "Young boy learning how to code online in quarantine coding club")) 
+                                   alt: "Two young girls learning how to code together in quarantine coding club")) 
                             )
                   (col-lg-8 class: "pr-lg-5"
                             (br)
