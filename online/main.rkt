@@ -52,7 +52,7 @@
                             @li{Join us and learn @b{new coding skills } every weekday. Our flexible curriculum allows you to join on the days that work best for you.}
                             @li{With a @b{1:5 teacher to student ratio}, our expert Coding Coaches deliver @b{interactive, personalized, interdisciplinary experiences} to kids, teens, and young adults at home while we all shelter-in-place together.}
                             @li{Using @b{Quarantine Credits}, sign up for any 1-hr session that fits your schedule; there will be @b{different skills and topics covered each day}.}
-                            @li{Our Quarantine Coding Club is great for coders of all skill levels from 2nd grade through young adults. Our goal is to @b{make learning coding fun} while we're all stuck at home.}
+                            @li{Our Quarantine Coding Club is great for coders of all skill levels from Kindergarten through young adults. Our goal is to @b{make learning coding fun} while we're all stuck at home.}
                             }})
                   (col-lg-6 class: "pr-lg-5"
                             (picture 
@@ -85,11 +85,11 @@
                             (br)
                             (h4 "Adventures in Coding")
                             (p "Made for our youngest students in mind, children in each session will "
-                               (b "pair program")
+                               (b "code as a team")
                                " with one of our expert Coding Coaches and learn new "
                                (b "coding concepts")
                                " each day. Everyday, there will be a new theme so that students are learning coding in context of subjects like video game design, math, and science. This subject is a fun way for "
-                               (b class:"text-success" "Kindergartener through 1st graders")
+                               (b class:"text-success" "Kindergarteners through 2nd graders")
                                " to start mastering technology while stuck in quarantine.")))
 
 
