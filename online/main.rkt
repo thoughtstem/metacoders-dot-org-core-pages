@@ -435,14 +435,14 @@
                 (br)
                 (row class: "d-flex justify-content-center"
                      (col-md-4
-                       (credits-subscription-buy-button 65 5 0 "plan_GyG8bSagiSzGYL" KEY)
+                       (credits-subscription-buy-button 65 5 0 "plan_H1fnr6YP21Y5N8" KEY)
                        )
                      (col-md-4
-                       (credits-subscription-buy-button 100 10 0 "plan_GyG7sMQhs4yHp2" KEY)
+                       (credits-subscription-buy-button 100 10 0 "plan_H1fndb6HHFPoV2" KEY)
                        )
                      #;
                      (col-md-4
-                       (credits-subscription-buy-button 180 20 0 "plan_GyG88V93YibSkE" KEY)
+                       (credits-subscription-buy-button 180 20 0 "plan_H1fmwXnHW4kZoR" KEY)
                        )
                      )
                 )
