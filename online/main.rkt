@@ -148,13 +148,15 @@
                  gregor)
   (jumbotron  class: "mb-0"
               style: (properties background: "white"
-                                 text-align: "center"
                                  )
               (container
                 (h2 class: "text-center" "Quarantine Coding Club Schedule")
                 (br)
 
-                (p style: (properties text-align: "center") "Note: This schedule is updated on a daily basis, but some sessions may fill before we are able to update the calendar. We are currently working on making this calendar dynamic so that you can see sessions that have filled in real-time.")
+                (p "Note: "
+                   (ul
+                     (li "All dates and times are currently listed in Pacific Daylight Time.")
+                     (li "This schedule is updated on a daily basis, but some sessions may fill before we are able to update the calendar. We are currently working on making this calendar dynamic so that you can see sessions that have filled in real-time.")))
                 (calendar (date 2020 04)
                           (hash
                             6 (list (timeslot-chip-a "3pm-4pm" "COVID A")
