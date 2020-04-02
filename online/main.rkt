@@ -391,10 +391,11 @@
 
                 (br)
 
-                (h4 "Looking for a different time or have ideas for other topics? ")
-                (a href: "https://docs.google.com/forms/d/e/1FAIpQLSfQQIKgK4SmeRoKqTuxd-7jrix-GgdJVLHugvOhIVXFjRVJpQ/viewform" 
-                   (button-primary id: "main-button" 
-                                   "Suggestions Form"))
+                (div style: (properties text-align:"center")
+                  (h4 "Looking for a different time or have ideas for other topics? ")
+                  (a href: "https://docs.google.com/forms/d/e/1FAIpQLSfQQIKgK4SmeRoKqTuxd-7jrix-GgdJVLHugvOhIVXFjRVJpQ/viewform" 
+                     (button-primary id: "main-button" 
+                                     "Suggestions Form")))
                 )
               )
   )
