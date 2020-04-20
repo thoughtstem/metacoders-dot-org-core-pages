@@ -45,25 +45,28 @@
               (container
                 (row
                   (col-lg-6 class: "pl-lg-5"
-                            (h2 "Stuck at Home? Learn with Us!")
+                            (h2 "Learn Coding Today, and Be a Part of the Solution to COVID-19!")
                             (br)
                             @list{
-                            Developed for the current needs of the community, @b{Quarantine Coding Club} is a chance to explore @b{coding in the context of real-world scenarios} with the guidance of @b{skilled instructors} that can provide @b{real-time} feedback.
+                            @b{Quarantine Coding Club} is a chance to explore coding in the context of COVID-19 with the guidance of @b{skilled instructors} that can provide @b{real-time} feedback. Our goal is to @b{empower} students to build their own digital solutions to @b{solve problems} they might see in their households and neighborhoods.
                             @br
                             @ul{
                             @li{Join us and learn @b{new coding skills } every weekday. Our flexible curriculum allows you to join on the days that work best for you.}
-                            @li{With a @b{1:5 teacher to student ratio}, our expert Coding Coaches deliver @b{interactive, personalized, interdisciplinary experiences} to kids, teens, and young adults at home while we all shelter-in-place together.}
+                            @li{With a @b{1:5 teacher to student ratio}, our expert Coding Coaches deliver @b{interactive, personalized, interdisciplinary experiences} to students while we all shelter-in-place together.}
                             @li{Using @b{Quarantine Credits}, sign up for any 1-hr session that fits your schedule; there will be @b{different skills and topics covered each day}.}
-                            @li{Our Quarantine Coding Club is great for coders of all skill levels from Kindergarten through young adults. Our goal is to @b{make learning coding fun} while we're all stuck at home.}
+                            @li{Our Quarantine Coding Club is great for coders of all skill levels. Sessions are available for @b{K-2nd}, @b{3rd-6th}, and @b{7th-Young Adult}.}
+                            @li{Our goal is to @b{make learning coding fun} while we're all stuck at home.}
                             }})
                   (col-lg-6 class: "pr-lg-5"
+                            (div class:"embed-responsive embed-responsive-16by9"
+                                 (iframe class:"embed-responsive-item" src:"https://www.youtube.com/embed/GVzxUtfTLGE"))
+                            (br)
                             (picture 
                               (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path coding-club-img-path)))
                               (source type: "image/jpeg" srcset: (prefix/pathify coding-club-img-path))
                               (img src: (prefix/pathify coding-club-img-path) 
                                    class: "img-fluid rounded d-block w-100 border border-dark"
-                                   alt: "Screenshot of a Quarantine Coding Club session in action with a Coding Coach and students coding in Racket")) 
-
+                                   alt: "Screenshot of a Quarantine Coding Club session in action with a Coding Coach and students coding in Racket"))
                             ))
                 )
               )
@@ -85,7 +88,8 @@
                             )
                   (col-lg-8 class: "pr-lg-5"
                             (br)
-                            (h4 "Adventures in Coding")
+                            (h4 "Adventures in Coding: "
+                                (b class:"text-success" "K-2nd"))
                             (p "Made for our youngest students in mind, children in each session will "
                                (b "code as a team")
                                " with one of our expert Coding Coaches and learn new "
@@ -99,7 +103,8 @@
                 (row
                   (col-lg-8 class: "pr-lg-5"
                             (br)
-                            (h4 "Conquer COVID with Coding")
+                            (h4 "Conquer COVID with Coding (Session A): "
+                                (b class: "text-primary" "3rd-6th"))
                             (p "The first in our Coding in Context series: Each session will teach "
                                (b "coding skills and concepts")
                                " to investigate the virus and it's repercussions in our society. We believe "
@@ -111,23 +116,10 @@
                                " that show where coronavirus lives right now. "
                                (b "Learn coding,")
                                " while developing a better understanding of how you can be a part of the solution!"
-                               )                                
-                            (p "We have 2 different sessions for different skill levels that you can join each day, Sessions A or B:")
-                            (ul
-                              (li
-                                (b class: "text-primary" "Session A")
-                                ": each day, our Coding Coaches will educate students in a "
+                                " Each day, our Coding Coaches will educate students in a "
                                 (b class: "text-primary" "kid-friendly")
                                 " way about current events through coding."
-                                )
-                              (li
-                                (b class: "text-warning" "Session B")
-                                ": we'll move through similar content, but at a "
-                                (b class:"text-warning" "faster pace")
-                                " intended for older students (like "
-                                (b class:"text-warning" "teens or adults")
-                                ", or students with more background knowledge)."
-                                ))
+                               )                                
                             )                               
                   (col-lg-4 class: "pl-lg-5"
                             (picture 
@@ -139,7 +131,30 @@
                             )
                   )
                 (br)
-
+                (row
+                  (col-lg-4 class: "pr-lg-5"
+                            (picture 
+                              (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path conquering-covid-b-img-path)))
+                              (source type: "image/jpeg" srcset: (prefix/pathify conquering-covid-b-img-path))
+                              (img src: (prefix/pathify adventures-in-coding-img-path) 
+                                   class: "img-fluid rounded d-block w-100"
+                                   alt: "Teenage boy learning coding at camp and programming alongside instructor")) 
+                            )
+                  (col-lg-8 class: "pr-lg-5"
+                            (br)
+                            (h4 "Conquer COVID with Coding (Session B): "
+                                (b class:"text-warning" "7th-Young Adult"))
+                            (p "In each session, students will learn coding skills and concepts while investigating the virus and it's repercussions in our society. Every day our Coding Coaches will have new coding projects for students that introduce "
+                               (b "new programming languages")
+                               ", "
+                               (b "new concepts")
+                               ", and "
+                               (b "new challenges")
+                               ". Learn coding, while developing a better understanding of how you can be a part of the solution! The content of this course is similar to Session A, but we'll move through that content at a faster pace intended for older students (like  "
+                               (b class:"text-warning" "teens or young adults")
+                               ")."
+                               )))
+                (br)
                 (h4 style: (properties text-align: "center") "More Subjects are coming soon!")
                 )
               )
@@ -152,7 +167,7 @@
               style: (properties background: "white"
                                  )
               (container
-                (h2 class: "text-center" "Quarantine Coding Club Schedule")
+                (h2 class: "text-center" "Schedule")
                 (br)
                 (h4 "See Which Sessions Fit Your Schedule")
                 (p "All Quarantine Coding Club Sessions are 1-hr long with start times listed in the calendar below. This schedule is updated on a daily basis, but some sessions may fill before we are able to update the calendar. We are currently working on making this calendar dynamic so that you can see sessions that have filled in real-time.")
