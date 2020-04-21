@@ -26,6 +26,7 @@
           (jumbotron-header-section)
           (club-description-section)
           (subject-description-section)
+          (customer-testimonial-section)
           (schedule-section)
           (credits-section)
           (faq-section)
@@ -71,6 +72,7 @@
                 )
               )
   )
+
 
 (define (subject-description-section)
   (jumbotron  class: "mb-0"
@@ -159,6 +161,48 @@
                 )
               )
   )
+
+(define (customer-testimonial-section)
+  (jumbotron id: "customer-testimonial-banner"
+             style: (properties
+                      text-align: "center"
+                      margin-bottom: 0
+                      background-position: "center"
+                      background-size: "initial"
+                      position: "relative")
+             class: "d-flex align-items-center"
+             role: "img"
+             `aria-label: "background image"
+             @style/inline[type: "text/css"]{
+             .no-webp #customer-testimonial-banner{
+             background-image: url(/img/online/circuits-background.jpg) !important;
+             }
+             .webp #customer-testimonial-banner{
+             background-image: url(/img/online/circuits-background.webp) !important;
+             }
+             }
+             (div class: "overlay"
+                  style: (properties
+                           background-color: "rgba(0, 0, 0, 0.6)"
+                           width: "100%"
+                           position: "absolute"
+                           top: 0
+                           left: 0
+                           bottom: 0
+                           right: 0
+                           float: "left"))
+             (container
+               (div style: (properties
+                             display: "inline-block"
+                             ;padding: 15
+                             color: "white"
+                             position: "relative"
+                             z-index: "10")
+                    (h2 "\"My daughter looks forward to each and every class. They keep her engaged and often she continues to experiment with the code after class is over. I would recommend to any student at all interested in technology as this is the way to get them introduced at a young age.\"")
+                    (br)
+                    (h4 "Veronica L.")
+                    (p "MetaCoders Parent")
+                    ))))
 
 (define (schedule-section)
   (local-require website-js/components/calendar
