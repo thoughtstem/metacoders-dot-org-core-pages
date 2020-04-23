@@ -214,7 +214,7 @@
                 (h2 class: "text-center" "Schedule")
                 (br)
                 (h4 "See Which Sessions Fit Your Schedule")
-                (p "All Quarantine Coding Club Sessions are 1-hr long with start times listed in the calendar below. This schedule is updated on a daily basis, but some sessions may fill before we are able to update the calendar. We are currently working on making this calendar dynamic so that you can see sessions that have filled in real-time.")
+                (p "All Quarantine Coding Club Sessions are 1-hr long with start times listed in the calendar below. Times below will show for YOUR timezone! This schedule is updated on a daily basis, but some sessions may fill before we are able to update the calendar. We are currently working on making this calendar dynamic so that you can see sessions that have filled in real-time.")
                 (calendar (date 2020 04)
                           (hash
                             6 (list (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
@@ -613,7 +613,8 @@
                   (li (b "What equipment do I need in order to participate?") " All you need to participate in our Quarantine Coding Club is a computer, a keyboard, and an internet connection! We also ask students to bring paper and pencil to sessions as well.") 
                   (li (b "Can my 2 or more children share the credits I purchase?") " Students who live within the same household can share credits.") 
                   (li (b "Can parents sit in on the session?") " Yes! Parents observation and participation is welcome and encouraged!") 
-                  (li (b "What if I don't use all my Quarantine Credits before this whole COVID-19 thing blows over?") " We will be continuing our Online Coding Club long after quarantines end. We are also happy to help transfer your remaining Quarantine Credits to in-person classes and camps that will be happening again after quarantines end. You can review our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") " for more details.") 
+                  (li (b "What if I don't use all my Quarantine Credits before this whole COVID-19 thing blows over?") " We will be continuing our Online Coding Club long after quarantines end. We are also happy to help transfer your remaining Quarantine Credits to in-person classes and camps that will be happening again after quarantines end. You can review our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") " for more details.")
+                  (li (b "Do you record Quarantine Coding Club sessions?") " Yes, in order to be as transparent as possible with parents, we try to record all sessions; parents can ask us for these screen recordings whenever they'd like. Often, we will pre-emptively send screen recordings to parents so that parents can see what their children are learning inside our digital classrooms. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") ".")
                   )
                 )
               ))
