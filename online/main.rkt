@@ -35,7 +35,7 @@
 (define (jumbotron-header-section)
   (mc-jumbotron-header
     #:title "Quarantine Coding Club"
-    #:tagline "Learn Coding in Context from Live Instructors in our Digital Classrooms while we're all in Quarantine!"
+    #:tagline "Learn Coding from Live Instructors in our Digital Classrooms while we're all in Quarantine!"
     #:percent-height "60vh"
     #:image-path online-banner-path
     #:alt-tag "Young boy coding a video game on his laptop while he's in quarantine during the COVID-19 pandemic."))
@@ -46,16 +46,17 @@
               (container
                 (row
                   (col-lg-6 class: "pl-lg-5"
-                            (h2 "Learn Coding Today, and Be a Part of the Solution to COVID-19!")
+                            (h2 "Learn Coding Today & Join our Educational Community Co-op")
                             (br)
                             @list{
-                            @b{Quarantine Coding Club} is a chance to explore coding in the context of COVID-19 with the guidance of @b{skilled instructors} that can provide @b{real-time} feedback. Our goal is to @b{empower} students to build their own digital solutions to @b{solve problems} they might see in their households and neighborhoods.
+                            @b{Quarantine Coding Club} is a chance for students to @b{learn coding and technology} with the guidance of @b{live instructors} while being able to @b{socialize with their peers}. Our goal is to @b{provide zero- to low-cost education} during quarantine by crafting a @b{thriving community} of educators, parents, and students.
                             @br
                             @ul{
-                            @li{Join us and learn @b{new coding skills } every weekday. Our flexible curriculum allows you to join on the days that work best for you.}
-                            @li{With a @b{1:5 teacher to student ratio}, our expert Coding Coaches deliver @b{interactive, personalized, interdisciplinary experiences} to students while we all shelter-in-place together.}
-                            @li{Using @b{Quarantine Credits}, sign up for any 1-hr session that fits your schedule; there will be @b{different skills and topics covered each day}.}
-                            @li{Our Quarantine Coding Club is great for coders of all skill levels. Sessions are available for @b{K-2nd}, @b{3rd-6th}, and @b{7th-Young Adult}.}
+                            @li{Students learn @b{new coding skills} every session. Educational activities change daily!}
+                            @li{Average @b{1:5 teacher to student ratio} allows our Coding Coaches to engage students in @b{interactive, personalized, interdisciplinary experiences}.}
+                            @li{Novel digital classroom models give students the @b{ability to choose} their educational activities, @b{significantly increasing student satisfaction}.}
+                          @li{Sign up for any 1-hr session that fits your schedule using @b{Quarantine Credits}; purchase Quarantine Credits or @b{earn them for free by volunteering} your time and skills.}
+                            @li{Great for coders of all skill levels. Sessions are available for @b{K-2nd}, @b{3rd-6th}, and @b{7th-Young Adult}.}
                             @li{Our goal is to @b{make learning coding fun} while we're all stuck at home.}
                             }})
                   (col-lg-6 class: "pr-lg-5"
@@ -550,6 +551,9 @@
                        (credits-subscription-buy-button 180 20 0 "plan_H1fmwXnHW4kZoR" KEY)
                        )
                      )
+                (br)
+                (p "Looking to volunteer and get free Quarantine Credits? Sign up to volunteer " (a href: "https://bit.ly/metacoders-volunteer-form" "here") ".")
+                
                 )
               )
   )
@@ -564,8 +568,12 @@
                 (br)
                 (ol
                   (li (b "How do Quarantine Credits work?") " Each Quarantine Credit can be applied to one 1 hour online session. You can apply the credits you purchase to any of our unfilled scheduled sessions. You do not have to apply all of your purchased credits all at once. We keep track of how many credits each customer has so that you can wait to apply them until a time that is convenient for you!")
-                  (li (b "I purchased Quarantine Credits! Now, how do I use them to sign up for Coding Club sessions?") " If you purchase credits during our normal business hours (Monday-Friday 9am-5pm PST), someone from our team will be notified and will email you within 30 minutes to collect your student's information and your preferred schedule. If you do not receive this email within 30 minutes, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to help you get enrolled in any of our unfilled sessions.") 
+                  (li (b "I purchased Quarantine Credits! Now, how do I use them to sign up for Coding Club sessions?") " After you purchase, you'll be directed to fill out a short form to send us your students' registration information and your preferred schedule. If you purchase credits during our normal business hours (Monday-Friday 9am-5pm PST), someone from our team will be notified and will email you within the hour to confirm your registration. If you do not receive this email within 2 hours, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to help you get enrolled in any of our unfilled sessions.") 
                   (li (b "How many sessions should I enroll my student in?") " We recommend no more than 1 session per day. Sessions within the same day will essentially be covering the same material. The material for sessions varies significantly from day-to-day.")
+                  (li (b "I'm interested in volunteering... what kinds of volunteer opportunities are there?") " Volunteers help in a variety of ways! Some volunteers are like traffic controllers, helping direct students to their preferred educational activities. Other volunteers help run targeted educational activities. Still other volunteers lead 5-minute stretch and exercise breaks to help get students moving! We believe volunteering should always be fun, so we'll help you find something that matches your interests.")
+                  (li (b "Can I get free Quarantine Credits for my children by volunteering?") " This is the best part about being an educational co-op! By putting in your time and energy, you can get free educational opportunities for your children. Volunteers can receive 1 Quarantine Credit for every 30 minutes of volunteer time (that's 1-hr of education for kids for every 30 minutes of volunteer time.)")
+                  (li (b "As a volunteer, can I gift my free Quarantine Credits to someone else?") " Absolutely! We have grandparents who volunteer and gift their credits to their grandchildren. Same with aunts and uncles for their nieces and nephews. You can also gift credits to someone outside your family.")
+                  (li (b "I want to sign-up as a volunteer! What do I need to do?") " We're so excited to have you join our community! The first step is to fill out the volunteer interest form " (a href: "https://bit.ly/metacoders-volunteer-form" "here") ". After that, we'll follow-up with you over email with next steps.")
                   (li (b "Do I need to install anything in order to participate?") " Yes. Our coaches teach through the free platform Zoom, which would need to be installed on your computer. You can find installation instructions for the Zoom Client for Meetings " (a href: "https://zoom.us/download" "here") ". Depending on the session, you may also be asked to install certain coding language environments on your computer, or Coaches may walk students through this installation process during a session.") 
                   (li (b "Can I still sign up for a session that starts today?") " You can sign up for any scheduled session, that is not yet full, up until 2 hours before the session begins. Please note: at this time, a customer service representative will email you after your purchase to help schedule your sessions. However, we are currently in the process of building an interface for customers to apply their credits to sessions themselves.") 
                   (li (b "What deals/coupons do you have available?") " We have bulk discount packages that are always available for purchase above. The more credits you purchase in 1 transaction, the less each credit costs.") 
