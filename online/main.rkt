@@ -410,11 +410,7 @@
                                      (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
                                      (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
                                      (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            25 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
+                          
                             26 (list 
                                      (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
                                      (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
