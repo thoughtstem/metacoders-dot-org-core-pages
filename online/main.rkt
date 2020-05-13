@@ -10,12 +10,13 @@
   ;(make-parameter "pk_test_Jd6aRCVssUu8YfSvltaT3tvU00je9fQbkA")
   )
 
+(define (gems n) (span n " " (i class:"fas fa-gem")))
 
 (define (online)
   (page online-top-path
         (normal-content-wide
           #:head (list (title "Quarantine Coding Club from MetaCoders")
-                       (meta name: "description" content: "Online coding club for kids and young adults that teaches coding through interdisplinary topics.")
+                       (meta name: "description" content: "Learn Coding from Live Instructors Right Now or Throughout the Summer")
                        (common-critical-css)
                        (link 'rel: "preconnect" href:"https://q.stripe.com")
                        (link 'rel: "preconnect" href:"https://m.stripe.com")
@@ -24,21 +25,280 @@
           #:defer-css #t
           (include-p5-js)
           (jumbotron-header-section)
+          (value-prop-section)
+          (topics-section)
           (club-description-section)
-          (subject-description-section)
           (customer-testimonial-section)
-          (schedule-section)
-          (credits-section)
+          (volunteer-section)
           (faq-section)
           )))
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
     #:title "Quarantine Coding Club"
-    #:tagline "Learn Coding from Live Instructors in our Digital Classrooms while we're all in Quarantine!"
+    #:tagline "Learn Coding from Live Instructors in our Digital Classrooms while we're all in Quarantine!" 
     #:percent-height "60vh"
     #:image-path online-banner-path
     #:alt-tag "Young boy coding a video game on his laptop while he's in quarantine during the COVID-19 pandemic."))
+
+
+(define (value-prop-section)
+  (jumbotron class: "mb-0"
+             style: (properties background: "white")
+             (container
+               (h2 "Buy credits, unlock everything!")
+               (p "Each Quarantine Credit unlocks an hour of personalized education. Quarantine Coding Club is the most flexible online class there is:")
+               (ul
+                 (li "We have " (b "over " (length (topics)) " coding " (a href:"#topics" "topics")) " to choose from, with curriculum changing daily.")
+                 (li (b "Current Availability") " (Now thru June 12): M-F 12pm-1pm or 3pm-4pm PST; Tu/Th 2pm-3pm PST; or request a new timeslot " (a href: "https://docs.google.com/forms/d/e/1FAIpQLSfQQIKgK4SmeRoKqTuxd-7jrix-GgdJVLHugvOhIVXFjRVJpQ/viewform" "here") ".") 
+                 (li (b "Summer Availability") " (June 15 - August 21): 9am-4pm PST") 
+                 (li "Starting this Summer: No pre-scheduling required! Just purchase credits and show up when it's convenient!") 
+                 (li "Join our thriving educational community by purchasing Quarantine Credits today!"))
+               (br)
+               (credit-wheel)
+               ;(learn-more-button)
+               )
+             )
+  )
+
+(define (credit-wheel)
+  (define (fancy-col x)
+    (div class: "col-lg-4 col-sm-6 col-xs-12" 
+         x)
+    )
+  (list
+    (card
+      (card-body
+        (h3 class: "text-center" "Credit Bundles")
+        (row (map fancy-col (credit-button-list)))))
+    (br)
+    (card
+      (card-body
+        (h3 class: "text-center" "Credit Subscriptions")
+        (row (map fancy-col (credit-button-list #:type 'subscription)))))
+    (a name:"topics"))
+  )
+
+
+
+(define (credit-button-list #:type [type 'one-time])
+  (cond
+    [(eq? type 'one-time)
+     (list
+       (credits-buy-button 15 1 0 "sku_GyG3n6kfimeXl9" KEY)
+       (credits-buy-button 120 10 0 "sku_GyG4rL6NDcH2SX" KEY)
+       (credits-buy-button 240 20 0 "sku_GyG5ryZxuC66T0" KEY)
+       (credits-buy-button 300 30 0 "sku_HGGukwhf6cCXLr" KEY)
+       (credits-buy-button 500 50 0 "sku_HGGu5QuiJLNiv9" KEY)
+       (credits-buy-button 900 100 0 "sku_HGGu7oGSW24xaK" KEY)
+       (credits-buy-button 1600 200 0 "sku_HGGvlCivK22DBv" KEY)
+       ) 
+     ]
+    [(eq? type 'subscription)
+     (list
+      (credits-subscription-buy-button 65 5 0 "plan_H1fnr6YP21Y5N8" KEY)
+      (credits-subscription-buy-button 110 10 0 "plan_HGH4uigniHjTFZ" KEY)  
+      (credits-subscription-buy-button 220 20 0 "plan_HGH573ZtogyiO9" KEY)  
+      (credits-subscription-buy-button 270 30 0 "plan_HGH5wCxvQLiBYJ" KEY)  
+      (credits-subscription-buy-button 450 50 0 "plan_HGH6hxlNtNanvJ" KEY)  
+      (credits-subscription-buy-button 800 100 0 "plan_HGH6XNwZH7UUX2" KEY)  
+       )
+     ]
+    [else
+      (error "Must supply one-time or subscription to credit button list")])
+  )
+
+
+(define (learn-more-button)
+  "Learn More! Scroll down."
+  )
+
+(define (topics-section)
+  (jumbotron class: "mb-0"
+             (container
+               (h2 class: "text-center" "What Credits Unlock" )
+               (p class: "text-center" "A credit goes a long way! You don't have to decide now, but here are some of the topics you can choose from:")
+               (card-columns (shuffle (map display-topic (topics))))
+               )
+             ))
+
+(define (display-topic t)
+  t)
+
+(define (topic header image desc [level 'K-2nd])
+  (define level-color
+    (cond 
+      [(eq? level 'K-2nd)
+       "bg-info text-white"] 
+      [(eq? level '3rd-6th)
+       "bg-success text-white"] 
+      [(eq? level '3rd-10th)
+       "bg-warning text-white"] 
+      [(eq? level '7th-10th)
+       "bg-danger text-white"] 
+      [(eq? level 'adult)
+       "bg-dark text-white"]
+      [(eq? level 'all-ages)
+       "bg-light"
+       ]
+      [else
+        "bg-secondary text-white"] 
+      )
+    )
+  (card class: level-color 
+        image
+    (card-body
+      (h5 header)
+      desc)
+    )
+  )
+
+
+(define (card-video-top src: path)
+  (video 'autoplay: 'loop: 'muted: 'playsinline: 
+         class: "card-img-top border-bottom"
+         style: (properties 'object-fit: "cover"
+                            'object-position: "0 0"
+                            )
+         (source src: (prefix/pathify path) type: "video/mp4")
+         (source src: (prefix/pathify (mp4-path->webm-path path)) type: "video/webm")
+         ))
+
+(define (topics)
+  (define (adventure)
+    (topic "Coding for Harry Potter & Mario Fans"
+           (card-video-top src: adventure-harrypotter-mp4-path)
+           "Build your own adventure based Harry Potter or Mario games. Mario fans will earn special Mario game design badges, and vice versa for Harry Potter fans!"
+           '3rd-10th
+           ) 
+    )
+  (define (battle-arena)
+    (topic "Coding for Marvel, Fortnite, & Star Wars Fans"
+           (card-video-top src: battlearena-avengers-mp4-path)
+           "Build battle arena-style games with characters from your favorite games and movies! Share the games you make with your new coding friends."
+           '3rd-10th
+           ) 
+    )
+  (define (artificial-intelligence)
+    (topic "Artificial Intelligence" 
+           (card-img-top src: (prefix/pathify artificial-intelligence-img-path))
+           "Artificial intelligence and machine learning are two of the most misunderstood topics in computer science. We help clear up the confusion."
+           '7th-10th
+           ) 
+    )
+  (define (zoo-animals)
+    (topic "Adventures in Coding and Zoo Animals" 
+           (card-video-top src: healer-zoo-mp4-path)
+           "Animals and computers have more in common than you might think! Learn to code by creating games and stories with animal characters."
+           'K-2nd
+           ) 
+    )
+  (define (cartoons)
+    (topic "Adventures in Coding and Cartoons" 
+           (card-video-top src: clicker-cartoon-mp4-path)
+           "All kids like watching cartoons. Smart kids like coding their own cartoons."
+           'K-2nd
+           ) 
+    )
+  (define (farm-animals)
+    (topic "Adventures in Coding and Farm Animals" 
+           (card-video-top src: healer-animal-mp4-path)
+           (p "A farm is a system. So is a field, so are the crops, and so are the animals. It’s " (b "never") " too early to learn Systems Thinking.")
+           'K-2nd
+           ) 
+    )
+  (define (pokemon-for-k-2)
+    (topic "Adventures in Coding and Pokemon" 
+           (card-video-top src: clicker-pokemon-mp4-path)
+           "Pokemon fans of any age can write about their love of Pokemon. We help kids write about what they love with code!"
+           'K-2nd
+           ) 
+    )
+  (define (survival)
+    (topic "Coding for Minecraft & Pokemon Fans" 
+           (card-video-top src: survival-minecraft-mp4-path)
+           "Learn how to build survival-style video games with other kids who love these video games!"
+           '3rd-10th
+           ) 
+    )
+
+  (define (dont-teach-coding)
+    (topic "Don't Teach Coding: Until You Take This Class" 
+           (card-img-top src: (prefix/pathify dont-teach-coding-img-path))
+           "“Don’t Teach Coding” is a radical, humanities-first approach to teaching coding. It was written by the Co-Founders of Metacoders. This class for teachers is taught by them."
+           'adult
+           ) 
+    )
+  (define (metacognition)
+    (topic "Metacognition" 
+           (card-img-top src: (prefix/pathify metacognition-img-path))
+           "This class teaches anyone with a brain how brains work. It’s the instruction manual for the brain and mind – the one scientists have been piecing together for decades."
+           'all-ages
+           ) 
+    )
+  (define (discord-bots)
+    (topic "Discord Bots" 
+           (card-img-top src: (prefix/pathify discord-img-path))
+           "Coding your own chat bot is an advanced and powerful topic. Bots can be used for community-building, educational technology, and business logic."
+           'all-ages 
+           ) 
+    )
+  (define (programming-language-development)
+    (topic "Programming Language Development" 
+           (card-img-top src: (prefix/pathify racket-logo-img-path))
+           "Language Oriented Programming is on the cutting edge of research and development. It also happens to be a core skillset at MetaCoders."
+           '7th-10th 
+           ) 
+    )
+  (define (web-development)
+    (topic "Web Development" 
+           (card-img-top src: (prefix/pathify web-development-img-path))
+           "Full-stack web development is one of the most sought-after skillsets in the industry right now. Learn your frontends from your backends, your ORMs from your SQLs, your Javas from your JavaScripts."
+           '7th-10th
+           ) 
+    )
+  (define (graphic-design)
+    (topic "Graphic Design with Code" 
+           (card-img-top src: (prefix/pathify graphic-design-img-path))
+           "Visual communication is almost always an end-goal of any end-user application. But code can only communicate as beautifully and clearly as its graphic designers can."
+           '7th-10th
+           ) 
+    )
+  (define (video-editing)
+    (topic "Video Editing with Code" 
+           (card-img-top src: (prefix/pathify video-editing-img-path))
+           "The language of film is one that most people comprehend, but few can “speak.” Like coding, it is a skillset in short supply worldwide."
+           '3rd-10th
+           ) 
+    )
+  (define (computer-music)
+    (topic "Coding for Musicians" 
+           (card-img-top src: (prefix/pathify music-img-path))
+           "Multiply the number of musical instruments you’ve heard of by 10,000. With the power of MIDI, anyone can play music, write it, and even create their own digital instruments."
+           '7th-10th
+           ) 
+    )
+
+
+  (list 
+    (zoo-animals)
+    (cartoons)
+    (farm-animals)
+    (pokemon-for-k-2)
+    (adventure)
+    (survival)
+    (battle-arena)
+    (dont-teach-coding)
+    (metacognition)
+    (discord-bots)
+    (artificial-intelligence)
+    (web-development)
+    (graphic-design)
+    (video-editing)
+    (computer-music)
+    (programming-language-development)
+    ))
+
 
 (define (club-description-section)
   (jumbotron  class: "mb-0"
@@ -74,94 +334,46 @@
               )
   )
 
-
-(define (subject-description-section)
+(define (summer-section)
   (jumbotron  class: "mb-0"
+              style: (properties background: "white"
+                                 )
               (container
-                (h2 class: "text-center" "Coding Club Subjects Currently Available")
+                (h2 class: "text-center" "Summer Camps")
                 (br)
-                (row
-                  (col-lg-4 class: "pr-lg-5"
-                            (picture 
-                              (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path adventures-in-coding-img-path)))
-                              (source type: "image/jpeg" srcset: (prefix/pathify adventures-in-coding-img-path))
-                              (img src: (prefix/pathify adventures-in-coding-img-path) 
-                                   class: "img-fluid rounded d-block w-100"
-                                   alt: "Two young girls learning how to code together in quarantine coding club")) 
-                            )
-                  (col-lg-8 class: "pr-lg-5"
-                            (br)
-                            (h4 "Adventures in Coding: "
-                                (b class:"text-success" "K-2nd"))
-                            (p "Made for our youngest students in mind, children in each session will "
-                               (b "code as a team")
-                               " with one of our expert Coding Coaches and learn new "
-                               (b "coding concepts")
-                               " each day. Everyday, there will be a new theme so that students are learning coding in context of subjects like video game design, math, and science. This subject is a fun way for "
-                               (b class:"text-success" "Kindergarteners through 2nd graders")
-                               " to start mastering technology while stuck in quarantine.")))
-
-
-                (br)
-                (row
-                  (col-lg-8 class: "pr-lg-5"
-                            (br)
-                            (h4 "Conquer COVID with Coding (Session A): "
-                                (b class: "text-primary" "3rd-6th"))
-                            (p "The first in our Coding in Context series: Each session will teach "
-                               (b "coding skills and concepts")
-                               " to investigate the virus and it's repercussions in our society. We believe "
-                               (b "understanding is the antithesis of fear; ")
-                               "our Coding Coaches work with students to "
-                               (b "code graphs")
-                               ", showing how they can prevent the spread of COVID-19 by staying home with their families, or "
-                               (b "maps")
-                               " that show where coronavirus lives right now. "
-                               (b "Learn coding,")
-                               " while developing a better understanding of how you can be a part of the solution!"
-                                " Each day, our Coding Coaches will educate students in a "
-                                (b class: "text-primary" "kid-friendly")
-                                " way about current events through coding."
-                               )                                
-                            )                               
-                  (col-lg-4 class: "pl-lg-5"
-                            (picture 
-                              (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path conquering-covid-img-path)))
-                              (source type: "image/jpeg" srcset: (prefix/pathify conquering-covid-img-path))
-                              (img src: (prefix/pathify conquering-covid-img-path) 
-                                   class: "img-fluid rounded d-block w-100"
-                                   alt: "Kid conquering COVID-19 at home by learning coding in quarantine coding club")) 
-                            )
+                (h4 "Insanely Flexible Summer Camp Hours")
+                (p "Summer camps? Full-day, half-day, 1-hr a day: your kids can be in camp whenever YOU want!")
+                (p "Purchase the number of Quarantine Credits you need this summer. Each credit can be applied to 1-hr of camp:")
+                (p "Do you want your child in camp 1-hr a day, M-F, for 8-weeks?")
+                (credits-buy-button 400 40 0 "sku_GyG3n6kfimeXl9" KEY)
+                (p "Do you want your child in camp for 3-hr a day, M-F, for 4-weeks?")
+                (credits-buy-button 600 60 0 "sku_GyG3n6kfimeXl9" KEY)
+                (p "Do you want your child in camp for 7-hr a day, M-F, for 1-week?")
+                (credits-buy-button 350 35 0 "sku_GyG3n6kfimeXl9" KEY)
+                (p "No scheduling required! Our camps will be operational from __ -__ from June __ - August __. Sending your kid to camp is as easy as following a link.")
+                (p "There's no such thing as a 1-size fits all education! Other camps make you decide what topic your student will be learning months in advance! Our camp lets students choose the topic the day of, and even switch between topics throughout the day.")
+                (p "Your child might start in a game design camp, but decide to switch to a web development camp 2-hours later. Our metacognitive staff is always there to help you and your child create the most personalized educational experience.")
+                (p "Worried about screen time? We offer stretch breaks and social activities throughout the camp day to optimize your child's social & emotional wellbeing.")
+                (p "No two children are the same. Some children prefer more time to reflect on what they are learning. Some children prefer to spend more time doing hands-on activities. Some children learn through discussion. Some children learn through teaching others. All you have to do is buy Quarantine Credits: for free, our staff will help you create an educational plan for your child this summer.")
+                (h4 "Examples")
+                (p "Jimmy is 11 years old. His parents are software engineers. Jimmy loves video games and wants to know how to make them. His parents want to give him the freedom to choose his favorite subjects this summer. So he is planning to spend his time in these classes (knowing he can change his mind later):")
+                (ul
+                  (li "2-hrs of Video Game Design")
+                  (li "1-hr of Computer Science Principles")
+                  (li "1-hr of Design Your Own Programming Language")
+                  (li "1-hr of Computer Science History")
+                  (li "1-hr Video Editing")
                   )
-                (br)
-                (row
-                  (col-lg-4 class: "pr-lg-5"
-                            (picture 
-                              (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path conquering-covid-b-img-path)))
-                              (source type: "image/jpeg" srcset: (prefix/pathify conquering-covid-b-img-path))
-                              (img src: (prefix/pathify adventures-in-coding-img-path) 
-                                   class: "img-fluid rounded d-block w-100"
-                                   alt: "Teenage boy learning coding at camp and programming alongside instructor")) 
-                            )
-                  (col-lg-8 class: "pr-lg-5"
-                            (br)
-                            (h4 "Conquer COVID with Coding (Session B): "
-                                (b class:"text-warning" "7th-Young Adult"))
-                            (p "In each session, students will learn coding skills and concepts while investigating the virus and it's repercussions in our society. Every day our Coding Coaches will have new coding projects for students that introduce "
-                               (b "new programming languages")
-                               ", "
-                               (b "new concepts")
-                               ", and "
-                               (b "new challenges")
-                               ". Learn coding, while developing a better understanding of how you can be a part of the solution! The content of this course is similar to Session A, but we'll move through that content at a faster pace intended for older students (like  "
-                               (b class:"text-warning" "teens or young adults")
-                               ")."
-                               )))
-                (br)
-                (h4 style: (properties text-align: "center") "More Subjects are coming soon!")
+                (p "Susy is 8 years old. Her parents are educators and worked with the MetaCoders staff on a special education plan for Susy this summer. Susy loves music and art. This is her educational plan:")
+                (ul
+                  (li "1-hr of Code Your Own Music")
+                  (li "1-hr of Graphic Design with Code")
+                  (li "Yoga Breaks every 30 minutes")
+                  )
                 )
               )
   )
+
 
 (define (customer-testimonial-section)
   (jumbotron id: "customer-testimonial-banner"
@@ -205,249 +417,23 @@
                     (p "MetaCoders Parent")
                     ))))
 
-(define (schedule-section)
-  (local-require website-js/components/calendar
-                 gregor)
-  (jumbotron  class: "mb-0"
-              style: (properties background: "white"
-                                 )
-              (container
-                (h2 class: "text-center" "Schedule")
-                (br)
-                (h4 "See Which Sessions Fit Your Schedule")
-                (p "All Quarantine Coding Club Sessions are 1-hr long with start times listed in the calendar below. Times below will show for YOUR timezone! This schedule is updated on a daily basis, but some sessions may fill before we are able to update the calendar. We are currently working on making this calendar dynamic so that you can see sessions that have filled in real-time.")
-                (calendar (date 2020 05)
-                          (hash
-                            1 (list 
-                                    (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                    (timeslot-chip-a "1/1/2020 10:00 PM UTC" "COVID A")
-                                    (timeslot-chip-b "1/1/2020 10:00 PM UTC" "COVID B") 
-                                    (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                    (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                    (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            4 (list 
-                                    (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                    (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                    (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                    (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            5 (list 
-                                    (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                    (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                    (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                    (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            6 (list 
-                                    (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                    (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                    (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                    (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            7 (list 
-                                    (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                    (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                    (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                    (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            8 (list 
-                                    (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                    (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                    (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                    (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            11 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            12 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            13 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            14 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 10:00 PM UTC" "COVID A")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            15 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            18 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures"))  
-                            19 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 10:00 PM UTC" "COVID A")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            20 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            21 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 10:00 PM UTC" "COVID A")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            22 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                          
-                            26 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 10:00 PM UTC" "COVID A")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            27 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            28 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 10:00 PM UTC" "COVID A")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            29 (list 
-                                     (timeslot-chip-c "1/1/2020 8:00 PM UTC" "Adventures")
-                                     (timeslot-chip-a "1/1/2020 11:00 PM UTC" "COVID A")
-                                     (timeslot-chip-b "1/1/2020 11:00 PM UTC" "COVID B")
-                                     (timeslot-chip-c "1/1/2020 11:00 PM UTC" "Adventures")) 
-                            )
-                          )
-
-                (br)
-
-                (div style: (properties text-align:"center")
-                     (h4 "Looking for a different time or have ideas for other topics? ")
-                     (a href: "https://docs.google.com/forms/d/e/1FAIpQLSfQQIKgK4SmeRoKqTuxd-7jrix-GgdJVLHugvOhIVXFjRVJpQ/viewform" 
-                        (button-primary id: "main-button" 
-                                        "Suggestions Form")))
-                )
-              )
-  )
-
-(define (timeslot-chip-a start subject)
-
-  (enclose
-    (badge-pill-primary 
-      id: (ns 'pill)
-      (~a start ": " subject))
-
-    (script ([pillId (ns 'pill)]
-             [constructor (call 'construct)] 
-             )
-            (function (construct)
-                      @js{
-                      setTimeout(
-                                 function() {
-                                   var someDate = moment("@start").format('LT') 
-                                   console.log(someDate)
-                                   document.getElementById(@pillId).innerHTML = someDate + ":@subject"  
-                                 }
-                                 , 250)
-                      }
-                      ))
-    ) 
-  )
-
-(define (timeslot-chip-b start subject)
-  (enclose
-    (badge-pill-warning style: (properties background-color: "#f37a1f"
-                                           color: "#fff")
-                        id: (ns 'pill)
-                        (~a start ": " subject))
-
-    (script ([pillId (ns 'pill)]
-             [constructor (call 'construct)] 
-             )
-            (function (construct)
-                      @js{
-                      setTimeout(
-                                 function() {
-                                   var someDate = moment("@start").format('LT') 
-                                   console.log(someDate)
-                                   document.getElementById(@pillId).innerHTML = someDate + ":@subject"  
-                                 }
-                                 , 250)
-                      }
-                      ))
-    ) 
-  )
-
-(define (timeslot-chip-c start subject)
-  (enclose
-    (badge-pill-success id: (ns 'pill)
-                        (~a start ": " subject))
-
-    (script ([pillId (ns 'pill)]
-             [constructor (call 'construct)] 
-             )
-            (function (construct)
-                      @js{
-                      setTimeout(
-                                 function() {
-                                   var someDate = moment("@start").format('LT') 
-                                   console.log(someDate)
-                                   document.getElementById(@pillId).innerHTML = someDate + ":@subject"  
-                                 }
-                                 , 250)
-                      }
-                      ))
-    )) 
-
-(define (credits-section)
-  (jumbotron  class: "mb-0"
-              style: (properties text-align: "center"
-                                 )
-              (container
-                (h2 class: "text-center" "Purchase Quarantine Credits")
-                (br)
-                (row class: "d-flex justify-content-center" 
-                     (col-md-4
-                       (credits-buy-button 15 1 0 "sku_GyG3n6kfimeXl9" KEY)
-                       )
-                     (col-md-4
-                       (credits-buy-button 120 10 0 "sku_GyG4rL6NDcH2SX" KEY)
-                       )
-                     #;
-                     (col-md-4
-                       (credits-buy-button 200 20 0 "sku_GyG5ryZxuC66T0" KEY)
-                       )
-
-                     )
-                (br)
-                (row class: "d-flex justify-content-center"
-                     (col-md-4
-                       (credits-subscription-buy-button 65 5 0 "plan_H1fnr6YP21Y5N8" KEY)
-                       )
-                     (col-md-4
-                       (credits-subscription-buy-button 100 10 0 "plan_H1fndb6HHFPoV2" KEY)
-                       )
-                     #;
-                     (col-md-4
-                       (credits-subscription-buy-button 180 20 0 "plan_H1fmwXnHW4kZoR" KEY)
-                       )
-                     )
-                (br)
-                (p "Looking to volunteer and get free Quarantine Credits? Sign up to volunteer " (a href: "https://bit.ly/metacoders-volunteer-form" "here") ".")
-                
-                )
-              )
-  )
+(define (volunteer-section)
+  (jumbotron class: "mb-0"
+             (container
+               (h2 class: "text-center" "Want Free Quarantine Credits? Volunteer with Us!")
+               (br)
+               (p "Volunteers can earn Quarantine Credits for themselves or for their kids. Other perks of being a volunteer:"
+                (ul
+                  (li "Learn new skills: from coding to video editing, social media to IT, we train our volunteers every step of the way.")
+                  (li "Support a non-profit in its educational mission.")
+                  (li "Become a leader in one of the fastest growing online educational communities.")
+                  )
+                (div class: "text-center"
+                     (button class: "btn btn-primary"
+                             href: "https://bit.ly/metacoders-volunteer-form"
+                             "Sign Up to Volunteer"
+                             ))
+                ))))
 
 
 (define (faq-section)
@@ -479,19 +465,26 @@
                 )
               ))
 
+(define (display-price price #:suffix [suffix ""])
+    (list
+      (br)
+      (badge-pill-light style: (properties font-size: "12pt")
+                        (~p price) suffix)))
 
-(define (credits-buy-button price num discount sku key #:suffix [suffix ""])
+(define (credits-buy-button price num discount sku key )
   (list (button-primary id:(~a "checkout-button-" sku)
-                        class: "mt-md-0 mt-2 col-sm-12"
+                        class: "mt-1 btn-block"
                         style: (properties border-radius: "0 0 0.18rem 0"
-                                           white-space: "normal")
+                                           white-space: "normal"
+                                           )
                         (if (> discount 0)
-                          (list "Buy " num " Credits for "
+                          (list (gems num) 
                                 (s class: "text-danger"
-                                   (~p price))
+                                   (display-price price))
                                 " " (~p (- price discount))
-                                suffix)
-                          (~a "Buy " num " Credits for " (~p price) suffix)))
+                          )
+                          (list (gems num) 
+                                (display-price price)))
         (div id:(~a "error-message" sku))
         ;(script src:"https://js.stripe.com/v3")
         @script/inline{
@@ -515,20 +508,22 @@
                                                                    });
                                                     });
                     })();})
-        )
+  ))
 
-  (define (credits-subscription-buy-button price num discount sku key #:suffix [suffix ""])
-    (list (button-primary id:(~a "checkout-button-" sku)
-                          class: "mt-md-0 mt-2 col-sm-12" 
+  (define (credits-subscription-buy-button price num discount sku key)
+    (list (button-success id:(~a "checkout-button-" sku)
+                          class: "mt-1 btn-block" 
                           style: (properties border-radius: "0 0 0.18rem 0"
                                              white-space: "normal")
                           (if (> discount 0)
-                            (list "Monthly Subscription:" num " Credits for "
+                            (list (gems num)
                                   (s class: "text-danger"
-                                     (~p price))
-                                  " " (~p (- price discount)) "/Month"
-                                  suffix)
-                            (~a "Monthly Subscription: " num " Credits for " (~p price) "/Month" suffix)))
+                                     (display-price price))
+                                  " " (display-price (- price discount)
+                                                     #:suffix "/mo") 
+                            )
+                            (list (gems num) 
+                                  (display-price price #:suffix "/mo"))))
           (div id:(~a "error-message" sku))
           ;(script src:"https://js.stripe.com/v3")
           @script/inline{
