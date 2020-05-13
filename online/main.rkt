@@ -27,8 +27,8 @@
           (jumbotron-header-section)
           (value-prop-section)
           (topics-section)
-          (club-description-section)
           (customer-testimonial-section)
+          (club-description-section)
           (volunteer-section)
           (faq-section)
           )))
@@ -46,6 +46,8 @@
   (jumbotron class: "mb-0"
              style: (properties background: "white")
              (container
+(row
+  (col-lg-6
                (h2 "Buy credits, unlock everything!")
                (p "Each Quarantine Credit unlocks an hour of personalized education. Quarantine Coding Club is the most flexible online class there is:")
                (ul
@@ -54,6 +56,17 @@
                  (li (b "Summer Availability") " (June 15 - August 21): 9am-4pm PST") 
                  (li "Starting this Summer: No pre-scheduling required! Just purchase credits and show up when it's convenient!") 
                  (li "Join our thriving educational community by purchasing Quarantine Credits today!"))
+    
+    )
+  (col-lg-6
+    (picture 
+      (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path coding-club-img-path)))
+      (source type: "image/jpeg" srcset: (prefix/pathify coding-club-img-path))
+      (img src: (prefix/pathify coding-club-img-path) 
+           class: "img-fluid rounded d-block w-100 border border-dark"
+           alt: "Screenshot of a Quarantine Coding Club session in action with a Coding Coach and students coding in Racket"))
+    )
+  )
                (br)
                (credit-wheel)
                ;(learn-more-button)
@@ -67,12 +80,12 @@
          x)
     )
   (list
-    (card
+    (card style: (properties border: "0px")
       (card-body
         (h3 class: "text-center" "Credit Bundles")
         (row (map fancy-col (credit-button-list)))))
     (br)
-    (card
+    (card style: (properties border: "0px")
       (card-body
         (h3 class: "text-center" "Credit Subscriptions")
         (row (map fancy-col (credit-button-list #:type 'subscription)))))
@@ -324,11 +337,11 @@
                                  (iframe class:"embed-responsive-item" src:"https://www.youtube.com/embed/GVzxUtfTLGE"))
                             (br)
                             (picture 
-                              (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path coding-club-img-path)))
-                              (source type: "image/jpeg" srcset: (prefix/pathify coding-club-img-path))
-                              (img src: (prefix/pathify coding-club-img-path) 
+                              (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path adventures-in-coding-img-path)))
+                              (source type: "image/jpeg" srcset: (prefix/pathify adventures-in-coding-img-path))
+                              (img src: (prefix/pathify adventures-in-coding-img-path) 
                                    class: "img-fluid rounded d-block w-100 border border-dark"
-                                   alt: "Screenshot of a Quarantine Coding Club session in action with a Coding Coach and students coding in Racket"))
+                                   alt: "Two young girls learning how to code together on a chromebook"))
                             ))
                 )
               )
@@ -443,24 +456,32 @@
               (container
                 (h2 class: "text-center" "Frequently Asked Questions")
                 (br)
+                (h4 "General")
                 (ol
                   (li (b "How do Quarantine Credits work?") " Each Quarantine Credit can be applied to one 1 hour online session. You can apply the credits you purchase to any of our unfilled scheduled sessions. You do not have to apply all of your purchased credits all at once. We keep track of how many credits each customer has so that you can wait to apply them until a time that is convenient for you!")
-                  (li (b "I purchased Quarantine Credits! Now, how do I use them to sign up for Coding Club sessions?") " After you purchase, you'll be directed to fill out a short form to send us your students' registration information and your preferred schedule. If you purchase credits during our normal business hours (Monday-Friday 9am-5pm PST), someone from our team will be notified and will email you within the hour to confirm your registration. If you do not receive this email within 2 hours, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to help you get enrolled in any of our unfilled sessions.") 
+                  (li (b "I purchased Quarantine Credits! Now, how do I use them to sign up for Coding Club sessions?") " If you'd like to join our classes in May or the first half of June: After you purchase, you'll be directed to fill out a short form to send us your students' registration information and your preferred schedule. If you purchase credits during our normal business hours (Monday-Friday 9am-5pm PST), someone from our team will be notified and will email you within the hour to confirm your registration. If you do not receive this email within 2 hours, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to help you get enrolled in any of our unfilled sessions.") 
                   (li (b "How many sessions should I enroll my student in?") " We recommend no more than 1 session per day. Sessions within the same day will essentially be covering the same material. The material for sessions varies significantly from day-to-day.")
-                  (li (b "I'm interested in volunteering... what kinds of volunteer opportunities are there?") " Volunteers help in a variety of ways! Some volunteers are like traffic controllers, helping direct students to their preferred educational activities. Other volunteers help run targeted educational activities. Still other volunteers lead 5-minute stretch and exercise breaks to help get students moving! We believe volunteering should always be fun, so we'll help you find something that matches your interests.")
-                  (li (b "Can I get free Quarantine Credits for my children by volunteering?") " This is the best part about being an educational co-op! By putting in your time and energy, you can get free educational opportunities for your children. Volunteers can receive 1 Quarantine Credit for every 30 minutes of volunteer time (that's 1-hr of education for kids for every 30 minutes of volunteer time.)")
-                  (li (b "As a volunteer, can I gift my free Quarantine Credits to someone else?") " Absolutely! We have grandparents who volunteer and gift their credits to their grandchildren. Same with aunts and uncles for their nieces and nephews. You can also gift credits to someone outside your family.")
-                  (li (b "I want to sign-up as a volunteer! What do I need to do?") " We're so excited to have you join our community! The first step is to fill out the volunteer interest form " (a href: "https://bit.ly/metacoders-volunteer-form" "here") ". After that, we'll follow-up with you over email with next steps.")
-                  (li (b "Do I need to install anything in order to participate?") " Yes. Our coaches teach through the free platform Zoom, which would need to be installed on your computer. You can find installation instructions for the Zoom Client for Meetings " (a href: "https://zoom.us/download" "here") ". Depending on the session, you may also be asked to install certain coding language environments on your computer, or Coaches may walk students through this installation process during a session.") 
+                  (li (b "Do I need to install anything in order to participate?") " Our online educational community is housed on the free platform Discord, which can be installed on any laptop. You can find installation and account setup instructions for Discord " (a href: "https://support.discord.com/hc/en-us/articles/360033931551-Getting-Started" "here") ". If you are using a chromebook, you can use the browser-version of Discord. During a session, Coaches may walk students through the installation of specific coding language environments necessary for that days' lesson.") 
                   (li (b "Can I still sign up for a session that starts today?") " You can sign up for any scheduled session, that is not yet full, up until 2 hours before the session begins. Please note: at this time, a customer service representative will email you after your purchase to help schedule your sessions. However, we are currently in the process of building an interface for customers to apply their credits to sessions themselves.") 
                   (li (b "What deals/coupons do you have available?") " We have bulk discount packages that are always available for purchase above. The more credits you purchase in 1 transaction, the less each credit costs.") 
-                  (li (b "Is the calendar above up-to-date?") " We are currently in the process of building a more robust interface to show customers are unfilled sessions. In the meantime, we are trying to keep the calendar above up-to-date as best we can. However, depending on how quickly spots in our sessions fill, some sessions may be full by the time we help you schedule your sessions. But not to worry: we'll work with you to make sure we can find a spot in a session that works with your schedule.") 
                   (li (b "What equipment do I need in order to participate?") " All you need to participate in our Quarantine Coding Club is a computer, a keyboard, and an internet connection! We also ask students to bring paper and pencil to sessions as well.") 
                   (li (b "Can my 2 or more children share the credits I purchase?") " Students who live within the same household can share credits.") 
                   (li (b "If my 2 children are sharing 1 laptop, do we pay 2 Quarantine Credits per session or 1?") " Each device will require 1 Quarantine Credit. We understand parents don't always have enough devices for all their students. Clearly, two students who are sharing 1 laptop can't code at the same time, so we are treating each device as if it is one student at this time.") 
                   (li (b "Can parents sit in on the session?") " Yes! Parents observation and participation is welcome and encouraged!") 
                   (li (b "What if I don't use all my Quarantine Credits before this whole COVID-19 thing blows over?") " We will be continuing our Online Coding Club long after quarantines end. We are also happy to help transfer your remaining Quarantine Credits to in-person classes and camps that will be happening again after quarantines end. You can review our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") " for more details.")
                   (li (b "Do you record Quarantine Coding Club sessions?") " Yes, in order to be as transparent as possible with parents, we try to record all sessions; parents can ask us for these screen recordings whenever they'd like. Often, we will pre-emptively send screen recordings to parents so that parents can see what their children are learning inside our digital classrooms. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") ".")
+                  )
+                (h4 "Summer")
+                (ol
+                  (li (b "Do I really not need to schedule my Quarantine Credits in advance?") "That's right! Throughout the summer, from 9am-4pm PST, Monday-Friday, just have your student sign into our Discord server, and we will teach them coding! As students \"spend\" their Quarantine Credits, we'll send you an update if your Quarantine Credit balance is running low.") 
+                  (li (b "How many Quarantine Credits should I purchase for this summer?") "You can do a quick estimate by multiplying the number of weeks x 5 days/week x hours per day x number of students. For example, if you have 1 child that you want to register for 3 hours per day for 5 weeks, you'd purchase: (5 weeks x 5 days/week x 3 hours per day x 1 student) = 75 credits.") 
+                  )
+                (h4 "Volunteers")
+                (ol
+                  (li (b "I'm interested in volunteering... what kinds of volunteer opportunities are there?") " Volunteers help in a variety of ways! Some volunteers are like traffic controllers, helping direct students to their preferred educational activities. Other volunteers help run targeted educational activities. Still other volunteers lead 5-minute stretch and exercise breaks to help get students moving! We believe volunteering should always be fun, so we'll help you find something that matches your interests.")
+                  (li (b "Can I get free Quarantine Credits for my children by volunteering?") " This is the best part about being an educational co-op! By putting in your time and energy, you can get free educational opportunities for your children. Volunteers can receive 1 Quarantine Credit for every 30 minutes of volunteer time (that's 1-hr of education for kids for every 30 minutes of volunteer time.)")
+                  (li (b "As a volunteer, can I gift my free Quarantine Credits to someone else?") " Absolutely! We have grandparents who volunteer and gift their credits to their grandchildren. Same with aunts and uncles for their nieces and nephews. You can also gift credits to someone outside your family.")
+                  (li (b "I want to sign-up as a volunteer! What do I need to do?") " We're so excited to have you join our community! The first step is to fill out the volunteer interest form " (a href: "https://bit.ly/metacoders-volunteer-form" "here") ". After that, we'll follow-up with you over email with next steps.")
                   )
                 )
               ))
