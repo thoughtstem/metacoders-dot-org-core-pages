@@ -11,7 +11,11 @@
 (define (jumbotron-header-section)
   (mc-jumbotron-header
     #:title "A Different Kind of Coding Education"
-    #:tagline "Cutting-edge learning science, with grass-roots community support to prepare kids for the future."
+    #:tagline (list "Cutting-edge learning science, with grass-roots community support to prepare kids for the future." 
+                   (br) 
+                    (a href: "/online.html"
+                       (button-primary style: (properties margin-top: 30) "Join Us Online"))
+                    )
     #:percent-height "80vh"
     #:image-path homepage-banner-path
     #:alt-tag "Young boy focused on building a video game with drag-and-drop coding at computer science workshop"))
