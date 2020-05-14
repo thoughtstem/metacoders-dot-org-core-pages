@@ -108,11 +108,11 @@
     [(eq? type 'subscription)
      (list
       (credits-subscription-buy-button 65 5 0 "plan_H1fnr6YP21Y5N8" KEY)
-      (credits-subscription-buy-button 110 10 0 "plan_HGH4uigniHjTFZ" KEY)  
-      (credits-subscription-buy-button 220 20 0 "plan_HGH573ZtogyiO9" KEY)  
-      (credits-subscription-buy-button 270 30 0 "plan_HGH5wCxvQLiBYJ" KEY)  
-      (credits-subscription-buy-button 450 50 0 "plan_HGH6hxlNtNanvJ" KEY)  
-      (credits-subscription-buy-button 800 100 0 "plan_HGH6XNwZH7UUX2" KEY)  
+      (credits-subscription-buy-button 110 10 0 "plan_HHOEQPY0sFRoxR" KEY)  
+      (credits-subscription-buy-button 220 20 0 "plan_HHOH2io4UDk3z9" KEY)  
+      (credits-subscription-buy-button 270 30 0 "plan_HHOIjv5C0nKsh3" KEY)  
+      (credits-subscription-buy-button 450 50 0 "plan_HHOIbEGyKflAsO" KEY)  
+      (credits-subscription-buy-button 800 100 0 "plan_HHOJzQdAcoMzkT" KEY)  
        )
      ]
     [else
