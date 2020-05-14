@@ -28,7 +28,7 @@
           (value-prop-section)
           (topics-section)
           (customer-testimonial-section)
-          (club-description-section)
+          (more-description-section)
           (faq-section)
           )))
 
@@ -42,28 +42,27 @@
 
 
 (define (value-prop-section)
+  (define (padded-li . content)
+    (li style: (properties 'padding-top: 30) content)
+    )
   (jumbotron class: "mb-0"
              style: (properties background: "white")
              (container
 (row
-  (col-lg-6
+  (col-md-8
                (h2 "Buy Quarantine Credits " (gems "") ", Unlock Everything!")
-               (p "Each Quarantine Credit unlocks an hour of personalized education. Quarantine Coding Club is the most flexible online class there is:")
-               (ul
-                 (li "We have " (b "over " (length (topics)) " coding " (a href:"#topics" "topics")) " to choose from, with curriculum changing daily.")
-                 (li (b "Current Availability") " (Now thru June 12): M-F 12pm-1pm or 3pm-4pm PST; Tu/Th 2pm-3pm PST; or request a new timeslot " (a href: "https://docs.google.com/forms/d/e/1FAIpQLSfQQIKgK4SmeRoKqTuxd-7jrix-GgdJVLHugvOhIVXFjRVJpQ/viewform" "here") ".") 
-                 (li (b "Summer Availability") " (June 15 - August 21): 9am-4pm PST") 
-                 (li "Starting this Summer: No pre-scheduling required! Just purchase credits and show up when it's convenient!") 
-                 (li "Join our thriving educational community by purchasing Quarantine Credits today!"))
+               (p "Each Quarantine Credit " (gems "") " unlocks an hour of personalized education for K-12 students and beyond. Quarantine Coding Club is the most flexible online educational experience there is:")
+               (ul 
+                 (padded-li "We have " (b "tons of coding " (a href:"#topics" "topics")) " to choose from, with curriculum changing daily.")
+                 (padded-li (b "Current Availability") ": weekdays, 12pm-4pm PST.") 
+                 (padded-li (b "Summer Availability (June 15 - August 21)") ": 24/7.") 
+                 (padded-li "Scheduling coding classes costs " (gems "0") ", and our team will walk you through it!"))
     
     )
-  (col-lg-6
-    (picture 
-      (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path coding-club-img-path)))
-      (source type: "image/jpeg" srcset: (prefix/pathify coding-club-img-path))
-      (img src: (prefix/pathify coding-club-img-path) 
-           class: "img-fluid rounded d-block w-100 border border-dark"
-           alt: "Screenshot of a Quarantine Coding Club session in action with a Coding Coach and students coding in Racket"))
+  (col-md-4
+    (img src: (prefix/pathify metacoders-diagram-path) 
+         class: "img-fluid rounded d-block w-100"
+         alt: "Diagram of the value of Quarantine Credits")
     )
   )
                (br)
@@ -128,16 +127,16 @@
 (define (topics-section)
   (jumbotron class: "mb-0"
              (container
-               (h2 class: "text-center" "What Credits Unlock" )
-               (p class: "text-center" "A credit goes a long way! You don't have to decide now, but here are some of the topics you can choose from:")
-               (card-columns (shuffle (map display-topic (topics))))
+               (h2 class: "text-center" "What Do Credits " (gems "") " Unlock?" )
+               (br)
+               (card-columns (map display-topic (topics)))
                )
              ))
 
 (define (display-topic t)
   t)
 
-(define (topic header image desc [level 'K-2nd])
+(define (topic header image desc #:level [level 'K-2nd] #:credits-per-hour [cph 1] #:coming-soon [coming-soon #f])
   (define level-color
     (cond 
       [(eq? level 'K-2nd)
@@ -148,9 +147,9 @@
        "bg-warning text-white"] 
       [(eq? level '7th-10th)
        "bg-danger text-white"] 
-      [(eq? level 'adult)
+      [(eq? level 'Adults)
        "bg-dark text-white"]
-      [(eq? level 'all-ages)
+      [(eq? level 'All-ages)
        "bg-light"
        ]
       [else
@@ -162,6 +161,13 @@
     (card-body
       (h5 header)
       desc)
+    (card-footer class: "d-flex"
+      (p class: "mr-auto mb-0" (list (gems cph) "/hr"))
+      (if (eq? coming-soon #t)
+        (p class: "mb-0"  "Coming Soon!")
+        (p class: "mb-0" (list "Great for " level "!"))
+        )
+      )
     )
   )
 
@@ -177,60 +183,81 @@
          ))
 
 (define (topics)
+  (define (adventures-in-coding)
+    (topic "Adventures in Coding"
+           (card-img-top src: (prefix/pathify adventures-in-coding-img-path))
+           "Made with our youngest students in mind, K-2nd students in each session will code as a team with one of our expert Coding Coaches."
+           #:level 'K-2nd))
+
+  (define (conquering-covid)
+    (topic "Conquer COVID with Coding"
+           (card-img-top src: (prefix/pathify conquering-covid-b-img-path))
+           "Every day our Coding Coaches will have new coding projects for students that introduce new programming languages, concepts, and challenges."
+           #:level '3rd-10th))
+  
+
   (define (adventure)
     (topic "Coding for Harry Potter & Mario Fans"
            (card-video-top src: adventure-harrypotter-mp4-path)
            "Build your own adventure based Harry Potter or Mario games. Mario fans will earn special Mario game design badges, and vice versa for Harry Potter fans!"
-           '3rd-10th
+           #:level '3rd-10th
+           #:coming-soon #t
            ) 
     )
   (define (battle-arena)
     (topic "Coding for Marvel, Fortnite, & Star Wars Fans"
            (card-video-top src: battlearena-avengers-mp4-path)
            "Build battle arena-style games with characters from your favorite games and movies! Share the games you make with your new coding friends."
-           '3rd-10th
+           #:level '3rd-10th
+           #:coming-soon #t
            ) 
     )
   (define (artificial-intelligence)
     (topic "Artificial Intelligence" 
            (card-img-top src: (prefix/pathify artificial-intelligence-img-path))
            "Artificial intelligence and machine learning are two of the most misunderstood topics in computer science. We help clear up the confusion."
-           '7th-10th
+           #:level '7th-10th
+           #:coming-soon #t
            ) 
     )
   (define (zoo-animals)
     (topic "Adventures in Coding and Zoo Animals" 
            (card-video-top src: healer-zoo-mp4-path)
            "Animals and computers have more in common than you might think! Learn to code by creating games and stories with animal characters."
-           'K-2nd
+           #:level 'K-2nd
+           #:coming-soon #t
            ) 
     )
   (define (cartoons)
     (topic "Adventures in Coding and Cartoons" 
            (card-video-top src: clicker-cartoon-mp4-path)
            "All kids like watching cartoons. Smart kids like coding their own cartoons."
-           'K-2nd
+           #:level 'K-2nd
+           #:coming-soon #t
            ) 
     )
   (define (farm-animals)
     (topic "Adventures in Coding and Farm Animals" 
            (card-video-top src: healer-animal-mp4-path)
            (p "A farm is a system. So is a field, so are the crops, and so are the animals. It’s " (b "never") " too early to learn Systems Thinking.")
-           'K-2nd
+           #:level 'K-2nd
+           #:coming-soon #t
            ) 
     )
   (define (pokemon-for-k-2)
     (topic "Adventures in Coding and Pokemon" 
            (card-video-top src: clicker-pokemon-mp4-path)
            "Pokemon fans of any age can write about their love of Pokemon. We help kids write about what they love with code!"
-           'K-2nd
+           #:level 'K-2nd
+           #:coming-soon #t
            ) 
     )
   (define (survival)
     (topic "Coding for Minecraft & Pokemon Fans" 
            (card-video-top src: survival-minecraft-mp4-path)
            "Learn how to build survival-style video games with other kids who love these video games!"
-           '3rd-10th
+           #:level '3rd-10th
+           #:coming-soon #t
            ) 
     )
 
@@ -238,67 +265,78 @@
     (topic "Don't Teach Coding: Until You Take This Class" 
            (card-img-top src: (prefix/pathify dont-teach-coding-img-path))
            "“Don’t Teach Coding” is a radical, humanities-first approach to teaching coding. It was written by the Co-Founders of Metacoders. This class for teachers is taught by them."
-           'adult
+           #:level 'Adult
+           #:credits-per-hour 2
+           #:coming-soon #t
            ) 
     )
   (define (metacognition)
     (topic "Metacognition" 
            (card-img-top src: (prefix/pathify metacognition-img-path))
            "This class teaches anyone with a brain how brains work. It’s the instruction manual for the brain and mind – the one scientists have been piecing together for decades."
-           'all-ages
+           #:level 'All-ages
+           #:coming-soon #t
            ) 
     )
   (define (discord-bots)
     (topic "Discord Bots" 
            (card-img-top src: (prefix/pathify discord-img-path))
            "Coding your own chat bot is an advanced and powerful topic. Bots can be used for community-building, educational technology, and business logic."
-           'all-ages 
+           #:level 'All-ages 
+           #:coming-soon #t
            ) 
     )
   (define (programming-language-development)
     (topic "Programming Language Development" 
            (card-img-top src: (prefix/pathify racket-logo-img-path))
            "Language Oriented Programming is on the cutting edge of research and development. It also happens to be a core skillset at MetaCoders."
-           '7th-10th 
+           #:level '7th-10th 
+           #:coming-soon #t
            ) 
     )
   (define (web-development)
     (topic "Web Development" 
            (card-img-top src: (prefix/pathify web-development-img-path))
            "Full-stack web development is one of the most sought-after skillsets in the industry right now. Learn your frontends from your backends, your ORMs from your SQLs, your Javas from your JavaScripts."
-           '7th-10th
+           #:level '7th-10th
+           #:coming-soon #t
            ) 
     )
   (define (graphic-design)
     (topic "Graphic Design with Code" 
            (card-img-top src: (prefix/pathify graphic-design-img-path))
            "Visual communication is almost always an end-goal of any end-user application. But code can only communicate as beautifully and clearly as its graphic designers can."
-           '7th-10th
+           #:level '7th-10th
+           #:coming-soon #t
            ) 
     )
   (define (video-editing)
     (topic "Video Editing with Code" 
            (card-img-top src: (prefix/pathify video-editing-img-path))
            "The language of film is one that most people comprehend, but few can “speak.” Like coding, it is a skillset in short supply worldwide."
-           '3rd-10th
+           #:level '3rd-10th
+           #:coming-soon #t
            ) 
     )
   (define (computer-music)
     (topic "Coding for Musicians" 
            (card-img-top src: (prefix/pathify music-img-path))
            "Multiply the number of musical instruments you’ve heard of by 10,000. With the power of MIDI, anyone can play music, write it, and even create their own digital instruments."
-           '7th-10th
+           #:level '7th-10th
+           #:coming-soon #t
            ) 
     )
 
 
   (list 
-    (zoo-animals)
-    (cartoons)
+    (adventures-in-coding)
+    (conquering-covid)
     (farm-animals)
     (pokemon-for-k-2)
     (adventure)
     (survival)
+    (zoo-animals)
+    (cartoons)
     (battle-arena)
     (dont-teach-coding)
     (metacognition)
@@ -312,13 +350,15 @@
     ))
 
 
-(define (club-description-section)
+(define (more-description-section)
   (jumbotron  class: "mb-0"
               style: (properties background: "white")
               (container
                 (row
                   (col-lg-6 class: "pl-lg-5"
-                            (h2 "Learn Coding Today & Join our Educational Community Co-op")
+                            (h2 (list"Education Takes a " 
+                                  (span style: (properties color: "red" text-decoration: "line-through") "School") 
+                                  " Village"))
                             (br)
                             @list{
                             @b{Quarantine Coding Club} is a chance for students to @b{learn coding and technology} with the guidance of @b{live instructors} while being able to @b{socialize with their peers}. Our goal is to @b{provide zero- to low-cost education} during quarantine by crafting a @b{thriving community} of educators, parents, and students.
@@ -327,20 +367,13 @@
                             @li{Students learn @b{new coding skills} every session. Educational activities change daily!}
                             @li{Average @b{1:5 teacher to student ratio} allows our Coding Coaches to engage students in @b{interactive, personalized, interdisciplinary experiences}.}
                             @li{Novel digital classroom models give students the @b{ability to choose} their educational activities, @b{significantly increasing student satisfaction}.}
-                          @li{Sign up for any 1-hr session that fits your schedule using @b{Quarantine Credits}; purchase Quarantine Credits or @b{earn them for free by volunteering} your time and skills.}
-                            @li{Great for coders of all skill levels. Sessions are available for @b{K-2nd}, @b{3rd-6th}, and @b{7th-Young Adult}.}
+                          @li{Purchase Quarantine Credits or @b{earn them for free by volunteering} your time and skills.}
+                            @li{Great for coders of all skill levels. Sessions are available for @b{K-2nd}, @b{3rd-6th}, @b{7th-10th}, @b{11th-12th}, @b{College}, and @b{Lifelong Learners}.}
                             @li{Our goal is to @b{make learning coding fun} while we're all stuck at home.}
                             }})
                   (col-lg-6 class: "pr-lg-5"
                             (div class:"embed-responsive embed-responsive-16by9"
                                  (iframe class:"embed-responsive-item" src:"https://www.youtube.com/embed/GVzxUtfTLGE"))
-                            (br)
-                            (picture 
-                              (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path adventures-in-coding-img-path)))
-                              (source type: "image/jpeg" srcset: (prefix/pathify adventures-in-coding-img-path))
-                              (img src: (prefix/pathify adventures-in-coding-img-path) 
-                                   class: "img-fluid rounded d-block w-100 border border-dark"
-                                   alt: "Two young girls learning how to code together on a chromebook"))
                             ))
                 )
               )
@@ -394,7 +427,8 @@
                       margin-bottom: 0
                       background-position: "center"
                       background-size: "initial"
-                      position: "relative")
+                      position: "relative"
+                      height: 400)
              class: "d-flex align-items-center"
              role: "img"
              `aria-label: "background image"
@@ -461,8 +495,6 @@
 (define (faq-section)
   (local-require website-js/components/accordion-cards)
   (jumbotron  class: "mb-0"
-              style: (properties background: "white"
-                                 )
               (container
                 (h2 class: "text-center" "Frequently Asked Questions")
                 (br)
