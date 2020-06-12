@@ -51,12 +51,13 @@
 (row
   (col-md-8
                (h2 "Buy Quarantine Credits " (gems "") ", Unlock Everything!")
-               (p "Each Quarantine Credit " (gems "") " unlocks an hour of personalized education for K-12 students and beyond. Quarantine Coding Club is the most flexible online educational experience there is:")
+               (p "Each Quarantine Credit " (gems "") " unlocks an hour of personalized education for K-10 students and beyond. Quarantine Coding Club is the most flexible online educational experience there is:")
                (ul 
-                 (padded-li "We have " (b "tons of coding " (a href:"#topics" "topics")) " to choose from, with curriculum changing daily.")
-                 (padded-li (b "Current Availability") ": weekdays, 12pm-4pm PST.") 
-                 (padded-li (b "Summer Availability (June 15 - August 21)") ": 24/7.") 
-                 (padded-li "Scheduling coding classes costs " (gems "0") ", and our team will walk you through it!"))
+                 (padded-li "We have " (b "tons of coding " (a href:"#topics" "topics")) " to choose from!")
+                 (padded-li (b "Summer Availability (June 15 - August 21)") ": Weekdays, 12pm-4pm PST.") 
+                 (padded-li "Students can " (b "join at the beginning of any hour ") "(12pm noon, 1pm, 2pm, 3pm) and stay for the entire hour. At the end of the hour, students can leave or continue on for another hour to maximize the experience.")
+                 (padded-li "Students will learn different coding topics " (b "at their own pace") ", guided by an experienced Coding Coach.")
+                 )
     
     )
   (col-md-4
@@ -136,27 +137,25 @@
 (define (display-topic t)
   t)
 
-(define (topic header image desc #:level [level 'K-2nd] #:credits-per-hour [cph 1] #:coming-soon [coming-soon #f])
-  (define level-color
+(define (topic header image desc #:card-color [color 'light] #:level [level 'K-2nd] #:credits-per-hour [cph 1] #:coming-soon [coming-soon #f])
+  (define card-color
     (cond 
-      [(eq? level 'K-2nd)
+      [(eq? color 'info)
        "bg-info text-white"] 
-      [(eq? level '3rd-6th)
+      [(eq? color 'success)
        "bg-success text-white"] 
-      [(eq? level '3rd-10th)
+      [(eq? color 'warning)
        "bg-warning text-white"] 
-      [(eq? level '7th-10th)
+      [(eq? color 'danger)
        "bg-danger text-white"] 
-      [(eq? level 'Adults)
+      [(eq? color 'dark)
        "bg-dark text-white"]
-      [(eq? level 'All-ages)
+      [(eq? color 'light)
        "bg-light"
        ]
-      [else
-        "bg-secondary text-white"] 
       )
     )
-  (card class: level-color 
+  (card class: card-color 
         image
     (card-body
       (h5 header)
@@ -199,17 +198,19 @@
   (define (adventure)
     (topic "Coding for Harry Potter & Mario Fans"
            (card-video-top src: adventure-harrypotter-mp4-path)
-           "Build your own adventure based Harry Potter or Mario games. Mario fans will earn special Mario game design badges, and vice versa for Harry Potter fans!"
+           "Build your own adventure based Harry Potter or Mario games. Mario fans will earn special Mario game design badges, and vice versa for Harry Potter fans! Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
+           #:card-color 'info
            #:level '3rd-10th
-           #:coming-soon #t
+           #:coming-soon #f
            ) 
     )
   (define (battle-arena)
     (topic "Coding for Marvel, Fortnite, & Star Wars Fans"
            (card-video-top src: battlearena-avengers-mp4-path)
-           "Build battle arena-style games with characters from your favorite games and movies! Share the games you make with your new coding friends."
+           "Build battle arena-style games with characters from your favorite games and movies! Share the games you make with your new coding friends. Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
+           #:card-color 'warning
            #:level '3rd-10th
-           #:coming-soon #t
+           #:coming-soon #f
            ) 
     )
   (define (artificial-intelligence)
@@ -255,9 +256,10 @@
   (define (survival)
     (topic "Coding for Minecraft & Pokemon Fans" 
            (card-video-top src: survival-minecraft-mp4-path)
-           "Learn how to build survival-style video games with other kids who love these video games!"
+           "Learn how to build survival-style video games with other kids who love these video games! Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
+           #:card-color 'light
            #:level '3rd-10th
-           #:coming-soon #t
+           #:coming-soon #f
            ) 
     )
 
@@ -326,29 +328,87 @@
            #:coming-soon #t
            ) 
     )
+  (define (endless-runner)
+    (topic "Endless Runner Game" 
+           (card-img-top src: (prefix/pathify adventures-in-coding-img-path))
+           "Students will use a typed coding language to code and customize a multi-staged game in the style of Temple Run and Super Mario Run. Students can theme their game with provided Mario, Harry Potter, or Star Wars assets complete with items to collect and things to avoid. Students will use an online coding editor. No installation needed."
+           #:card-color 'danger
+           #:level '3rd-10th
+           #:coming-soon #f
+           ) 
+    )
+  (define (maze-game)
+    (topic "Maze Game" 
+           (card-img-top src: (prefix/pathify conquering-covid-b-img-path))
+           "Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure! Students can theme their game using provided Minecraft or Pokemon assets or even create their own. Students will use an online coding editor. No installation needed."
+           #:card-color 'success
+           #:level '3rd-10th
+           #:coming-soon #f
+           ) 
+    )
+  (define (paper-coding)
+    (topic "Paper Coding" 
+           (card-img-top src: (prefix/pathify paper-coding-img-path))
+           "Paper coding is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper."
+           #:card-color 'light
+           #:level 'K-2nd
+           #:coming-soon #f
+           ) 
+    )
+  (define (scratch)
+    (topic "Coding with Scratch" 
+           (card-img-top src: (prefix/pathify scratch-img-path))
+           "Our Coding Coaches will guide your children through a variety of projects using the Scratch programming language."
+           #:card-color 'dark
+           #:level 'K-10th
+           #:coming-soon #f
+           ) 
+    )
+  (define (digital-art)
+    (topic "Coding Digital Art" 
+           (card-img-top src: (prefix/pathify digital-art-img-path))
+           "Get creative with code! Generate and manipulate shapes in the text-based language Scheme. Our Coding Coaches will introduce and build your student’s confidence with universal coding tools and terms like functions, definitions, and arguments -- all while creating fun pictures with code!  guide your children through a variety of text-based coding art projects using WeScheme."
+           #:card-color 'warning
+           #:level '3rd-10th
+           #:coming-soon #f
+           ) 
+    )
+  (define (3d-exploration)
+    (topic "3D Exploration" 
+           (card-img-top src: (prefix/pathify 3d-exploration-img-path))
+           "The magic of turning code into an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing interactive worlds that they can walk (or fly!) through."
+           #:card-color 'info
+           #:level '3rd-10th
+           #:coming-soon #f
+           ) 
+    )
 
 
   (list 
-    (adventures-in-coding)
-    (conquering-covid)
-    (farm-animals)
-    (pokemon-for-k-2)
+    ;(adventures-in-coding)
+    ;(conquering-covid)
+    ;(farm-animals)
+    ;(pokemon-for-k-2)
     (adventure)
     (survival)
-    (zoo-animals)
-    (cartoons)
+    ;(zoo-animals)
+    ;(cartoons)
     (battle-arena)
-    (dont-teach-coding)
-    (metacognition)
-    (discord-bots)
-    (artificial-intelligence)
-    (web-development)
-    (graphic-design)
-    (video-editing)
-    (computer-music)
-    (programming-language-development)
-    ))
-
+    ;(dont-teach-coding)
+    ;(metacognition)
+    ;(discord-bots)
+    ;(artificial-intelligence)
+    ;(web-development)
+    ;(graphic-design)
+    ;(video-editing)
+    ;(computer-music)
+    ;(programming-language-development)
+    (endless-runner)
+    (maze-game)
+    (paper-coding)
+    (scratch)
+    (digital-art)
+    (3d-exploration)))
 
 (define (more-description-section)
   (jumbotron  class: "mb-0"
@@ -501,12 +561,12 @@
                 (accordion-card #:header (h4 "General")
                                 (ol
                                   (li (b "How do Quarantine Credits work?") " Each Quarantine Credit can be applied to one 1 hour online session. You can apply the credits you purchase to any of our unfilled scheduled sessions. You do not have to apply all of your purchased credits all at once. We keep track of how many credits each customer has so that you can wait to apply them until a time that is convenient for you!")
-                                  (li (b "I purchased Quarantine Credits! Now, how do I use them to sign up for Coding Club sessions?") " If you'd like to join our classes in May or the first half of June: After you purchase, you'll be directed to fill out a short form to send us your students' registration information and your preferred schedule. If you purchase credits during our normal business hours (Monday-Friday 9am-5pm PST), someone from our team will be notified and will email you within the hour to confirm your registration. If you do not receive this email within 2 hours, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to help you get enrolled in any of our unfilled sessions.") 
-                                  (li (b "How many sessions should I enroll my student in?") " We recommend no more than 1 session per day. Sessions within the same day will essentially be covering the same material. The material for sessions varies significantly from day-to-day.")
-                                  (li (b "Do I need to install anything in order to participate?") " Our online educational community is housed on the free platform Discord, which can be installed on any laptop. You can find installation and account setup instructions for Discord " (a href: "https://support.discord.com/hc/en-us/articles/360033931551-Getting-Started" "here") ". If you are using a chromebook, you can use the browser-version of Discord. During a session, Coaches may walk students through the installation of specific coding language environments necessary for that days' lesson.") 
-                                  (li (b "Can I still sign up for a session that starts today?") " You can sign up for any scheduled session, that is not yet full, up until 2 hours before the session begins. Please note: at this time, a customer service representative will email you after your purchase to help schedule your sessions. However, we are currently in the process of building an interface for customers to apply their credits to sessions themselves.") 
+                                  (li (b "I purchased Quarantine Credits! Now, how do I use them to sign up for Coding Club sessions?") " After you purchase, you'll be directed to fill out a short form to send us your students' registration information. Once you have registered, someone from our team will be notified and will email you within the hour to confirm your registration. If you do not receive this email within 2 hours, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to confirm your registration.") 
+                                  (li (b "How many sessions should I enroll my student in?") " Your child can stay online with us from 12pm - 4pm PST.  Each session starts on the hour, and students can choose to end a session or continue on at each hour mark. Remember, coding is a skill just like playing piano or learning a foreign language: the more time students spend on coding, the stronger their coding skills will become. And with so many fun topics to choose from, students will always be learning new skills!")
+                                  (li (b "Do I need to install anything in order to participate?") " Some of our topics will require installing software.  If you are unable or unwilling to install software on your device, there are other topics that do not require anything to be installed.") 
+                                  (li (b "Can I still sign up for a session that starts today?") " Once you purchase Quarantine Credits, a customer service representative will contact you and send a video conferencing link along with information about scheduling.") 
                                   (li (b "What deals/coupons do you have available?") " We have bulk discount packages that are always available for purchase above. The more credits you purchase in 1 transaction, the less each credit costs.") 
-                                  (li (b "What equipment do I need in order to participate?") " All you need to participate in our Quarantine Coding Club is a computer, a keyboard, and an internet connection! We also ask students to bring paper and pencil to sessions as well.") 
+                                  (li (b "What equipment do I need in order to participate?") " All you need to participate in our Quarantine Coding Club is a computer, a keyboard, and an internet connection! We also ask students to bring paper and pencil to sessions as well. Some of our topics will require that software be installed; if your device doesn’t allow for that, your child can choose another topic.") 
                                   (li (b "Can my 2 or more children share the credits I purchase?") " Students who live within the same household can share credits.") 
                                   (li (b "If my 2 children are sharing 1 laptop, do we pay 2 Quarantine Credits per session or 1?") " Each device will require 1 Quarantine Credit. We understand parents don't always have enough devices for all their students. Clearly, two students who are sharing 1 laptop can't code at the same time, so we are treating each device as if it is one student at this time.") 
                                   (li (b "Can parents sit in on the session?") " Yes! Parents observation and participation is welcome and encouraged!") 
@@ -516,15 +576,15 @@
                                 )
                 (accordion-card #:header (h4 "Summer")
                                 (ol
-                                  (li (b "Do I really not need to schedule my Quarantine Credits in advance?") "That's right! Throughout the summer, from 9am-4pm PST, Monday-Friday, just have your student sign into our Discord server, and we will teach them coding! As students \"spend\" their Quarantine Credits, we'll send you an update if your Quarantine Credit balance is running low.") 
-                                  (li (b "How many Quarantine Credits should I purchase for this summer?") "You can do a quick estimate by multiplying the number of weeks x 5 days/week x hours per day x number of students. For example, if you have 1 child that you want to register for 3 hours per day for 5 weeks, you'd purchase: (5 weeks x 5 days/week x 3 hours per day x 1 student) = 75 credits.") 
+                                  (li (b "Do I really not need to schedule my Quarantine Credits in advance?") " That's right! Throughout the summer, from 12pm noon-4pm PST, Monday-Friday, just have your student join our emailed video conferencing link, and we will teach them coding! As students \"spend\" their Quarantine Credits, we'll send you an update if your Quarantine Credit balance is running low.") 
+                                  (li (b "How many Quarantine Credits should I purchase for this summer?") " You can do a quick estimate by multiplying the number of weeks x 5 days/week x hours per day x number of students. For example, if you have 1 child that you want to register for 3 hours per day for 5 weeks, you'd purchase: (5 weeks x 5 days/week x 3 hours per day x 1 student) = 75 credits.") 
                                   )
                                 )
                 (accordion-card #:header  
                                 (h4 "Volunteers")
                                 (ol
-                                  (li (b "I'm interested in volunteering... what kinds of volunteer opportunities are there?") " Volunteers help in a variety of ways! Some volunteers are like traffic controllers, helping direct students to their preferred educational activities. Other volunteers help run targeted educational activities. Still other volunteers lead 5-minute stretch and exercise breaks to help get students moving! We believe volunteering should always be fun, so we'll help you find something that matches your interests.")
-                                  (li (b "Can I get free Quarantine Credits for my children by volunteering?") " This is the best part about being an educational co-op! By putting in your time and energy, you can get free educational opportunities for your children. Volunteers can receive 1 Quarantine Credit for every 30 minutes of volunteer time (that's 1-hr of education for kids for every 30 minutes of volunteer time.)")
+                                  (li (b "I'm interested in volunteering... what kinds of volunteer opportunities are there?") " Volunteers help in a variety of ways! Some volunteers are like traffic controllers, helping direct students to their preferred educational activities. Other volunteers help run targeted educational activities. We believe volunteering should always be fun, so we'll help you find something that matches your interests.")
+                                  (li (b "Can I get free Quarantine Credits for my children by volunteering?") " This is the best part about being an educational co-op! By putting in your time and energy, you can get free educational opportunities for your children. Volunteers can receive 1 Quarantine Credit for every 1-hr of volunteer time (that's 1-hr of education for kids for every 1-hr of volunteer time.)")
                                   (li (b "As a volunteer, can I gift my free Quarantine Credits to someone else?") " Absolutely! We have grandparents who volunteer and gift their credits to their grandchildren. Same with aunts and uncles for their nieces and nephews. You can also gift credits to someone outside your family.")
                                   (li (b "I want to sign-up as a volunteer! What do I need to do?") " We're so excited to have you join our community! The first step is to fill out the volunteer interest form " (a href: "https://bit.ly/metacoders-volunteer-form" "here") ". After that, we'll follow-up with you over email with next steps.")
                                   ))
