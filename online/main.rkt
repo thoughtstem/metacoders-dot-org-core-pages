@@ -330,7 +330,7 @@
     )
   (define (endless-runner)
     (topic "Endless Runner Game" 
-           (card-img-top src: (prefix/pathify adventures-in-coding-img-path))
+           (card-video-top src: endless-runner-mp4-path)
            "Students will use a typed coding language to code and customize a multi-staged game in the style of Temple Run and Super Mario Run. Students can theme their game with provided Mario, Harry Potter, or Star Wars assets complete with items to collect and things to avoid. Students will use an online coding editor. No installation needed."
            #:card-color 'danger
            #:level '3rd-10th
@@ -339,7 +339,7 @@
     )
   (define (maze-game)
     (topic "Maze Game" 
-           (card-img-top src: (prefix/pathify conquering-covid-b-img-path))
+           (card-video-top src: maze-mp4-path)
            "Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure! Students can theme their game using provided Minecraft or Pokemon assets or even create their own. Students will use an online coding editor. No installation needed."
            #:card-color 'success
            #:level '3rd-10th
