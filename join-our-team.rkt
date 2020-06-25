@@ -18,8 +18,8 @@
                              #:defer-css #t
          (include-p5-js)
           (jumbotron-header-section)
-          (two-ways-to-work-with-metacoders)
-          (two-other-ways-to-help-metacoders)
+          (main-way-to-work-with-metacoders)
+          (other-ways-to-help-metacoders)
           (our-values))))
 
 (define (jumbotron-header-section)
@@ -30,7 +30,7 @@
     #:image-path join-our-team-banner-path
     #:alt-tag "College student mentoring junior high school boy in computer science and coding at university"))
 
-(define (two-ways-to-work-with-metacoders)
+(define (main-way-to-work-with-metacoders)
   (jumbotron  style: (properties
                            text-align: "center"
                            margin-bottom: 0
@@ -38,7 +38,42 @@
     (container
       (h2 "Make a Difference in Kids' Lives")
       (br)
-      (p "MetaCoders is in communities throughout the United States, and we are continuing to grow.  We are looking for candidates who support our mission of a world with more computer science education. Our current employment opportunities are:")
+      (p "MetaCoders is in communities throughout the United States, running classes for students around the world online, and continuing to grow.  We are looking for individuals who support our mission of a world with more computer science education. Our current volunteer opportunities are:")
+      (br)
+      (div class: "d-flex col-lg-6 col-sm-6 col-xs-12 my-3 px-3" style: "margin: 0 auto;"
+           (card ;class: "h-100"
+             style: (properties overflow: "hidden"
+                                'flex: 1)
+             (picture 
+               (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path summer-camp-intern-img-path)))
+               (source type: "image/jpeg" srcset: (prefix/pathify summer-camp-intern-img-path))
+               (card-img-top src: (prefix/pathify summer-camp-intern-img-path)
+                             alt: "Summer camp volunteer in computer science education bonds with a young boy at camp"))
+             (card-body
+               (card-title "Volunteer with Us Online!")
+               (card-text
+                 (ul style: "text-align:left;"
+                   (li "Help bring coding education to students around the globe")
+                   (li "Work with our team of skilled educators to build your communication and teaching skills")
+                   (li "Learn how to design engaging curriculum")
+                   (li "Build your personal technical and coding skills")
+                   (li "Delve into what it takes to run a non-profit")
+                   )
+                 ))
+             (card-footer class: "p-0 m-0"
+                          (a style: (properties text-decoration: "none") href: summer-camp-intern-top-path 
+                             (button-primary class: "btn-block rounded-0" "Learn More")))))    
+      )))
+
+
+(define (other-ways-to-help-metacoders)
+  (jumbotron  style: (properties
+                           text-align: "center"
+                           margin-bottom: 0)
+    (container
+      (h2 "Other Ways You Can Help")
+      (br)
+      (p "In addition to volunteer opportunities, we're often looking for employees to help us maximize student outcomes in our classrooms.")
       (br)
       (responsive-row #:columns 2 #:d-flex? #t
         (card ;class: "h-100"
@@ -68,61 +103,8 @@
             (card-text "Help us connect coaches and students in your area!"))
           (card-footer class: "p-0 m-0" 
             (a style: (properties text-decoration: "none") href: tech-coords-top-path 
-                     (button-primary class: "btn-block rounded-0" "Learn More"))))))))
-
-
-(define (two-other-ways-to-help-metacoders)
-  (jumbotron  style: (properties
-                           text-align: "center"
-                           margin-bottom: 0)
-    (container
-      (h2 "Other Ways You Can Help")
-      (br)
-      (p "In addition to employment opportunities, we're always looking for volunteers and interns to help us maximize student outcomes in our classrooms.")
-      (br)
-      (responsive-row #:columns 3 #:d-flex? #t
-        (card ;class: "h-100"
-              style: (properties overflow: "hidden"
-                                 'flex: 1)
-              (picture 
-               (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path volunteer-scientist-img-path)))
-               (source type: "image/jpeg" srcset: (prefix/pathify volunteer-scientist-img-path))
-               (card-img-top src: (prefix/pathify volunteer-scientist-img-path)
-                             alt: "Learning scientists writes notes about student progress and monitors computer science classroom"))
-          (card-body
-            (card-title "Volunteer as a Learning Scientist")
-            (card-text "Study and monitor MetaCoders classes in your local area to make sure kids have the best classroom experiences."))
-          (card-footer class: "p-0 m-0"
-            (a style: (properties text-decoration: "none") href: scientists-top-path
-              (button-primary class: "btn-block rounded-0" "Learn More"))))
-        (card ;class: "h-100"
-              style: (properties overflow: "hidden"
-                                 'flex: 1)
-              (picture 
-               (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path volunteer-coder-img-path)))
-               (source type: "image/jpeg" srcset: (prefix/pathify volunteer-coder-img-path))
-               (card-img-top src: (prefix/pathify volunteer-coder-img-path)
-                             alt: "Volunteer programmer codes drag-and-drop educational technologies for K-12 students"))
-          (card-body
-            (card-title "Volunteer as a Coder")
-            (card-text "Help us code open-source educational software that kids around the world can use to create video games, apps, and more!"))
-          (card-footer class: "p-0 m-0"
-            (a style: (properties text-decoration: "none") href: coders-top-path 
-              (button-primary class: "btn-block rounded-0" "Learn More"))))
-        (card ;class: "h-100"
-              style: (properties overflow: "hidden"
-                                 'flex: 1)
-              (picture 
-               (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path summer-camp-intern-img-path)))
-               (source type: "image/jpeg" srcset: (prefix/pathify summer-camp-intern-img-path))
-               (card-img-top src: (prefix/pathify summer-camp-intern-img-path)
-                             alt: "Summer camp intern in computer science education bonds with a young boy at camp"))
-          (card-body
-            (card-title "Intern as a Summer Camp Team Leader")
-            (card-text "Lead students in our summer camps in coding exercises and make sure they have a great first experience with coding!"))
-          (card-footer class: "p-0 m-0"
-            (a style: (properties text-decoration: "none") href: summer-camp-intern-top-path 
-              (button-primary class: "btn-block rounded-0" "Learn More"))))))))
+                     (button-primary class: "btn-block rounded-0" "Learn More")))))   
+      )))
 
 (define (our-values)
   (l-system  #:step 50

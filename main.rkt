@@ -11,7 +11,7 @@
           "join-our-team.rkt"
           "online.rkt"
           "tech-coords.rkt"
-          "summer-interns.rkt"
+          "volunteer-online.rkt"
           "coders.rkt"
           "city-search.rkt"
           "checkout-fail.rkt"
@@ -28,7 +28,7 @@
                        "join-our-team.rkt"
                        "online.rkt"
                        "tech-coords.rkt"
-                       "summer-interns.rkt"
+                       "volunteer-online.rkt"
                        "coders.rkt"
                        "city-search.rkt"
                        "checkout-fail.rkt"
@@ -51,7 +51,7 @@
       (join-our-team)
       (online)
       (tech-coords)
-      (summer-interns)
+      (volunteer-online)
       (coders)
       (city-search)
       (cities)
