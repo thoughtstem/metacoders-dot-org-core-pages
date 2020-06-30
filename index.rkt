@@ -12,9 +12,14 @@
   (mc-jumbotron-header
     #:title "A Different Kind of Coding Education"
     #:tagline (list "Cutting-edge learning science, with grass-roots community support to prepare kids for the future." 
-                   (br) 
-                    (a href: "/online.html"
-                       (button-primary style: (properties margin-top: 30) "Join Us Online"))
+                   (br)
+                   (div
+                     (a href: "/online.html" style: "padding-right: 10px;"
+                        (button-primary style: (properties margin-top: 30) "Join Our Online Classes"))
+                     (a href: "http://eepurl.com/dtmTTT" style: "padding-left: 10px;"
+                        (button type: "button" class: "btn btn-warning" style: (properties margin-top: 30)
+                                (i class: "fas fa-envelope")
+                                "  Join Our Mailing List")))
                     )
     #:percent-height "80vh"
     #:image-path homepage-banner-path
@@ -991,6 +996,9 @@ h1 {
 }
 
 .fab {
+    font-family: "Font Awesome 5 Brands"
+}                           
+.fas {
     font-family: "Font Awesome 5 Brands"
 }                           
 })
