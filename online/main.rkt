@@ -194,6 +194,14 @@
            "Every day our Coding Coaches will have new coding projects for students that introduce new programming languages, concepts, and challenges."
            #:level '3rd-10th))
   
+  (define (learntomod)
+    (topic "LearnToMod Minecraft"
+           (card-img-top src: (prefix/pathify conquering-covid-b-img-path))
+           "Learn how to make cool, custom Minecraft mods with our instructors on Fridays.  Tech requirements for this topic include pre-purchasing LearnToMod software ($29.99) and having a Minecraft account on Windows or Mac version 1.9."
+           #:card-color 'danger
+           #:level '3rd-10th))
+  
+  
 
   (define (adventure)
     (topic "Coding for Harry Potter & Mario Fans"
@@ -392,6 +400,7 @@
     (adventure)
     (survival)
     ;(zoo-animals)
+    (learntomod)
     ;(cartoons)
     (battle-arena)
     ;(dont-teach-coding)
@@ -434,6 +443,15 @@
                   (col-lg-6 class: "pr-lg-5"
                             (div class:"embed-responsive embed-responsive-16by9"
                                  (iframe class:"embed-responsive-item" src:"https://www.youtube.com/embed/GVzxUtfTLGE"))
+                            (br)
+                            (br)
+                            (br)
+                            (div class: "text-center"
+                                 (h4 "Not ready to order yet?")
+                                 (a href: "http://eepurl.com/dtmTTT"
+                                    (button type: "button" class: "btn btn-warning"
+                                            (i class: "fas fa-envelope")
+                                            "  Join Our Mailing List for Offers & Updates")))
                             ))
                 )
               )
