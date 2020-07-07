@@ -34,8 +34,8 @@
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
-    #:title "A Different Way of Learning Coding"
-    #:tagline "Join the MetaCoders Online Community. We'll Teach You. All Ages Welcome." 
+    #:title "Online Coding Summer Camps for K-10th"
+    #:tagline "Join the MetaCoders Online Community. We'll Teach You How to Have Fun While Coding." 
     #:percent-height "60vh"
     #:image-path online-banner-path
     #:alt-tag "Young boy coding a video game on his laptop while he's in quarantine during the COVID-19 pandemic."))
@@ -43,7 +43,7 @@
 
 (define (value-prop-section)
   (define (padded-li . content)
-    (li style: (properties 'padding-top: 30) content)
+    (li style: (properties 'padding-top: 10) content)
     )
   (jumbotron class: "mb-0"
              style: (properties background: "white")
@@ -57,6 +57,7 @@
                  (padded-li (b "Summer Availability (June 15 - August 21)") ": Weekdays, 12pm-4pm PST.") 
                  (padded-li "Students can " (b "join at the beginning of any hour ") "(12pm noon, 1pm, 2pm, 3pm) and stay for the entire hour. At the end of the hour, students can leave or continue on for another hour to maximize the experience.")
                  (padded-li "Students will learn different coding topics " (b "at their own pace") ", guided by an experienced Coding Coach.")
+                 (padded-li (b "JULY BRING-A-FRIEND PROMOTION: ") "Bring a friend to class for free! Plus, get an extra Quarantine Credit half off for every friend! Email " (a href:"mailto:contact@metacoders.org" "contact@metacoders.org") " for more information!")
                  )
     
     )
