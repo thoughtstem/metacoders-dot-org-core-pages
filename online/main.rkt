@@ -358,7 +358,7 @@
   (define (paper-coding)
     (topic "Coding Adventures" 
            (card-img-top src: (prefix/pathify paper-coding-img-path))
-           "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper. M-F, 12-2PM PST."
+           "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper. M-F, 1pm-2pm and 3pm-4pm PST."
            #:card-color 'light
            #:level 'K-2nd
            #:coming-soon #f
