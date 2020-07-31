@@ -110,7 +110,7 @@
                  (card-body
                   (p "Now we need your student's info! Please fill out the registration information for each student:")
                   (a id: "formUrl"
-                     href:"https://docs.google.com/forms/d/e/1FAIpQLSeo6vHe7gyNLl-BLNfOWIGmHyj3tN7Y7WNhsfH49DokINyt5Q/viewform"
+                     href:"https://docs.google.com/forms/d/e/1FAIpQLSe7qfncd3qyVlylYsc9rph6k86MstLnbVIUmBXUhQ5slSbsww/viewform"
                      class:"btn btn-primary"
                      'role: "button"
                      "CLICK HERE")))

@@ -23,7 +23,7 @@
       (p "MetaCoders offers several opportunities for volunteers to teach and learn with us! As a volunteer you can help bring computer science education to students around the world in our online classes while building your own skills in coding, teaching, curriculum design, and administration. Volunteer hours are very flexible and easily scheduled; join us for one hour a week or up to twenty hours a week! MetaCoders volunteers also earn Quarantine Credits for the students in their life. For every 1 hour you volunteer, you earn 1 free hour for your student. Bring high-quality education to your child, cousin, niece, nephew, or neighbor!")
       (p "If you have any questions, please email our Volunteer Coordinator at " (a href: "mailto:volunteer@metacoders.org" target: "_blank" "volunteer@metacoders.org")  ". Join our community by filling out the application below!")
       )
-    #:application-link "https://forms.gle/Vw1ZCRiLzRxdGwoZA"
+    #:application-link "https://docs.google.com/forms/d/e/1FAIpQLSeGAMm6a6wpmFkikMa5k6QbK9rE3r3_rb22GDLx6UGWi5jdMg/viewform"
     ))
 
 (define (summer-camp-interns-top)
