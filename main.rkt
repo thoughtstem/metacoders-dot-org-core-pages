@@ -9,8 +9,10 @@
           "scientists.rkt"
           "terms-and-conditions.rkt"
           "join-our-team.rkt"
+          "online.rkt"
+          "online-fall.rkt"
           "tech-coords.rkt"
-          "summer-interns.rkt"
+          "volunteer-online.rkt"
           "coders.rkt"
           "city-search.rkt"
           "checkout-fail.rkt"
@@ -25,8 +27,10 @@
                        "scientists.rkt"
                        "terms-and-conditions.rkt"
                        "join-our-team.rkt"
+                       "online.rkt"
+                       "online-fall.rkt"
                        "tech-coords.rkt"
-                       "summer-interns.rkt"
+                       "volunteer-online.rkt"
                        "coders.rkt"
                        "city-search.rkt"
                        "checkout-fail.rkt"
@@ -47,8 +51,10 @@
       (scientists)
       (terms-and-conditions)
       (join-our-team)
+      (online)
+      (online-fall)
       (tech-coords)
-      (summer-interns)
+      (volunteer-online)
       (coders)
       (city-search)
       (cities)
