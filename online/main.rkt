@@ -55,9 +55,9 @@
                (ul 
                  (padded-li "We have " (b "tons of coding " (a href:"#topics" "topics")) " to choose from!")
                  (padded-li (b "Summer Availability (June 15 - August 21)") ": Weekdays, 12pm-4pm PST.") 
+                 (padded-li (b "Fall Availability (August 24 - December 22)") ": Weekdays, 1pm-4pm PST.") 
                  (padded-li "Students can " (b "join at the beginning of any hour ") "(12pm noon, 1pm, 2pm, 3pm) and stay for the entire hour. At the end of the hour, students can leave or continue on for another hour to maximize the experience.")
                  (padded-li "Students will learn different coding topics " (b "at their own pace") ", guided by an experienced Coding Coach.")
-                 (padded-li (b "JULY BRING-A-FRIEND PROMOTION: ") "Bring a friend to class for free! Plus, get an extra Quarantine Credit half off for every friend! Email " (a href:"mailto:contact@metacoders.org" "contact@metacoders.org") " for more information!")
                  )
     
     )
@@ -199,7 +199,7 @@
     (topic "LearnToMod Minecraft"
            (card-img-top src: (prefix/pathify conquering-covid-b-img-path))
            (list "Learn how to make cool, custom Minecraft mods with our instructors on Fridays.  Tech requirements for this topic include pre-purchasing " (a href: "https://www.learntomod.com" style: "color:#444444;" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
-           #:card-color 'danger
+           #:card-color 'dark
            #:level '3rd-10th))
   
   
@@ -358,8 +358,8 @@
   (define (paper-coding)
     (topic "Coding Adventures" 
            (card-img-top src: (prefix/pathify paper-coding-img-path))
-           "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper. M-F, 1pm-2pm and 3pm-4pm PST."
-           #:card-color 'light
+           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper. " (b "M-F, 1pm-2pm and 3pm-4pm PST"))
+           #:card-color 'danger
            #:level 'K-2nd
            #:coming-soon #f
            ) 
