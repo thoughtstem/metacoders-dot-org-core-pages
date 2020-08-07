@@ -131,7 +131,7 @@
              (container
                (h2 class: "text-center" "What Do Credits " (gems "") " Unlock?" )
                (br)
-               (card-columns (map display-topic (topics)))
+               (apply (curry responsive-row #:columns 3) (map display-topic (topics)))
                )
              ))
 
@@ -140,7 +140,11 @@
 
 (define (topic header image desc #:card-color [color 'light] #:level [level 'K-2nd] #:credits-per-hour [cph 1] #:coming-soon [coming-soon #f])
   (define card-color
-    (cond 
+    (cond
+      [(eq? color 'primary)
+       "bg-primary text-white"]
+      [(eq? color 'secondary)
+       "bg-secondary text-white"] 
       [(eq? color 'info)
        "bg-info text-white"] 
       [(eq? color 'success)
@@ -156,7 +160,7 @@
        ]
       )
     )
-  (card class: card-color 
+  (card class: (~a "h-100 " card-color) 
         image
     (card-body
       (h5 header)
@@ -198,8 +202,8 @@
   (define (learntomod)
     (topic "LearnToMod Minecraft"
            (card-img-top src: (prefix/pathify conquering-covid-b-img-path))
-           (list "Learn how to make cool, custom Minecraft mods with our instructors on Fridays.  Tech requirements for this topic include pre-purchasing " (a href: "https://www.learntomod.com" style: "color:#444444;" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
-           #:card-color 'dark
+           (list "Learn how to make cool, custom Minecraft mods with our instructors on Fridays.  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
+           #:card-color 'primary
            #:level '3rd-10th))
   
   
@@ -208,7 +212,7 @@
     (topic "Coding for Harry Potter & Mario Fans"
            (card-video-top src: adventure-harrypotter-mp4-path)
            "Build your own adventure based Harry Potter or Mario games. Mario fans will earn special Mario game design badges, and vice versa for Harry Potter fans! Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
-           #:card-color 'info
+           #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f
            ) 
@@ -266,7 +270,7 @@
     (topic "Coding for Minecraft & Pokemon Fans" 
            (card-video-top src: survival-minecraft-mp4-path)
            "Learn how to build survival-style video games with other kids who love these video games! Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
-           #:card-color 'light
+           #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f
            ) 
@@ -341,7 +345,7 @@
     (topic "Endless Runner Game" 
            (card-video-top src: endless-runner-mp4-path)
            "Students will use a typed coding language to code and customize a multi-staged game in the style of Temple Run and Super Mario Run. Students can theme their game with provided Mario, Harry Potter, or Star Wars assets complete with items to collect and things to avoid. Students will use an online coding editor. No installation needed."
-           #:card-color 'danger
+           #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f
            ) 
@@ -350,7 +354,7 @@
     (topic "Maze Game" 
            (card-video-top src: maze-mp4-path)
            "Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure! Students can theme their game using provided Minecraft or Pokemon assets or even create their own. Students will use an online coding editor. No installation needed."
-           #:card-color 'success
+           #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f
            ) 
@@ -359,7 +363,7 @@
     (topic "Coding Adventures" 
            (card-img-top src: (prefix/pathify paper-coding-img-path))
            (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper. " (b "M-F, 1pm-2pm and 3pm-4pm PST"))
-           #:card-color 'danger
+           #:card-color 'primary
            #:level 'K-2nd
            #:coming-soon #f
            ) 
@@ -368,7 +372,7 @@
     (topic "Coding with Scratch" 
            (card-img-top src: (prefix/pathify scratch-img-path))
            "Our Coding Coaches will guide your children through a variety of projects using the Scratch programming language."
-           #:card-color 'dark
+           #:card-color 'warning
            #:level 'K-10th
            #:coming-soon #f
            ) 
@@ -377,7 +381,7 @@
     (topic "Coding Digital Art" 
            (card-img-top src: (prefix/pathify digital-art-img-path))
            "Get creative with code! Generate and manipulate shapes in the text-based language Scheme. Our Coding Coaches will introduce and build your student’s confidence with universal coding tools and terms like functions, definitions, and arguments -- all while creating fun pictures with code!  guide your children through a variety of text-based coding art projects using WeScheme."
-           #:card-color 'warning
+           #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f
            ) 
@@ -386,14 +390,14 @@
     (topic "3D Exploration" 
            (card-img-top src: (prefix/pathify 3d-exploration-img-path))
            "The magic of turning code into an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing interactive worlds that they can walk (or fly!) through."
-           #:card-color 'info
+           #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f
            ) 
     )
 
 
-  (list 
+  (list
     ;(adventures-in-coding)
     ;(conquering-covid)
     ;(farm-animals)
