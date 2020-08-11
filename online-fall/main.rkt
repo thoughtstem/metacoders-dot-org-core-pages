@@ -13,7 +13,7 @@
 (define (gems n) (span n " " (i class:"fas fa-gem")))
 
 (define (online-fall)
-  (page (list "online-fall.html") ;can't make this line to work with: online-fall-top-path
+  (page online-fall-top-path
         (normal-content-wide
           #:head (list (title "Virtual After School Coding Club from MetaCoders")
                        (meta name: "description" content: "Learn Coding from Live Instructors starting on August 24th")
