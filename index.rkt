@@ -157,7 +157,7 @@
                       alt: "Portrait of Jason Le, Senior Curriculum Manager."))))
             (col-3 class: "m-1 p-1"              
                    (picture 
-                    (img src: (prefix/pathify tall-logo-svg-path))))
+                    (img class: "h-100 w-100 p-2 bg-white rounded" src: (prefix/pathify tall-logo-svg-path))))
             (col-3 class: "m-1 p-1"
               (a href: "#" data-toggle: "modal" data-target: "#Modal-Sara"
                 (picture 
