@@ -13,9 +13,9 @@
 (define (gems n) (span n " " (i class:"fas fa-gem")))
 
 (define (online-fall)
-  (page (list "online-fall.html") ;can't make this line to work with: online-fall-top-path
+  (page online-fall-top-path
         (normal-content-wide
-          #:head (list (title "Virtual After School Coding Club from MetaCoders")
+          #:head (list (title "Virtual Coding Club from MetaCoders")
                        (meta name: "description" content: "Learn Coding from Live Instructors starting on August 24th")
                        (common-critical-css)
                        (link 'rel: "preconnect" href:"https://q.stripe.com")
@@ -25,53 +25,75 @@
           #:defer-css #t
           (include-p5-js)
           (jumbotron-header-section)
-          (value-prop-section)
-          (topics-section)
+          (updated-list-value-prop)
+          (credits-section)
           (customer-testimonial-section)
-          (more-description-section)
+          (topics-section)
           (faq-section)
           )))
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
-    #:title "Virtual After School Coding Club for K-10th"
-    #:tagline "Join the MetaCoders Online Community. We'll Teach You How to Have Fun While Coding." 
+    #:title "Virtual Coding Club"
+    #:tagline "A community of K-10th grade coders of all levels from around the world" 
     #:percent-height "60vh"
     #:image-path online-banner-path
-    #:alt-tag "Young boy coding a video game on his laptop while he's in quarantine during the COVID-19 pandemic."))
+    #:alt-tag "Young boy coding a video game on his laptop."))
 
 
-(define (value-prop-section)
+(define (updated-list-value-prop)
+  (define (padded-li . content)
+    (li style: (properties 'padding-top: 10) content))
+  (jumbotron class: "mb-0"
+             style: (properties background: "white")
+             (container
+               (h2 "Why Join MetaCoders Virtual Coding Club?")
+               (ul 
+                 (padded-li (h5 "Live-Taught on Your Schedule!") " MetaCoders knows that you and your family have a lot going on -- now more than ever! Online sessions with our Coding Coaches are offered " (b "every weekday, 1pm to 4pm PT") ". Join us on the hour daily, weekly, or whenever! Our schedule adapts to " (i "you") ".")
+                 (padded-li (h5 "Ultimate Flexibility!") " With no session enrollments required, you and your students can decide to join us five minutes in advance, if you want! The absolute low-commitment class with no stress about changing schedules or missing sessions.") 
+                 (padded-li (h5 "Customized Student Experience!") "  A range of topics offered daily allows students to design their own education experience around their interest and experience level. MetaCoders' unique Badge System allows students to move though curriculum at the pace that is right for them, track their progress, and pick up right where they left off each day.")
+                 (padded-li (h5 "Real People, Real Time!") " Learning at home doesn't have to mean learning alone. Join other coding students from around the world and our experienced Coding Coaches for a social, fun, and educational experience!"))))
+)
+
+;needs a header
+(define (updated-value-prop)
+  (jumbotron class: "mb-0"
+             (container
+              (h1 "Why Join MetaCoder's Virtual Coding Club?")
+               (responsive-row #:columns 2
+                               (sched-value-card))
+               )
+             ))
+
+;move image to bottom cap? or underlay?
+(define (value-card header image text)
+  (card class: "text-black"
+        (card-img src: image) 
+        (card-img-overlay 
+         (h3 header)
+         text)
+    ))
+
+(define (sched-value-card)
+  (value-card "High-Quality Coding Education on Your Schedule"
+              (prefix/pathify sched-value-img-path)
+              (p "MetaCoders knows that you and your family have a lot going on -- now more than ever! With our drop-in style Virtual Coding Club, you don't have to struggle to cram another daily or weekly class into your calendar. Our schedule adapts to " (i "you") ".")))
+
+
+
+(define (credits-section)
   (define (padded-li . content)
     (li style: (properties 'padding-top: 10) content)
     )
   (jumbotron class: "mb-0"
              style: (properties background: "white")
              (container
-(row
-  (col-md-8
-               (h2 "Buy Credits " (gems "") ", Unlock Everything!")
-               (p "Each Credit " (gems "") " unlocks an hour of personalized education for K-10 students and beyond. Coding Club is the most flexible online educational experience there is:")
-               (ul 
-                 (padded-li "We have " (b "tons of coding " (a href:"#topics" "topics")) " to choose from!")
-                 (padded-li (b "Fall Availability (August 24 - December 22)") ": Weekdays, 1pm-4pm PST.") 
-                 (padded-li "Students can " (b "join at the beginning of any hour ") "(1pm, 2pm, 3pm) and stay for the entire hour. At the end of the hour, students can leave or continue on for another hour to maximize the experience.")
-                 (padded-li "Students will learn different coding topics " (b "at their own pace") ", guided by an experienced Coding Coach.")
-                 )
-    
-    )
-  (col-md-4
-    (img src: (prefix/pathify metacoders-diagram-path) 
-         class: "img-fluid rounded d-block w-100"
-         alt: "Diagram of the value of Credits")
-    )
-  )
+               (h2 "Buy Credits " (gems "") " Join Anytime!")
+               (br)
+               (p "Each Credit " (gems "") " unlocks an hour of personalized education for K-10 students and beyond. " (b "Join at the beginning of any hour, and stick around for one, two or three hours at a time!") " No need to sign up or schedule for days or times.") 
                (br)
                (credit-wheel)
-               ;(learn-more-button)
-               )
-             )
-  )
+               )))
 
 (define (credit-wheel)
   (define (fancy-col x)
