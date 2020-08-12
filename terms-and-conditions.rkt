@@ -90,7 +90,7 @@
       )
     (b "Video Publishing and Privacy")
     (p "Sessions may be recorded and shared online for educational and promotional purposes. Student privacy and safety are always our utmost concern. Although students' faces may be shown, we will ensure no identifying information like names or locations are shown in any recording. If you have any further concerns, please contact us at contact@metacoders.org.")
-    (p "Note: As with any video conferencing service, sessions can be recorded by other students from their computers. MetaCoders cannot control this or how these recordings may be used. If you are concerned about your student's face being shown in potential student recordings, we recommend helping your student get started at the beginning of each session to make sure their video camera is off. You are also able to manipulate the name of your student in Zoom to show a pseudonym if you so choose. Please email us at contact@metacoders.org in advance if you plan to use a pseudonym so that we can accurately keep track of attendance in our sessions.")
+    (p "Note: As with any video conferencing service, sessions can be recorded by other students from their computers. MetaCoders cannot control this or how these recordings may be used. If you are concerned about your student's face being shown in potential student recordings, we recommend helping your student get started at the beginning of each session to make sure their video camera is off.")
     (b "Credits")
     (p "Any Credits purchased through MetaCoders have no expiration date.")
     (p "If for any reason a customer wishes to receive a refund for their purchase of Credits, they may do so for a full refund except as follows:")

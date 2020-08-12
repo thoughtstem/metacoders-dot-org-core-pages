@@ -97,21 +97,21 @@
   (cond
     [(eq? type 'one-time)
      (list
-       (credits-buy-button   20   1 0 "sku_GyG3n6kfimeXl9" KEY) ;needs new shopify sku
-       (credits-buy-button   95   5 0 "sku_GyG4rL6NDcH2SX" KEY) ;needs new shopify sku
-       (credits-buy-button  180  10 0 "sku_GyG5ryZxuC66T0" KEY) ;needs new shopify sku
-       (credits-buy-button  320  20 0 "sku_HGGukwhf6cCXLr" KEY) ;needs new shopify sku
-       (credits-buy-button  750  50 0 "sku_HGGu5QuiJLNiv9" KEY) ;needs new shopify sku
-       (credits-buy-button 1300 100 0 "sku_HGGu7oGSW24xaK" KEY) ;needs new shopify sku
+       (credits-buy-button   20   1 0 "sku_Hp2excpd8TsP6O" KEY)
+       (credits-buy-button   95   5 0 "sku_Hp2fvDejxx74qp" KEY)
+       (credits-buy-button  180  10 0 "sku_Hp2gncz7BjbzxZ" KEY)
+       (credits-buy-button  320  20 0 "sku_Hp2gbaJErzCgMC" KEY)
+       (credits-buy-button  750  50 0 "sku_Hp2gRBh6YfVjNy" KEY)
+       (credits-buy-button 1300 100 0 "sku_Hp2gYZM84N9bg0" KEY)
        ) 
      ]
     [(eq? type 'subscription)
      (list
-      (credits-subscription-buy-button   90   5 0 "plan_H1fnr6YP21Y5N8" KEY) ;needs new shopify sku
-      (credits-subscription-buy-button  170  10 0 "plan_HHOEQPY0sFRoxR" KEY) ;needs new shopify sku
-      (credits-subscription-buy-button  320  20 0 "plan_HHOH2io4UDk3z9" KEY) ;needs new shopify sku
-      (credits-subscription-buy-button  750  50 0 "plan_HHOIbEGyKflAsO" KEY) ;needs new shopify sku
-      (credits-subscription-buy-button 1200 100 0 "plan_HHOJzQdAcoMzkT" KEY) ;needs new shopify sku 
+      (credits-subscription-buy-button   90   5 0 "price_1HFOsoJbkDSuzmy7w22RzIoo" KEY) 
+      (credits-subscription-buy-button  170  10 0 "price_1HFP9tJbkDSuzmy75jqgAuNZ" KEY) 
+      (credits-subscription-buy-button  320  20 0 "price_1HFPAtJbkDSuzmy78efD3deo" KEY)
+      (credits-subscription-buy-button  750  50 0 "price_1HFPBsJbkDSuzmy7NCj1yDXu" KEY)
+      (credits-subscription-buy-button 1200 100 0 "price_1HFPCiJbkDSuzmy7KY1ErN0B" KEY)
        )
      ]
     [else

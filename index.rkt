@@ -191,7 +191,7 @@
                  (source type: "image/jpeg" srcset: (prefix/pathify eunice-img-path))
                  (img src: (prefix/pathify eunice-img-path) 
                      class: "img-fluid rounded img-link"
-                     alt: "Portrait of Eunice Baes, Customer Service Representative")))))
+                     alt: "Portrait of Eunice Baes, Customer Service Specialist")))))
           
           (staff-modal #:id "Modal-Stephen"
                        #:path stephen-img-path
@@ -235,7 +235,7 @@
           (staff-modal #:id "Modal-Eunice"
                        #:path eunice-img-path
                        #:name "Eunice Baes"
-                       #:position "Customer Service Representative"
+                       #:position "Customer Service Specialist"
                        )
           )))))
 
