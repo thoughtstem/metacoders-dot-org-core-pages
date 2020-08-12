@@ -86,8 +86,7 @@
     (li style: (properties 'padding-top: 10) content)
     )
   (jumbotron class: "mb-0"
-             style: (properties background: "white")
-             (container
+             (container class: "text-center"
                (h2 "Buy Credits " (gems "") " Join Anytime!")
                (br)
                (p "Each Credit " (gems "") " unlocks an hour of personalized education for K-10 students and beyond. " (b "Join at the beginning of any hour, and stick around for one, two or three hours at a time!") " No need to sign up or schedule for days or times.") 
@@ -101,12 +100,12 @@
          x)
     )
   (list
-    (card style: (properties border: "0px")
+    (card class: "bg-transparent" style: (properties border: "0px")
       (card-body
         (h3 class: "text-center" "Credit Bundles")
         (row (map fancy-col (credit-button-list)))))
     (br)
-    (card style: (properties border: "0px")
+    (card class: "bg-transparent" style: (properties border: "0px")
       (card-body
         (h3 class: "text-center" "Credit Subscriptions")
         (row (map fancy-col (credit-button-list #:type 'subscription)))))
