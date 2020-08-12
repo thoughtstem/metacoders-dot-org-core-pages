@@ -12,12 +12,12 @@
           (br)
           (h1 "Terms and Conditions")
           (terms-for-online-coding-club)
-          (terms-for-refunds)
-          (terms-for-late-pickup-fees)
+          ;(terms-for-refunds)
+          ;(terms-for-late-pickup-fees)
           ;(terms-for-multi-session-discounts)
-          (terms-for-students-arriving-to-class)
-          (terms-for-student-pickup-after-class)
-          (parents-in-classroom-policy)
+          ;(terms-for-students-arriving-to-class)
+          ;(terms-for-student-pickup-after-class)
+          ;(parents-in-classroom-policy)
           (terms-for-phonecalls-texts)
           (terms-for-media-policy)
           (privacy-policy)
@@ -26,7 +26,7 @@
           )))
 
 
-
+#|
 (define (terms-for-refunds)
   (container
     (h3 "MetaCoders Refund/Cancellation Policy for In-Person Classes & Camps")
@@ -40,8 +40,6 @@
       (li "No refund after the halfway point of the session."))
     (p "NOTE: These terms and conditions only apply when purchases are made on the MetaCoders website (www.metacoders.org). Purchases of MetaCoders programs made on other websites have their own Terms and Conditions which supersede these.")))
           
-
-
 (define (terms-for-late-pickup-fees)
   (container
     (h3 "MetaCoders Late Pick-up Fee")
@@ -78,10 +76,11 @@
   (container
     (h3 "")
     (p "We provide all the technological equipment that students need for our classes. Furthermore, we want to make sure our students are able to learn in a distraction-free environment, so we encourage students to leave their cell phones, laptops, and other devices at home. However, if you would like your child to have their cell phone, smart watch, or other communication device with them at class for emergency purposes, these devices should be powered off and left in a backpack during the class. If you ever need to contact your child during the class, please call our main office at 858-375-4097 or email us at contact@metacoders.org, and we will pass on information or connect you with your child as needed.")))
+|#
 
 (define (terms-for-online-coding-club)
   (container
-    (h3 "Quarantine Coding Club Terms and Conditions")
+    (h3 "Coding Club Terms and Conditions")
     (b "Student Behavior Policy and Expectations")
     (ul
       (li "Students should always be respectful of both other students and the instructor.")
@@ -90,17 +89,15 @@
       (li "Have fun!")
       )
     (b "Video Publishing and Privacy")
-    (p "Sessions will be recorded and shared with parents so that parents can see what's happening inside our digital classrooms. Session recordings may also be posted online for educational and promotional purposes. Student privacy and safety are always our utmost concern. Although students' faces may be shown, we will ensure no identifying information like names or locations are shown in any recording. If you have any further concerns, please contact us at contact@metacoders.org.")
+    (p "Sessions may be recorded and shared online for educational and promotional purposes. Student privacy and safety are always our utmost concern. Although students' faces may be shown, we will ensure no identifying information like names or locations are shown in any recording. If you have any further concerns, please contact us at contact@metacoders.org.")
     (p "Note: As with any video conferencing service, sessions can be recorded by other students from their computers. MetaCoders cannot control this or how these recordings may be used. If you are concerned about your student's face being shown in potential student recordings, we recommend helping your student get started at the beginning of each session to make sure their video camera is off. You are also able to manipulate the name of your student in Zoom to show a pseudonym if you so choose. Please email us at contact@metacoders.org in advance if you plan to use a pseudonym so that we can accurately keep track of attendance in our sessions.")
-    (b "Quarantine Credits")
-    (p "Any Quarantine Credits purchased through MetaCoders have no expiration date.")
-    (p "If a student misses a session they were scheduled to join and you would like to reschedule, please contact us at (858) 375-4097 or contact@metacoders.org, and we can transfer your purchased Quarantine Credits to another session.")
-    (p "If for any reason a customer wishes to receive a refund for their purchase of Quarantine Credits, they may do so for a full refund except as follows:")
+    (b "Credits")
+    (p "Any Credits purchased through MetaCoders have no expiration date.")
+    (p "If for any reason a customer wishes to receive a refund for their purchase of Credits, they may do so for a full refund except as follows:")
     (ul
-      (li "If the parent has purchased the credits in a bulk package in advance, any credits they have used will be converted to the normal $15 per credit rate. They will instead receive a refund for the balance after that conversion.")
+      (li "If the parent has purchased the credits in a bulk package in advance, any credits they have used will be converted to the current rate. They will instead receive a refund for the balance after that conversion.")
       (li "If one year or longer has passed since the date of purchasing, no refund will be given for those credits.")
       )
-    (p "We understand that the current COVID-19 situation is evolving rapidly and changing day to day. Therefore, if you would like to transfer any of your online credits in the future toward tuition for an in person class or camp, you may do so without a fee by letting us know at contact@metacoders.org or by calling (858) 375-4097.")
     ))
 
 (define (terms-for-phonecalls-texts)
@@ -111,8 +108,8 @@
 (define (terms-for-media-policy)
   (container
     (h3 "MetaCoders Media Policy")
-    (p "When you register for the class, there is an option to provide MetaCoders with photo/video release that allows us to take pictures and video of your child for promotional purposes. It is always your choice whether you provide us with a photo/video release for your child. On rare occasions, news networks will come film our after-school programs and camps, and only children who have photo/video releases will be recorded for the news.")
-    (p "For quality assurance, MetaCoders sometimes records our classes to monitor our instructors. Video recorded for the purpose of quality assurance are not saved or ever used for promotional purposes.")
+    ;(p "When you register for the class, there is an option to provide MetaCoders with photo/video release that allows us to take pictures and video of your child for promotional purposes. It is always your choice whether you provide us with a photo/video release for your child. On rare occasions, news networks will come film our after-school programs and camps, and only children who have photo/video releases will be recorded for the news.")
+    ;(p "For quality assurance, MetaCoders sometimes records our classes to monitor our instructors. Video recorded for the purpose of quality assurance are not saved or ever used for promotional purposes.")
     (p "By registering for MetaCoders classes, you agree that all projects and work created by students while at MetaCoders may be used by MetaCoders in promotional materials, online, and other print media and may be shared and used by corporate partners, the media, or other organizations who work with MetaCoders. You also agree that MetaCoders, its owners, agents, partners, facility providers, and employees cannot be held liable for damages and injuries associated with said publishing, including any and all claims based on negligence. Students names will never be published, without the express permission of parents.")))
 
 (define (privacy-policy)
