@@ -119,21 +119,21 @@
   (cond
     [(eq? type 'one-time)
      (list
-       (credits-buy-button   20   1 0 "sku_GyG3n6kfimeXl9" KEY) ;needs new shopify sku
-       (credits-buy-button   95   5 0 "sku_GyG4rL6NDcH2SX" KEY) ;needs new shopify sku
-       (credits-buy-button  180  10 0 "sku_GyG5ryZxuC66T0" KEY) ;needs new shopify sku
-       (credits-buy-button  320  20 0 "sku_HGGukwhf6cCXLr" KEY) ;needs new shopify sku
-       (credits-buy-button  750  50 0 "sku_HGGu5QuiJLNiv9" KEY) ;needs new shopify sku
-       (credits-buy-button 1300 100 0 "sku_HGGu7oGSW24xaK" KEY) ;needs new shopify sku
+       (credits-buy-button   20   1 0 "sku_Hp2excpd8TsP6O" KEY)
+       (credits-buy-button   95   5 0 "sku_Hp2fvDejxx74qp" KEY)
+       (credits-buy-button  180  10 0 "sku_Hp2gncz7BjbzxZ" KEY)
+       (credits-buy-button  320  20 0 "sku_Hp2gbaJErzCgMC" KEY)
+       (credits-buy-button  750  50 0 "sku_Hp2gRBh6YfVjNy" KEY)
+       (credits-buy-button 1300 100 0 "sku_Hp2gYZM84N9bg0" KEY)
        ) 
      ]
     [(eq? type 'subscription)
      (list
-      (credits-subscription-buy-button   90   5 0 "plan_H1fnr6YP21Y5N8" KEY) ;needs new shopify sku
-      (credits-subscription-buy-button  170  10 0 "plan_HHOEQPY0sFRoxR" KEY) ;needs new shopify sku
-      (credits-subscription-buy-button  320  20 0 "plan_HHOH2io4UDk3z9" KEY) ;needs new shopify sku
-      (credits-subscription-buy-button  750  50 0 "plan_HHOIbEGyKflAsO" KEY) ;needs new shopify sku
-      (credits-subscription-buy-button 1200 100 0 "plan_HHOJzQdAcoMzkT" KEY) ;needs new shopify sku 
+      (credits-subscription-buy-button   90   5 0 "price_1HFOsoJbkDSuzmy7w22RzIoo" KEY) 
+      (credits-subscription-buy-button  170  10 0 "price_1HFP9tJbkDSuzmy75jqgAuNZ" KEY) 
+      (credits-subscription-buy-button  320  20 0 "price_1HFPAtJbkDSuzmy78efD3deo" KEY)
+      (credits-subscription-buy-button  750  50 0 "price_1HFPBsJbkDSuzmy7NCj1yDXu" KEY)
+      (credits-subscription-buy-button 1200 100 0 "price_1HFPCiJbkDSuzmy7KY1ErN0B" KEY)
        )
      ]
     [else
@@ -233,7 +233,7 @@
   (define (paper-coding)
     (topic "Coding Adventures" 
            (card-img-top src: (prefix/pathify paper-coding-img-path))
-           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper. " (b "M-F, 1pm-2pm and 3pm-4pm PST"))
+           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper. " (b "M-F, 3pm-4pm PST"))
            #:card-color 'warning
            #:level 'K-2nd
            #:coming-soon #f))
@@ -487,7 +487,7 @@
                                 (ol
                                   (li (b "How do Credits work?") " Each Credit can be applied to one 1 hour online session. You can apply the credits you purchase to any of our unfilled scheduled sessions. You do not have to apply all of your purchased credits all at once. We keep track of how many credits each customer has so that you can wait to apply them until a time that is convenient for you!")
                                   (li (b "I purchased Credits! Now, how do I use them to sign up for Coding Club sessions?") " After you purchase, you'll be directed to fill out a short form to send us your students' registration information. Once you have registered, someone from our team will be notified and will email you within the hour to confirm your registration. If you do not receive this email within 2 hours, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to confirm your registration.") 
-                                  (li (b "How many sessions should I enroll my student in?") " Your child can stay online with us from 12pm - 4pm PST.  Each session starts on the hour, and students can choose to end a session or continue on at each hour mark. Remember, coding is a skill just like playing piano or learning a foreign language: the more time students spend on coding, the stronger their coding skills will become. And with so many fun topics to choose from, students will always be learning new skills!")
+                                  (li (b "How many sessions should I enroll my student in?") " Your child can stay online with us from 1pm - 4pm PST.  Each session starts on the hour, and students can choose to end a session or continue on at each hour mark. Remember, coding is a skill just like playing piano or learning a foreign language: the more time students spend on coding, the stronger their coding skills will become. And with so many fun topics to choose from, students will always be learning new skills!")
                                   (li (b "Do I need to install anything in order to participate?") " Some of our topics will require installing software.  If you are unable or unwilling to install software on your device, there are other topics that do not require anything to be installed.") 
                                   (li (b "Can I still sign up for a session that starts today?") " Yes, you can! Once you purchase Credits, a customer service representative will contact you and send a video conferencing link along with information about scheduling.") 
                                   (li (b "What deals/coupons do you have available?") " We have bulk discount packages that are always available for purchase above. The more credits you purchase in 1 transaction, the less each credit costs.") 
@@ -495,8 +495,8 @@
                                   (li (b "Can my 2 or more children share the credits I purchase?") " Students who live within the same household can share credits.") 
                                   (li (b "If my 2 children are sharing 1 laptop, do we pay 2 Credits per session or 1?") " Each device will require 1 Credit. We understand parents don't always have enough devices for all their students. Clearly, two students who are sharing 1 laptop can't code at the same time, so we are treating each device as if it is one student at this time.") 
                                   (li (b "Can parents sit in on the session?") " Yes! Parents observation and participation is welcome and encouraged!") 
-                                  (li (b "What if I don't use all my Credits before this whole COVID-19 thing blows over?") " We will be continuing our Online Coding Club long after quarantines end. We are also happy to help transfer your remaining Credits to in-person classes and camps that will be happening again after quarantines end. You can review our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") " for more details.")
-                                  (li (b "Do you record Coding Club sessions?") " Yes, in order to be as transparent as possible with parents, we try to record all sessions; parents can ask us for these screen recordings whenever they'd like. Often, we will pre-emptively send screen recordings to parents so that parents can see what their children are learning inside our digital classrooms. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") ".")
+                                  (li (b "What if I don't use all my Credits?") " You can review our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") " for more details.")
+                                  (li (b "Do you record Coding Club sessions?") " Yes, in order to be as transparent as possible with parents, we try to record all sessions. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") ".")
                                   )
                                 )
                 (accordion-card #:header (h4 "Fall")
@@ -511,8 +511,8 @@
                                   (li (b "How do I become a MetaCoders Volunteer?") " Easily! Apply online " (a href: "https://docs.google.com/forms/d/e/1FAIpQLSeGAMm6a6wpmFkikMa5k6QbK9rE3r3_rb22GDLx6UGWi5jdMg/viewform" target: "_blank" "here") " and we will be in touch about the upcoming opportunities soon!")
                                   (li (b "What kind of things do MetaCoders Volunteers do?") " All our volunteers start out with the basics -- you will help out in the classroom and administration tasks. As you become more comfortable with the MetaCoders experience, you will have more creative opportunities and more power to decide how you spend your time.")
                                   (li (b "Are there any prerequisites to volunteering?") " There are no requirements for coding knowledge or teaching experience. For tech, our volunteers usually need a reliable internet connection, computer such as a desktop or laptop that can access online video conferencing, and a webcam/microphone. We do require our volunteers be 17 or older.")
-                                  (li (b "Can I get free Credits for my children by volunteering?") " This is the best part about being an educational co-op! By putting in your time and energy, you can get free educational opportunities for your children. Volunteers can receive 1 Credit for every 1-hr of volunteer time (that's 1-hr of education for kids for every 1-hr of volunteer time.)")
-                                  (li (b "As a volunteer, can I gift my free Credits to someone else?") " Absolutely! We have grandparents who volunteer and gift their credits to their grandchildren. Same with aunts and uncles for their nieces and nephews. You can also gift credits to someone outside your family.")
+                                  (li (b "Can I get free Credits for friends or family by volunteering?") " This is the best part about being an educational co-op! By putting in your time and energy, you can get free educational opportunities for your friends or family. Volunteers can receive 1 Credit for every 1-hr of volunteer time (that's 1-hr of education for kids for every 1-hr of volunteer time.)")
+                                  (li (b "As a volunteer, can I gift my free Credits to someone else?") " Absolutely! You can also gift credits to someone outside your family.")
                                   ))
                 )
               ))
