@@ -1,5 +1,5 @@
 #lang at-exp racket
-(provide online-fall)
+(provide coding-club)
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
          website-js/components/l-system
@@ -12,8 +12,8 @@
 
 (define (gems n) (span n " " (i class:"fas fa-gem")))
 
-(define (online-fall)
-  (page online-fall-top-path
+(define (coding-club)
+  (page coding-club-top-path
         (normal-content-wide
           #:head (list (title "Virtual Coding Club from MetaCoders")
                        (meta name: "description" content: "Learn Coding from Live Instructors starting on August 24th")
