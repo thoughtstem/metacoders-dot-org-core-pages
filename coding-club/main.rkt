@@ -286,15 +286,15 @@
 
   (define (python)
     (topic "Python Game Design" 
-           (card-img-top src: (prefix/pathify web-development-img-path))
-           "Make games using Python"
+           (card-img-top src: (prefix/pathify python-img-path))
+           "Learn the basics of Python including syntax, variables, I/O (inputs and outputs), conditionals, data types, and an introduction to Object-Oriented Programming while designing and developing games!"
            #:card-color 'primary
            #:level '7th-10th
            #:coming-soon #t))
 
   (define (3d-orbit)
     (topic "3D Orbit" 
-           (card-img-top src: (prefix/pathify 3d-exploration-img-path))
+           (card-video-top src: (prefix/pathify 3d-orbit-mp4-path))
            "The magic of exploring the universe in an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing a star system thet the can fly through."
            #:card-color 'warning
            #:level '3rd-10th
