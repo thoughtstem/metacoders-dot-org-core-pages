@@ -55,7 +55,6 @@
                (ul 
                  (padded-li "We have " (b "tons of coding " (a href:"#topics" "topics")) " to choose from!")
                  (padded-li (b "Summer Availability (June 15 - August 21)") ": Weekdays, 12pm-4pm PST.") 
-                 (padded-li (b "Fall Availability (August 24 - December 22)") ": Weekdays, 1pm-4pm PST.") 
                  (padded-li "Students can " (b "join at the beginning of any hour ") "(12pm noon, 1pm, 2pm, 3pm) and stay for the entire hour. At the end of the hour, students can leave or continue on for another hour to maximize the experience.")
                  (padded-li "Students will learn different coding topics " (b "at their own pace") ", guided by an experienced Coding Coach.")
                  )
