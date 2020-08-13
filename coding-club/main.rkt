@@ -35,7 +35,7 @@
 (define (jumbotron-header-section)
   (mc-jumbotron-header
     #:title "Virtual Coding Club"
-    #:tagline "A community of K-10th grade coders of all levels from around the world" 
+    #:tagline "A community of K-10th grade coders of all levels from around the world." 
     #:percent-height "60vh"
     #:image-path online-banner-path
     #:alt-tag "Young boy coding a video game on his laptop."))
