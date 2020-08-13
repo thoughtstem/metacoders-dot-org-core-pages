@@ -14,7 +14,7 @@
     #:tagline (list "Cutting-edge learning science, with grass-roots community support to prepare kids for the future." 
                    (br)
                    (div
-                     (a href: "/online.html" style: "padding-right: 10px;"
+                     (a href: "/coding-club.html" style: "padding-right: 10px;"
                         (button-primary style: (properties margin-top: 30) "Join Our Online Classes"))
                      (a href: "http://eepurl.com/dtmTTT" style: "padding-left: 10px;"
                         (button type: "button" class: "btn btn-warning" style: (properties margin-top: 30)
