@@ -1,5 +1,5 @@
 #lang at-exp racket
-(provide online-fall)
+(provide coding-club)
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
          website-js/components/l-system
@@ -14,8 +14,8 @@
 
 (define (gems n) (span n " " (i class:"fas fa-gem")))
 
-(define (online-fall)
-  (page online-fall-top-path
+(define (coding-club)
+  (page coding-club-top-path
         (normal-content-wide
           #:head (list (title "Virtual Coding Club from MetaCoders")
                        (meta name: "description" content: "Learn Coding from Live Instructors starting on August 24th")
@@ -37,7 +37,7 @@
 (define (jumbotron-header-section)
   (mc-jumbotron-header
     #:title "Virtual Coding Club"
-    #:tagline "A community of K-10th grade coders of all levels from around the world" 
+    #:tagline "A community of K-10th grade coders of all levels from around the world." 
     #:percent-height "60vh"
     #:image-path online-banner-path
     #:alt-tag "Young boy coding a video game on his laptop."))
@@ -154,7 +154,6 @@
 (define (learn-more-button)
   "Learn More! Scroll down."
   )
-
 
 
 (define (more-description-section)

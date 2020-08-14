@@ -10,7 +10,7 @@
           "terms-and-conditions.rkt"
           "join-our-team.rkt"
           "online.rkt"
-          "online-fall.rkt"
+          "coding-club.rkt"
           "tech-coords.rkt"
           "volunteer-online.rkt"
           "coders.rkt"
@@ -28,7 +28,7 @@
                        "terms-and-conditions.rkt"
                        "join-our-team.rkt"
                        "online.rkt"
-                       "online-fall.rkt"
+                       "coding-club.rkt"
                        "tech-coords.rkt"
                        "volunteer-online.rkt"
                        "coders.rkt"
@@ -52,7 +52,7 @@
       (terms-and-conditions)
       (join-our-team)
       (online)
-      (online-fall)
+      (coding-club)
       (tech-coords)
       (volunteer-online)
       (coders)
