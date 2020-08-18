@@ -52,16 +52,16 @@
              (container
               (h2 "Why create a Pod and Join MetaCoders Virtual Coding Club?")
               (responsive-row #:columns 4 #:d-flex? #t
-                              (card class: "border-primary" style: (properties 'flex: 1)
-                                    (card-header class: "bg-primary text-white" "Flexible Schedule!")
+                              (card class: "border-warning" style: (properties 'flex: 1)
+                                    (card-header class: "bg-warning text-white" "Flexible Schedule!")
                                     (card-body
                                      "Online Pod sessions with our Coding Coaches can be scheduled to fit " (b "your schedule") ". Join us on the hour daily, weekly, or whenever! We will find a time that works best for " (i "your pod") "."))
                               (card class: "border-warning" style: (properties 'flex: 1)
                                     (card-header class: "bg-warning text-white" "Adjustable Prices!")
                                     (card-body
                                      "We have a different pricing for each 1-hour session depending on the size of " (i "your pod") ". Pods with " (b "2 - 6") " students cost " (b "$70") ". Pods with " (b " 6 - 10") " students cost " (b " $160") ". If you are part of a larger pod email us at contact@metacoders.org for a quote.")) 
-                              (card class: "border-primary" style: (properties 'flex: 1)
-                                    (card-header class: "bg-primary text-white" "Guaranteed Instructor!")
+                              (card class: "border-warning" style: (properties 'flex: 1)
+                                    (card-header class: "bg-warning text-white" "Guaranteed Instructor!")
                                     (card-body
                                      "In our Coding Club, instructors rotate topics every day. When you create a pod we will pair you with one of our " (b "Pro-Instructors") " and we guarantee that they will work every scheduled session with " (i "your pod") "."))
                               (card class: "border-warning" style: (properties 'flex: 1)
@@ -84,30 +84,31 @@
   t)
 
 (define (pod-signup)
-  (card class: "jumbotron"
-        (card-body
-         (card-title class: "pb-4"
-                     style: "font-size: 30px; text-align: center" "To get more details about your specific pod, fill out this form!") 
-         (form action:
-               "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfc1cpZ0o5OT8c38WZ-XMOTsr5Zofrk7L9Q35EY7E2LJTNAtg/formResponse"
-               (div class:"form-group"
-                    (label "Contact Parent Name")
-                    (input type: "text" class: "form-control" name: "entry.1054010153"))
-               (div class:"form-group"
-                    (label "Contact Parent Email")
-                    (input type:"email" class: "form-control" name: "entry.470834101"))
-               (div class:"form-group"  
-                    (label "How many students are in your pod?")
-                    (input type: "text" class: "form-control" name: "entry.56393326"))
-               (div class:"form-group"  
-                    (label "What are their ages?")
-                    (input type: "text" class: "form-control" name: "entry.1092274102"))
-               (div class:"form-group"  
-                    (label "What topic(s) are they interested in?")
-                    (input type: "text" class: "form-control" name: "entry.584219301"))
-               (div class:"form-group"  
-                    (label "What days and times is your pod available? Please specify your timezone.")
-                    (input type: "text" class: "form-control" name: "entry.360691127"))
+  (container
+   (card class: "jumbotron"
+         (card-body
+          (card-title class: "pb-4"
+                      style: "font-size: 30px; text-align: center" "To get more details about your specific pod, fill out this form!") 
+          (form action:
+                "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfc1cpZ0o5OT8c38WZ-XMOTsr5Zofrk7L9Q35EY7E2LJTNAtg/formResponse"
+                (div class:"form-group"
+                     (label "Contact Parent Name")
+                     (input type: "text" class: "form-control" name: "entry.1054010153"))
+                (div class:"form-group"
+                     (label "Contact Parent Email")
+                     (input type:"email" class: "form-control" name: "entry.470834101"))
+                (div class:"form-group"  
+                     (label "How many students are in your pod?")
+                     (input type: "text" class: "form-control" name: "entry.56393326"))
+                (div class:"form-group"  
+                     (label "What are their ages?")
+                     (input type: "text" class: "form-control" name: "entry.1092274102"))
+                (div class:"form-group"  
+                     (label "What topic(s) are they interested in?")
+                     (input type: "text" class: "form-control" name: "entry.584219301"))
+                (div class:"form-group"  
+                     (label "What days and times is your pod available? Please specify your timezone.")
+                     (input type: "text" class: "form-control" name: "entry.360691127"))
         
-               (button-primary type: "submit" name: "submit"
-                               "Submit")))))
+                (button-primary type: "submit" name: "submit"
+                                "Submit"))))))
