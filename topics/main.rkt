@@ -141,7 +141,7 @@
 
   (define (python)
     (topic "Python Game Design" 
-           (card-img-top src: (prefix/pathify web-development-img-path))
+           (card-img-top src: (prefix/pathify python-img-path))
            "Make games using Python"
            #:card-color 'primary
            #:level '7th-10th
@@ -149,7 +149,7 @@
 
   (define (3d-orbit)
     (topic "3D Orbit" 
-           (card-img-top src: (prefix/pathify 3d-exploration-img-path))
+           (card-img-top src: (prefix/pathify 3d-orbit-img-path))
            "The magic of exploring the universe in an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing a star system thet the can fly through."
            #:card-color 'warning
            #:level '3rd-10th
