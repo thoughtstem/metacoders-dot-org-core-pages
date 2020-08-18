@@ -29,6 +29,7 @@
           (jumbotron-header-section)
           (updated-list-value-prop)
           (credits-section)
+          (schedule-info)
           (customer-testimonial-section)
           (topics-section)
           (faq-section)
@@ -68,29 +69,6 @@
                    (card-body
                     "Learning at home doesn't have to mean learning alone. Join other coding students from around the world and our experienced Coding Coaches for a social, fun, and educational experience!")))))
 )
-
-;needs a header
-(define (updated-value-prop)
-  (jumbotron class: "mb-0"
-             (container
-              (h1 "Why Join MetaCoder's Virtual Coding Club?")
-               (responsive-row #:columns 2
-                               (sched-value-card))
-               )
-             ))
-
-(define (value-card header image text)
-  (card class: "text-black"
-        (card-img src: image) 
-        (card-img-overlay 
-         (h3 header)
-         text)
-    ))
-
-(define (sched-value-card)
-  (value-card "High-Quality Coding Education on Your Schedule"
-              (prefix/pathify sched-value-img-path)
-              (p "MetaCoders knows that you and your family have a lot going on -- now more than ever! With our drop-in style Virtual Coding Club, you don't have to struggle to cram another daily or weekly class into your calendar. Our schedule adapts to " (i "you") ".")))
 
 (define (topics-section)
   (jumbotron class: "mb-0"
@@ -161,6 +139,19 @@
     [else
       (error "Must supply one-time or subscription to credit button list")])
   )
+
+(define (schedule-info)
+  (jumbotron class: "mb-0 text-center"
+             style: (properties background: "white")
+             (container
+              (card class: "border-primary col-sm-6"
+                    (card-header class: "h5 bg-primary text-white" "Fall 2020 Schedule")
+                    (card-body
+                     (table class: "table table-sm table-borderless text-left"
+                            (tr (td (strong "Session Dates: ")) (td "August 24th - December 18th"))
+                            (tr (td (strong "Schedule: ")) (td "Weekdays 1pm-4pm"))
+                            (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27")))))
+              )))
 
 
 (define (learn-more-button)

@@ -45,8 +45,6 @@
 
 
 (define (updated-list-value-prop)
-  (define (padded-li . content)
-    (li style: (properties 'padding-top: 10) content))
   (jumbotron class: "mb-0 text-center bg-white"
              (container
               (h2 "Why create a Pod and Join MetaCoders Virtual Coding Club?")
