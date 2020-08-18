@@ -52,19 +52,19 @@
                (h2 "Why Join MetaCoders Virtual Coding Club?")
                (responsive-row #:columns 4 #:d-flex? #t
                  (card class: "border-primary" style: (properties 'flex: 1)
-                  (card-header class: "bg-primary text-white" "Live-Taught on Your Schedule!")
+                  (card-header class: "h6 bg-primary text-white" "Live-Taught on Your Schedule!")
                   (card-body
                    "MetaCoders knows that you and your family have a lot going on -- now more than ever! Online sessions with our Coding Coaches are offered " (b "every weekday, 1pm to 4pm PT") ". Join us on the hour daily, weekly, or whenever! Our schedule adapts to " (i "you") "."))
-                 (card class: "border-warning" style: (properties 'flex: 1)
-                  (card-header class: "bg-warning text-white" "Ultimate Flexibility!")
+                 (card class: "border-primary" style: (properties 'flex: 1)
+                  (card-header class: "h6 bg-primary text-white" "Ultimate Flexibility!")
                   (card-body
                    "With no session enrollments required, you and your students can decide to join us five minutes in advance, if you want! The absolute low-commitment class with no stress about changing schedules or missing sessions.")) 
                  (card class: "border-primary" style: (properties 'flex: 1)
-                  (card-header class: "bg-primary text-white" "Customized Student Experience!")
+                  (card-header class: "h6 bg-primary text-white" "Customized Student Experience!")
                   (card-body
                    "A range of topics offered daily allows students to design their own education experience around their interest and experience level. MetaCoders' unique Badge System allows students to move though curriculum at the pace that is right for them, track their progress, and pick up right where they left off each day."))
-                 (card class: "border-warning" style: (properties 'flex: 1)
-                   (card-header class: "bg-warning text-white" "Real People, Real Time!")
+                 (card class: "border-primary" style: (properties 'flex: 1)
+                   (card-header class: "h6 bg-primary text-white" "Real People, Real Time!")
                    (card-body
                     "Learning at home doesn't have to mean learning alone. Join other coding students from around the world and our experienced Coding Coaches for a social, fun, and educational experience!")))))
 )
@@ -169,8 +169,8 @@
 
 
 (define (more-description-section)
-  (jumbotron  class: "mb-0"
-              style: (properties background: "white")
+  (jumbotron  class: "mb-0 bg-white"
+              ;style: (properties background: "white")
               (container
                 (row
                   (col-lg-6 class: "pl-lg-5"
