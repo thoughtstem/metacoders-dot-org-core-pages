@@ -46,15 +46,27 @@
 (define (updated-list-value-prop)
   (define (padded-li . content)
     (li style: (properties 'padding-top: 10) content))
-  (jumbotron class: "mb-0"
+  (jumbotron class: "mb-0 text-center"
              style: (properties background: "white")
              (container
                (h2 "Why Join MetaCoders Virtual Coding Club?")
-               (ul 
-                 (padded-li (h5 "Live-Taught on Your Schedule!") " MetaCoders knows that you and your family have a lot going on -- now more than ever! Online sessions with our Coding Coaches are offered " (b "every weekday, 1pm to 4pm PT") ". Join us on the hour daily, weekly, or whenever! Our schedule adapts to " (i "you") ".")
-                 (padded-li (h5 "Ultimate Flexibility!") " With no session enrollments required, you and your students can decide to join us five minutes in advance, if you want! The absolute low-commitment class with no stress about changing schedules or missing sessions.") 
-                 (padded-li (h5 "Customized Student Experience!") "  A range of topics offered daily allows students to design their own education experience around their interest and experience level. MetaCoders' unique Badge System allows students to move though curriculum at the pace that is right for them, track their progress, and pick up right where they left off each day.")
-                 (padded-li (h5 "Real People, Real Time!") " Learning at home doesn't have to mean learning alone. Join other coding students from around the world and our experienced Coding Coaches for a social, fun, and educational experience!"))))
+               (responsive-row #:columns 4 #:d-flex? #t
+                 (card class: "border-primary" style: (properties 'flex: 1)
+                  (card-header class: "bg-primary text-white" "Live-Taught on Your Schedule!")
+                  (card-body
+                   "MetaCoders knows that you and your family have a lot going on -- now more than ever! Online sessions with our Coding Coaches are offered " (b "every weekday, 1pm to 4pm PT") ". Join us on the hour daily, weekly, or whenever! Our schedule adapts to " (i "you") "."))
+                 (card class: "border-warning" style: (properties 'flex: 1)
+                  (card-header class: "bg-warning text-white" "Ultimate Flexibility!")
+                  (card-body
+                   "With no session enrollments required, you and your students can decide to join us five minutes in advance, if you want! The absolute low-commitment class with no stress about changing schedules or missing sessions.")) 
+                 (card class: "border-primary" style: (properties 'flex: 1)
+                  (card-header class: "bg-primary text-white" "Customized Student Experience!")
+                  (card-body
+                   "A range of topics offered daily allows students to design their own education experience around their interest and experience level. MetaCoders' unique Badge System allows students to move though curriculum at the pace that is right for them, track their progress, and pick up right where they left off each day."))
+                 (card class: "border-warning" style: (properties 'flex: 1)
+                   (card-header class: "bg-warning text-white" "Real People, Real Time!")
+                   (card-body
+                    "Learning at home doesn't have to mean learning alone. Join other coding students from around the world and our experienced Coding Coaches for a social, fun, and educational experience!")))))
 )
 
 ;needs a header
