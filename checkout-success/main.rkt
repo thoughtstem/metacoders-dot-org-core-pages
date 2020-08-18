@@ -19,7 +19,7 @@
                  (card-body
                   (p "Now we need your student's info! Please fill out the registration information for each student:")
                   (a id: "formUrl"
-                     href:"https://docs.google.com/forms/d/e/1FAIpQLSd1VM1_UvUtCP1bBaH6LN_3OlPxriZx7euotdfBmg8Z8Ftacg/viewform"
+                     href:"https://docs.google.com/forms/d/e/1FAIpQLScyXujTJ2IyKgw6bYnJGz7Bt4P780qmfg0hkt_4tmG1ikGXLQ/viewform"
                      class:"btn btn-primary"
                      'role: "button"
                      "CLICK HERE")))
@@ -188,7 +188,7 @@
                (h4 "Add a message to your donation!")
                (p "Click below to let us know why you are donating (anonymous or not):")
                (a id: "formUrl"
-                  href:"https://docs.google.com/forms/d/e/1FAIpQLScuznm2TWaUaGh2UMPQby4V8jjaFluq6NCyXYJNAj_9atYA3w/viewform"
+                  href:"https://docs.google.com/forms/d/e/1FAIpQLSd9Lji7XEejsQzxGq4WPsDvwmmacw4V5PV8bE7H4dDFHfQtfQ/viewform"
                   class:"btn btn-primary"
                   'role: "button"
                   "Finish Donation")
