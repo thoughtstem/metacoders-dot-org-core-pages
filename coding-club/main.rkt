@@ -29,7 +29,6 @@
           (jumbotron-header-section)
           (updated-list-value-prop)
           (credits-section)
-          (schedule-info)
           (customer-testimonial-section)
           (topics-section)
           (faq-section)
@@ -45,10 +44,7 @@
 
 
 (define (updated-list-value-prop)
-  (define (padded-li . content)
-    (li style: (properties 'padding-top: 10) content))
-  (jumbotron class: "mb-0 text-center"
-             style: (properties background: "white")
+  (jumbotron class: "mb-0 text-center bg-white"
              (container
                (h2 "Why Join MetaCoders Virtual Coding Club?")
                (responsive-row #:columns 4 #:d-flex? #t
@@ -93,23 +89,23 @@
                (p "Each Credit " (gems "") " unlocks an hour of personalized education for K-10 students and beyond. " (b "Join at the beginning of any hour, and stick around for one, two or three hours at a time!") " No need to sign up or schedule for days or times.") 
                (br)
                (credit-wheel)
+               (br)
+               (schedule-info)
                )))
 
 (define (credit-wheel)
-  (define (fancy-col x)
-    (div class: "col-lg-4 col-sm-6 col-xs-12" 
-         x)
-    )
   (list
-    (card class: "bg-transparent" style: (properties border: "0px")
+    (card class: "bg-transparent border-0"
       (card-body
         (h3 class: "text-center" "Credit Bundles")
-        (row (map fancy-col (credit-button-list)))))
+        (apply (curry responsive-row #:columns 3 #:padding 2 #:justify? #t) (credit-button-list))
+        ))
     (br)
-    (card class: "bg-transparent" style: (properties border: "0px")
+    (card class: "bg-transparent border-0"
       (card-body
         (h3 class: "text-center" "Credit Subscriptions")
-        (row (map fancy-col (credit-button-list #:type 'subscription)))))
+        (apply (curry responsive-row #:columns 3 #:padding 2 #:justify? #t) (credit-button-list #:type 'subscription))
+        ))
     (a name:"topics"))
   )
 
@@ -141,17 +137,15 @@
   )
 
 (define (schedule-info)
-  (jumbotron class: "mb-0 text-center"
-             style: (properties background: "white")
-             (container
-              (card class: "border-primary col-sm-6"
-                    (card-header class: "h5 bg-primary text-white" "Fall 2020 Schedule")
-                    (card-body
-                     (table class: "table table-sm table-borderless text-left"
-                            (tr (td (strong "Session Dates: ")) (td "August 24th - December 18th"))
-                            (tr (td (strong "Schedule: ")) (td "Weekdays 1pm-4pm"))
-                            (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27")))))
-              )))
+  (row
+   (div class: "col-lg-6 mx-auto"
+        (card class: "border-warning mx-2"
+              (card-header class: "h5 bg-warning text-white" "Fall 2020 Schedule")
+              (card-body
+               (table class: "table table-sm table-borderless text-left"
+                      (tr (td (strong "Session Dates: ")) (td "August 24th - December 18th"))
+                      (tr (td (strong "Schedule: ")) (td "Weekdays 1pm-4pm"))
+                      (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27"))))))))
 
 
 (define (learn-more-button)
