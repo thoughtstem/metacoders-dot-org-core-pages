@@ -54,24 +54,30 @@
                                     (card-body
                                      "Our staff will work with you to find the best time for your group of students. Start every week with coding class at 9am on Monday or code three times a week at noon! We can create the unique educational experience that works for you."))
                               (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "Affordable!")
+                                    (card-header class: "h6 bg-warning text-white" "High Quality, Affordable Prices!")
                                     (card-body
-                                     "We have a different pricing for each 1-hour session depending on the size of " (i "your pod") ". Pods with " (b "2 - 6") " students cost " (b "$70") ". Pods with " (b " 6 - 10") " students cost " (b " $160") ". If you are part of a larger pod email us at contact@metacoders.org for a quote.")) 
+                                     "Our team works with your specific circumstances to bring you the most affordable price without sacrificing quality. More than just a flat rate per student, our pricing scale means lower prices for you and your fellow parents!")) 
                               (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "Guaranteed Instructor!")
+                                    (card-header class: "h6 bg-warning text-white" "Structured for Your Students!")
                                     (card-body
-                                     "In our Coding Club, instructors rotate topics every day. When you create a pod we will pair you with one of our " (b "Pro-Instructors") " and we guarantee that they will work every scheduled session with " (i "your pod") "."))
+                                     "Unlike our drop-in Coding Club, MetaCoders in your Micro-School is able to provide the same Coding Coach every time and guarantee the same students in every session -- " (i "your") " students! Get personalized attention and structure to maximize your students' growth."))
                               (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "Guaranteed Schedule!")
+                                    (card-header class: "h6 bg-warning text-white" "Completely Customizable!")
                                     (card-body
-                                     "Some of our topics are only available at specific times a day and others are only offered certain days a week. When you create a pod whatever topic(s) you choose are guaranteed to be available during your session.")))
+                                     "Are your students specifically interested in a topic not currently offered in Coding Club? We can customize our topics to the needs of your students and even create new curriculum just for you!*" (br)(i class: "small" "*Additional cost for custom curriculum."))))
 
               )))
+
+#;(define (pricing-section)
+  (jumbotron class: "mb-0"
+             (container
+              (h2 "What does it Cost?")
+              (p "Our pricing scale adapts "))))
 
 (define (topics-section)
   (jumbotron class: "mb-0"
              (container
-               (h2 class: "text-center" "What Do Credits " (gems "") " Unlock?" )
+               (h2 class: "text-center" "What Can Your Students Learn?" )
                (br)
                (apply (curry responsive-row #:columns 3) (map display-topic (topics)))
                )
@@ -98,8 +104,8 @@
               (container
                (card class: "border-primary"
                 (card-header class: "bg-primary text-white text-center"
-                             (h5 "To get more details about your specific pod, fill out this form!"))
-                (card-body
+                             (h5 "Contact us to Bring MetaCoders to your Micro-School!"))
+                (card-body 
                  (form action:
                        "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfc1cpZ0o5OT8c38WZ-XMOTsr5Zofrk7L9Q35EY7E2LJTNAtg/formResponse"
                        (div class:"form-group"
@@ -109,17 +115,20 @@
                             (label "Contact Parent Email")
                             (input type:"email" class: "form-control" name: "entry.470834101"))
                        (div class:"form-group"  
-                            (label "How many students are in your pod?")
+                            (label "How many students?")
                             (input type: "text" class: "form-control" name: "entry.56393326"))
                        (div class:"form-group"  
                             (label "What are their ages?")
                             (input type: "text" class: "form-control" name: "entry.1092274102"))
                        (div class:"form-group"  
-                            (label "What topic(s) are they interested in?")
+                            (label "What topic(s) are you interested in bringing in?")
                             (input type: "text" class: "form-control" name: "entry.584219301"))
                        (div class:"form-group"  
-                            (label "What days and times is your pod available? Please specify your timezone.")
+                            (label "What days and times would be ideal for you? Please specify your timezone.")
                             (input type: "text" class: "form-control" name: "entry.360691127"))
         
                        (button-primary type: "submit" name: "submit"
-                                       "Submit")))))))
+                                       "Submit"))
+                 (br)
+                 (container class: "text-center"
+                            (i "Thank you for your interest. You will hear back from our team soon with a pricing quote, scheduling options, and more details.")))))))
