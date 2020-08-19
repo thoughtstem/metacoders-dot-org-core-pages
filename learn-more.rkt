@@ -206,9 +206,9 @@ function toggleAccBtn3() {
         (include-p5-js)
         (jumbotron-header)
         (about-and-mission)
-        (programs-we-offer)
-        (what-makes-us-different)
-        (where-do-you-fit-in)
+        ;(programs-we-offer)
+        ;(what-makes-us-different)
+        ;(where-do-you-fit-in)
         (include-js "js/name-replace-effect.js")))))
 
 (define (critical-css)

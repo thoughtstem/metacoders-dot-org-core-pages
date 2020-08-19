@@ -31,9 +31,10 @@
        ]
       )
     )
-  (card class: (~a "h-100 " card-color)  
+  
+  (card class: (~a "h-100 " card-color)
         image
-    (card-body
+    (card-body class: "bg-white text-dark"
       (h5 header)
       desc)
     (card-footer class: "d-flex"
@@ -52,12 +53,19 @@
 (define (card-video-top src: path)
   (video 'autoplay: 'loop: 'muted: 'playsinline: 
          class: "card-img-top border-bottom"
-         style: (properties 'object-fit: "cover"
+         style: (properties 'height: "33%"
+                            'object-fit: "cover"
                             'object-position: "0 0"
                             )
          (source src: (prefix/pathify path) type: "video/mp4")
          (source src: (prefix/pathify (mp4-path->webm-path path)) type: "video/webm")
          ))
+
+(define card-img-top-style
+  (properties 'height: "33%"
+              'object-fit: "cover"
+              'object-position: "0 0"
+              ))
 
 (define (topics)
   (define (endless-runner)
@@ -70,7 +78,7 @@
 
   (define (digital-art)
     (topic "Coding Digital Art" 
-           (card-img-top src: (prefix/pathify digital-art-img-path))
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify digital-art-img-path))
            "Get creative with code! Generate and manipulate shapes in the text-based language Scheme. Our Coding Coaches will introduce and build your student’s confidence with universal coding tools and terms like functions, definitions, and arguments -- all while creating fun pictures with code!  guide your children through a variety of text-based coding art projects using WeScheme."
            #:card-color 'warning
            #:level '3rd-10th
@@ -86,7 +94,7 @@
 
   (define (paper-coding)
     (topic "Coding Adventures" 
-           (card-img-top src: (prefix/pathify paper-coding-img-path))
+           (card-img-top class: "border-bottom" class: "border-bottom" style: card-img-top-style src: (prefix/pathify paper-coding-img-path))
            (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper. " (b "M-F, 3pm-4pm PST"))
            #:card-color 'warning
            #:level 'K-2nd
@@ -94,14 +102,14 @@
 
   (define (learntomod)
     (topic "LearnToMod Minecraft"
-           (card-img-top src: (prefix/pathify conquering-covid-b-img-path))
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify conquering-covid-b-img-path))
            (list "Learn how to make cool, custom Minecraft mods with our instructors on Fridays.  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
            #:card-color 'primary
            #:level '3rd-10th))
   
   (define (scratch)
     (topic "Coding with Scratch" 
-           (card-img-top src: (prefix/pathify scratch-img-path))
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify scratch-img-path))
            "Our Coding Coaches will guide your children through a variety of projects using the Scratch programming language."
            #:card-color 'warning
            #:level 'K-10th
@@ -133,7 +141,7 @@
 
     (define (3d-exploration)
     (topic "3D Exploration" 
-           (card-img-top src: (prefix/pathify 3d-exploration-img-path))
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify 3d-exploration-img-path))
            "The magic of turning code into an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing interactive worlds that they can walk (or fly!) through."
            #:card-color 'warning
            #:level '3rd-10th
@@ -141,15 +149,15 @@
 
   (define (python)
     (topic "Python Game Design" 
-           (card-img-top src: (prefix/pathify python-img-path))
-           "Make games using Python"
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
+           "Learn the basics of Python including syntax, variables, I/O (inputs and outputs), conditionals, data types, and an introduction to Object-Oriented Programming while designing and developing games!"
            #:card-color 'primary
            #:level '7th-10th
            #:coming-soon #t))
 
   (define (3d-orbit)
     (topic "3D Orbit" 
-           (card-img-top src: (prefix/pathify 3d-orbit-img-path))
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify 3d-orbit-img-path))
            "The magic of exploring the universe in an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing a star system thet the can fly through."
            #:card-color 'warning
            #:level '3rd-10th

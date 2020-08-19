@@ -105,7 +105,7 @@
                (card class: "border-primary"
                 (card-header class: "bg-primary text-white text-center"
                              (h5 "Contact us to Bring MetaCoders to your Micro-School!"))
-                (card-body 
+                (card-body
                  (form action:
                        "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfc1cpZ0o5OT8c38WZ-XMOTsr5Zofrk7L9Q35EY7E2LJTNAtg/formResponse"
                        (div class:"form-group"
