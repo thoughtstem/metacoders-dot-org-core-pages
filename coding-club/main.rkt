@@ -138,7 +138,7 @@
 
 (define (schedule-info)
   (row
-   (div class: "col-lg-6 mx-auto"
+   (div class: "col-lg-8 col-xl-6 mx-auto"
         (card class: "border-warning mx-2"
               (card-header class: "h5 bg-warning text-white" "Fall 2020 Schedule")
               (card-body
