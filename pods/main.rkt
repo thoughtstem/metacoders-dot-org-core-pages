@@ -19,7 +19,7 @@
 (define (pods)
   (page pods-top-path
         (normal-content-wide
-          #:head (list (title "Coding Pods from MetaCoders")
+          #:head (list (title "MetaCoders for Micro-Schools")
                        (meta name: "description" content: "Learn Coding from Live Instructors starting on August 24th")
                        (common-critical-css)
                        (link 'rel: "preconnect" href:"https://q.stripe.com")
@@ -37,24 +37,24 @@
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
-    #:title "Coding Pods"
-    #:tagline "Create your own pods and meet with a Coding Coach." 
+    #:title "MetaCoders for Micro-Schools"
+    #:tagline "Bring professional coding education into your homeschooling experience." 
     #:percent-height "60vh"
-    #:image-path online-banner-path
-    #:alt-tag "Young boy coding a video game on his laptop."))
+    #:image-path students-in-row-path
+    #:alt-tag "Kids coding together in a small group."))
 
 
 (define (updated-list-value-prop)
   (jumbotron class: "mb-0 text-center bg-white"
              (container
-              (h2 "Why create a Pod and Join MetaCoders Virtual Coding Club?")
+              (h2 "MetaCoders now offers custom classes for your pod or micro-school!")
               (responsive-row #:columns 4 #:d-flex? #t
                               (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "Flexible Schedule!")
+                                    (card-header class: "h6 bg-warning text-white" "Build your Own Schedule!")
                                     (card-body
-                                     "Online Pod sessions with our Coding Coaches can be scheduled to fit " (b "your schedule") ". Join us on the hour daily, weekly, or whenever! We will find a time that works best for " (i "your pod") "."))
+                                     "Our staff will work with you to find the best time for your group of students. Start every week with coding class at 9am on Monday or code three times a week at noon! We can create the unique educational experience that works for you."))
                               (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "Adjustable Prices!")
+                                    (card-header class: "h6 bg-warning text-white" "Affordable!")
                                     (card-body
                                      "We have a different pricing for each 1-hour session depending on the size of " (i "your pod") ". Pods with " (b "2 - 6") " students cost " (b "$70") ". Pods with " (b " 6 - 10") " students cost " (b " $160") ". If you are part of a larger pod email us at contact@metacoders.org for a quote.")) 
                               (card class: "border-warning" style: (properties 'flex: 1)
