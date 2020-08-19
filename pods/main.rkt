@@ -97,8 +97,8 @@
               style: (properties 'overflow: "hidden")
               (container
                (card class: "border-primary"
-                (card-header class: "bg-primary text-white text-center"
-                             (h5 "To get more details about your specific pod, fill out this form!"))
+                (card-header class: "h5 bg-primary text-white text-center"
+                             "Tell us about your pod by filling out this form!")
                 (card-body
                  (form action:
                        "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfc1cpZ0o5OT8c38WZ-XMOTsr5Zofrk7L9Q35EY7E2LJTNAtg/formResponse"
