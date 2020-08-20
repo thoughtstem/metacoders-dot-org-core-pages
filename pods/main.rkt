@@ -52,11 +52,11 @@
                               (card class: "border-warning" style: (properties 'flex: 1)
                                     (card-header class: "h6 bg-warning text-white" "Build your Own Schedule!")
                                     (card-body
-                                     "Our staff will work with you to find the best time for your group of students. Start every week with coding class at 9am on Monday or code three times a week at noon! We can create the unique educational experience that works for you."))
+                                     "Our staff will work with you to find the best time for your group of students. For example, start every week with coding class at 9am on Monday, or code three times a week at noon! We create the unique educational experience that works for you."))
                               (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "High Quality, Affordable Prices!")
+                                    (card-header class: "h6 bg-warning text-white" "High Quality & Affordable!")
                                     (card-body
-                                     "Our team works with your specific circumstances to bring you the most affordable price without sacrificing quality. More than just a flat rate per student, our pricing scale means lower prices for you and your fellow parents!")) 
+                                     "Starting as low as " (b "$70/hour for 2-5 students") ", our prices adjust based on your student group and needs. Our customized pricing allows for student groups of any size and age. You don't have to choose between quality and afforability in your students' education!")) 
                               (card class: "border-warning" style: (properties 'flex: 1)
                                     (card-header class: "h6 bg-warning text-white" "Structured for Your Students!")
                                     (card-body
@@ -68,11 +68,6 @@
 
               )))
 
-#;(define (pricing-section)
-  (jumbotron class: "mb-0"
-             (container
-              (h2 "What does it Cost?")
-              (p "Our pricing scale adapts "))))
 
 (define (topics-section)
   (jumbotron class: "mb-0"
