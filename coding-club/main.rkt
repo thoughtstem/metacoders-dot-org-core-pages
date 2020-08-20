@@ -191,17 +191,35 @@
               )
   )
 
-
-
+; Customized accordian-card
+; Todo: remove button-link and just turn the entire header into a link
+(define (accordion-card-faq 
+           #:header (header "Click to show")
+           #:shown? (shown? #f)
+           . content)
+  (enclose
+   (card
+    class: "border-primary mb-2"
+    (card-header class: "p-0 bg-primary"
+     (button-link class: "btn-block bg-transparent m-0 text-white text-left"
+                  on-click: (call 'toggle)
+       header))
+    (div id: (id 'collapse1)
+         class: (~a "collapse " (if shown? "show" ""))
+      (card-body
+       content)))
+   (script ([toToggle (id 'collapse1)])
+     (function (toggle)
+       @js{$("#"+@toToggle).toggle()}))))
 
 
 (define (faq-section)
-  (local-require website-js/components/accordion-cards)
-  (jumbotron  class: "mb-0"
+  ;(local-require website-js/components/accordion-cards)
+  (jumbotron  class: "mb-0 bg-white"
               (container
                 (h2 class: "text-center" "Frequently Asked Questions")
                 (br)
-                (accordion-card #:header (h4 "General")
+                (accordion-card-faq #:header (h4 class: "mb-0" "General")
                                 (ol
                                   (li (b "How do Credits work?") " Each Credit can be applied to one 1 hour online session. You can apply the credits you purchase to any of our unfilled scheduled sessions. You do not have to apply all of your purchased credits all at once. We keep track of how many credits each customer has so that you can wait to apply them until a time that is convenient for you!")
                                   (li (b "I purchased Credits! Now, how do I use them to sign up for Coding Club sessions?") " After you purchase, you'll be directed to fill out a short form to send us your students' registration information. Once you have registered, someone from our team will be notified and will email you within the hour to confirm your registration. If you do not receive this email within 2 hours, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to confirm your registration.") 
@@ -217,14 +235,14 @@
                                   (li (b "Do you record Coding Club sessions?") " Yes, in order to be as transparent as possible with parents, we try to record all sessions. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") ".")
                                   )
                                 )
-                (accordion-card #:header (h4 "Fall")
+                (accordion-card-faq #:header (h4 class: "mb-0" "Fall")
                                 (ol
                                   (li (b "Do I really not need to schedule my sessions in advance?") " That's right! Throughout the fall, from 1pm-4pm PST, Monday-Friday, just have your student join our emailed video conferencing link, and we will teach them coding! As students \"spend\" their Credits, we'll send you an update if your Credit balance is running low.") 
                                   (li (b "How many Credits should I purchase for this fall?") " You can do a quick estimate by multiplying the number of weeks x 5 days/week x hours per day x number of students. For example, if you have 1 child that you want to register for 3 hours per day for 5 weeks, you'd purchase: (5 weeks x 5 days/week x 3 hours per day x 1 student) = 75 credits.") 
                                   )
                                 )
-                (accordion-card #:header  
-                                (h4 "Volunteers")
+                (accordion-card-faq #:header  
+                                (h4 class: "mb-0" "Volunteers")
                                 (ol
                                   (li (b "How do I become a MetaCoders Volunteer?") " Easily! Apply online " (a href: "https://docs.google.com/forms/d/e/1FAIpQLSeGAMm6a6wpmFkikMa5k6QbK9rE3r3_rb22GDLx6UGWi5jdMg/viewform" target: "_blank" "here") " and we will be in touch about the upcoming opportunities soon!")
                                   (li (b "What kind of things do MetaCoders Volunteers do?") " All our volunteers start out with the basics -- you will help out in the classroom and administration tasks. As you become more comfortable with the MetaCoders experience, you will have more creative opportunities and more power to decide how you spend your time.")

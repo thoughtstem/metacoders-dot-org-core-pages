@@ -11,7 +11,7 @@
           "join-our-team.rkt"
           "online.rkt"
           "coding-club.rkt"
-          "pods.rkt"
+          "coding-for-pods.rkt"
           "one-on-one.rkt"
           "badges.rkt"
           "tech-coords.rkt"
@@ -33,7 +33,7 @@
                        "online.rkt"
                        "coding-club.rkt"
                        "badges.rkt"
-                       "pods.rkt"
+                       "coding-for-pods.rkt"
                        "one-on-one.rkt"
                        "tech-coords.rkt"
                        "volunteer-online.rkt"
@@ -59,7 +59,7 @@
       (join-our-team)
       (online)
       (coding-club)
-      (pods)
+      (coding-for-pods)
       (one-on-one)
       (badges)
       (tech-coords)

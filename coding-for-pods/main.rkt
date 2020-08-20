@@ -1,6 +1,6 @@
 #lang at-exp racket
 
-(provide pods)
+(provide coding-for-pods)
 
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
@@ -16,8 +16,8 @@
 
 (define (gems n) (span n " " (i class:"fas fa-gem")))
 
-(define (pods)
-  (page pods-top-path
+(define (coding-for-pods)
+  (page coding-for-pods-top-path
         (normal-content-wide
           #:head (list (title "Coding for Pods")
                        (meta name: "description" content: "Bring Quality Coding Education into your Pod, MicroSchool, or Homeschool Curriculum")
@@ -99,7 +99,7 @@
               (container
                (card class: "border-primary"
                 (card-header class: "bg-primary text-white text-center"
-                             (h5 "Submit the form below to bring Coding to your Pod!"))
+                             (h5 "Submit the form below to bring coding to your pod!"))
                 (card-body
                  (form action: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfc1cpZ0o5OT8c38WZ-XMOTsr5Zofrk7L9Q35EY7E2LJTNAtg/formResponse"
                        (div class:"form-group"
