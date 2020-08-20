@@ -19,8 +19,8 @@
 (define (pods)
   (page pods-top-path
         (normal-content-wide
-          #:head (list (title "MetaCoders for Micro-Schools")
-                       (meta name: "description" content: "Learn Coding from Live Instructors starting on August 24th")
+          #:head (list (title "Coding for Pods")
+                       (meta name: "description" content: "Bring Quality Coding Education into your Pod, MicroSchool, or Homeschool Curriculum")
                        (common-critical-css)
                        (link 'rel: "preconnect" href:"https://q.stripe.com")
                        (link 'rel: "preconnect" href:"https://m.stripe.com")
@@ -37,8 +37,8 @@
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
-    #:title "MetaCoders for Micro-Schools"
-    #:tagline "Bring professional coding education into your homeschooling experience." 
+    #:title "Coding for Pods"
+    #:tagline "Professional coding education for your home learning experience." 
     #:percent-height "60vh"
     #:image-path students-in-row-path
     #:alt-tag "Kids coding together in a small group."))
@@ -47,24 +47,24 @@
 (define (updated-list-value-prop)
   (jumbotron class: "mb-0 text-center bg-white"
              (container
-              (h2 "MetaCoders now offers custom classes for your pod or micro-school!")
+              (h2 "Bring MetaCoders into your MicroSchool!")
               (responsive-row #:columns 4 #:d-flex? #t
                               (card class: "border-warning" style: (properties 'flex: 1)
                                     (card-header class: "h6 bg-warning text-white" "Build your Own Schedule!")
                                     (card-body
-                                     "Our staff will work with you to find the best time for your group of students. For example, start every week with coding class at 9am on Monday, or code three times a week at noon! We create the unique educational experience that works for you."))
+                                     "Our staff will work with you to find the best time for your co-learning pod. For example, start every week with coding class at 9am on Monday, or code three times a week at noon! We create the unique educational experience that works for you."))
                               (card class: "border-warning" style: (properties 'flex: 1)
                                     (card-header class: "h6 bg-warning text-white" "High Quality & Affordable!")
                                     (card-body
-                                     "Starting as low as " (b "$70/hour for 2-5 students") ", our prices adjust based on your student group and needs. Our customized pricing allows for student groups of any size and age. You don't have to choose between quality and afforability in your students' education!")) 
+                                     "Starting as low as " (b "$70/hour for 2-5 students") ", our prices adjust based on your pod's needs. Our customized pricing allows for student groups of any size and age. You don't have to choose between quality and afforability for your students' education!")) 
                               (card class: "border-warning" style: (properties 'flex: 1)
                                     (card-header class: "h6 bg-warning text-white" "Structured for Your Students!")
                                     (card-body
-                                     "Unlike our drop-in Coding Club, MetaCoders in your Micro-School is able to provide the same Coding Coach every time and guarantee the same students in every session -- " (i "your") " students! Get personalized attention and structure to maximize your students' growth."))
+                                     "Unlike our drop-in Coding Club, Coding for Pods is able to provide the same Coding Coach every time and guarantee the same students in every session -- " (i "your") " students! Get personalized attention and structure to maximize your students' growth."))
                               (card class: "border-warning" style: (properties 'flex: 1)
                                     (card-header class: "h6 bg-warning text-white" "Completely Customizable!")
                                     (card-body
-                                     "Are your students specifically interested in a topic not currently offered in Coding Club? We can customize our topics to the needs of your students and even create new curriculum just for you!*" (br)(i class: "small" "*Additional cost for custom curriculum."))))
+                                     "Is your pod specifically interested in a topic not currently offered in Coding Club? We can customize our topics to the needs of your students and even create new curriculum just for you!*" (br)(i class: "small" "*Additional cost for custom curriculum."))))
 
               )))
 
@@ -99,10 +99,9 @@
               (container
                (card class: "border-primary"
                 (card-header class: "bg-primary text-white text-center"
-                             (h5 "Contact us to Bring MetaCoders to your Micro-School!"))
+                             (h5 "Submit the form below to bring Coding to your Pod!"))
                 (card-body
-                 (form action:
-                       "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfc1cpZ0o5OT8c38WZ-XMOTsr5Zofrk7L9Q35EY7E2LJTNAtg/formResponse"
+                 (form action: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfc1cpZ0o5OT8c38WZ-XMOTsr5Zofrk7L9Q35EY7E2LJTNAtg/formResponse"
                        (div class:"form-group"
                             (label "Contact Parent Name")
                             (input type: "text" class: "form-control" name: "entry.1054010153"))
