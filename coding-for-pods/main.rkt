@@ -98,8 +98,8 @@
               style: (properties 'overflow: "hidden")
               (container
                (card class: "border-primary"
-                (card-header class: "bg-primary text-white text-center"
-                             (h5 "Submit the form below to bring coding to your pod!"))
+                (card-header class: "h5 bg-primary text-white text-center"
+                             "Submit the form below to bring coding to your pod!")
                 (card-body
                  (form action: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfc1cpZ0o5OT8c38WZ-XMOTsr5Zofrk7L9Q35EY7E2LJTNAtg/formResponse"
                        (div class:"form-group"
