@@ -71,7 +71,11 @@
              (container
                (h2 class: "text-center" "What Do Credits " (gems "") " Unlock?" )
                (br)
-               (apply (curry responsive-row #:columns 3) (map display-topic (topics)))
+               (h5 class: "text-center" "The following topics can run on Chromebooks, macOS, or Windows and require no installation.")
+               (apply (curry responsive-row #:columns 3) (map display-topic (noinstall-topics)))
+               (hr)
+               (h5 class: "text-center" "The following topics require software to be installed on macOS or Windows.")
+               (apply (curry responsive-row #:columns 3) (map display-topic (install-topics)))
                )
              ))
 

@@ -1,6 +1,8 @@
 #lang at-exp racket
 
-(provide topics)
+(provide topics
+         noinstall-topics
+         install-topics)
 
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
@@ -68,14 +70,30 @@
               ))
 
 (define (topics)
+  (define (scratch)
+    (topic "Coding with Scratch" 
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify scratch-img-path))
+           "Our Coding Coaches will guide your children through a variety of projects using the Scratch programming language."
+           #:card-color 'primary
+           #:level 'K-10th
+           #:coming-soon #f))
+  
   (define (endless-runner)
     (topic "Endless Runner Game" 
            (card-video-top src: endless-runner-mp4-path)
            "Students will use a typed coding language to code and customize a multi-staged game in the style of Temple Run and Super Mario Run. Students can theme their game with provided Mario, Harry Potter, or Star Wars assets complete with items to collect and things to avoid. Students will use an online coding editor. No installation needed."
-           #:card-color 'primary
+           #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
 
+  (define (maze-game)
+    (topic "Maze Game" 
+           (card-video-top src: maze-mp4-path)
+           "Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure! Students can theme their game using provided Minecraft or Pokemon assets or even create their own. Students will use an online coding editor. No installation needed."
+           #:card-color 'primary
+           #:level '3rd-10th
+           #:coming-soon #f))
+  
   (define (digital-art)
     (topic "Coding Digital Art" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify digital-art-img-path))
@@ -84,36 +102,21 @@
            #:level '3rd-10th
            #:coming-soon #f))
   
-  (define (maze-game)
-    (topic "Maze Game" 
-           (card-video-top src: maze-mp4-path)
-           "Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure! Students can theme their game using provided Minecraft or Pokemon assets or even create their own. Students will use an online coding editor. No installation needed."
-           #:card-color 'primary
-           #:level '3rd-10th
-           #:coming-soon #f))
-
   (define (paper-coding)
     (topic "Coding Adventures" 
            (card-img-top class: "border-bottom" class: "border-bottom" style: card-img-top-style src: (prefix/pathify paper-coding-img-path))
-           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper. " (b "M-F, 3pm-4pm PST"))
-           #:card-color 'warning
+           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge! " (b "M-F, 3pm-4pm PST"))
+           #:card-color 'primary
            #:level 'K-2nd
            #:coming-soon #f))
 
-  (define (learntomod)
-    (topic "LearnToMod Minecraft"
-           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify conquering-covid-b-img-path))
-           (list "Learn how to make cool, custom Minecraft mods with our instructors on Fridays.  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
-           #:card-color 'primary
-           #:level '3rd-10th))
-  
-  (define (scratch)
-    (topic "Coding with Scratch" 
-           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify scratch-img-path))
-           "Our Coding Coaches will guide your children through a variety of projects using the Scratch programming language."
+  (define (python)
+    (topic "Python Game Design" 
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
+           "Learn the basics of Python including syntax, variables, I/O (inputs and outputs), conditionals, data types, and an introduction to Object-Oriented Programming while designing and developing games!"
            #:card-color 'warning
-           #:level 'K-10th
-           #:coming-soon #f))
+           #:level '7th-10th
+           #:coming-soon #t))
   
   (define (adventure)
     (topic "Coding for Harry Potter & Mario Fans"
@@ -139,7 +142,7 @@
            #:level '3rd-10th
            #:coming-soon #f))
 
-    (define (3d-exploration)
+  (define (3d-exploration)
     (topic "3D Exploration" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify 3d-exploration-img-path))
            "The magic of turning code into an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing interactive worlds that they can walk (or fly!) through."
@@ -147,22 +150,20 @@
            #:level '3rd-10th
            #:coming-soon #f))
 
-  (define (python)
-    (topic "Python Game Design" 
-           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
-           "Learn the basics of Python including syntax, variables, I/O (inputs and outputs), conditionals, data types, and an introduction to Object-Oriented Programming while designing and developing games!"
-           #:card-color 'primary
-           #:level '7th-10th
-           #:coming-soon #t))
-
   (define (3d-orbit)
     (topic "3D Orbit" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify 3d-orbit-img-path))
            "The magic of exploring the universe in an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing a star system thet the can fly through."
-           #:card-color 'warning
+           #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
   
+  (define (learntomod)
+    (topic "LearnToMod Minecraft"
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify conquering-covid-b-img-path))
+           (list "Learn how to make cool, custom Minecraft mods with our instructors on Fridays.  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
+           #:card-color 'warning
+           #:level '3rd-10th))
   #|
   (define (adventures-in-coding)
     (topic "Adventures in Coding"
@@ -214,17 +215,25 @@
 
   |#
   
-  (list 
-    (endless-runner)
-    (digital-art)
-    (maze-game)
-    (paper-coding)
-    (learntomod)    
-    (scratch)
-    (adventure)
-    (survival)
-    (battle-arena)
-    (3d-exploration)
-    (python)
-    (3d-orbit)
-    ))
+  (list
+   (scratch)
+   (endless-runner)
+   (maze-game)
+   (digital-art)
+   (paper-coding)
+   (python)
+   
+   (adventure)
+   (survival)
+   (battle-arena)
+   (3d-exploration)
+   (3d-orbit)
+   (learntomod)
+   
+   ))
+
+(define (noinstall-topics)
+  (take (topics) 6))
+
+(define (install-topics)
+  (drop (topics) 6))
