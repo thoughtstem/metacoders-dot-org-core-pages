@@ -98,6 +98,8 @@
       (li "If the parent has purchased the credits in a bulk package in advance, any credits they have used will be converted to the current rate. They will instead receive a refund for the balance after that conversion.")
       (li "If one year or longer has passed since the date of purchasing, no refund will be given for those credits.")
       )
+    (b "Subscriptions")
+    (p "Due to the discounts associated with subscriptions, customers must purchase a minimum of 3 months to qualify.  If a subscription is cancelled before the 3 month time period, a $19.99 fee will be charged.")
     ))
 
 (define (terms-for-phonecalls-texts)

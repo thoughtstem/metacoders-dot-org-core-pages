@@ -10,7 +10,8 @@
          ;website-js/components/gradient
          ;website-js/components/boids
          ;website-js/components/pointillism
-         website-js/components/l-system)
+         website-js/components/l-system
+         "./team.rkt")
 
 (define-runtime-path js "learn-more/js")
 
@@ -206,9 +207,10 @@ function toggleAccBtn3() {
         (include-p5-js)
         (jumbotron-header)
         (about-and-mission)
-        (programs-we-offer)
-        (what-makes-us-different)
-        (where-do-you-fit-in)
+        ;(programs-we-offer)
+        ;(what-makes-us-different)
+        ;(where-do-you-fit-in)
+        (jumbotron-save-the-world)
         (include-js "js/name-replace-effect.js")))))
 
 (define (critical-css)

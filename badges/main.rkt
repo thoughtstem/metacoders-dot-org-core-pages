@@ -1,5 +1,5 @@
 #lang at-exp racket
-(provide coding-club)
+(provide badges)
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
          website-js/components/l-system
@@ -14,8 +14,8 @@
 
 (define (gems n) (span n " " (i class:"fas fa-gem")))
 
-(define (coding-club)
-  (page coding-club-top-path
+(define (badges)
+  (page badges-top-path
         (normal-content-wide
           #:head (list (title "Virtual Coding Club from MetaCoders")
                        (meta name: "description" content: "Learn Coding from Live Instructors starting on August 24th")
@@ -44,27 +44,41 @@
 
 
 (define (updated-list-value-prop)
-  (jumbotron class: "mb-0 text-center bg-white"
+  (define (padded-li . content)
+    (li style: (properties 'padding-top: 10) content))
+  (jumbotron class: "mb-0"
+             style: (properties background: "white")
              (container
                (h2 "Why Join MetaCoders Virtual Coding Club?")
-               (responsive-row #:columns 4 #:d-flex? #t
-                 (card class: "border-primary" style: (properties 'flex: 1)
-                  (card-header class: "h6 bg-primary text-white" "Live-Taught on Your Schedule!")
-                  (card-body
-                   "MetaCoders knows that you and your family have a lot going on -- now more than ever! Online sessions with our Coding Coaches are offered " (b "every weekday, 1pm to 4pm PT") ". Join us on the hour daily, weekly, or whenever! Our schedule adapts to " (i "you") "."))
-                 (card class: "border-primary" style: (properties 'flex: 1)
-                  (card-header class: "h6 bg-primary text-white" "Ultimate Flexibility!")
-                  (card-body
-                   "With no session enrollments required, you and your students can decide to join us five minutes in advance, if you want! The absolute low-commitment class with no stress about changing schedules or missing sessions.")) 
-                 (card class: "border-primary" style: (properties 'flex: 1)
-                  (card-header class: "h6 bg-primary text-white" "Customized Student Experience!")
-                  (card-body
-                   "A range of topics offered daily allows students to design their own education experience around their interest and experience level. MetaCoders' unique Badge System allows students to move though curriculum at the pace that is right for them, track their progress, and pick up right where they left off each day."))
-                 (card class: "border-primary" style: (properties 'flex: 1)
-                   (card-header class: "h6 bg-primary text-white" "Real People, Real Time!")
-                   (card-body
-                    "Learning at home doesn't have to mean learning alone. Join other coding students from around the world and our experienced Coding Coaches for a social, fun, and educational experience!")))))
+               (ul 
+                 (padded-li (h5 "Live-Taught on Your Schedule!") " MetaCoders knows that you and your family have a lot going on -- now more than ever! Online sessions with our Coding Coaches are offered " (b "every weekday, 1pm to 4pm PT") ". Join us on the hour daily, weekly, or whenever! Our schedule adapts to " (i "you") ".")
+                 (padded-li (h5 "Ultimate Flexibility!") " With no session enrollments required, you and your students can decide to join us five minutes in advance, if you want! The absolute low-commitment class with no stress about changing schedules or missing sessions.") 
+                 (padded-li (h5 "Customized Student Experience!") "  A range of topics offered daily allows students to design their own education experience around their interest and experience level. MetaCoders' unique Badge System allows students to move though curriculum at the pace that is right for them, track their progress, and pick up right where they left off each day.")
+                 (padded-li (h5 "Real People, Real Time!") " Learning at home doesn't have to mean learning alone. Join other coding students from around the world and our experienced Coding Coaches for a social, fun, and educational experience!"))))
 )
+
+;needs a header
+(define (updated-value-prop)
+  (jumbotron class: "mb-0"
+             (container
+              (h1 "Why Join MetaCoder's Virtual Coding Club?")
+               (responsive-row #:columns 2
+                               (sched-value-card))
+               )
+             ))
+
+(define (value-card header image text)
+  (card class: "text-black"
+        (card-img src: image) 
+        (card-img-overlay 
+         (h3 header)
+         text)
+    ))
+
+(define (sched-value-card)
+  (value-card "High-Quality Coding Education on Your Schedule"
+              (prefix/pathify sched-value-img-path)
+              (p "MetaCoders knows that you and your family have a lot going on -- now more than ever! With our drop-in style Virtual Coding Club, you don't have to struggle to cram another daily or weekly class into your calendar. Our schedule adapts to " (i "you") ".")))
 
 (define (topics-section)
   (jumbotron class: "mb-0"
@@ -89,23 +103,23 @@
                (p "Each Credit " (gems "") " unlocks an hour of personalized education for K-10 students and beyond. " (b "Join at the beginning of any hour, and stick around for one, two or three hours at a time!") " No need to sign up or schedule for days or times.") 
                (br)
                (credit-wheel)
-               (br)
-               (schedule-info)
                )))
 
 (define (credit-wheel)
+  (define (fancy-col x)
+    (div class: "col-lg-4 col-sm-6 col-xs-12" 
+         x)
+    )
   (list
-    (card class: "bg-transparent border-0"
+    (card class: "bg-transparent" style: (properties border: "0px")
       (card-body
         (h3 class: "text-center" "Credit Bundles")
-        (apply (curry responsive-row #:columns 3 #:padding 2 #:justify? #t) (credit-button-list))
-        ))
+        (row (map fancy-col (credit-button-list)))))
     (br)
-    (card class: "bg-transparent border-0"
+    (card class: "bg-transparent" style: (properties border: "0px")
       (card-body
         (h3 class: "text-center" "Credit Subscriptions")
-        (apply (curry responsive-row #:columns 3 #:padding 2 #:justify? #t) (credit-button-list #:type 'subscription))
-        ))
+        (row (map fancy-col (credit-button-list #:type 'subscription)))))
     (a name:"topics"))
   )
 
@@ -136,17 +150,6 @@
       (error "Must supply one-time or subscription to credit button list")])
   )
 
-(define (schedule-info)
-  (row
-   (div class: "col-lg-8 col-xl-6 mx-auto"
-        (card class: "border-warning mx-2"
-              (card-header class: "h5 bg-warning text-white" "Fall 2020 Schedule")
-              (card-body
-               (table class: "table table-sm table-borderless text-left"
-                      (tr (td (strong "Session Dates: ")) (td "August 24th - December 18th"))
-                      (tr (td (strong "Schedule: ")) (td "Weekdays 1pm-4pm"))
-                      (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27"))))))))
-
 
 (define (learn-more-button)
   "Learn More! Scroll down."
@@ -154,8 +157,8 @@
 
 
 (define (more-description-section)
-  (jumbotron  class: "mb-0 bg-white"
-              ;style: (properties background: "white")
+  (jumbotron  class: "mb-0"
+              style: (properties background: "white")
               (container
                 (row
                   (col-lg-6 class: "pl-lg-5"
@@ -191,35 +194,17 @@
               )
   )
 
-; Customized accordian-card
-; Todo: remove button-link and just turn the entire header into a link
-(define (accordion-card-faq 
-           #:header (header "Click to show")
-           #:shown? (shown? #f)
-           . content)
-  (enclose
-   (card
-    class: "border-primary mb-2"
-    (card-header class: "p-0 bg-primary"
-     (button-link class: "btn-block bg-transparent m-0 text-white text-left"
-                  on-click: (call 'toggle)
-       header))
-    (div id: (id 'collapse1)
-         class: (~a "collapse " (if shown? "show" ""))
-      (card-body
-       content)))
-   (script ([toToggle (id 'collapse1)])
-     (function (toggle)
-       @js{$("#"+@toToggle).toggle()}))))
+
+
 
 
 (define (faq-section)
-  ;(local-require website-js/components/accordion-cards)
-  (jumbotron  class: "mb-0 bg-white"
+  (local-require website-js/components/accordion-cards)
+  (jumbotron  class: "mb-0"
               (container
                 (h2 class: "text-center" "Frequently Asked Questions")
                 (br)
-                (accordion-card-faq #:header (h4 class: "mb-0" "General")
+                (accordion-card #:header (h4 "General")
                                 (ol
                                   (li (b "How do Credits work?") " Each Credit can be applied to one 1 hour online session. You can apply the credits you purchase to any of our unfilled scheduled sessions. You do not have to apply all of your purchased credits all at once. We keep track of how many credits each customer has so that you can wait to apply them until a time that is convenient for you!")
                                   (li (b "I purchased Credits! Now, how do I use them to sign up for Coding Club sessions?") " After you purchase, you'll be directed to fill out a short form to send us your students' registration information. Once you have registered, someone from our team will be notified and will email you within the hour to confirm your registration. If you do not receive this email within 2 hours, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to confirm your registration.") 
@@ -235,14 +220,14 @@
                                   (li (b "Do you record Coding Club sessions?") " Yes, in order to be as transparent as possible with parents, we try to record all sessions. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") ".")
                                   )
                                 )
-                (accordion-card-faq #:header (h4 class: "mb-0" "Fall")
+                (accordion-card #:header (h4 "Fall")
                                 (ol
                                   (li (b "Do I really not need to schedule my sessions in advance?") " That's right! Throughout the fall, from 1pm-4pm PST, Monday-Friday, just have your student join our emailed video conferencing link, and we will teach them coding! As students \"spend\" their Credits, we'll send you an update if your Credit balance is running low.") 
                                   (li (b "How many Credits should I purchase for this fall?") " You can do a quick estimate by multiplying the number of weeks x 5 days/week x hours per day x number of students. For example, if you have 1 child that you want to register for 3 hours per day for 5 weeks, you'd purchase: (5 weeks x 5 days/week x 3 hours per day x 1 student) = 75 credits.") 
                                   )
                                 )
-                (accordion-card-faq #:header  
-                                (h4 class: "mb-0" "Volunteers")
+                (accordion-card #:header  
+                                (h4 "Volunteers")
                                 (ol
                                   (li (b "How do I become a MetaCoders Volunteer?") " Easily! Apply online " (a href: "https://docs.google.com/forms/d/e/1FAIpQLSeGAMm6a6wpmFkikMa5k6QbK9rE3r3_rb22GDLx6UGWi5jdMg/viewform" target: "_blank" "here") " and we will be in touch about the upcoming opportunities soon!")
                                   (li (b "What kind of things do MetaCoders Volunteers do?") " All our volunteers start out with the basics -- you will help out in the classroom and administration tasks. As you become more comfortable with the MetaCoders experience, you will have more creative opportunities and more power to decide how you spend your time.")
