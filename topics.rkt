@@ -4,7 +4,6 @@
 
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
-         website-js/components/l-system
          website-js
          )
 
