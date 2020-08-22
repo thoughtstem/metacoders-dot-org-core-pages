@@ -73,7 +73,7 @@
   (define (scratch)
     (topic "Coding with Scratch" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify scratch-img-path))
-           "Our Coding Coaches will guide your children through a variety of projects using the Scratch programming language."
+           "Scratch is a drag-and-drop programming language known for it's beginner-friendly interface and colorful code blocks but MetaCoders takes Scratch beyond beginner! Perfect for all levels, students get to choose an code the projects that excite them from our ever-growing collection of curriculum."
            #:card-color 'primary
            #:level 'K-10th
            #:coming-soon #f))
@@ -81,7 +81,7 @@
   (define (endless-runner)
     (topic "Endless Runner Game" 
            (card-video-top src: endless-runner-mp4-path)
-           "Students will use a typed coding language to code and customize a multi-staged game in the style of Temple Run and Super Mario Run. Students can theme their game with provided Mario, Harry Potter, or Star Wars assets complete with items to collect and things to avoid. Students will use an online coding editor. No installation needed."
+           "Code a classic! Students use a typed coding language to code and customize a multi-staged game in the style of Temple Run and Super Mario Run. Students can theme their game with provided Mario, Harry Potter, or Star Wars assets complete with items to collect and dangers to avoid. Code it all in a free online coding editor; no installation required!"
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -89,7 +89,7 @@
   (define (maze-game)
     (topic "Maze Game" 
            (card-video-top src: maze-mp4-path)
-           "Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure! Students can theme their game using provided Minecraft or Pokemon assets or even create their own. Students will use an online coding editor. No installation needed."
+           "Code thrilling and challenging maze puzzle games! Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure. Students can theme their game using provided Minecraft or Pokemon assets or even create their own. Code it all in a free online coding editor; no installation required!"
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
@@ -97,7 +97,7 @@
   (define (digital-art)
     (topic "Coding Digital Art" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify digital-art-img-path))
-           "Get creative with code! Generate and manipulate shapes in the text-based language Scheme. Our Coding Coaches will introduce and build your student’s confidence with universal coding tools and terms like functions, definitions, and arguments -- all while creating fun pictures with code!  guide your children through a variety of text-based coding art projects using WeScheme."
+           "Get creative with code! Generate and manipulate shapes in the text-based language Scheme. Our Coding Coaches introduce universal coding tools like functions, definitions, and arguments in a visual context. Once they have gotten comfortable the basics, students get to choose art projects from our ever-growing collection of curriculum. Code it all in a free online coding editor; no installation required!"
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -105,7 +105,7 @@
   (define (paper-coding)
     (topic "Coding Adventures" 
            (card-img-top class: "border-bottom" class: "border-bottom" style: card-img-top-style src: (prefix/pathify paper-coding-img-path))
-           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge! " (b "M-F, 3pm-4pm PST"))
+           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge! " (b "Topic offered M-F, 3pm-4pm PST"))
            #:card-color 'primary
            #:level 'K-2nd
            #:coming-soon #f))
@@ -113,7 +113,7 @@
   (define (python)
     (topic "Python Game Design" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
-           "Learn the basics of Python including syntax, variables, I/O (inputs and outputs), conditionals, data types, and an introduction to Object-Oriented Programming while designing and developing games!"
+           "Learn a new language! Our Coding Coaches guide students as they learn the basics of Python including syntax, variables, I/O (inputs and outputs), conditionals, data types, and an introduction to Object-Oriented Programming while designing and developing games! Code it all in a free online coding editor; no installation required!"
            #:card-color 'warning
            #:level '7th-10th
            #:coming-soon #t))
