@@ -105,7 +105,8 @@
   (define (paper-coding)
     (topic "Coding Adventures" 
            (card-img-top class: "border-bottom" class: "border-bottom" style: card-img-top-style src: (prefix/pathify paper-coding-img-path))
-           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge! " (b "Topic offered M-F, 3pm-4pm PST"))
+           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing and coding activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge! " (b "Topic offered M-F, 3pm-4pm PST"))
+
            #:card-color 'primary
            #:level 'K-2nd
            #:coming-soon #f))
