@@ -162,7 +162,7 @@
   (define (learntomod)
     (topic "LearnToMod Minecraft"
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify conquering-covid-b-img-path))
-           (list "Learn how to make cool, custom Minecraft mods with our instructors on Fridays.  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
+           (list "Learn how to make cool, custom Minecraft mods with our instructors on " (b "Fridays") ".  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
            #:card-color 'warning
            #:level '3rd-10th))
   #|
