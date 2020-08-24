@@ -1,6 +1,8 @@
 #lang at-exp racket
 
-(provide topics)
+(provide topics
+         noinstall-topics
+         install-topics)
 
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
@@ -68,57 +70,59 @@
               ))
 
 (define (topics)
-  (define (endless-runner)
-    (topic "Endless Runner Game" 
-           (card-video-top src: endless-runner-mp4-path)
-           "Students will use a typed coding language to code and customize a multi-staged game in the style of Temple Run and Super Mario Run. Students can theme their game with provided Mario, Harry Potter, or Star Wars assets complete with items to collect and things to avoid. Students will use an online coding editor. No installation needed."
-           #:card-color 'primary
-           #:level '3rd-10th
-           #:coming-soon #f))
-
-  (define (digital-art)
-    (topic "Coding Digital Art" 
-           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify digital-art-img-path))
-           "Get creative with code! Generate and manipulate shapes in the text-based language Scheme. Our Coding Coaches will introduce and build your student’s confidence with universal coding tools and terms like functions, definitions, and arguments -- all while creating fun pictures with code!  guide your children through a variety of text-based coding art projects using WeScheme."
-           #:card-color 'warning
-           #:level '3rd-10th
-           #:coming-soon #f))
-  
-  (define (maze-game)
-    (topic "Maze Game" 
-           (card-video-top src: maze-mp4-path)
-           "Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure! Students can theme their game using provided Minecraft or Pokemon assets or even create their own. Students will use an online coding editor. No installation needed."
-           #:card-color 'primary
-           #:level '3rd-10th
-           #:coming-soon #f))
-
-  (define (paper-coding)
-    (topic "Coding Adventures" 
-           (card-img-top class: "border-bottom" class: "border-bottom" style: card-img-top-style src: (prefix/pathify paper-coding-img-path))
-           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!  They will gain basic coding skills while drawing on paper. " (b "M-F, 3pm-4pm PST"))
-           #:card-color 'warning
-           #:level 'K-2nd
-           #:coming-soon #f))
-
-  (define (learntomod)
-    (topic "LearnToMod Minecraft"
-           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify conquering-covid-b-img-path))
-           (list "Learn how to make cool, custom Minecraft mods with our instructors on Fridays.  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
-           #:card-color 'primary
-           #:level '3rd-10th))
-  
   (define (scratch)
     (topic "Coding with Scratch" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify scratch-img-path))
-           "Our Coding Coaches will guide your children through a variety of projects using the Scratch programming language."
-           #:card-color 'warning
+           "Scratch is a drag-and-drop programming language known for its beginner-friendly interface and colorful code blocks but MetaCoders takes Scratch beyond beginner! Perfect for all levels, students get to choose and code the projects that excite them from our ever-growing collection of curriculum. Code it all in a free online coding editor; no installation required!"
+           #:card-color 'primary
            #:level 'K-10th
            #:coming-soon #f))
+  
+  (define (endless-runner)
+    (topic "Endless Runner Game" 
+           (card-video-top src: endless-runner-mp4-path)
+           "Code a classic! Students use a typed coding language to code and customize a multi-staged game in the style of Temple Run and Super Mario Run. Students can theme their game with provided Mario, Harry Potter, or Star Wars assets complete with items to collect and dangers to avoid. Code it all in a free online coding editor; no installation required!"
+           #:card-color 'warning
+           #:level '3rd-10th
+           #:coming-soon #f))
+
+  (define (maze-game)
+    (topic "Maze Game" 
+           (card-video-top src: maze-mp4-path)
+           "Code thrilling and challenging maze puzzle games! Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure. Students can theme their game using provided Minecraft or Pokemon assets or even create their own. Code it all in a free online coding editor; no installation required!"
+           #:card-color 'primary
+           #:level '3rd-10th
+           #:coming-soon #f))
+  
+  (define (digital-art)
+    (topic "Coding Digital Art" 
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify digital-art-img-path))
+           "Get creative with code! Generate and manipulate shapes in the text-based language Scheme while learning universal coding tools like functions, definitions, and arguments. Once they have gotten comfortable the basics, students get to choose art projects from our ever-growing collection of curriculum. Code it all in a free online coding editor; no installation required!"
+           #:card-color 'warning
+           #:level '3rd-10th
+           #:coming-soon #f))
+  
+  (define (paper-coding)
+    (topic "Coding Adventures" 
+           (card-img-top class: "border-bottom" class: "border-bottom" style: card-img-top-style src: (prefix/pathify paper-coding-img-path))
+           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing and coding activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge! " (b "Topic offered M-F, 3pm-4pm PST"))
+
+           #:card-color 'primary
+           #:level 'K-2nd
+           #:coming-soon #f))
+
+  (define (python)
+    (topic "Python Game Design" 
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
+           "Did you know that the Python language is named, not for the snake, but for the classics of British comedy: Monty Python? Our Coding Coaches guide students as they learn the basics of Python including syntax, variables, inputs/outputs, conditionals, and data types while designing and developing games. Code it all in a free online coding editor; no installation required!"
+           #:card-color 'warning
+           #:level '7th-10th
+           #:coming-soon #t))
   
   (define (adventure)
     (topic "Coding for Harry Potter & Mario Fans"
            (card-video-top src: adventure-harrypotter-mp4-path)
-           "Build your own adventure based Harry Potter or Mario games. Mario fans will earn special Mario game design badges, and vice versa for Harry Potter fans! Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
+           "Build your own adventure based Harry Potter or Mario games. Gamer fans will earn special Mario game design badges while Harry Potter fanatics earn themed badges as they explore the \"magic\" of coding! This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
@@ -126,7 +130,7 @@
    (define (survival)
     (topic "Coding for Minecraft & Pokemon Fans" 
            (card-video-top src: survival-minecraft-mp4-path)
-           "Learn how to build survival-style video games with other kids who love these video games! Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
+           "Minecraft is a famous example of the classic survival-style video game. Learn how to build your own survival game inspired by Minecraft or Pokemon with other kids who love these video games! This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -134,35 +138,33 @@
   (define (battle-arena)
     (topic "Coding for Marvel, Fortnite, & Star Wars Fans"
            (card-video-top src: battlearena-avengers-mp4-path)
-           "Build battle arena-style games with characters from your favorite games and movies! Share the games you make with your new coding friends. Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
+           "Code your own battle game where you decide the challenge! How many enemies do you want to face? What tools fill your armory? What powerups are at your disposal? Fill your game with characters from your favorite games and movies!  This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
 
-    (define (3d-exploration)
+  (define (3d-exploration)
     (topic "3D Exploration" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify 3d-exploration-img-path))
-           "The magic of turning code into an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing interactive worlds that they can walk (or fly!) through."
+           "Let your imagination run wild; code immersive 3D worlds you can see with a click of a button! Our Coding Coaches guide students as they learn a programming language for designing and customizing interactive worlds that they can walk (or fly!) through. This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
-
-  (define (python)
-    (topic "Python Game Design" 
-           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
-           "Learn the basics of Python including syntax, variables, I/O (inputs and outputs), conditionals, data types, and an introduction to Object-Oriented Programming while designing and developing games!"
-           #:card-color 'primary
-           #:level '7th-10th
-           #:coming-soon #t))
 
   (define (3d-orbit)
     (topic "3D Orbit" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify 3d-orbit-img-path))
-           "The magic of exploring the universe in an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing a star system thet the can fly through."
-           #:card-color 'warning
+           "Take to the stars! Code planets, moons, asteroids, stars as you create your own unique solar system in stunning 3D. Our Coding Coaches guide students as they explore a programming language for generating entire universes. This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
+           #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
   
+  (define (learntomod)
+    (topic "LearnToMod Minecraft"
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify conquering-covid-b-img-path))
+           (list "Learn how to make cool, custom Minecraft mods with our instructors on " (b "Fridays") ".  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
+           #:card-color 'warning
+           #:level '3rd-10th))
   #|
   (define (adventures-in-coding)
     (topic "Adventures in Coding"
@@ -214,17 +216,25 @@
 
   |#
   
-  (list 
-    (endless-runner)
-    (digital-art)
-    (maze-game)
-    (paper-coding)
-    (learntomod)    
-    (scratch)
-    (adventure)
-    (survival)
-    (battle-arena)
-    (3d-exploration)
-    (python)
-    (3d-orbit)
-    ))
+  (list
+   (scratch)
+   (endless-runner)
+   (maze-game)
+   (digital-art)
+   (paper-coding)
+   (python)
+   
+   (adventure)
+   (survival)
+   (battle-arena)
+   (3d-exploration)
+   (3d-orbit)
+   (learntomod)
+   
+   ))
+
+(define (noinstall-topics)
+  (take (topics) 6))
+
+(define (install-topics)
+  (drop (topics) 6))
