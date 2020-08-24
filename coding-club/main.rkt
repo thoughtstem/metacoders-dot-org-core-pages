@@ -1,5 +1,6 @@
 #lang at-exp racket
-(provide coding-club)
+(provide coding-club
+         coding-club-content)
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
          website-js/components/l-system
@@ -16,7 +17,11 @@
 
 (define (coding-club)
   (page coding-club-top-path
-        (normal-content-wide
+        (coding-club-content)
+        ))
+
+(define (coding-club-content)
+  (normal-content-wide
           #:head (list (title "Virtual Coding Club from MetaCoders")
                        (meta name: "description" content: "Learn Coding from Live Instructors starting on August 24th")
                        (common-critical-css)
@@ -32,7 +37,7 @@
           (customer-testimonial-section)
           (topics-section)
           (faq-section)
-          )))
+          ))
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header

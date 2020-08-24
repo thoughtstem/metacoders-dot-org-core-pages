@@ -1,9 +1,11 @@
 #lang at-exp racket
+
 (provide online)
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
          website-js/components/l-system
          website-js
+         "../coding-club/main.rkt"
          )
 
 (define KEY (make-parameter "pk_live_Kd7tDKVnPMvyCyk5oAuSkbju00pa0xJPPL")
@@ -14,31 +16,36 @@
 
 (define (online)
   (page online-top-path
-        (normal-content-wide
-          #:head (list (title "Quarantine Coding Club from MetaCoders")
-                       (meta name: "description" content: "Learn Coding from Live Instructors Right Now or Throughout the Summer")
-                       (common-critical-css)
-                       (link 'rel: "preconnect" href:"https://q.stripe.com")
-                       (link 'rel: "preconnect" href:"https://m.stripe.com")
-                       (normal:script src:"https://js.stripe.com/v3")
-                       )
-          #:defer-css #t
-          (include-p5-js)
-          (jumbotron-header-section)
-          (value-prop-section)
-          (topics-section)
-          (customer-testimonial-section)
-          (more-description-section)
-          (faq-section)
-          )))
+        (coding-club-content)
+
+#|
+(normal-content-wide
+         #:head (list (title "Quarantine Coding Club from MetaCoders")
+                      (meta name: "description" content: "Learn Coding from Live Instructors Right Now or Throughout the Summer")
+                      (common-critical-css)
+                      (link 'rel: "preconnect" href:"https://q.stripe.com")
+                      (link 'rel: "preconnect" href:"https://m.stripe.com")
+                      (normal:script src:"https://js.stripe.com/v3")
+                      )
+         #:defer-css #t
+         (include-p5-js)
+         (jumbotron-header-section)
+         (value-prop-section)
+         (topics-section)
+         (customer-testimonial-section)
+         (more-description-section)
+         (faq-section)
+         )
+|#
+        ))
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
-    #:title "Online Coding Summer Camps for K-10th"
-    #:tagline "Join the MetaCoders Online Community. We'll Teach You How to Have Fun While Coding." 
-    #:percent-height "60vh"
-    #:image-path online-banner-path
-    #:alt-tag "Young boy coding a video game on his laptop while he's in quarantine during the COVID-19 pandemic."))
+   #:title "Online Coding Summer Camps for K-10th"
+   #:tagline "Join the MetaCoders Online Community. We'll Teach You How to Have Fun While Coding." 
+   #:percent-height "60vh"
+   #:image-path online-banner-path
+   #:alt-tag "Young boy coding a video game on his laptop while he's in quarantine during the COVID-19 pandemic."))
 
 
 (define (value-prop-section)
@@ -48,28 +55,28 @@
   (jumbotron class: "mb-0"
              style: (properties background: "white")
              (container
-(row
-  (col-md-8
-               (h2 "Buy Quarantine Credits " (gems "") ", Unlock Everything!")
-               (p "Each Quarantine Credit " (gems "") " unlocks an hour of personalized education for K-10 students and beyond. Quarantine Coding Club is the most flexible online educational experience there is:")
-               (ul 
+              (row
+               (col-md-8
+                (h2 "Buy Credits " (gems "") ", Unlock Everything!")
+                (p "Each Credit " (gems "") " unlocks an hour of personalized education for K-10 students and beyond. Quarantine Coding Club is the most flexible online educational experience there is:")
+                (ul 
                  (padded-li "We have " (b "tons of coding " (a href:"#topics" "topics")) " to choose from!")
                  (padded-li (b "Summer Availability (June 15 - August 21)") ": Weekdays, 12pm-4pm PST.") 
                  (padded-li "Students can " (b "join at the beginning of any hour ") "(12pm noon, 1pm, 2pm, 3pm) and stay for the entire hour. At the end of the hour, students can leave or continue on for another hour to maximize the experience.")
                  (padded-li "Students will learn different coding topics " (b "at their own pace") ", guided by an experienced Coding Coach.")
                  )
     
-    )
-  (col-md-4
-    (img src: (prefix/pathify metacoders-diagram-path) 
-         class: "img-fluid rounded d-block w-100"
-         alt: "Diagram of the value of Quarantine Credits")
-    )
-  )
-               (br)
-               (credit-wheel)
-               ;(learn-more-button)
+                )
+               (col-md-4
+                (img src: (prefix/pathify metacoders-diagram-path) 
+                     class: "img-fluid rounded d-block w-100"
+                     alt: "Diagram of the value of Quarantine Credits")
+                )
                )
+              (br)
+              (credit-wheel)
+              ;(learn-more-button)
+              )
              )
   )
 
@@ -79,16 +86,16 @@
          x)
     )
   (list
-    (card style: (properties border: "0px")
-      (card-body
-        (h3 class: "text-center" "Credit Bundles")
-        (row (map fancy-col (credit-button-list)))))
-    (br)
-    (card style: (properties border: "0px")
-      (card-body
-        (h3 class: "text-center" "Credit Subscriptions")
-        (row (map fancy-col (credit-button-list #:type 'subscription)))))
-    (a name:"topics"))
+   (card style: (properties border: "0px")
+         (card-body
+          (h3 class: "text-center" "Credit Bundles")
+          (row (map fancy-col (credit-button-list)))))
+   (br)
+   (card style: (properties border: "0px")
+         (card-body
+          (h3 class: "text-center" "Credit Subscriptions")
+          (row (map fancy-col (credit-button-list #:type 'subscription)))))
+   (a name:"topics"))
   )
 
 
@@ -97,14 +104,14 @@
   (cond
     [(eq? type 'one-time)
      (list
-       (credits-buy-button 15 1 0 "sku_GyG3n6kfimeXl9" KEY)
-       (credits-buy-button 120 10 0 "sku_GyG4rL6NDcH2SX" KEY)
-       (credits-buy-button 240 20 0 "sku_GyG5ryZxuC66T0" KEY)
-       (credits-buy-button 300 30 0 "sku_HGGukwhf6cCXLr" KEY)
-       (credits-buy-button 500 50 0 "sku_HGGu5QuiJLNiv9" KEY)
-       (credits-buy-button 900 100 0 "sku_HGGu7oGSW24xaK" KEY)
-       (credits-buy-button 1600 200 0 "sku_HGGvlCivK22DBv" KEY)
-       ) 
+      (credits-buy-button 15 1 0 "sku_GyG3n6kfimeXl9" KEY)
+      (credits-buy-button 120 10 0 "sku_GyG4rL6NDcH2SX" KEY)
+      (credits-buy-button 240 20 0 "sku_GyG5ryZxuC66T0" KEY)
+      (credits-buy-button 300 30 0 "sku_HGGukwhf6cCXLr" KEY)
+      (credits-buy-button 500 50 0 "sku_HGGu5QuiJLNiv9" KEY)
+      (credits-buy-button 900 100 0 "sku_HGGu7oGSW24xaK" KEY)
+      (credits-buy-button 1600 200 0 "sku_HGGvlCivK22DBv" KEY)
+      ) 
      ]
     [(eq? type 'subscription)
      (list
@@ -114,10 +121,10 @@
       (credits-subscription-buy-button 270 30 0 "plan_HHOIjv5C0nKsh3" KEY)  
       (credits-subscription-buy-button 450 50 0 "plan_HHOIbEGyKflAsO" KEY)  
       (credits-subscription-buy-button 800 100 0 "plan_HHOJzQdAcoMzkT" KEY)  
-       )
+      )
      ]
     [else
-      (error "Must supply one-time or subscription to credit button list")])
+     (error "Must supply one-time or subscription to credit button list")])
   )
 
 
@@ -128,10 +135,10 @@
 (define (topics-section)
   (jumbotron class: "mb-0"
              (container
-               (h2 class: "text-center" "What Do Credits " (gems "") " Unlock?" )
-               (br)
-               (apply (curry responsive-row #:columns 3) (map display-topic (topics)))
-               )
+              (h2 class: "text-center" "What Do Credits " (gems "") " Unlock?" )
+              (br)
+              (apply (curry responsive-row #:columns 3) (map display-topic (topics)))
+              )
              ))
 
 (define (display-topic t)
@@ -161,17 +168,17 @@
     )
   (card class: (~a "h-100 " card-color) 
         image
-    (card-body
-      (h5 header)
-      desc)
-    (card-footer class: "d-flex"
-      (p class: "mr-auto mb-0" (list (gems cph) "/hr"))
-      (if (eq? coming-soon #t)
-        (p class: "mb-0"  "Coming Soon!")
-        (p class: "mb-0" (list "Great for " level "!"))
+        (card-body
+         (h5 header)
+         desc)
+        (card-footer class: "d-flex"
+                     (p class: "mr-auto mb-0" (list (gems cph) "/hr"))
+                     (if (eq? coming-soon #t)
+                         (p class: "mb-0"  "Coming Soon!")
+                         (p class: "mb-0" (list "Great for " level "!"))
+                         )
+                     )
         )
-      )
-    )
   )
 
 
@@ -397,67 +404,67 @@
 
 
   (list
-    ;(adventures-in-coding)
-    ;(conquering-covid)
-    ;(farm-animals)
-    ;(pokemon-for-k-2)
-    (adventure)
-    (survival)
-    ;(zoo-animals)
-    (learntomod)
-    ;(cartoons)
-    (battle-arena)
-    ;(dont-teach-coding)
-    ;(metacognition)
-    ;(discord-bots)
-    ;(artificial-intelligence)
-    ;(web-development)
-    ;(graphic-design)
-    ;(video-editing)
-    ;(computer-music)
-    ;(programming-language-development)
-    (endless-runner)
-    (maze-game)
-    (paper-coding)
-    (scratch)
-    (digital-art)
-    (3d-exploration)))
+   ;(adventures-in-coding)
+   ;(conquering-covid)
+   ;(farm-animals)
+   ;(pokemon-for-k-2)
+   (adventure)
+   (survival)
+   ;(zoo-animals)
+   (learntomod)
+   ;(cartoons)
+   (battle-arena)
+   ;(dont-teach-coding)
+   ;(metacognition)
+   ;(discord-bots)
+   ;(artificial-intelligence)
+   ;(web-development)
+   ;(graphic-design)
+   ;(video-editing)
+   ;(computer-music)
+   ;(programming-language-development)
+   (endless-runner)
+   (maze-game)
+   (paper-coding)
+   (scratch)
+   (digital-art)
+   (3d-exploration)))
 
 (define (more-description-section)
   (jumbotron  class: "mb-0"
               style: (properties background: "white")
               (container
-                (row
-                  (col-lg-6 class: "pl-lg-5"
-                            (h2 (list"Education Takes a " 
-                                  (span style: (properties color: "red" text-decoration: "line-through") "School") 
-                                  " Village"))
-                            (br)
-                            @list{
-                            @b{Quarantine Coding Club} is a chance for students to @b{learn coding and technology} with the guidance of @b{live instructors} while being able to @b{socialize with their peers}. Our goal is to @b{provide zero- to low-cost education} during quarantine by crafting a @b{thriving community} of educators, parents, and students.
-                            @br
-                            @ul{
-                            @li{Students learn @b{new coding skills} every session. Educational activities change daily!}
-                            @li{Average @b{1:8 teacher to student ratio} allows our Coding Coaches to engage students in @b{interactive, personalized, interdisciplinary experiences}.}
-                            @li{Novel digital classroom models give students the @b{ability to choose} their educational activities, @b{significantly increasing student satisfaction}.}
-                          @li{Purchase Quarantine Credits or @b{earn them for free by volunteering} your time and skills.}
-                            @li{Great for coders of all skill levels. Sessions are available for @b{K-2nd}, @b{3rd-6th}, @b{7th-10th}, @b{11th-12th}, @b{College}, and @b{Lifelong Learners}.}
-                            @li{Our goal is to @b{make learning coding fun} while we're all stuck at home.}
-                            }})
-                  (col-lg-6 class: "pr-lg-5"
-                            (div class:"embed-responsive embed-responsive-16by9"
-                                 (iframe class:"embed-responsive-item" src:"https://www.youtube.com/embed/GVzxUtfTLGE"))
-                            (br)
-                            (br)
-                            (br)
-                            (div class: "text-center"
-                                 (h4 "Not ready to order yet?")
-                                 (a href: "http://eepurl.com/dtmTTT"
-                                    (button type: "button" class: "btn btn-warning"
-                                            (i class: "fas fa-envelope")
-                                            "  Join Our Mailing List for Offers & Updates")))
-                            ))
-                )
+               (row
+                (col-lg-6 class: "pl-lg-5"
+                          (h2 (list"Education Takes a " 
+                                   (span style: (properties color: "red" text-decoration: "line-through") "School") 
+                                   " Village"))
+                          (br)
+                          @list{
+ @b{Quarantine Coding Club} is a chance for students to @b{learn coding and technology} with the guidance of @b{live instructors} while being able to @b{socialize with their peers}. Our goal is to @b{provide zero- to low-cost education} during quarantine by crafting a @b{thriving community} of educators, parents, and students.
+ @br
+ @ul{
+  @li{Students learn @b{new coding skills} every session. Educational activities change daily!}
+  @li{Average @b{1:8 teacher to student ratio} allows our Coding Coaches to engage students in @b{interactive, personalized, interdisciplinary experiences}.}
+  @li{Novel digital classroom models give students the @b{ability to choose} their educational activities, @b{significantly increasing student satisfaction}.}
+  @li{Purchase Quarantine Credits or @b{earn them for free by volunteering} your time and skills.}
+  @li{Great for coders of all skill levels. Sessions are available for @b{K-2nd}, @b{3rd-6th}, @b{7th-10th}, @b{11th-12th}, @b{College}, and @b{Lifelong Learners}.}
+  @li{Our goal is to @b{make learning coding fun} while we're all stuck at home.}
+  }})
+                (col-lg-6 class: "pr-lg-5"
+                          (div class:"embed-responsive embed-responsive-16by9"
+                               (iframe class:"embed-responsive-item" src:"https://www.youtube.com/embed/GVzxUtfTLGE"))
+                          (br)
+                          (br)
+                          (br)
+                          (div class: "text-center"
+                               (h4 "Not ready to order yet?")
+                               (a href: "http://eepurl.com/dtmTTT"
+                                  (button type: "button" class: "btn btn-warning"
+                                          (i class: "fas fa-envelope")
+                                          "  Join Our Mailing List for Offers & Updates")))
+                          ))
+               )
               )
   )
 
@@ -466,38 +473,38 @@
               style: (properties background: "white"
                                  )
               (container
-                (h2 class: "text-center" "Summer Camps")
-                (br)
-                (h4 "Insanely Flexible Summer Camp Hours")
-                (p "Summer camps? Full-day, half-day, 1-hr a day: your kids can be in camp whenever YOU want!")
-                (p "Purchase the number of Quarantine Credits you need this summer. Each credit can be applied to 1-hr of camp:")
-                (p "Do you want your child in camp 1-hr a day, M-F, for 8-weeks?")
-                (credits-buy-button 400 40 0 "sku_GyG3n6kfimeXl9" KEY)
-                (p "Do you want your child in camp for 3-hr a day, M-F, for 4-weeks?")
-                (credits-buy-button 600 60 0 "sku_GyG3n6kfimeXl9" KEY)
-                (p "Do you want your child in camp for 7-hr a day, M-F, for 1-week?")
-                (credits-buy-button 350 35 0 "sku_GyG3n6kfimeXl9" KEY)
-                (p "No scheduling required! Our camps will be operational from __ -__ from June __ - August __. Sending your kid to camp is as easy as following a link.")
-                (p "There's no such thing as a 1-size fits all education! Other camps make you decide what topic your student will be learning months in advance! Our camp lets students choose the topic the day of, and even switch between topics throughout the day.")
-                (p "Your child might start in a game design camp, but decide to switch to a web development camp 2-hours later. Our metacognitive staff is always there to help you and your child create the most personalized educational experience.")
-                (p "Worried about screen time? We offer stretch breaks and social activities throughout the camp day to optimize your child's social & emotional wellbeing.")
-                (p "No two children are the same. Some children prefer more time to reflect on what they are learning. Some children prefer to spend more time doing hands-on activities. Some children learn through discussion. Some children learn through teaching others. All you have to do is buy Quarantine Credits: for free, our staff will help you create an educational plan for your child this summer.")
-                (h4 "Examples")
-                (p "Jimmy is 11 years old. His parents are software engineers. Jimmy loves video games and wants to know how to make them. His parents want to give him the freedom to choose his favorite subjects this summer. So he is planning to spend his time in these classes (knowing he can change his mind later):")
-                (ul
-                  (li "2-hrs of Video Game Design")
-                  (li "1-hr of Computer Science Principles")
-                  (li "1-hr of Design Your Own Programming Language")
-                  (li "1-hr of Computer Science History")
-                  (li "1-hr Video Editing")
-                  )
-                (p "Susy is 8 years old. Her parents are educators and worked with the MetaCoders staff on a special education plan for Susy this summer. Susy loves music and art. This is her educational plan:")
-                (ul
-                  (li "1-hr of Code Your Own Music")
-                  (li "1-hr of Graphic Design with Code")
-                  (li "Yoga Breaks every 30 minutes")
-                  )
+               (h2 class: "text-center" "Summer Camps")
+               (br)
+               (h4 "Insanely Flexible Summer Camp Hours")
+               (p "Summer camps? Full-day, half-day, 1-hr a day: your kids can be in camp whenever YOU want!")
+               (p "Purchase the number of Quarantine Credits you need this summer. Each credit can be applied to 1-hr of camp:")
+               (p "Do you want your child in camp 1-hr a day, M-F, for 8-weeks?")
+               (credits-buy-button 400 40 0 "sku_GyG3n6kfimeXl9" KEY)
+               (p "Do you want your child in camp for 3-hr a day, M-F, for 4-weeks?")
+               (credits-buy-button 600 60 0 "sku_GyG3n6kfimeXl9" KEY)
+               (p "Do you want your child in camp for 7-hr a day, M-F, for 1-week?")
+               (credits-buy-button 350 35 0 "sku_GyG3n6kfimeXl9" KEY)
+               (p "No scheduling required! Our camps will be operational from __ -__ from June __ - August __. Sending your kid to camp is as easy as following a link.")
+               (p "There's no such thing as a 1-size fits all education! Other camps make you decide what topic your student will be learning months in advance! Our camp lets students choose the topic the day of, and even switch between topics throughout the day.")
+               (p "Your child might start in a game design camp, but decide to switch to a web development camp 2-hours later. Our metacognitive staff is always there to help you and your child create the most personalized educational experience.")
+               (p "Worried about screen time? We offer stretch breaks and social activities throughout the camp day to optimize your child's social & emotional wellbeing.")
+               (p "No two children are the same. Some children prefer more time to reflect on what they are learning. Some children prefer to spend more time doing hands-on activities. Some children learn through discussion. Some children learn through teaching others. All you have to do is buy Quarantine Credits: for free, our staff will help you create an educational plan for your child this summer.")
+               (h4 "Examples")
+               (p "Jimmy is 11 years old. His parents are software engineers. Jimmy loves video games and wants to know how to make them. His parents want to give him the freedom to choose his favorite subjects this summer. So he is planning to spend his time in these classes (knowing he can change his mind later):")
+               (ul
+                (li "2-hrs of Video Game Design")
+                (li "1-hr of Computer Science Principles")
+                (li "1-hr of Design Your Own Programming Language")
+                (li "1-hr of Computer Science History")
+                (li "1-hr Video Editing")
                 )
+               (p "Susy is 8 years old. Her parents are educators and worked with the MetaCoders staff on a special education plan for Susy this summer. Susy loves music and art. This is her educational plan:")
+               (ul
+                (li "1-hr of Code Your Own Music")
+                (li "1-hr of Graphic Design with Code")
+                (li "Yoga Breaks every 30 minutes")
+                )
+               )
               )
   )
 
@@ -505,71 +512,71 @@
 (define (customer-testimonial-section)
   (jumbotron id: "customer-testimonial-banner"
              style: (properties
-                      text-align: "center"
-                      margin-bottom: 0
-                      background-position: "center"
-                      background-size: "initial"
-                      position: "relative"
-                      height: 400)
+                     text-align: "center"
+                     margin-bottom: 0
+                     background-position: "center"
+                     background-size: "initial"
+                     position: "relative"
+                     height: 400)
              class: "d-flex align-items-center"
              role: "img"
              `aria-label: "background image"
              @style/inline[type: "text/css"]{
-             .no-webp #customer-testimonial-banner{
-             background-image: url(/img/online/circuits-background.jpg) !important;
-             }
-             .webp #customer-testimonial-banner{
-             background-image: url(/img/online/circuits-background.webp) !important;
-             }
-             }
+ .no-webp #customer-testimonial-banner{
+  background-image: url(/img/online/circuits-background.jpg) !important;
+ }
+ .webp #customer-testimonial-banner{
+  background-image: url(/img/online/circuits-background.webp) !important;
+ }
+}
              (div class: "overlay"
                   style: (properties
-                           background-color: "rgba(0, 0, 0, 0.6)"
-                           width: "100%"
-                           position: "absolute"
-                           top: 0
-                           left: 0
-                           bottom: 0
-                           right: 0
-                           float: "left"))
+                          background-color: "rgba(0, 0, 0, 0.6)"
+                          width: "100%"
+                          position: "absolute"
+                          top: 0
+                          left: 0
+                          bottom: 0
+                          right: 0
+                          float: "left"))
              (container
-               (div id: "carouselExampleFade" class: "carousel slide carousel-fade" 'data-ride: "carousel"
-                    (div class: "carousel-inner"
-                         (div class: "carousel-item text-white active"
-                              (h2 "\"My daughter looks forward to each and every class. They keep her engaged and often she continues to experiment with the code after class is over. I would recommend to any student at all interested in technology as this is the way to get them introduced at a young age.\"")
-                              (br)
-                              (h4 "Veronica L.")
-                              (p "MetaCoders Parent")
-                              )
-                         (div class: "carousel-item text-white"
-                              (h2 "\"Coding is a great starting block for any kid to teach discipline and especially attention to details. Thank you MetaCoders for giving my boys something to look forward to during the tough stay at home days!\"")
-                              (br)
-                              (h4 "Robert M.")
-                              (p "MetaCoders Parent")
-                              )
-                         (div class: "carousel-item text-white"
-                              (h2 "\"My daughter loves her coding class with MetaCoders. She is learning something new every time! The activities are a lot of fun and keep her engaged. I would highly recommend this class to every student who wants to delve into coding\"")
-                              (br)
-                              (h4 "Colette V.")
-                              (p "MetaCoders Parent")
-                              )
-                         (div class: "carousel-item text-white"
-                              (h2 "\"This is the best online class my 7 and 9 year old boys have ever attended. The teachers are engaging. The classes are interesting and fun. I am very very impressed by their professional and fun program!\"")
-                              (br)
-                              (h4 "Allison S.")
-                              (p "MetaCoders Parent")
-                              )
-                         )
-                    (a class: "carousel-control-prev" href: "#carouselExampleFade" role: "button" 'data-slide: "prev"
-                       (span class: "carousel-control-prev-icon" 'aria-hidden: "true")
-                       (span class: "sr-only" "Previous")
-                       )
-                    (a class: "carousel-control-next" href: "#carouselExampleFade" role: "button" 'data-slide: "next"
-                       (span class: "carousel-control-next-icon" 'aria-hidden: "true")
-                       (span class: "sr-only" "Next")
-                       )
-                    )
-               )
+              (div id: "carouselExampleFade" class: "carousel slide carousel-fade" 'data-ride: "carousel"
+                   (div class: "carousel-inner"
+                        (div class: "carousel-item text-white active"
+                             (h2 "\"My daughter looks forward to each and every class. They keep her engaged and often she continues to experiment with the code after class is over. I would recommend to any student at all interested in technology as this is the way to get them introduced at a young age.\"")
+                             (br)
+                             (h4 "Veronica L.")
+                             (p "MetaCoders Parent")
+                             )
+                        (div class: "carousel-item text-white"
+                             (h2 "\"Coding is a great starting block for any kid to teach discipline and especially attention to details. Thank you MetaCoders for giving my boys something to look forward to during the tough stay at home days!\"")
+                             (br)
+                             (h4 "Robert M.")
+                             (p "MetaCoders Parent")
+                             )
+                        (div class: "carousel-item text-white"
+                             (h2 "\"My daughter loves her coding class with MetaCoders. She is learning something new every time! The activities are a lot of fun and keep her engaged. I would highly recommend this class to every student who wants to delve into coding\"")
+                             (br)
+                             (h4 "Colette V.")
+                             (p "MetaCoders Parent")
+                             )
+                        (div class: "carousel-item text-white"
+                             (h2 "\"This is the best online class my 7 and 9 year old boys have ever attended. The teachers are engaging. The classes are interesting and fun. I am very very impressed by their professional and fun program!\"")
+                             (br)
+                             (h4 "Allison S.")
+                             (p "MetaCoders Parent")
+                             )
+                        )
+                   (a class: "carousel-control-prev" href: "#carouselExampleFade" role: "button" 'data-slide: "prev"
+                      (span class: "carousel-control-prev-icon" 'aria-hidden: "true")
+                      (span class: "sr-only" "Previous")
+                      )
+                   (a class: "carousel-control-next" href: "#carouselExampleFade" role: "button" 'data-slide: "next"
+                      (span class: "carousel-control-next-icon" 'aria-hidden: "true")
+                      (span class: "sr-only" "Next")
+                      )
+                   )
+              )
              ))
 
 
@@ -578,47 +585,47 @@
   (local-require website-js/components/accordion-cards)
   (jumbotron  class: "mb-0"
               (container
-                (h2 class: "text-center" "Frequently Asked Questions")
-                (br)
-                (accordion-card #:header (h4 "General")
-                                (ol
-                                  (li (b "How do Quarantine Credits work?") " Each Quarantine Credit can be applied to one 1 hour online session. You can apply the credits you purchase to any of our unfilled scheduled sessions. You do not have to apply all of your purchased credits all at once. We keep track of how many credits each customer has so that you can wait to apply them until a time that is convenient for you!")
-                                  (li (b "I purchased Quarantine Credits! Now, how do I use them to sign up for Coding Club sessions?") " After you purchase, you'll be directed to fill out a short form to send us your students' registration information. Once you have registered, someone from our team will be notified and will email you within the hour to confirm your registration. If you do not receive this email within 2 hours, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to confirm your registration.") 
-                                  (li (b "How many sessions should I enroll my student in?") " Your child can stay online with us from 12pm - 4pm PST.  Each session starts on the hour, and students can choose to end a session or continue on at each hour mark. Remember, coding is a skill just like playing piano or learning a foreign language: the more time students spend on coding, the stronger their coding skills will become. And with so many fun topics to choose from, students will always be learning new skills!")
-                                  (li (b "Do I need to install anything in order to participate?") " Some of our topics will require installing software.  If you are unable or unwilling to install software on your device, there are other topics that do not require anything to be installed.") 
-                                  (li (b "Can I still sign up for a session that starts today?") " Yes, you can! Once you purchase Quarantine Credits, a customer service representative will contact you and send a video conferencing link along with information about scheduling.") 
-                                  (li (b "What deals/coupons do you have available?") " We have bulk discount packages that are always available for purchase above. The more credits you purchase in 1 transaction, the less each credit costs.") 
-                                  (li (b "What equipment do I need in order to participate?") " All you need to participate in our Quarantine Coding Club is a computer, a keyboard, and an internet connection! We also ask students to bring paper and pencil to sessions as well. Some of our topics will require that software be installed; if your device doesn’t allow for that, your child can choose another topic.") 
-                                  (li (b "Can my 2 or more children share the credits I purchase?") " Students who live within the same household can share credits.") 
-                                  (li (b "If my 2 children are sharing 1 laptop, do we pay 2 Quarantine Credits per session or 1?") " Each device will require 1 Quarantine Credit. We understand parents don't always have enough devices for all their students. Clearly, two students who are sharing 1 laptop can't code at the same time, so we are treating each device as if it is one student at this time.") 
-                                  (li (b "Can parents sit in on the session?") " Yes! Parents observation and participation is welcome and encouraged!") 
-                                  (li (b "What if I don't use all my Quarantine Credits before this whole COVID-19 thing blows over?") " We will be continuing our Online Coding Club long after quarantines end. We are also happy to help transfer your remaining Quarantine Credits to in-person classes and camps that will be happening again after quarantines end. You can review our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") " for more details.")
-                                  (li (b "Do you record Quarantine Coding Club sessions?") " Yes, in order to be as transparent as possible with parents, we try to record all sessions; parents can ask us for these screen recordings whenever they'd like. Often, we will pre-emptively send screen recordings to parents so that parents can see what their children are learning inside our digital classrooms. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") ".")
-                                  )
+               (h2 class: "text-center" "Frequently Asked Questions")
+               (br)
+               (accordion-card #:header (h4 "General")
+                               (ol
+                                (li (b "How do Quarantine Credits work?") " Each Quarantine Credit can be applied to one 1 hour online session. You can apply the credits you purchase to any of our unfilled scheduled sessions. You do not have to apply all of your purchased credits all at once. We keep track of how many credits each customer has so that you can wait to apply them until a time that is convenient for you!")
+                                (li (b "I purchased Quarantine Credits! Now, how do I use them to sign up for Coding Club sessions?") " After you purchase, you'll be directed to fill out a short form to send us your students' registration information. Once you have registered, someone from our team will be notified and will email you within the hour to confirm your registration. If you do not receive this email within 2 hours, please call us at (858) 375-4097. If you purchase credits outside of our business hours (Monday-Friday 9am-5pm PST), someone from our team will email you during our next scheduled business hours to confirm your registration.") 
+                                (li (b "How many sessions should I enroll my student in?") " Your child can stay online with us from 12pm - 4pm PST.  Each session starts on the hour, and students can choose to end a session or continue on at each hour mark. Remember, coding is a skill just like playing piano or learning a foreign language: the more time students spend on coding, the stronger their coding skills will become. And with so many fun topics to choose from, students will always be learning new skills!")
+                                (li (b "Do I need to install anything in order to participate?") " Some of our topics will require installing software.  If you are unable or unwilling to install software on your device, there are other topics that do not require anything to be installed.") 
+                                (li (b "Can I still sign up for a session that starts today?") " Yes, you can! Once you purchase Quarantine Credits, a customer service representative will contact you and send a video conferencing link along with information about scheduling.") 
+                                (li (b "What deals/coupons do you have available?") " We have bulk discount packages that are always available for purchase above. The more credits you purchase in 1 transaction, the less each credit costs.") 
+                                (li (b "What equipment do I need in order to participate?") " All you need to participate in our Quarantine Coding Club is a computer, a keyboard, and an internet connection! We also ask students to bring paper and pencil to sessions as well. Some of our topics will require that software be installed; if your device doesn’t allow for that, your child can choose another topic.") 
+                                (li (b "Can my 2 or more children share the credits I purchase?") " Students who live within the same household can share credits.") 
+                                (li (b "If my 2 children are sharing 1 laptop, do we pay 2 Quarantine Credits per session or 1?") " Each device will require 1 Quarantine Credit. We understand parents don't always have enough devices for all their students. Clearly, two students who are sharing 1 laptop can't code at the same time, so we are treating each device as if it is one student at this time.") 
+                                (li (b "Can parents sit in on the session?") " Yes! Parents observation and participation is welcome and encouraged!") 
+                                (li (b "What if I don't use all my Quarantine Credits before this whole COVID-19 thing blows over?") " We will be continuing our Online Coding Club long after quarantines end. We are also happy to help transfer your remaining Quarantine Credits to in-person classes and camps that will be happening again after quarantines end. You can review our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") " for more details.")
+                                (li (b "Do you record Quarantine Coding Club sessions?") " Yes, in order to be as transparent as possible with parents, we try to record all sessions; parents can ask us for these screen recordings whenever they'd like. Often, we will pre-emptively send screen recordings to parents so that parents can see what their children are learning inside our digital classrooms. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") ".")
                                 )
-                (accordion-card #:header (h4 "Summer")
-                                (ol
-                                  (li (b "Do I really not need to schedule my Quarantine Credits in advance?") " That's right! Throughout the summer, from 12pm noon-4pm PST, Monday-Friday, just have your student join our emailed video conferencing link, and we will teach them coding! As students \"spend\" their Quarantine Credits, we'll send you an update if your Quarantine Credit balance is running low.") 
-                                  (li (b "How many Quarantine Credits should I purchase for this summer?") " You can do a quick estimate by multiplying the number of weeks x 5 days/week x hours per day x number of students. For example, if you have 1 child that you want to register for 3 hours per day for 5 weeks, you'd purchase: (5 weeks x 5 days/week x 3 hours per day x 1 student) = 75 credits.") 
-                                  )
+                               )
+               (accordion-card #:header (h4 "Summer")
+                               (ol
+                                (li (b "Do I really not need to schedule my Quarantine Credits in advance?") " That's right! Throughout the summer, from 12pm noon-4pm PST, Monday-Friday, just have your student join our emailed video conferencing link, and we will teach them coding! As students \"spend\" their Quarantine Credits, we'll send you an update if your Quarantine Credit balance is running low.") 
+                                (li (b "How many Quarantine Credits should I purchase for this summer?") " You can do a quick estimate by multiplying the number of weeks x 5 days/week x hours per day x number of students. For example, if you have 1 child that you want to register for 3 hours per day for 5 weeks, you'd purchase: (5 weeks x 5 days/week x 3 hours per day x 1 student) = 75 credits.") 
                                 )
-                (accordion-card #:header  
-                                (h4 "Volunteers")
-                                (ol
-                                  (li (b "How do I become a MetaCoders Volunteer?") " Easily! Apply online " (a href: "https://docs.google.com/forms/d/e/1FAIpQLSeGAMm6a6wpmFkikMa5k6QbK9rE3r3_rb22GDLx6UGWi5jdMg/viewform" target: "_blank" "here") " and we will be in touch about the upcoming opportunities soon!")
-                                  (li (b "What kind of things do MetaCoders Volunteers do?") " All our volunteers start out with the basics -- you will help out in the classroom and administration tasks. As you become more comfortable with the MetaCoders experience, you will have more creative opportunities and more power to decide how you spend your time.")
-                                  (li (b "Are there any prerequisites to volunteering?") " There are no requirements for coding knowledge or teaching experience. For tech, our volunteers usually need a reliable internet connection, computer such as a desktop or laptop that can access online video conferencing, and a webcam/microphone. We do require our volunteers be 17 or older.")
-                                  (li (b "Can I get free Quarantine Credits for my children by volunteering?") " This is the best part about being an educational co-op! By putting in your time and energy, you can get free educational opportunities for your children. Volunteers can receive 1 Quarantine Credit for every 1-hr of volunteer time (that's 1-hr of education for kids for every 1-hr of volunteer time.)")
-                                  (li (b "As a volunteer, can I gift my free Quarantine Credits to someone else?") " Absolutely! We have grandparents who volunteer and gift their credits to their grandchildren. Same with aunts and uncles for their nieces and nephews. You can also gift credits to someone outside your family.")
-                                  ))
-                )
+                               )
+               (accordion-card #:header  
+                               (h4 "Volunteers")
+                               (ol
+                                (li (b "How do I become a MetaCoders Volunteer?") " Easily! Apply online " (a href: "https://docs.google.com/forms/d/e/1FAIpQLSeGAMm6a6wpmFkikMa5k6QbK9rE3r3_rb22GDLx6UGWi5jdMg/viewform" target: "_blank" "here") " and we will be in touch about the upcoming opportunities soon!")
+                                (li (b "What kind of things do MetaCoders Volunteers do?") " All our volunteers start out with the basics -- you will help out in the classroom and administration tasks. As you become more comfortable with the MetaCoders experience, you will have more creative opportunities and more power to decide how you spend your time.")
+                                (li (b "Are there any prerequisites to volunteering?") " There are no requirements for coding knowledge or teaching experience. For tech, our volunteers usually need a reliable internet connection, computer such as a desktop or laptop that can access online video conferencing, and a webcam/microphone. We do require our volunteers be 17 or older.")
+                                (li (b "Can I get free Quarantine Credits for my children by volunteering?") " This is the best part about being an educational co-op! By putting in your time and energy, you can get free educational opportunities for your children. Volunteers can receive 1 Quarantine Credit for every 1-hr of volunteer time (that's 1-hr of education for kids for every 1-hr of volunteer time.)")
+                                (li (b "As a volunteer, can I gift my free Quarantine Credits to someone else?") " Absolutely! We have grandparents who volunteer and gift their credits to their grandchildren. Same with aunts and uncles for their nieces and nephews. You can also gift credits to someone outside your family.")
+                                ))
+               )
               ))
 
 (define (display-price price #:suffix [suffix ""])
-    (list
-      (br)
-      (badge-pill-light style: (properties font-size: "12pt")
-                        (~p price) suffix)))
+  (list
+   (br)
+   (badge-pill-light style: (properties font-size: "12pt")
+                     (~p price) suffix)))
 
 (define (credits-buy-button price num discount sku key )
   (list (button-primary id:(~a "checkout-button-" sku)
@@ -627,73 +634,73 @@
                                            white-space: "normal"
                                            )
                         (if (> discount 0)
-                          (list (gems num) 
-                                (s class: "text-danger"
-                                   (display-price price))
-                                " " (~p (- price discount))
-                          )
-                          (list (gems num) 
-                                (display-price price)))
-        (div id:(~a "error-message" sku))
-        ;(script src:"https://js.stripe.com/v3")
-        @script/inline{
-        (function() {
-                    var stripe = Stripe('@key');
+                            (list (gems num) 
+                                  (s class: "text-danger"
+                                     (display-price price))
+                                  " " (~p (- price discount))
+                                  )
+                            (list (gems num) 
+                                  (display-price price)))
+                        (div id:(~a "error-message" sku))
+                        ;(script src:"https://js.stripe.com/v3")
+                        @script/inline{
+ (function() {
+  var stripe = Stripe('@key');
 
-                    var checkoutButton = document.getElementById('checkout-button-@sku');
-                    checkoutButton.addEventListener('click', function () {
+  var checkoutButton = document.getElementById('checkout-button-@sku');
+  checkoutButton.addEventListener('click', function () {
 
-                                                    stripe.redirectToCheckout({
-                                                                               items: [{sku: '@sku', quantity: 1}],
-                                                                               successUrl: 'https://metacoders.org@(prefix/pathify checkout-success-top-path)',
-                                                                               cancelUrl: 'https://metacoders.org@(prefix/pathify checkout-fail-top-path)',
-                                                                               billingAddressCollection: 'required',
-                                                                               })
-                                                    .then(function (result) {
-                                                                   if (result.error) {
-                                                                   var displayError = document.getElementById('error-message@sku');
-                                                                   displayError.textContent = result.error.message;
-                                                                   }
-                                                                   });
-                                                    });
-                    })();})
-  ))
+   stripe.redirectToCheckout({
+    items: [{sku: '@sku', quantity: 1}],
+    successUrl: 'https://metacoders.org@(prefix/pathify checkout-success-top-path)',
+    cancelUrl: 'https://metacoders.org@(prefix/pathify checkout-fail-top-path)',
+    billingAddressCollection: 'required',
+    })
+   .then(function (result) {
+    if (result.error) {
+     var displayError = document.getElementById('error-message@sku');
+     displayError.textContent = result.error.message;
+    }
+    });
+   });
+  })();})
+        ))
 
-  (define (credits-subscription-buy-button price num discount sku key)
-    (list (button-success id:(~a "checkout-button-" sku)
-                          class: "mt-1 btn-block" 
-                          style: (properties border-radius: "0 0 0.18rem 0"
-                                             white-space: "normal")
-                          (if (> discount 0)
+(define (credits-subscription-buy-button price num discount sku key)
+  (list (button-success id:(~a "checkout-button-" sku)
+                        class: "mt-1 btn-block" 
+                        style: (properties border-radius: "0 0 0.18rem 0"
+                                           white-space: "normal")
+                        (if (> discount 0)
                             (list (gems num)
                                   (s class: "text-danger"
                                      (display-price price))
                                   " " (display-price (- price discount)
                                                      #:suffix "/mo") 
-                            )
+                                  )
                             (list (gems num) 
                                   (display-price price #:suffix "/mo"))))
-          (div id:(~a "error-message" sku))
-          ;(script src:"https://js.stripe.com/v3")
-          @script/inline{
-          (function() {
-                      var stripe = Stripe('@key');
+        (div id:(~a "error-message" sku))
+        ;(script src:"https://js.stripe.com/v3")
+        @script/inline{
+ (function() {
+  var stripe = Stripe('@key');
 
-                      var checkoutButton = document.getElementById('checkout-button-@sku');
-                      checkoutButton.addEventListener('click', function () {
+  var checkoutButton = document.getElementById('checkout-button-@sku');
+  checkoutButton.addEventListener('click', function () {
 
-                                                      stripe.redirectToCheckout({
-                                                                                 items: [{plan: '@sku', quantity: 1}],
-                                                                                 successUrl: 'https://metacoders.org@(prefix/pathify checkout-success-top-path)',
-                                                                                 cancelUrl: 'https://metacoders.org@(prefix/pathify checkout-fail-top-path)',
-                                                                                 billingAddressCollection: 'required',
-                                                                                 })
-                                                      .then(function (result) {
-                                                                     if (result.error) {
-                                                                     var displayError = document.getElementById('error-message@sku');
-                                                                     displayError.textContent = result.error.message;
-                                                                     }
-                                                                     });
-                                                      });
-                      })();})
-          ) 
+   stripe.redirectToCheckout({
+    items: [{plan: '@sku', quantity: 1}],
+    successUrl: 'https://metacoders.org@(prefix/pathify checkout-success-top-path)',
+    cancelUrl: 'https://metacoders.org@(prefix/pathify checkout-fail-top-path)',
+    billingAddressCollection: 'required',
+    })
+   .then(function (result) {
+    if (result.error) {
+     var displayError = document.getElementById('error-message@sku');
+     displayError.textContent = result.error.message;
+    }
+    });
+   });
+  })();})
+  ) 
