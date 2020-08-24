@@ -73,7 +73,7 @@
   (define (scratch)
     (topic "Coding with Scratch" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify scratch-img-path))
-           "Scratch is a drag-and-drop programming language known for it's beginner-friendly interface and colorful code blocks but MetaCoders takes Scratch beyond beginner! Perfect for all levels, students get to choose an code the projects that excite them from our ever-growing collection of curriculum."
+           "Scratch is a drag-and-drop programming language known for its beginner-friendly interface and colorful code blocks but MetaCoders takes Scratch beyond beginner! Perfect for all levels, students get to choose and code the projects that excite them from our ever-growing collection of curriculum. Code it all in a free online coding editor; no installation required!"
            #:card-color 'primary
            #:level 'K-10th
            #:coming-soon #f))
@@ -97,7 +97,7 @@
   (define (digital-art)
     (topic "Coding Digital Art" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify digital-art-img-path))
-           "Get creative with code! Generate and manipulate shapes in the text-based language Scheme. Our Coding Coaches introduce universal coding tools like functions, definitions, and arguments in a visual context. Once they have gotten comfortable the basics, students get to choose art projects from our ever-growing collection of curriculum. Code it all in a free online coding editor; no installation required!"
+           "Get creative with code! Generate and manipulate shapes in the text-based language Scheme while learning universal coding tools like functions, definitions, and arguments. Once they have gotten comfortable the basics, students get to choose art projects from our ever-growing collection of curriculum. Code it all in a free online coding editor; no installation required!"
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -114,7 +114,7 @@
   (define (python)
     (topic "Python Game Design" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
-           "Learn a new language! Our Coding Coaches guide students as they learn the basics of Python including syntax, variables, I/O (inputs and outputs), conditionals, data types, and an introduction to Object-Oriented Programming while designing and developing games! Code it all in a free online coding editor; no installation required!"
+           "Did you know that the Python language is named, not for the snake, but for the classics of British comedy: Monty Python? Our Coding Coaches guide students as they learn the basics of Python including syntax, variables, inputs/outputs, conditionals, and data types while designing and developing games. Code it all in a free online coding editor; no installation required!"
            #:card-color 'warning
            #:level '7th-10th
            #:coming-soon #t))
@@ -122,7 +122,7 @@
   (define (adventure)
     (topic "Coding for Harry Potter & Mario Fans"
            (card-video-top src: adventure-harrypotter-mp4-path)
-           "Build your own adventure based Harry Potter or Mario games. Mario fans will earn special Mario game design badges, and vice versa for Harry Potter fans! Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
+           "Build your own adventure based Harry Potter or Mario games. Gamer fans will earn special Mario game design badges while Harry Potter fanatics earn themed badges as they explore the \"magic\" of coding! This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
@@ -130,7 +130,7 @@
    (define (survival)
     (topic "Coding for Minecraft & Pokemon Fans" 
            (card-video-top src: survival-minecraft-mp4-path)
-           "Learn how to build survival-style video games with other kids who love these video games! Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
+           "Minecraft is a famous example of the classic survival-style video game. Learn how to build your own survival game inspired by Minecraft or Pokemon with other kids who love these video games! This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -138,7 +138,7 @@
   (define (battle-arena)
     (topic "Coding for Marvel, Fortnite, & Star Wars Fans"
            (card-video-top src: battlearena-avengers-mp4-path)
-           "Build battle arena-style games with characters from your favorite games and movies! Share the games you make with your new coding friends. Tech requirements for this topic includes installing software in advance.  Information will be emailed to you."
+           "Code your own battle game where you decide the challenge! How many enemies do you want to face? What tools fill your armory? What powerups are at your disposal? Fill your game with characters from your favorite games and movies!  This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
@@ -146,7 +146,7 @@
   (define (3d-exploration)
     (topic "3D Exploration" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify 3d-exploration-img-path))
-           "The magic of turning code into an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing interactive worlds that they can walk (or fly!) through."
+           "Let your imagination run wild; code immersive 3D worlds you can see with a click of a button! Our Coding Coaches guide students as they learn a programming language for designing and customizing interactive worlds that they can walk (or fly!) through. This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -154,7 +154,7 @@
   (define (3d-orbit)
     (topic "3D Orbit" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify 3d-orbit-img-path))
-           "The magic of exploring the universe in an immersive 3D world is something that only coders will ever experience. Students will learn a programming language for designing and customizing a star system thet the can fly through."
+           "Take to the stars! Code planets, moons, asteroids, stars as you create your own unique solar system in stunning 3D. Our Coding Coaches guide students as they explore a programming language for generating entire universes. This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
