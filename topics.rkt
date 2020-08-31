@@ -70,6 +70,30 @@
               ))
 
 (define (topics)
+  (define (python)
+    (topic "Python Game Design" 
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
+           "Did you know that the Python language is named, not for the snake, but for the classics of British comedy: Monty Python? Our Coding Coaches guide students as they learn the basics of Python including syntax, variables, inputs/outputs, conditionals, and data types while designing and developing games. Code it all in a free online coding editor; no installation required!"
+           #:card-color 'warning
+           #:level '7th-10th
+           #:coming-soon #f))
+  
+  (define (web-design)
+    (topic "Web Design" 
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify web-development-img-path))
+           "HTML, CSS..."
+           #:card-color 'primary
+           #:level '3rd-10th
+           #:coming-soon #f))
+
+  (define (virtual-engineering)
+    (topic "Virtual Engineering" 
+           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify web-development-img-path))
+           "CPX..."
+           #:card-color 'warning
+           #:level '3rd-10th
+           #:coming-soon #f))
+
   (define (scratch)
     (topic "Coding with Scratch" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify scratch-img-path))
@@ -111,13 +135,6 @@
            #:level 'K-2nd
            #:coming-soon #f))
 
-  (define (python)
-    (topic "Python Game Design" 
-           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
-           "Did you know that the Python language is named, not for the snake, but for the classics of British comedy: Monty Python? Our Coding Coaches guide students as they learn the basics of Python including syntax, variables, inputs/outputs, conditionals, and data types while designing and developing games. Code it all in a free online coding editor; no installation required!"
-           #:card-color 'warning
-           #:level '7th-10th
-           #:coming-soon #t))
   
   (define (adventure)
     (topic "Coding for Harry Potter & Mario Fans"
@@ -200,12 +217,7 @@
            #:level 'K-2nd
            #:coming-soon #t))
 
-  (define (web-development)
-    (topic "Web Development" 
-           (card-img-top src: (prefix/pathify web-development-img-path))
-           "Full-stack web development is one of the most sought-after skillsets in the industry right now. Learn your frontends from your backends, your ORMs from your SQLs, your Javas from your JavaScripts."
-           #:level '7th-10th
-           #:coming-soon #t))
+
   
   (define (graphic-design)
     (topic "Graphic Design with Code" 
@@ -217,12 +229,15 @@
   |#
   
   (list
+   (python)
+   (web-design)
+   (virtual-engineering)
    (scratch)
    (endless-runner)
    (maze-game)
    (digital-art)
    (paper-coding)
-   (python)
+
    
    (adventure)
    (survival)
@@ -234,7 +249,7 @@
    ))
 
 (define (noinstall-topics)
-  (take (topics) 6))
+  (take (topics) 8))
 
 (define (install-topics)
   (drop (topics) 6))

@@ -64,7 +64,7 @@
                  (card class: "border-primary" style: (properties 'flex: 1)
                   (card-header class: "h6 bg-primary text-white" "Customized Student Experience!")
                   (card-body
-                   "A range of topics offered daily allows students to design their own education experience around their interest and experience level. MetaCoders' unique Badge System allows students to move though curriculum at the pace that is right for them, track their progress, and pick up right where they left off each day."))
+                   "A range of topics offered daily allows students to design their own education experience around their interest and experience level. MetaCoders' unique Badge System allows students to move through curriculum at the pace that is right for them, track their progress, and pick up right where they left off each day."))
                  (card class: "border-primary" style: (properties 'flex: 1)
                    (card-header class: "h6 bg-primary text-white" "Real People, Real Time!")
                    (card-body
@@ -153,7 +153,7 @@
               (card-body
                (table class: "table table-sm table-borderless text-left"
                       (tr (td (strong "Session Dates: ")) (td "August 24th - December 18th"))
-                      (tr (td (strong "Schedule: ")) (td "Weekdays 1pm-4pm"))
+                      (tr (td (strong "Schedule: ")) (td "Weekdays 1pm - 4pm PT"))
                       (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27"))))))))
 
 
