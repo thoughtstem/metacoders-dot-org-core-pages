@@ -19,8 +19,8 @@
 (define (genentech)
   (page genentech-top-path
         (normal-content-wide
-          #:head (list (title "Genentech Coding Scholarship")
-                       (meta name: "description" content: "Available for Students from the Vista and ____ School District")
+          #:head (list (title "Genentech's Diversity in Coding Scholarship")
+                       (meta name: "description" content: "For Students of OUSD & VUSD")
                        (common-critical-css)
                        (link 'rel: "preconnect" href:"https://q.stripe.com")
                        (link 'rel: "preconnect" href:"https://m.stripe.com")
@@ -37,8 +37,8 @@
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
-    #:title "Genentech Coding Scholarship"
-    #:tagline "Professional coding education for your home learning experience." 
+    #:title "Genentech's Diversity in Coding Scholarship"
+    #:tagline "For Students of OUSD & VUSD" 
     #:percent-height "60vh"
     #:image-path students-in-row-path
     #:alt-tag "Kids coding together in a small group."))
@@ -47,8 +47,6 @@
 (define (updated-list-value-prop)
   (jumbotron class: "mb-0 bg-white"
              (container
-              (h2 "Genentech's Diversity in Coding Scholarship: For Students of OUSD & VUSD")
-              (br)
               (h3 "Overview")
               (p "Of all STEM fields, computer science in particular has a major diversity problem. Society's stereotypical conception of a software developer as a white male is mirrored in decades of participation data from computer science education at the high school and university levels, as well as decades of workforce demographics data in technology sectors. People of color and women in particular are incredibly underrepresented in computer science. At the K-12 level, there are several reasons for this:")
               (li "Lack of access: students may not have access to computers at home or coding education at their school.")
