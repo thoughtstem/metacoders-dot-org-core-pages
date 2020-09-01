@@ -17,8 +17,8 @@
 (define (tech-skills)
   (page tech-skills-top-path
         (normal-content-wide
-          #:head (list (title "Tech Skills Development")
-                       (meta name: "description" content: "Learn basic computer skills while coding!")
+          #:head (list (title "Tech Ed for Lifelong Learners")
+                       (meta name: "description" content: "Engage with the technology that surrounds us; learn to speak the language of code!")
                        (common-critical-css)
                        (link 'rel: "preconnect" href:"https://q.stripe.com")
                        (link 'rel: "preconnect" href:"https://m.stripe.com")
@@ -33,34 +33,34 @@
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
-    #:title "Tech Skills Development"
-    #:tagline "Learn Basic Computer Skills while Coding!" 
+    #:title "Tech Ed for Lifelong Learners"
+    #:tagline "Engage with the technology that surrounds us; learn to speak the language of code!" 
     #:percent-height "60vh"
-    #:image-path students-in-row-path
-    #:alt-tag "Kids coding together in a small group."))
+    #:image-path senior-hands-on-keyboard-path
+    #:alt-tag "Hands of an older adult on a keyboard."))
 
 
 (define (updated-list-value-prop)
   (jumbotron class: "mb-0 text-center bg-white"
              (container
-              (h2 "Learn Basic Computer Skills while Coding!")
+              (h2 "Build technological skills, confidence, & knowledge!")
               (responsive-row #:columns 4 #:d-flex? #t
                               (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "Learn about")
+                                    (card-header class: "h6 bg-warning text-white" "Engage the Active Mind!")
                                     (card-body
-                                     "browsers, tabs, window management, typing skills"))
+                                     "Looking for a new kind of puzzle to solve? Or a new creative outlet? Just looking to try something new? Scientists have seen it over and over; nothing is better for the brain than learning. Exercise the mind with fun, creative coding puzzles while you build brand new skills!"))
                               (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "How will you learn?")
+                                    (card-header class: "h6 bg-warning text-white" "Create New Connections!")
                                     (card-body
-                                     "coach will guide you, give you assignments")) 
+                                     "MetaCoders believes that learning is a social experience. That is why all our programming is live-taught in online, video classes with like-minded learners. Our classes become learning communities that motivate and learn from each other as much as from our Coding Coaches!")) 
                               (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "Why is it important?")
+                                    (card-header class: "h6 bg-warning text-white" "Build Skills You'll Use!")
                                     (card-body
-                                     "talk to family, share memes"))
+                                     "As you learn how to code, you will learn about the logic and language that runs so many of the objects in our daily lives -- from our phones to our cars to our televisions! You will see gains in your comfort and confidence with technology through practice and understanding."))
                               (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "Class Schedule")
+                                    (card-header class: "h6 bg-warning text-white" "Long-Distance, High-Standard!")
                                     (card-body
-                                     "Fridays from 10 - 11 am PT."))))
+                                     "Get quality education brought to you -- safely through your computer screen! MetaCoders curriculum is designed specifically for remote learning. Our Coding Coaches guide you at the pace that is right for you; always ready with a helpful tip or the next challenge. With MetaCoders, you don't need to sacrifice quality for convenience."))))
 
               ))
 
