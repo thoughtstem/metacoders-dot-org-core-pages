@@ -146,7 +146,6 @@
                             (div class: "form-check"
                                  (input class: "form-check-input"
                                         type: "radio"
-                                        ;name: "exampleRadios"
                                         id: "genderOption1"
                                         'value: "Male"
                                         'onchange: "toggleCustomInput();"
@@ -157,7 +156,6 @@
                             (div class: "form-check"
                                  (input class: "form-check-input"
                                         type: "radio"
-                                        ;name: "exampleRadios"
                                         id: "genderOption2"
                                         'value: "Female"
                                         'onchange: "toggleCustomInput();"
@@ -168,7 +166,7 @@
                             (div class: "form-check form-check-inline"
                                  (input class: "form-check-input"
                                         type: "radio"
-                                        ;name: "exampleRadios"
+                                        name: "entry.1733469838"
                                         id: "genderOption3"
                                         'value: "other"
                                         'onchange: "toggleCustomInput();")
@@ -177,24 +175,30 @@
                                         "Custom ")
                                  (input class: "form-control form-control-sm mx-2"
                                         type: "hidden"
-                                        ;name: "customGenderInput"
                                         id: "genderTextInput"
                                         'placeholder: "Type here"
-                                        name: "entry.1733469838")
-  @script/inline{function toggleCustomInput(){
-  var checked = document.getElementById("genderOption3").checked;
-  if(checked){
-   document.getElementById("genderTextInput").type = "text";
-   } else{
-   document.getElementById("genderTextInput").type = "hidden";
-  }
-  }}))
+                                        'oninput: "toggleCustomGenderValue();")
+  @script/inline{
+  function toggleCustomInput(){
+    var checked = document.getElementById("genderOption3").checked;
+    if(checked){
+       document.getElementById("genderTextInput").type = "text";
+    } else{
+       document.getElementById("genderTextInput").type = "hidden";
+  }}
+  function toggleCustomGenderValue(){
+    var customValue = document.getElementById("genderTextInput").value;
+    var checked = document.getElementById("genderOption3").checked;
+    if(checked){
+       document.getElementById("genderOption3").value = customValue;
+    } else{
+       document.getElementById("genderOption3").value = "other";
+  }}}))
                        (div class: "form-group"
                             (label "Student's Race")
                             (div class: "form-check"
                                  (input class: "form-check-input"
                                         type: "radio"
-                                        ;name: "exampleRadios"
                                         id: "raceOption1"
                                         'value: "African American"
                                         'onchange: "toggleOtherInput();"
@@ -205,7 +209,6 @@
                             (div class: "form-check"
                                  (input class: "form-check-input"
                                         type: "radio"
-                                        ;name: "exampleRadios"
                                         id: "raceOption2"
                                         'value: "American Indian or Alaska Native"
                                         'onchange: "toggleOtherInput();"
@@ -216,7 +219,6 @@
                             (div class: "form-check"
                                  (input class: "form-check-input"
                                         type: "radio"
-                                        ;name: "exampleRadios"
                                         id: "raceOption3"
                                         'value: "Asian"
                                         'onchange: "toggleOtherInput();"
@@ -227,7 +229,6 @@
                             (div class: "form-check"
                                  (input class: "form-check-input"
                                         type: "radio"
-                                        ;name: "exampleRadios"
                                         id: "raceOption4"
                                         'value: "Caucasian"
                                         'onchange: "toggleOtherInput();"
@@ -238,7 +239,6 @@
                             (div class: "form-check"
                                  (input class: "form-check-input"
                                         type: "radio"
-                                        ;name: "exampleRadios"
                                         id: "raceOption5"
                                         'value: "Latino or Hispanic"
                                         'onchange: "toggleOtherInput();"
@@ -249,7 +249,6 @@
                             (div class: "form-check"
                                  (input class: "form-check-input"
                                         type: "radio"
-                                        ;name: "exampleRadios"
                                         id: "raceOption6"
                                         'value: "Pacific Islander or Hawaiian"
                                         'onchange: "toggleOtherInput();"
@@ -260,27 +259,34 @@
                             (div class: "form-check  form-check-inline"
                                  (input class: "form-check-input"
                                         type: "radio"
-                                        ;name: "exampleRadios"
                                         id: "raceOption7"
-                                        'value: "Other"
-                                        'onchange: "toggleOtherInput();")
+                                        'value: "other"
+                                        'onchange: "toggleOtherInput();"
+                                        name: "entry.1663616049")
                                  (label class: "form-check-label"
                                         'for: "raceOption7"
                                         "Other ")
                                  (input class: "form-control form-control-sm mx-2"
                                         type: "hidden"
-                                        ;name: "otherRaceInput"
                                         id: "raceTextInput"
                                         'placeholder: "Type here"
-                                        name: "entry.1663616049")
-  @script/inline{function toggleOtherInput(){
-  var checked = document.getElementById("raceOption7").checked;
-  if(checked){
-   document.getElementById("raceTextInput").type = "text";
-   } else{
-   document.getElementById("raceTextInput").type = "hidden";
-  }
-  }}))
+                                        'oninput: "toggleCustomValue();")
+  @script/inline{
+  function toggleOtherInput(){
+    var checked = document.getElementById("raceOption7").checked;
+    if(checked){
+       document.getElementById("raceTextInput").type = "text";
+    } else{
+       document.getElementById("raceTextInput").type = "hidden";
+    }}
+  function toggleCustomValue(){
+    var customValue = document.getElementById("raceTextInput").value;
+    var checked = document.getElementById("raceOption7").checked;
+    if(checked){
+       document.getElementById("raceOption7").value = customValue;
+    } else{
+       document.getElementById("raceOption7").value = "other";
+  }}}))
                        (div class: "form-group"
                             (label "Student's Grade Level")
                             (select class: "form-control" name: "entry.323010727"
