@@ -2,6 +2,8 @@
 
 (provide checkout-success
          camp-checkout-success
+         tech-ed-checkout-success
+         
          donate-success)
 
 (require metacoders-dot-org-lib)
@@ -194,3 +196,36 @@
                   "Finish Donation")
                (br)
                ))))
+
+(define (tech-ed-form-card)
+  (card class: "border-primary"
+        (card-header class: "h5 bg-primary text-white text-center"
+                     "Submit the form below to complete your registration")
+        (card-body
+         (form action: "https://docs.google.com/forms/d/e/1FAIpQLSe8Qas_4iDdxHLQp8JlVsKBJWyxDn6jBVjfHV5J5rew3RfIUA/formResponse"
+               (div class:"form-group"
+                    (label "First Name")
+                    (input type: "text" class: "form-control" name: "entry.1054010153"))
+               (div class:"form-group"
+                    (label "Last Name")
+                    (input type: "text" class: "form-control" name: "entry.1023994476"))
+               (div class:"form-group"
+                    (label "Email")
+                    (input type:"email" class: "form-control" name: "entry.470834101"))
+               (div class:"form-group"  
+                    (label "What timezone are you located in? (Or if you're unsure, what city/country?)")
+                    (input type: "text" class: "form-control" name: "entry.584219301"))
+               (div class:"form-group"  
+                    (label "What topic(s) are you interested in?")
+                    (input type: "text" class: "form-control" name: "entry.1478459484"))
+               (button-primary type: "submit" name: "submit"
+                               "Submit")))))
+
+(define (tech-ed-checkout-success)
+  (page tech-ed-checkout-success-top-path
+        (normal-content
+          (div class: "text-center p-4"
+               (h1 "Payment Success")
+               (p "You will receive an email with your receipt shortly."))
+          (tech-ed-form-card)
+          )))
