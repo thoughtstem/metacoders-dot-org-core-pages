@@ -76,6 +76,7 @@
       (checkout-fail)
       (checkout-success)
       (camp-checkout-success)
+      (tech-ed-checkout-success)
       (donate-success)
       (learn-more)
       )))
