@@ -133,7 +133,7 @@
            (card-img-top class: "border-bottom" class: "border-bottom" style: card-img-top-style src: (prefix/pathify paper-coding-img-path))
            (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing and coding activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge! "
                  (if show-time?
-                     (b "This topic is no longer offered on Fridays, you can still join us M-Th, 3pm-4pm PT.")
+                     (b "This topic is no longer offered on Fridays. You can still join us M-Th, 3pm-4pm PT.")
                      ""))
 
            #:card-color 'primary
