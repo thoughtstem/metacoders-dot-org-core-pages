@@ -1,8 +1,10 @@
 #lang at-exp racket
 
-(provide topics
+(provide ;topics
          noinstall-topics
-         install-topics)
+         install-topics
+         noinstall-noschedule-topics
+         install-noschedule-topics)
 
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
@@ -75,13 +77,13 @@
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
            "Did you know that the Python language is named, not for the snake, but for the classics of British comedy: Monty Python? Our Coding Coaches guide students as they learn the basics of Python including syntax, variables, inputs/outputs, conditionals, and data types while designing and developing games. Code it all in a free online coding editor; no installation required!"
            #:card-color 'warning
-           #:level '7th-10th
+           #:level '3rd-10th
            #:coming-soon #f))
   
   (define (web-design)
     (topic "Web Design" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify web-development-img-path))
-           "HTML, CSS..."
+           "Create websites using a combination of HTML and CSS! Students will learn about the different tags in HTML by formatting their text, adding images and links to their websites. They will also focus on adding different styles, layouts, colors, and fonts to their website using CSS."
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
@@ -89,7 +91,7 @@
   (define (virtual-engineering)
     (topic "Virtual Engineering" 
            (card-video-top src: cpx-makecode-mp4-path)
-           "CPX..."
+           "Learn about electronics and coding without a physical board! Using a web-based code editor for physical computing, students will be able to program the buttons, lights, and sensors of a virtual Circuit Playground Express (CPX) board. Students will have the option to use the drag and drop block-based interface or jump into Javascript and see how the code is being created."
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -126,10 +128,13 @@
            #:level '3rd-10th
            #:coming-soon #f))
   
-  (define (paper-coding)
+  (define (coding-adventures [show-time? #t])
     (topic "Coding Adventures" 
            (card-img-top class: "border-bottom" class: "border-bottom" style: card-img-top-style src: (prefix/pathify paper-coding-img-path))
-           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing and coding activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge! " (b "This topic is no longer offered on Fridays, you can still join us M-Th, 3pm-4pm PT."))
+           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing and coding activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge! "
+                 (if show-time?
+                     (b "This topic is no longer offered on Fridays. You can still join us M-Th, 3pm-4pm PT.")
+                     ""))
 
            #:card-color 'primary
            #:level 'K-2nd
@@ -176,10 +181,13 @@
            #:level '3rd-10th
            #:coming-soon #f))
   
-  (define (learntomod)
+  (define (learntomod [show-time? #t])
     (topic "LearnToMod Minecraft"
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify conquering-covid-b-img-path))
-           (list "Learn how to make cool, custom Minecraft mods with our instructors on " (b "Fridays") ".  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9.")
+           (list "Learn how to make cool, custom Minecraft mods with our instructors.  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9. "
+                 (if show-time?
+                     (b "This topic is only offered on Fridays from 1pm-4pm PT.")
+                     ""))
            #:card-color 'warning
            #:level '3rd-10th))
   #|
@@ -216,40 +224,47 @@
            "Pokemon fans of any age can write about their love of Pokemon. We help kids write about what they love with code!"
            #:level 'K-2nd
            #:coming-soon #t))
-
-
   
   (define (graphic-design)
     (topic "Graphic Design with Code" 
            (card-img-top src: (prefix/pathify graphic-design-img-path))
            "Visual communication is almost always an end-goal of any end-user application. But code can only communicate as beautifully and clearly as its graphic designers can."
            #:level '7th-10th
-           #:coming-soon #t) )
-
+           #:coming-soon #t))
   |#
   
   (list
-   (python)
-   (web-design)
-   (virtual-engineering)
-   (scratch)
-   (endless-runner)
-   (maze-game)
-   (digital-art)
-   (paper-coding)
-
-   
-   (adventure)
-   (survival)
-   (battle-arena)
-   (3d-exploration)
-   (3d-orbit)
-   (learntomod)
-   
+   (list ; no install
+    (python)
+    (web-design)
+    (virtual-engineering)
+    (endless-runner)
+    (maze-game)
+    (scratch)
+    (digital-art)
+    (coding-adventures))
+   (list ; install
+    (adventure)
+    (survival)
+    (battle-arena)
+    (3d-exploration)
+    (3d-orbit)
+    (learntomod))
+   (list ; schedule off
+    (coding-adventures #f)
+    (learntomod #f))
    ))
 
 (define (noinstall-topics)
-  (take (topics) 8))
+  (first (topics)))
 
 (define (install-topics)
-  (drop (topics) 6))
+  (second (topics)))
+
+(define (noinstall-noschedule-topics)
+  (flatten (append (drop-right (noinstall-topics) 1)
+                   (first (third (topics))))))
+
+(define (install-noschedule-topics)
+  (flatten (append (drop-right (install-topics) 1)
+                   (second (third (topics))))))
