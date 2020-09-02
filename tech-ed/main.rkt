@@ -29,6 +29,7 @@
           (jumbotron-header-section)
           (updated-list-value-prop)
           (class-schedule)
+          (contact-us)
           )))
 
 (define (jumbotron-header-section)
@@ -79,7 +80,6 @@
               #:max-radius 0
               class: "card px-3 py-5 mb-0 bg-transparent"
               style: (properties 'overflow: "hidden")
-  (jumbotron
    (container
     (row ;when we add more classes, change to responsive-row
      (div class: "col-md-8 col-lg-6 mx-auto"
@@ -91,7 +91,7 @@
                                src: (prefix/pathify summer-camp-intern-img-path)
                                alt: "A group of older adults learning coding in an online class."))
                 (card-body class: "text-center"
-                 (card-title "Code Shapes and Art")
+                 (card-title "Intro to Coding: Shapes and Art")
                  (card-text class: "text-left"
                             "Get creative with code! Start your journey into computer programming by creating shapes and pictures in the LISP language Scheme. Learn by doing! Our beginniner-friendly curriculum will have you coding in no time. Code in a free online coding editor; no installation required.") 
                  (table class: "table table-sm table-bordered text-left"
@@ -99,7 +99,7 @@
                         (tr (td (strong "Dates: ")) (td "10/2, 10/9, 10/16, 10/23"))))
                 (card-footer
                  class: "p-0 m-0"
-                 (class-purchase-button 70 0 "sku_HwtZZ6Ny1F9oxb" KEY)))))))))
+                 (class-purchase-button 70 0 "sku_HwtZZ6Ny1F9oxb" KEY))))))))
 
 
 (define (class-purchase-button price discount sku key)
@@ -135,43 +135,17 @@
                     })();})
   )
 
-#;(define (tech-skills-signup)
-  (l-system   #:x "240"
-              #:y "p.height/3*2"
-              #:start-angle -150
-              #:step 18
-              #:angle 90
-              #:axiom "FX"
-              #:loops 16
-              #:rules (list (cons "X" "X+YF+")
-                            (cons "Y" "-FX-Y"))
-              #:bg-color "#e9ecef"
-              #:line-color (~a primary 66);"rgba(255,193,7,0.4)"
-              #:max-radius 0
-              class: "card px-3 py-5 mb-0 bg-transparent"
-              style: (properties 'overflow: "hidden")
-              (container
-               (card class: "border-primary"
-                (card-header class: "h5 bg-primary text-white text-center"
-                             "Submit the form below for more information!")
-                (card-body
-                 (form action: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSe8Qas_4iDdxHLQp8JlVsKBJWyxDn6jBVjfHV5J5rew3RfIUA/formResponse"
-                       ;https://docs.google.com/forms/d/e/1FAIpQLSe8Qas_4iDdxHLQp8JlVsKBJWyxDn6jBVjfHV5J5rew3RfIUA
-                       ;entry.1054010153=sonny
-                       ;entry.470834101=sonny@email.com
-                       ;entry.584219301=python
-                       (div class:"form-group"
-                            (label "Name")
-                            (input type: "text" class: "form-control" name: "entry.1054010153"))
-                       (div class:"form-group"
-                            (label "Email")
-                            (input type:"email" class: "form-control" name: "entry.470834101"))
-                       (div class:"form-group"  
-                            (label "What do you want to tell us? e.g. A different time for our online session (please specify your timezone), a specific topic you're interested in learning.")
-                            (input type: "text" class: "form-control" name: "entry.584219301"))
-        
-                       (button-primary type: "submit" name: "submit"
-                                       "Submit"))
-                 (br)
-                 (container class: "text-center"
-                            (i "Thank you for your interest. You will hear back from our team soon with more details.")))))))
+(define (contact-us)
+  (jumbotron class: "mb-0 text-center bg-white"
+   (container
+    (div
+     (card
+      (card-header class: "h6" "Group Discounts and Custom Classes!")
+      (card-body
+       (card-text (b "Attention leaders and members of adult learning communities, senior support programs, and senior living facilities!") " MetaCoders is pleased to offer offer bulk pricing discounts and custom classes for groups of lifelong learners. Bring high-quality, online education directly to the members of your community."
+                  (br)
+                  (h6 "Contact Us for More Information")
+                  (ul class: "list-unstyled"
+                      (li (a href: "tel:858-375-4097" (small "(858) 375-4097")))
+                      (li (a href:"mailto: contact@metacoders.org" (small "contact@metacoders.org")))
+                      (li (small "Monday - Friday, 9am-5pm PT"))))))))))
