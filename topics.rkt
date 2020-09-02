@@ -90,7 +90,7 @@
 
   (define (virtual-engineering)
     (topic "Virtual Engineering" 
-           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify cpx-img-path))
+           (card-video-top src: cpx-makecode-mp4-path)
            "Learn about electronics and coding without a physical board! Using a web-based code editor for physical computing, students will be able to program the buttons, lights, and sensors of a virtual Circuit Playground Express (CPX) board. Students will have the option to use the drag and drop block-based interface or jump into Javascript and see how the code is being created."
            #:card-color 'warning
            #:level '3rd-10th
