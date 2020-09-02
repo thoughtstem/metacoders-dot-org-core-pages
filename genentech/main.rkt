@@ -19,7 +19,7 @@
 (define (genentech)
   (page genentech-top-path
         (normal-content-wide
-          #:head (list (title "Genentech's Diversity in Coding Scholarship")
+          #:head (list (title "Diversity in Coding Scholarship")
                        (meta name: "description" content: "For Students of OUSD & VUSD")
                        (common-critical-css)
                        (link 'rel: "preconnect" href:"https://q.stripe.com")
@@ -37,10 +37,10 @@
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
-    #:title "Genentech's Diversity in Coding Scholarship"
+    #:title "Diversity in Coding Scholarship"
     #:tagline "For Students of OUSD & VUSD" 
     #:percent-height "60vh"
-    #:image-path students-in-row-path
+    #:image-path girl-on-computer-path
     #:alt-tag "Kids coding together in a small group."))
 
 
@@ -53,28 +53,20 @@
               (li "Self-selection: students may not think a woman or a person of color \"belongs\" in computer science, if they do not see role models there.")
               (li "Biases of parents: parents may have certain biases about who \"belongs\" in computer science and therefore may not encourage their children to pursue it.")
               (br)
-              (p "The exclusion of people of color and women from the field of computer science is a major problem for the American economy that must be addressed. The Bureau of Labor Statistics consistently shows growth in technology sectors outpacing America's ability to produce graduates with relevant degrees. If 70% of America grows up believing they do not belong in computer science, we will never be able to produce enough graduates with computer science and technology degrees to keep up with economic demand.")
-              (p "This grant would be a step towards solving this diversity problem in the Vista/Oceanside region and encouraging more people of color and women to pursue computer science and join the STEM workforce in the future. This grant would:")
+              (p "The exclusion of people of color and women from the field of computer science is a problem for the American economy that must be addressed. The Bureau of Labor Statistics consistently shows growth in technology sectors outpacing America's ability to produce graduates with relevant degrees. If 70% of America grows up believing they do not belong in computer science, we will not be able to produce enough graduates with computer science and technology degrees to keep up with economic demand.")
+              (p "MetaCoders wants to help towards solving this diversity problem in the Vista/Oceanside region and encouraging more people of color and women to pursue computer science and join the STEM workforce in the future. Thanks to a generous grant from Genentech, MetaCoders can:")
               (li "Provide access to students who otherwise do not have access to a computer or coding education.")
-              (li "Provide role models to students who are women or people of color (75% of MetaCoders teaching staff are women or people of color).")
+              (li "Provide role models to students who are women or people of color.")
               (li "Provide education to parents about the long-term value of their children pursuing computer science and coding education.")
               (br)
-              (p "Furthermore, during the COVID-19 pandemic, access to K-12 STEM opportunities is even more limited than usual. Many parents are facing financial hardship due to lost jobs or reduced hours and can not afford to enroll their children in extracurricular STEM activities. Due to systemic racial inequalities, we expect this financial hardship to fall harder on people of color. Therefore, this grant is also a step towards providing STEM educational access to communities that need it most during the COVID-19 pandemic.")
-
               (h3 "Scholarships")
-              (p "Genentech is offering 200 scholarships to K-8th students in the Vista and Oceanside Unified School Districts who are either persons of color or female. These two groups have been frequently identified as underrepresented in the field of computer science and in various STEM fields in general. Scholarships would provide students the opportunity to join MetaCoders' online coding classes for 10 hours each for free. Students would be able to join online sessions at their convenience between the hours of 1pm-4pm, M-F.")
+              (p "MetaCoders is offering 200 scholarships to K-8th students in the Vista and Oceanside Unified School Districts who are either persons of color or female. Scholarships provide students the opportunity to join MetaCoders' online coding classes. Each scholarship recipient will receive 10 hours of live coding sessions. ")
 
-              (h3 "Scholarship Criteria & Application Process")
-              (p "In order to verify the scholarship criteria we will be collecting the following: students' names, basic information (e.g. age, grade level, gender, race), email and phone number of their parents (or guardians) so that we can contact them if they are awarded a scholarship. Finally, in the case of an overwhelming number of scholarship applicants, there will be a short answer question: \"What does the student hope to gain from this experience?\" This question will only be used to break ties. Scholarships will primarily be awarded on a first-come, first-serve basis, taking into account our goals for how many scholarships to award to each demographic.")
-
-              (h3 "Scholarship Awarding Process")
-              (p "Scholarships will be awarded on a rolling basis throughout the grant period. We plan to award 50 scholarships to female students and 150 scholarships to students of color (or students of color who are also female). We expect, based on the demographics of this region, most scholarships will be awarded to Latino students, but we will also strive to award scholarships to students who are African American, American Indian or Alaskan Native, and Pacific Islander.")
-
-              (h3 "Educational Activities of Scholarship Awardees")
-              (p "As soon as students are awarded a scholarship, they will be able to login to MetaCoders' Zoom classrooms at the start of any hour between the hours of 1pm-4pm, M-F. Students can login for multiple hours at a time, or just an hour here and there. Students will be able to choose any of the topics that are available for their age.")
-
+              (h3 "Scholarship Application Process")
+              (p "To apply for this scholarship, please fill out the form below. Scholarships will be awarded beginning on September 21 on a rolling basis; scholarship credits may be used through January 22, 2021.  For the greatest chance of winning a scholarship, please reply in a timely manner.")
+ 
               (h3 "Required Hardware")
-              (p "Students must have access to a laptop or desktop (with Windows or macOS, or a Chromebook. Our classes are through Zoom so students will also need access to a microphone and a webcam.")
+              (p "Students must have access to a laptop or desktop (with Windows or macOS) or a Chromebook. Our classes are taught through Zoom so students will also need access to the internet, a microphone, and a webcam.")
               )))
 
 
