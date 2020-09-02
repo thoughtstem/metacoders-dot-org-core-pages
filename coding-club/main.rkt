@@ -224,7 +224,21 @@
 
 (define (faq-section)
   ;(local-require website-js/components/accordion-cards)
-  (jumbotron  class: "mb-0 bg-white"
+  (l-system   #:x "240"
+              #:y "p.height/3*2"
+              #:start-angle -150
+              #:step 18
+              #:angle 90
+              #:axiom "FX"
+              #:loops 16
+              #:rules (list (cons "X" "X+YF+")
+                            (cons "Y" "-FX-Y"))
+              ;#:bg-color "#e9ecef"
+              #:line-color (~a warning 66);"rgba(255,193,7,0.4)"
+              #:max-radius 0
+              class: "card px-3 py-5 mb-0 bg-transparent"
+              style: (properties 'overflow: "hidden")
+  ;(jumbotron  class: "mb-0 bg-white"
               (container
                 (h2 class: "text-center" "Frequently Asked Questions")
                 (br)
