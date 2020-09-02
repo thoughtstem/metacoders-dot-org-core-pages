@@ -121,7 +121,7 @@
 
                                                     stripe.redirectToCheckout({
                                                                                items: [{sku: '@sku', quantity: 1}],
-                                                                               successUrl: 'https://metacoders.org@(prefix/pathify checkout-success-top-path)',
+                                                                               successUrl: 'https://metacoders.org@(prefix/pathify tech-ed-checkout-success-top-path)',
                                                                                cancelUrl: 'https://metacoders.org@(prefix/pathify checkout-fail-top-path)',
                                                                                billingAddressCollection: 'required',
                                                                                })
