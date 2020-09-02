@@ -1,6 +1,6 @@
 #lang at-exp racket
 
-(provide tech-skills)
+(provide tech-ed)
 
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
@@ -14,8 +14,8 @@
 
 (define (gems n) (span n " " (i class:"fas fa-gem")))
 
-(define (tech-skills)
-  (page tech-skills-top-path
+(define (tech-ed)
+  (page tech-ed-top-path
         (normal-content-wide
           #:head (list (title "Tech Ed for Lifelong Learners")
                        (meta name: "description" content: "Engage with the technology that surrounds us; learn to speak the language of code!")
@@ -34,7 +34,7 @@
 (define (jumbotron-header-section)
   (mc-jumbotron-header
     #:title "Tech Ed for Lifelong Learners"
-    #:tagline "Engage with the technology that surrounds us; learn to speak the language of code!" 
+    #:tagline "Engage your logical mind & creativity. Learn how to code!" 
     #:percent-height "60vh"
     #:image-path senior-hands-on-keyboard-path
     #:alt-tag "Hands of an older adult on a keyboard."))
@@ -52,15 +52,15 @@
                               (card class: "border-warning" style: (properties 'flex: 1)
                                     (card-header class: "h6 bg-warning text-white" "Create New Connections!")
                                     (card-body
-                                     "MetaCoders believes that learning is a social experience. That is why all our programming is live-taught in online, video classes with like-minded learners. Our classes become learning communities that motivate and learn from each other as much as from our Coding Coaches!")) 
-                              (card class: "border-warning" style: (properties 'flex: 1)
-                                    (card-header class: "h6 bg-warning text-white" "Build Skills You'll Use!")
-                                    (card-body
-                                     "As you learn how to code, you will learn about the logic and language that runs so many of the objects in our daily lives -- from our phones to our cars to our televisions! You will see gains in your comfort and confidence with technology through practice and understanding."))
+                                     "MetaCoders believes that learning is a social experience. That is why all our programming is live-taught in online, video classes with like-minded learners. Our classes become learning communities that motivate and learn from each other as much as from our Coding Coaches!"))
                               (card class: "border-warning" style: (properties 'flex: 1)
                                     (card-header class: "h6 bg-warning text-white" "Long-Distance, High-Standard!")
                                     (card-body
-                                     "Get quality education brought to you -- safely through your computer screen! MetaCoders curriculum is designed specifically for remote learning. Our Coding Coaches guide you at the pace that is right for you; always ready with a helpful tip or the next challenge. With MetaCoders, you don't need to sacrifice quality for convenience."))))
+                                     "Get quality education brought to you -- safely through your computer screen! MetaCoders curriculum is designed specifically for remote learning. Our Coding Coaches guide you at the pace that is right for you; always ready with a helpful tip or the next challenge. With MetaCoders, you don't need to sacrifice quality for convenience."))
+                              (card class: "border-warning" style: (properties 'flex: 1)
+                                    (card-header class: "h6 bg-warning text-white" "Build Skills You'll Use!")
+                                    (card-body
+                                     "As you learn how to code, you will learn about the logic and language that runs so many of the objects in our daily lives -- from our phones to our cars to our televisions! You will see gains in your comfort and confidence with technology through practice and understanding."))))
 
               ))
 

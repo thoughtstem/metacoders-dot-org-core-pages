@@ -13,7 +13,7 @@
           "coding-club.rkt"
           "coding-for-pods.rkt"
           "genentech.rkt"
-          "tech-skills.rkt"
+          "tech-ed.rkt"
           "one-on-one.rkt"
           "badges.rkt"
           "tech-coords.rkt"
@@ -37,7 +37,7 @@
                        "badges.rkt"
                        "coding-for-pods.rkt"
                        "genentech.rkt"
-                       "tech-skills.rkt"
+                       "tech-ed.rkt"
                        "one-on-one.rkt"
                        "tech-coords.rkt"
                        "volunteer-online.rkt"
@@ -65,7 +65,7 @@
       (coding-club)
       (coding-for-pods)
       (genentech)
-      (tech-skills)
+      (tech-ed)
       (one-on-one)
       (badges)
       (tech-coords)
