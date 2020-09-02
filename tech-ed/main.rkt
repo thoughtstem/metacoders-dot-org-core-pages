@@ -28,7 +28,7 @@
           (include-p5-js)
           (jumbotron-header-section)
           (updated-list-value-prop)
-          (tech-skills-signup)
+          (class-schedule)
           )))
 
 (define (jumbotron-header-section)
@@ -64,7 +64,78 @@
 
               ))
 
-(define (tech-skills-signup)
+(define (class-schedule)
+  (l-system   #:x "240"
+              #:y "p.height/3*2"
+              #:start-angle -150
+              #:step 18
+              #:angle 90
+              #:axiom "FX"
+              #:loops 16
+              #:rules (list (cons "X" "X+YF+")
+                            (cons "Y" "-FX-Y"))
+              #:bg-color "#e9ecef"
+              #:line-color (~a primary 66);"rgba(255,193,7,0.4)"
+              #:max-radius 0
+              class: "card px-3 py-5 mb-0 bg-transparent"
+              style: (properties 'overflow: "hidden")
+  (jumbotron
+   (container
+    (row ;when we add more classes, change to responsive-row
+     (div class: "col-md-8 col-lg-6 mx-auto"
+          (card class: "border-primary"
+                (picture 
+                 (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path seniors-zoom-coding-path)))
+                 (source type: "image/jpeg" srcset: (prefix/pathify seniors-zoom-coding-path))
+                 (card-img-top class: "border-bottom"
+                               src: (prefix/pathify summer-camp-intern-img-path)
+                               alt: "A group of older adults learning coding in an online class."))
+                (card-body class: "text-center"
+                 (card-title "Code Shapes and Art")
+                 (card-text class: "text-left"
+                            "Get creative with code! Start your journey into computer programming by creating shapes and pictures in the LISP language Scheme. Learn by doing! Our beginniner-friendly curriculum will have you coding in no time. Code in a free online coding editor; no installation required.") 
+                 (table class: "table table-sm table-bordered text-left"
+                        (tr (td (strong "Time: ")) (td "Fridays, 10:30am - 11:30am PT"))
+                        (tr (td (strong "Dates: ")) (td "10/2, 10/9, 10/16, 10/23"))))
+                (card-footer
+                 class: "p-0 m-0"
+                 (class-purchase-button 70 0 "sku_HwtZZ6Ny1F9oxb" KEY)))))))))
+
+
+(define (class-purchase-button price discount sku key)
+  (list (button-primary id: (~a "checkout-button-" sku)
+                        class: "btn-block rounded-0"
+                        (if (> discount 0)
+                              (list "Click Here to Enroll for "
+                                    (s class: "text-danger"
+                                       (~p price))
+                                    " " (~p (- price discount)))
+                              (~a "Click Here to Enroll for " (~p price))))
+        (div id:(~a "error-message-" sku))
+        @script/inline{
+        (function() {
+                    var stripe = Stripe('@key');
+
+                    var checkoutButton = document.getElementById('checkout-button-@sku');
+                    checkoutButton.addEventListener('click', function () {
+
+                                                    stripe.redirectToCheckout({
+                                                                               items: [{sku: '@sku', quantity: 1}],
+                                                                               successUrl: 'https://metacoders.org@(prefix/pathify checkout-success-top-path)',
+                                                                               cancelUrl: 'https://metacoders.org@(prefix/pathify checkout-fail-top-path)',
+                                                                               billingAddressCollection: 'required',
+                                                                               })
+                                                    .then(function (result) {
+                                                                   if (result.error) {
+                                                                   var displayError = document.getElementById('error-message@sku');
+                                                                   displayError.textContent = result.error.message;
+                                                                   }
+                                                                   });
+                                                    });
+                    })();})
+  )
+
+#;(define (tech-skills-signup)
   (l-system   #:x "240"
               #:y "p.height/3*2"
               #:start-angle -150
