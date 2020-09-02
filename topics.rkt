@@ -3,8 +3,9 @@
 (provide ;topics
          noinstall-topics
          install-topics
-         noinstall-noschedule-topics
-         install-noschedule-topics)
+         ;noinstall-noschedule-topics
+         ;install-noschedule-topics
+         )
 
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
@@ -71,7 +72,7 @@
               'object-position: "0 0"
               ))
 
-(define (topics)
+(define (topics #:show-time? [show-time? #f])
   (define (python)
     (topic "Python Game Design" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
@@ -242,29 +243,29 @@
     (maze-game)
     (scratch)
     (digital-art)
-    (coding-adventures))
+    (coding-adventures show-time?))
    (list ; install
     (adventure)
     (survival)
     (battle-arena)
     (3d-exploration)
     (3d-orbit)
-    (learntomod))
-   (list ; schedule off
-    (coding-adventures #f)
-    (learntomod #f))
+    (learntomod show-time?))
+   ;(list ; schedule off
+   ; (coding-adventures #f)
+   ; (learntomod #f))
    ))
 
-(define (noinstall-topics)
-  (first (topics)))
+(define (noinstall-topics #:show-time? [show-time? #f])
+  (first (topics #:show-time? show-time?)))
 
-(define (install-topics)
-  (second (topics)))
+(define (install-topics #:show-time? [show-time? #f])
+  (second (topics #:show-time? show-time?)))
 
-(define (noinstall-noschedule-topics)
+#|(define (noinstall-noschedule-topics)
   (flatten (append (drop-right (noinstall-topics) 1)
                    (first (third (topics))))))
 
 (define (install-noschedule-topics)
   (flatten (append (drop-right (install-topics) 1)
-                   (second (third (topics))))))
+                   (second (third (topics))))))|#
