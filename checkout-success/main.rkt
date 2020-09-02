@@ -213,11 +213,8 @@
                     (label "Email")
                     (input type:"email" class: "form-control" name: "entry.470834101"))
                (div class:"form-group"  
-                    (label "What timezone are you located in? (Or if you're unsure, what city/country?)")
-                    (input type: "text" class: "form-control" name: "entry.584219301"))
-               (div class:"form-group"  
-                    (label "What topic(s) are you interested in?")
-                    (input type: "text" class: "form-control" name: "entry.1478459484"))
+                    (label "Phone Number")
+                    (input type: "text" class: "form-control" name: "entry.1259011555"))
                (button-primary type: "submit" name: "submit"
                                "Submit")))))
 

@@ -88,7 +88,7 @@
 
   (define (virtual-engineering)
     (topic "Virtual Engineering" 
-           (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify web-development-img-path))
+           (card-video-top src: cpx-makecode-mp4-path)
            "CPX..."
            #:card-color 'warning
            #:level '3rd-10th
