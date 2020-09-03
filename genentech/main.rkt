@@ -134,8 +134,8 @@
                             (label "Student's Date of Birth")
                             (input type: "date" class: "form-control" name: "entry.56393326"))
                        (div class: "form-group"
-                            (label "Student's Gender")
-                            (div class: "form-check"
+                            (label class: "pr-4" "Student's Gender")
+                            (div class: "form-check form-check-inline"
                                  (input class: "form-check-input"
                                         type: "radio"
                                         id: "genderOption1"
@@ -145,7 +145,7 @@
                                  (label class: "form-check-label"
                                         'for: "genderOption1"
                                         "Male"))
-                            (div class: "form-check"
+                            (div class: "form-check form-check-inline"
                                  (input class: "form-check-input"
                                         type: "radio"
                                         id: "genderOption2"
@@ -187,17 +187,118 @@
        document.getElementById("genderOption3").value = "other";
   }}}))
                        (div class: "form-group"
-                            (label "Student's Race")
+                            (label class: "mdb-main-label" "Student's Race/Ethnicity (choose all that apply)")
                             (div class: "form-check"
-                                 (input class: "form-check-input"
-                                        type: "radio"
-                                        id: "raceOption1"
-                                        'value: "African American"
-                                        'onchange: "toggleOtherInput();"
+                                 (input class: "form-control form-control-sm mx-2"
+                                        type: "hidden"
+                                        id: "raceText"
+                                        'value: "--fill in--"
                                         name: "entry.1663616049")
-                                 (label class: "form-check-label"
-                                        'for: "raceOption1"
-                                        "African American"))
+                                 
+                                 (div class: "container"
+                                      (div class: "row"
+                                           (div class:  "col-md-4"
+                                                (input class: "form-check-input" type: "checkbox" id: "raceOption1" 'onchange: "toggleOtherInput(); concatStrings();" 'value: "American Indian or Alaska Native, ")
+                                                (label class: "form-check-label" 'for: "raceOption1" "American Indian or Alaska Native"))
+                                           (div class:  "col-md-4"
+                                                (input class: "form-check-input" type: "checkbox" id: "raceOption2" 'onchange: "toggleOtherInput(); concatStrings();" 'value: "Asian ,")
+                                                (label class: "form-check-label" 'for: "raceOption2" "Asian"))
+                                           (div class:  "col-md-4"
+                                                (input class: "form-check-input" type: "checkbox" id: "raceOption3" 'onchange: "toggleOtherInput(); concatStrings();" 'value: "Black or African American, ")
+                                                (label class: "form-check-label" 'for: "raceOption3" "Black or African American")))
+                                      (div class: "row"
+                                           (div class: "col-md-4"
+                                                (input class: "form-check-input" type: "checkbox" id: "raceOption4" 'onchange: "toggleOtherInput(); concatStrings();" 'value: "Caucasian, ")
+                                                (label class: "form-check-label" 'for: "raceOption4" "Caucasian"))
+                                           (div class: "col-md-4"
+                                                (input class: "form-check-input" type: "checkbox" id: "raceOption5" 'onchange: "toggleOtherInput(); concatStrings();" 'value: "Latinx or Hispanic, ")
+                                                (label class: "form-check-label" 'for: "raceOption5" "Latinx or Hispanic"))
+                                           (div class: "col-md-4"
+                                                (input class: "form-check-input" type: "checkbox" id: "raceOption6" 'onchange: "toggleOtherInput(); concatStrings();" 'value: "Pacific Islander or Hawaiian, ")
+                                                (label class: "form-check-label" 'for: "raceOption6" "Pacific Islander or Hawaiian")))
+                                      (div class: "row col-md-4"
+                                           (input class: "form-check-input" type: "checkbox" id: "raceOption7" 'onchange: "toggleOtherInput(); concatStrings();" 'value: "other")
+                                           (label class: "form-check-label" 'for: "raceOption7" "Other")
+                                           (input class: "form-control-md mx-2"
+                                                  type: "hidden"
+                                                  id: "raceTextInput"
+                                                  'placeholder: "Type here"
+                                                  'oninput: "toggleCustomValue(); concatStrings();")
+                                           ))
+ @script/inline{
+  function toggleOtherInput(){
+    var checked = document.getElementById("raceOption7").checked;
+    if(checked){
+       document.getElementById("raceTextInput").type = "text";
+    } else{
+       document.getElementById("raceTextInput").type = "hidden";
+    }}
+  function concatStrings(){
+    var option1 = document.getElementById("raceOption1").value;
+    var option2 = document.getElementById("raceOption2").value;
+    var option3 = document.getElementById("raceOption3").value;
+    var option4 = document.getElementById("raceOption4").value;
+    var option5 = document.getElementById("raceOption5").value;
+    var option6 = document.getElementById("raceOption6").value;
+    var option7 = document.getElementById("raceTextInput").value;
+
+    var selected1 = "";
+    var selected2 = "";
+    var selected3 = "";
+    var selected4 = "";
+    var selected5 = "";
+    var selected6 = "";
+    var selected7 = "";
+ 
+    if (document.getElementById("raceOption1").checked){
+        selected1 = option1;
+    } else {
+        selected1 = ""; }
+
+    if (document.getElementById("raceOption2").checked){
+        selected2 = option2;
+    } else {
+        selected2 = ""; }
+
+    if (document.getElementById("raceOption3").checked){
+        selected3 = option3;
+    } else {
+        selected3 = ""; }
+
+    if (document.getElementById("raceOption4").checked){
+        selected4 = option4;
+    } else {
+        selected4 = ""; }
+
+    if (document.getElementById("raceOption5").checked){
+        selected5 = option5;
+    } else {
+        selected5 = ""; }
+
+    if (document.getElementById("raceOption6").checked){
+        selected6 = option6;
+    } else {
+        selected6 = ""; }
+
+    if (document.getElementById("raceOption7").checked){
+        selected7 = option7;
+    } else {
+        selected7 = ""; }  
+        
+  document.getElementById("raceText").value = "".concat(selected1, selected2, selected3, selected4, selected5, selected6, selected7, '.');
+
+  }
+ function toggleCustomValue(){
+  var customValue = document.getElementById("raceTextInput").value;
+  var checked = document.getElementById("raceOption7").checked;
+  if(checked){
+     document.getElementById("raceOption7").value = customValue;
+  } else{
+     document.getElementById("raceOption7").value = "other";
+  }}}))
+#|
+                       (div class: "form-group"
+                            (label "Student's Race/Ethnicity (check all that apply)")
                             (div class: "form-check"
                                  (input class: "form-check-input"
                                         type: "radio"
@@ -221,6 +322,16 @@
                             (div class: "form-check"
                                  (input class: "form-check-input"
                                         type: "radio"
+                                        id: "raceOption1"
+                                        'value: "Black or African American"
+                                        'onchange: "toggleOtherInput();"
+                                        name: "entry.1663616049")
+                                 (label class: "form-check-label"
+                                        'for: "raceOption1"
+                                        "Black or African American"))
+                            (div class: "form-check"
+                                 (input class: "form-check-input"
+                                        type: "radio"
                                         id: "raceOption4"
                                         'value: "Caucasian"
                                         'onchange: "toggleOtherInput();"
@@ -232,7 +343,7 @@
                                  (input class: "form-check-input"
                                         type: "radio"
                                         id: "raceOption5"
-                                        'value: "Latino or Hispanic"
+                                        'value: "Latinx or Hispanic"
                                         'onchange: "toggleOtherInput();"
                                         name: "entry.1663616049")
                                  (label class: "form-check-label"
@@ -279,6 +390,7 @@
     } else{
        document.getElementById("raceOption7").value = "other";
   }}}))
+|#
                        (div class: "form-group"
                             (label "Student's Grade Level")
                             (select class: "form-control" name: "entry.323010727"
