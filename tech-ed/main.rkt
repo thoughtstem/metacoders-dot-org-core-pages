@@ -138,14 +138,15 @@
 (define (contact-us)
   (jumbotron class: "mb-0 text-center bg-white"
    (container
-    (div
+    (div class: "col-md-8 mx-auto"
      (card
       (card-header class: "h6" "Group Discounts and Custom Classes!")
-      (card-body
-       (card-text (b "Attention leaders and members of adult learning communities, senior support programs, and senior living facilities!") " MetaCoders is pleased to offer offer bulk pricing discounts and custom classes for groups of lifelong learners. Bring high-quality, online education directly to the members of your community."
-                  (br)
-                  (h6 "Contact Us for More Information")
-                  (ul class: "list-unstyled"
-                      (li (a href: "tel:858-375-4097" (small "(858) 375-4097")))
-                      (li (a href:"mailto: contact@metacoders.org" (small "contact@metacoders.org")))
-                      (li (small "Monday - Friday, 9am-5pm PT"))))))))))
+      (card-body class: "text-left"
+       (card-text (b "Attention leaders and members of adult learning communities, senior support programs, and senior living facilities!")
+                  (p "MetaCoders is pleased to offer offer bulk pricing discounts and custom classes for groups of lifelong learners. Bring high-quality, online education directly to the members of your community.")
+                  (hr)
+                  (h6 class: "text-center" "Contact Us for More Information")
+                  (ul class: "list-unstyled text-center"
+                      (li (a href: "tel:858-375-4097" "(858) 375-4097"))
+                      (li (a href:"mailto: contact@metacoders.org" "contact@metacoders.org"))
+                      (li "Monday - Friday, 9am-5pm PT")))))))))
