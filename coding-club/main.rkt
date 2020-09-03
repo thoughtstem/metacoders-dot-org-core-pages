@@ -64,7 +64,7 @@
                  (card class: "border-primary" style: (properties 'flex: 1)
                   (card-header class: "h6 bg-primary text-white" "Customized Student Experience!")
                   (card-body
-                   "A range of topics offered daily allows students to design their own education experience around their interest and experience level. MetaCoders' unique Badge System allows students to move though curriculum at the pace that is right for them, track their progress, and pick up right where they left off each day."))
+                   "A range of topics offered daily allows students to design their own education experience around their interest and experience level. MetaCoders' unique Badge System allows students to move through curriculum at the pace that is right for them, track their progress, and pick up right where they left off each day."))
                  (card class: "border-primary" style: (properties 'flex: 1)
                    (card-header class: "h6 bg-primary text-white" "Real People, Real Time!")
                    (card-body
@@ -77,10 +77,10 @@
                (h2 class: "text-center" "What Do Credits " (gems "") " Unlock?" )
                (br)
                (h5 class: "text-center" "The following topics can run on Chromebooks, macOS, or Windows and require no installation.")
-               (apply (curry responsive-row #:columns 3) (map display-topic (noinstall-topics)))
+               (apply (curry responsive-row #:columns 3) (map display-topic (noinstall-topics #:show-time? #t)))
                (hr)
                (h5 class: "text-center" "The following topics require software to be installed on macOS or Windows.")
-               (apply (curry responsive-row #:columns 3) (map display-topic (install-topics)))
+               (apply (curry responsive-row #:columns 3) (map display-topic (install-topics #:show-time? #t)))
                )
              ))
 
@@ -153,7 +153,7 @@
               (card-body
                (table class: "table table-sm table-borderless text-left"
                       (tr (td (strong "Session Dates: ")) (td "August 24th - December 18th"))
-                      (tr (td (strong "Schedule: ")) (td "Weekdays 1pm-4pm"))
+                      (tr (td (strong "Schedule: ")) (td "Weekdays 1pm - 4pm PT"))
                       (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27"))))))))
 
 
@@ -224,7 +224,21 @@
 
 (define (faq-section)
   ;(local-require website-js/components/accordion-cards)
-  (jumbotron  class: "mb-0 bg-white"
+  (l-system   #:x "240"
+              #:y "p.height/3*2"
+              #:start-angle -150
+              #:step 18
+              #:angle 90
+              #:axiom "FX"
+              #:loops 16
+              #:rules (list (cons "X" "X+YF+")
+                            (cons "Y" "-FX-Y"))
+              ;#:bg-color "#e9ecef"
+              #:line-color (~a warning 66);"rgba(255,193,7,0.4)"
+              #:max-radius 0
+              class: "card px-3 py-5 mb-0 bg-transparent"
+              style: (properties 'overflow: "hidden")
+  ;(jumbotron  class: "mb-0 bg-white"
               (container
                 (h2 class: "text-center" "Frequently Asked Questions")
                 (br)

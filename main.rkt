@@ -12,6 +12,8 @@
           "online.rkt"
           "coding-club.rkt"
           "coding-for-pods.rkt"
+          "genentech.rkt"
+          "tech-ed.rkt"
           "one-on-one.rkt"
           "badges.rkt"
           "tech-coords.rkt"
@@ -34,6 +36,8 @@
                        "coding-club.rkt"
                        "badges.rkt"
                        "coding-for-pods.rkt"
+                       "genentech.rkt"
+                       "tech-ed.rkt"
                        "one-on-one.rkt"
                        "tech-coords.rkt"
                        "volunteer-online.rkt"
@@ -60,6 +64,8 @@
       (online)
       (coding-club)
       (coding-for-pods)
+      (genentech)
+      (tech-ed)
       (one-on-one)
       (badges)
       (tech-coords)
@@ -70,6 +76,7 @@
       (checkout-fail)
       (checkout-success)
       (camp-checkout-success)
+      (tech-ed-checkout-success)
       (donate-success)
       (learn-more)
       )))
