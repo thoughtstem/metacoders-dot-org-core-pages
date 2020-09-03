@@ -61,6 +61,30 @@
                               (h4 class: "text-right" "Allison S.")
                               (p class: "text-right" "Parent of a 7 and 9 year-old")
                               )
+                         (div class: "carousel-item text-white"
+                              (h2 "\"It was actually better than school. At school, we have a Zoom class for 30 minutes and then we do the work on our own. Here, the coaches were more on hand.\"")
+                              (br)
+                              (h4 class: "text-right" "Stanley M.")
+                              (p class: "text-right" "Age 15")
+                              )
+                         (div class: "carousel-item text-white"
+                              (h2 "\"I’ve been missing an organized class over the summer. The coaches were very nice and helped you when you needed help. I liked that you could choose your own projects, and you got to create your own characters.\"")
+                              (br)
+                              (h4 class: "text-right" "Arwen M.")
+                              (p class: "text-right" "Age 13")
+                              )
+                         (div class: "carousel-item text-white"
+                              (h2 "\"My learner really enjoyed this class. The instructor was lively and kept the class exciting.\"")
+                              (br)
+                              (h4 class: "text-right" "Roberta T.")
+                              (p class: "text-right" "Parent of an 11 year-old")
+                              )
+                         (div class: "carousel-item text-white"
+                              (h2 "\"When school ended last year, there was no real distance learning in place for the kids. These lessons are what I would expect distance learning to be like. The instructor was on screen and sharing a screen of the lesson that was going on. It was very well done.\"")
+                              (br)
+                              (h4 class: "text-right" "Ed M.")
+                              (p class: "text-right" "Parent of a 13 and 15 year-old")
+                              )
                          )
                     (a class: "carousel-control-prev" href: "#carouselExampleFade" role: "button" 'data-slide: "prev"
                        (span class: "carousel-control-prev-icon" 'aria-hidden: "true")

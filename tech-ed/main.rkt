@@ -28,7 +28,8 @@
           (include-p5-js)
           (jumbotron-header-section)
           (updated-list-value-prop)
-          (tech-skills-signup)
+          (class-schedule)
+          (contact-us)
           )))
 
 (define (jumbotron-header-section)
@@ -64,7 +65,7 @@
 
               ))
 
-(define (tech-skills-signup)
+(define (class-schedule)
   (l-system   #:x "240"
               #:y "p.height/3*2"
               #:start-angle -150
@@ -79,28 +80,73 @@
               #:max-radius 0
               class: "card px-3 py-5 mb-0 bg-transparent"
               style: (properties 'overflow: "hidden")
-              (container
-               (card class: "border-primary"
-                (card-header class: "h5 bg-primary text-white text-center"
-                             "Submit the form below for more information!")
-                (card-body
-                 (form action: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSe8Qas_4iDdxHLQp8JlVsKBJWyxDn6jBVjfHV5J5rew3RfIUA/formResponse"
-                       ;https://docs.google.com/forms/d/e/1FAIpQLSe8Qas_4iDdxHLQp8JlVsKBJWyxDn6jBVjfHV5J5rew3RfIUA
-                       ;entry.1054010153=sonny
-                       ;entry.470834101=sonny@email.com
-                       ;entry.584219301=python
-                       (div class:"form-group"
-                            (label "Name")
-                            (input type: "text" class: "form-control" name: "entry.1054010153"))
-                       (div class:"form-group"
-                            (label "Email")
-                            (input type:"email" class: "form-control" name: "entry.470834101"))
-                       (div class:"form-group"  
-                            (label "What do you want to tell us? e.g. A different time for our online session (please specify your timezone), a specific topic you're interested in learning.")
-                            (input type: "text" class: "form-control" name: "entry.584219301"))
-        
-                       (button-primary type: "submit" name: "submit"
-                                       "Submit"))
-                 (br)
-                 (container class: "text-center"
-                            (i "Thank you for your interest. You will hear back from our team soon with more details.")))))))
+   (container
+    (row ;when we add more classes, change to responsive-row
+     (div class: "col-md-8 col-lg-6 mx-auto"
+          (card class: "border-primary"
+                (picture 
+                 (source type: "image/webp" srcset: (prefix/pathify (jpg-path->webp-path seniors-zoom-coding-path)))
+                 (source type: "image/jpeg" srcset: (prefix/pathify seniors-zoom-coding-path))
+                 (card-img-top class: "border-bottom"
+                               src: (prefix/pathify summer-camp-intern-img-path)
+                               alt: "A group of older adults learning coding in an online class."))
+                (card-body class: "text-center"
+                 (card-title "Intro to Coding: Shapes and Art")
+                 (card-text class: "text-left"
+                            "Get creative with code! Start your journey into computer programming by creating shapes and pictures in the LISP language Scheme. Learn by doing! Our beginniner-friendly curriculum will have you coding in no time. Code in a free online coding editor; no installation required.") 
+                 (table class: "table table-sm table-bordered text-left"
+                        (tr (td (strong "Time: ")) (td "Fridays, 10:30am - 11:30am PT"))
+                        (tr (td (strong "Dates: ")) (td "10/2, 10/9, 10/16, 10/23"))))
+                (card-footer
+                 class: "p-0 m-0"
+                 (class-purchase-button 70 0 "sku_HwtZZ6Ny1F9oxb" KEY))))))))
+
+
+(define (class-purchase-button price discount sku key)
+  (list (button-primary id: (~a "checkout-button-" sku)
+                        class: "btn-block rounded-0"
+                        (if (> discount 0)
+                              (list "Click Here to Enroll for "
+                                    (s class: "text-danger"
+                                       (~p price))
+                                    " " (~p (- price discount)))
+                              (~a "Click Here to Enroll for " (~p price))))
+        (div id:(~a "error-message-" sku))
+        @script/inline{
+        (function() {
+                    var stripe = Stripe('@key');
+
+                    var checkoutButton = document.getElementById('checkout-button-@sku');
+                    checkoutButton.addEventListener('click', function () {
+
+                                                    stripe.redirectToCheckout({
+                                                                               items: [{sku: '@sku', quantity: 1}],
+                                                                               successUrl: 'https://metacoders.org@(prefix/pathify tech-ed-checkout-success-top-path)',
+                                                                               cancelUrl: 'https://metacoders.org@(prefix/pathify checkout-fail-top-path)',
+                                                                               billingAddressCollection: 'required',
+                                                                               })
+                                                    .then(function (result) {
+                                                                   if (result.error) {
+                                                                   var displayError = document.getElementById('error-message@sku');
+                                                                   displayError.textContent = result.error.message;
+                                                                   }
+                                                                   });
+                                                    });
+                    })();})
+  )
+
+(define (contact-us)
+  (jumbotron class: "mb-0 text-center bg-white"
+   (container
+    (div class: "col-md-8 mx-auto"
+     (card
+      (card-header class: "h6" "Group Discounts and Custom Classes!")
+      (card-body class: "text-left"
+       (card-text (b "Attention leaders and members of adult learning communities, senior support programs, and senior living facilities!")
+                  (p "MetaCoders is pleased to offer offer bulk pricing discounts and custom classes for groups of lifelong learners. Bring high-quality, online education directly to the members of your community.")
+                  (hr)
+                  (h6 class: "text-center" "Contact Us for More Information")
+                  (ul class: "list-unstyled text-center"
+                      (li (a href: "tel:858-375-4097" "(858) 375-4097"))
+                      (li (a href:"mailto: contact@metacoders.org" "contact@metacoders.org"))
+                      (li "Monday - Friday, 9am-5pm PT")))))))))

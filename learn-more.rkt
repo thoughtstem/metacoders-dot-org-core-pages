@@ -11,7 +11,8 @@
          ;website-js/components/boids
          ;website-js/components/pointillism
          website-js/components/l-system
-         "./team.rkt")
+         "./team.rkt"
+         "./customer-testimonials.rkt")
 
 (define-runtime-path js "learn-more/js")
 
@@ -207,6 +208,7 @@ function toggleAccBtn3() {
         (include-p5-js)
         (jumbotron-header)
         (about-and-mission)
+        (customer-testimonial-section)
         ;(programs-we-offer)
         ;(what-makes-us-different)
         ;(where-do-you-fit-in)
