@@ -198,7 +198,7 @@
                ))))
 
 (define (tech-ed-form-card)
-  (card class: "border-primary"
+  (card class: "border-primary my-5"
         (card-header class: "h5 bg-primary text-white text-center"
                      "Submit the form below to complete your registration")
         (card-body
@@ -221,7 +221,7 @@
 (define (tech-ed-checkout-success)
   (page tech-ed-checkout-success-top-path
         (normal-content
-          (div class: "text-center p-4"
+          (div class: "text-center pt-4"
                (h1 "Payment Success")
                (p "You will receive an email with your receipt shortly."))
           (tech-ed-form-card)
