@@ -56,7 +56,7 @@
                  (card class: "border-primary" style: (properties 'flex: 1)
                   (card-header class: "h6 bg-primary text-white" "Live-Taught on Your Schedule!")
                   (card-body
-                   "MetaCoders knows that you and your family have a lot going on -- now more than ever! Online sessions with our Coding Coaches are offered " (b "every weekday, 1pm to 4pm PT") ". Join us on the hour daily, weekly, or whenever! Our schedule adapts to " (i "you") "."))
+                   "MetaCoders knows that you and your family have a lot going on -- now more than ever! Online sessions with our Coding Coaches are offered " (b "every weekday, 2pm to 5pm PT") ". Join us on the hour daily, weekly, or whenever! Our schedule adapts to " (i "you") "."))
                  (card class: "border-primary" style: (properties 'flex: 1)
                   (card-header class: "h6 bg-primary text-white" "Ultimate Flexibility!")
                   (card-body
@@ -77,9 +77,11 @@
                (h2 class: "text-center" "What Do Credits " (gems "") " Unlock?" )
                (br)
                (h5 class: "text-center" "The following topics can run on Chromebooks, macOS, or Windows and require no installation.")
+               (p class: "text-center" "Code it all in a free online coding editor; no installation required!")
                (apply (curry responsive-row #:columns 3) (map display-topic (noinstall-topics #:show-time? #t)))
                (hr)
                (h5 class: "text-center" "The following topics require software to be installed on macOS or Windows.")
+               (p class: "text-center" "Detailed instructions are sent upon credit purchase or upon request.")
                (apply (curry responsive-row #:columns 3) (map display-topic (install-topics #:show-time? #t)))
                )
              ))
