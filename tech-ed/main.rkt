@@ -30,6 +30,7 @@
           (updated-list-value-prop)
           (class-schedule)
           (contact-us)
+          (faq-section2)
           )))
 
 (define (jumbotron-header-section)
@@ -139,8 +140,8 @@
   (jumbotron class: "mb-0 text-center bg-white"
    (container
     (div class: "col-md-8 mx-auto"
-     (card
-      (card-header class: "h6" "Group Discounts and Custom Classes!")
+     (card class: "border-warning"
+      (card-header class: "h6 bg-warning text-white" "Group Discounts and Custom Classes!")
       (card-body class: "text-left"
        (card-text (b "Attention leaders and members of adult learning communities, senior support programs, and senior living facilities!")
                   (p "MetaCoders is pleased to offer offer bulk pricing discounts and custom classes for groups of lifelong learners. Bring high-quality, online education directly to the members of your community.")
@@ -150,3 +151,78 @@
                       (li (a href: "tel:858-375-4097" "(858) 375-4097"))
                       (li (a href:"mailto: contact@metacoders.org" "contact@metacoders.org"))
                       (li "Monday - Friday, 9am-5pm PT")))))))))
+
+
+; copied from coding-club
+; TODO: refactor out?
+; Customized accordian-card
+; Todo: remove button-link and just turn the entire header into a link
+(define (accordion-card-faq 
+           #:header (header "Click to show")
+           #:shown? (shown? #f)
+           . content)
+  (enclose
+   (card
+    class: "border-primary mb-2"
+    (card-header class: "p-0 bg-primary"
+     (button-link class: "btn-block bg-transparent m-0 text-white text-left"
+                  on-click: (call 'toggle)
+       header))
+    (div id: (id 'collapse1)
+         class: (~a "collapse " (if shown? "show" ""))
+      (card-body
+       content)))
+   (script ([toToggle (id 'collapse1)])
+     (function (toggle)
+       @js{$("#"+@toToggle).toggle()}))))
+
+
+(define (faq-section)
+  (jumbotron class: "mb-0 text-center"
+              (container
+                (h2 class: "text-center" "Frequently Asked Questions")
+                (br)
+                (accordion-card-faq #:header (h4 class: "mb-0" "General")
+                                (ol
+                                  (li (b "Do I need to install anything in order to participate?") " Our classes are taught through the video conferencing software Zoom which can be accessed directly through your internet browser or through their free downloadable application. For the smoothest experience, we recommend installing Zoom, but it is not required. Additionally, some of our class topics will require installing software. If your class requires software to be installed, you will receive an email with instructions in advance of the class.")
+                                  (li (b "Is there a minimum experience level required for these classes?") " Our Tech Ed for Lifelong Learners are designed to be accessible for students of all levels. Our classes are run entirely online using the video conferencing software Zoom and students do need to be able to log on to the class. Once online, we will take care of the rest!")
+                                  (li (b "Can I still sign up for a class that starts today?") " Yes, you can! Classes remain open until the start time of the first session.") 
+                                  (li (b "What equipment do I need in order to participate?") " All you need to participate in our Tech Ed for Lifelong Learner courses is a computer, a keyboard, and an internet connection! Our classes are taught through the video conferencing software Zoom which can be accessed directly through your internet browser or through their free downloadable application. For the smoothest experience, we recommend installing Zoom, but it is not required. Additionally, some of our class topics will require installing software. If your class requires software to be installed, you will receive an email with instructions in advance of the class.") 
+                                  (li (b "Can two people in the same household sign up as one student?") " Students who live within the same household can share a computer and join our class with one enrollment.  However, if you will log in from two separate devices, we ask that each student sign up separately.") 
+                                  (li (b "Do you record Tech Ed for Lifelong Learners classes?") " Yes, in order to provide the highest level of quality for our students while creating a safe online community, we record many sessions. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") ".")
+                                  (li (b "Can you create a custom class for me and my friends/community?") " Yes, we are happy to create custom classes that suit your interests and schedule!  Email us at " (a href:"mailto: contact@metacoders.org" "contact@metacoders.org") " for more information.") 
+                                  )
+                                )
+                )
+              ))
+
+(define (faq-section2)
+  (jumbotron class: "mb-0 text-center"
+             (container
+              (h2 class: "text-center" "Frequently Asked Questions")
+              (br)
+              (accordion-card-faq #:header (h6 class: "mb-0" "Do I need to install anything in order to participate?")
+                                  (p class: "text-left"
+                                     "Our classes are taught through the video conferencing software Zoom which can be accessed directly through your internet browser or through their free downloadable application. For the smoothest experience, we recommend installing Zoom, but it is not required. Additionally, some of our class topics will require installing software. If your class requires software to be installed, you will receive an email with instructions in advance of the class."))
+              (accordion-card-faq #:header (h6 class: "mb-0" "Is there a minimum experience level required for these classes?")
+                                  (p class: "text-left"
+                                     "Our Tech Ed for Lifelong Learners are designed to be accessible for students of all levels. Our classes are run entirely online using the video conferencing software Zoom and students do need to be able to log on to the class. Once online, we will take care of the rest!"))
+              (accordion-card-faq #:header (h6 class: "mb-0" "Can I still sign up for a class that starts today?")
+                                  (p class: "text-left"
+                                     "Yes, you can! Classes remain open until the start time of the first session."))
+              (accordion-card-faq #:header (h6 class: "mb-0" "What equipment is required?")
+                                  (p class: "text-left"
+                                     "All you need to participate in our Tech Ed for Lifelong Learner courses is a computer, a keyboard, and an internet connection! Our classes are taught through the video conferencing software Zoom which can be accessed directly through your internet browser or through their free downloadable application. For the smoothest experience, we recommend installing Zoom, but it is not required. Additionally, some of our class topics will require installing software. If your class requires software to be installed, you will receive an email with instructions in advance of the class."))
+              (accordion-card-faq #:header (h6 class: "mb-0" "Can two people in the same household sign up as one student?")
+                                  (p class: "text-left"
+                                     "Students who live within the same household can share a computer and join our class with one enrollment.  However, if you will log in from two separate devices, we ask that each student sign up separately."))
+
+              (accordion-card-faq #:header (h6 class: "mb-0" "Do you record Tech Ed for Lifelong Learners classes?")
+                                  (p class: "text-left"
+                                     "Yes, in order to provide the highest level of quality for our students while creating a safe online community, we record many sessions. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") "."))
+              (accordion-card-faq #:header (h6 class: "mb-0" "Can you create a custom class for me and my friends/community?")
+                                  (p class: "text-left"
+                                     "Yes, we are happy to create custom classes that suit your interests and schedule!  Email us at " (a href:"mailto: contact@metacoders.org" "contact@metacoders.org") " for more information."))
+              )
+             )
+  )
