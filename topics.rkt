@@ -1,11 +1,8 @@
 #lang at-exp racket
 
-(provide ;topics
-         noinstall-topics
+(provide noinstall-topics
          install-topics
-         ;noinstall-noschedule-topics
-         ;install-noschedule-topics
-         )
+ )
 
 (require (except-in metacoders-dot-org-lib script)
          (prefix-in normal: metacoders-dot-org-lib)
@@ -39,19 +36,19 @@
   
   (card class: (~a "h-100 " card-color)
         image
-    (card-body class: "bg-white text-dark"
-      (h5 header)
-      desc)
-    (card-footer class: "d-flex"
-      (if cph
-          (p class: "mr-auto mb-0" (list (gems cph) "/hr"))
-          #f)
-      (if (eq? coming-soon #t)
-        (p class: "mb-0"  "Coming Soon!")
-        (p class: "mb-0" (list "Great for " level "!"))
+        (card-body class: "bg-white text-dark"
+                   (h5 header)
+                   desc)
+        (card-footer class: "d-flex"
+                     (if cph
+                         (p class: "mr-auto mb-0" (list (gems cph) "/hr"))
+                         #f)
+                     (if (eq? coming-soon #t)
+                         (p class: "mb-0"  "Coming Soon!")
+                         (p class: "mb-0" (list "Great for " level "!"))
+                         )
+                     )
         )
-      )
-    )
   )
 
 
@@ -73,10 +70,14 @@
               ))
 
 (define (topics #:show-time? [show-time? #f])
+
   (define (python)
     (topic "Python Game Design" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify python-img-path))
-           "Did you know that the Python language is named, not for the snake, but for the classics of British comedy: Monty Python? Our Coding Coaches guide students as they learn the basics of Python including syntax, variables, inputs/outputs, conditionals, and data types while designing and developing games. Code it all in a free online coding editor; no installation required!"
+           (list "Did you know that the Python language is named, not for the snake, but for the classics of British comedy: Monty Python? Our Coding Coaches guide students as they learn the basics of Python including syntax, variables, inputs/outputs, conditionals, and data types while designing and developing games." (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "MWF 2-3pm & TTh 4-5pm")
+                     ""))
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -84,7 +85,10 @@
   (define (web-design)
     (topic "Web Design" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify web-development-img-path))
-           "Create websites using a combination of HTML and CSS! Students will learn about the different tags in HTML by formatting their text, adding images and links to their websites. They will also focus on adding different styles, layouts, colors, and fonts to their website using CSS."
+           (list "Create websites using a combination of HTML and CSS! Students will learn about the different tags in HTML by formatting their text, adding images and links to their websites. They will also focus on adding different styles, layouts, colors, and fonts to their website using CSS." (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "MWF 2-3pm & TTh 4-5pm")
+                     ""))
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
@@ -92,7 +96,10 @@
   (define (virtual-engineering)
     (topic "Virtual Engineering" 
            (card-video-top src: cpx-makecode-mp4-path)
-           "Learn about electronics and coding without a physical board! Using a web-based code editor for physical computing, students will be able to program the buttons, lights, and sensors of a virtual Circuit Playground Express (CPX) board. Students will have the option to use the drag and drop block-based interface or jump into Javascript and see how the code is being created."
+           (list "Learn about electronics and coding without a physical board! Using a web-based code editor for physical computing, students will be able to program the buttons, lights, and sensors of a virtual Circuit Playground Express (CPX) board. Students can use the drag and drop block-based interface or jump into Javascript." (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "M-F 4-5pm")
+                     ""))
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -100,7 +107,10 @@
   (define (scratch)
     (topic "Coding with Scratch" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify scratch-img-path))
-           "Scratch is a drag-and-drop programming language known for its beginner-friendly interface and colorful code blocks but MetaCoders takes Scratch beyond beginner! Perfect for all levels, students get to choose and code the projects that excite them from our ever-growing collection of curriculum. Code it all in a free online coding editor; no installation required!"
+           (list "Scratch is a drag-and-drop programming language known for its beginner-friendly interface and colorful code blocks but MetaCoders takes Scratch beyond beginner! Perfect for all levels, students get to choose and code the projects that excite them from our ever-growing collection of curriculum." (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "M-Th 2-5pm & F 3-4pm")
+                     ""))
            #:card-color 'primary
            #:level 'K-10th
            #:coming-soon #f))
@@ -108,7 +118,10 @@
   (define (endless-runner)
     (topic "Endless Runner Game" 
            (card-video-top src: endless-runner-mp4-path)
-           "Code a classic! Students use a typed coding language to code and customize a multi-staged game in the style of Temple Run and Super Mario Run. Students can theme their game with provided Mario, Harry Potter, or Star Wars assets complete with items to collect and dangers to avoid. Code it all in a free online coding editor; no installation required!"
+           (list "Code a classic! Students use a typed coding language to code and customize a multi-staged game in the style of Temple Run and Super Mario Run. Students can theme their game with provided Mario, Harry Potter, or Star Wars assets complete with items to collect and dangers to avoid." (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "MWF 2-5pm & TTh 2-4pm")
+                     ""))
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -116,7 +129,10 @@
   (define (maze-game)
     (topic "Maze Game" 
            (card-video-top src: maze-mp4-path)
-           "Code thrilling and challenging maze puzzle games! Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure. Students can theme their game using provided Minecraft or Pokemon assets or even create their own. Code it all in a free online coding editor; no installation required!"
+           (list "Code thrilling and challenging maze puzzle games! Students will focus on level design and game balance while using a typed coding language to create a top-down puzzle adventure. Students can theme their game using provided Minecraft or Pokemon assets or even create their own." (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "MWF 2-5pm & TTh 2-4pm")
+                     ""))
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
@@ -124,19 +140,21 @@
   (define (digital-art)
     (topic "Coding Digital Art" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify digital-art-img-path))
-           "Get creative with code! Generate and manipulate shapes in the text-based language Scheme while learning universal coding tools like functions, definitions, and arguments. Once they have gotten comfortable the basics, students get to choose art projects from our ever-growing collection of curriculum. Code it all in a free online coding editor; no installation required!"
+           (list "Get creative with code! Generate and manipulate shapes in the text-based language Scheme while learning universal coding tools like functions, definitions, and arguments. Once they have gotten comfortable the basics, students get to choose art projects from our ever-growing collection of curriculum." (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "MWF 2-5pm & TTh 2-4pm")
+                     ""))
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
   
-  (define (coding-adventures [show-time? #t])
+  (define (coding-adventures)
     (topic "Coding Adventures" 
            (card-img-top class: "border-bottom" class: "border-bottom" style: card-img-top-style src: (prefix/pathify paper-coding-img-path))
-           (list "Coding Adventures is designed for our youngest students. Our Coding Coaches will guide your young coder through creative drawing and coding activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge! "
+           (list "Our Coding Coaches will guide your young coder through creative drawing and coding activities as they learn valuable computational thinking skills such as sequencing, pattern recognition, and problem solving as well as general computer knowledge!" (br)(br)
                  (if show-time?
-                     (b "This topic is no longer offered on Fridays. You can still join us M-Th, 3pm-4pm PT.")
+                     (p (b "Schedule: ") "Only offered through Outschool. Click " (a class: "text-warning" href: "https://outschool.com/classes/coding-adventures-in-scratch-4-week-course-CsQ1WBCi#usFYao0EkN" "here") " to see our 4-week course, or " (a class: "text-warning" href: "https://outschool.com/classes/coding-adventures-in-scratch-LtgbLGSC#usFYao0EkN" "here")" for our single sessions.")
                      ""))
-
            #:card-color 'primary
            #:level 'K-2nd
            #:coming-soon #f))
@@ -145,15 +163,21 @@
   (define (adventure)
     (topic "Coding for Harry Potter & Mario Fans"
            (card-video-top src: adventure-harrypotter-mp4-path)
-           "Build your own adventure based Harry Potter or Mario games. Gamer fans will earn special Mario game design badges while Harry Potter fanatics earn themed badges as they explore the \"magic\" of coding! This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
+           (list "Build your own adventure based Harry Potter or Mario games. Gamer fans will earn special Mario game design badges while Harry Potter fanatics earn themed badges as they explore the \"magic\" of coding!" (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "MWF 3-5pm & TTh 2-4pm")
+                     ""))
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
 
-   (define (survival)
+  (define (survival)
     (topic "Coding for Minecraft & Pokemon Fans" 
            (card-video-top src: survival-minecraft-mp4-path)
-           "Minecraft is a famous example of the classic survival-style video game. Learn how to build your own survival game inspired by Minecraft or Pokemon with other kids who love these video games! This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
+           (list "Minecraft is a famous example of the classic survival-style video game. Learn how to build your own survival game inspired by Minecraft or Pokemon with other kids who love these video games!" (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "MWF 3-5pm & TTh 2-4pm")
+                     ""))
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -161,7 +185,10 @@
   (define (battle-arena)
     (topic "Coding for Marvel, Fortnite, & Star Wars Fans"
            (card-video-top src: battlearena-avengers-mp4-path)
-           "Code your own battle game where you decide the challenge! How many enemies do you want to face? What tools fill your armory? What powerups are at your disposal? Fill your game with characters from your favorite games and movies!  This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
+           (list "Code your own battle game where you decide the challenge! How many enemies do you want to face? What tools fill your armory? What powerups are at your disposal? Fill your game with characters from your favorite games and movies!" (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "MWF 3-5pm & TTh 2-4pm")
+                     ""))
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
@@ -169,7 +196,10 @@
   (define (3d-exploration)
     (topic "3D Exploration" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify 3d-exploration-img-path))
-           "Let your imagination run wild; code immersive 3D worlds you can see with a click of a button! Our Coding Coaches guide students as they learn a programming language for designing and customizing interactive worlds that they can walk (or fly!) through. This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
+           (list "Let your imagination run wild; code immersive 3D worlds you can see with a click of a button! Our Coding Coaches guide students as they learn a programming language for designing and customizing interactive worlds that they can walk (or fly!) through." (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "MWF 3-5pm & TTh 2-4pm")
+                     ""))
            #:card-color 'warning
            #:level '3rd-10th
            #:coming-soon #f))
@@ -177,17 +207,20 @@
   (define (3d-orbit)
     (topic "3D Orbit" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify 3d-orbit-img-path))
-           "Take to the stars! Code planets, moons, asteroids, stars as you create your own unique solar system in stunning 3D. Our Coding Coaches guide students as they explore a programming language for generating entire universes. This topic requires students to install free software in advance; detailed instructions are sent upon credit purchase or upon request."
+           (list "Take to the stars! Code planets, moons, asteroids, stars as you create your own unique solar system in stunning 3D. Our Coding Coaches guide students as they explore a programming language for generating entire universes." (br)(br)
+                 (if show-time?
+                     (p (b "Schedule: " ) "MWF 3-5pm & TTh 2-4pm")
+                     ""))
            #:card-color 'primary
            #:level '3rd-10th
            #:coming-soon #f))
   
-  (define (learntomod [show-time? #t])
+  (define (learntomod)
     (topic "LearnToMod Minecraft"
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify conquering-covid-b-img-path))
-           (list "Learn how to make cool, custom Minecraft mods with our instructors.  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9. "
+           (list "Learn how to make cool, custom Minecraft mods with our instructors.  Tech requirements for this topic include pre-purchasing " (a class: "text-warning" href: "https://www.learntomod.com" "LearnToMod") " software ($29.99) and having a Minecraft account on Windows or Mac version 1.9." (br)(br)
                  (if show-time?
-                     (b "This topic is only offered on Fridays from 1pm-4pm PT.")
+                     (p (b "Schedule: " ) "F 2-5pm")
                      ""))
            #:card-color 'warning
            #:level '3rd-10th))
@@ -243,17 +276,14 @@
     (maze-game)
     (scratch)
     (digital-art)
-    (coding-adventures show-time?))
+    (coding-adventures))
    (list ; install
     (adventure)
     (survival)
     (battle-arena)
     (3d-exploration)
     (3d-orbit)
-    (learntomod show-time?))
-   ;(list ; schedule off
-   ; (coding-adventures #f)
-   ; (learntomod #f))
+    (learntomod))
    ))
 
 (define (noinstall-topics #:show-time? [show-time? #f])
@@ -261,12 +291,3 @@
 
 (define (install-topics #:show-time? [show-time? #f])
   (second (topics #:show-time? show-time?)))
-
-#|(define (noinstall-noschedule-topics)
-  (flatten (append (drop-right (noinstall-topics) 1)
-                   (first (third (topics))))))
-
-(define (install-noschedule-topics)
-  (flatten (append (drop-right (install-topics) 1)
-                   (second (third (topics))))))|#
-
