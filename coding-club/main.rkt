@@ -34,6 +34,7 @@
           (jumbotron-header-section)
           (updated-list-value-prop)
           (credits-section)
+          (schedule-section)
           (customer-testimonial-section)
           (topics-section)
           (faq-section)
@@ -73,8 +74,9 @@
 
 (define (topics-section)
   (jumbotron class: "mb-0"
+             id: "topic-cards"
              (container
-               (h2 class: "text-center" "What Do Credits " (gems "") " Unlock?" )
+               (h2 class: "text-center" "What We Offer")
                (br)
                (h5 class: "text-center" "The following topics can run on Chromebooks, macOS, or Windows and require no installation.")
                (apply (curry responsive-row #:columns 3) (map display-topic (noinstall-topics #:show-time? #t)))
@@ -88,20 +90,25 @@
   t)
 
 (define (credits-section)
-  (define (padded-li . content)
-    (li style: (properties 'padding-top: 10) content)
-    )
   (jumbotron class: "mb-0"
              (container class: "text-center"
-               (h2 "Buy Credits " (gems "") " Join Anytime!")
+               (h2 "How to Get Started") ;"Buy Credits " (gems "") " Join Anytime!")
                (br)
-               (p "Each Credit " (gems "") " unlocks an hour of personalized education for K-10 students and beyond. " (b "Join at the beginning of any hour, and stick around for one, two or three hours at a time!") " No need to sign up or schedule for days or times.") 
+               (p "Purchase Credits " (gems "") " below and join anytime! Each Credit unlocks an hour of personalized education. " (b "Join at the beginning of any hour, and stick around for one, two or three hours at a time!") " No need to sign up or schedule for days or times.") 
                (br)
                (credit-wheel)
-               (br)
-               (schedule-info)
                )))
 
+(define (schedule-section)
+  (jumbotron class: "mb-0 bg-white"
+             (container class: "text-center"
+                        (h2 id: "topics-schedule-header" class: "mb-4"
+                            "When to Join Us")
+                        (p "Each hour will have a variety of topics to choose from but if there's a specific topic you or your child is interested in, see the best times to join us below. For more details on our topics, see the " (a href: "#topic-cards" "descriptions") " further down.")
+                        (fall-schedule)
+                        (br)
+                        (topics-schedule))))
+                        
 (define (credit-wheel)
   (list
     (card class: "bg-transparent border-0"
@@ -145,17 +152,141 @@
       (error "Must supply one-time or subscription to credit button list")])
   )
 
-(define (schedule-info)
+(define (fall-schedule)
   (row
    (div class: "col-lg-8 col-xl-6 mx-auto"
         (card class: "border-warning mx-2"
-              (card-header class: "h5 bg-warning text-white" "Fall 2020 Schedule")
+              (card-header class: "h5 bg-warning text-white" "Fall 2020")
               (card-body
                (table class: "table table-sm table-borderless text-left"
                       (tr (td (strong "Session Dates: ")) (td "August 24th - December 18th"))
-                      (tr (td (strong "Schedule: ")) (td "Weekdays 1pm - 4pm PT"))
+                      (tr (td (strong "Schedule: ")) (td "Weekdays 2pm - 5pm PT"))
                       (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27"))))))))
 
+(define (schedule-toggle)
+  (div class: "btn-group btn-group-toggle w-100"
+       style: (properties border-radius: "0.18rem 0.18rem 0 0")
+       'data-toggle: "buttons"
+       (label class: "btn btn-warning active w-50"
+              data-target: "#schedule-carousel"
+              data-slide-to: "0"
+              (input type: "radio"
+                     name: "options"
+                     id: "by-topic"
+                     ;autocomplete: "off"
+                     )
+              "BY TOPIC")
+       (label class: "btn btn-warning w-50"
+              data-target: "#schedule-carousel"
+              data-slide-to: "1"
+              (input type: "radio"
+                     name: "options"
+                     id: "by-day"
+                     ;autocomplete: "off"
+                     )
+              "BY DAY")))
+
+(define (topics-schedule)
+  (row
+   (div class: "mx-auto"
+             (div (schedule-toggle)
+                  (carousel id: "schedule-carousel"
+                            class: "slide"
+                            (div class: "card border-warning carousel-inner" ;style: (properties 'min-height: 250)
+                                 (div class: "carousel-item active"
+                                       (card-body
+                                        (table class: "table table-sm table-bordered bg-white table-striped text-left mx-auto"
+                                               (thead (tr (th 'scope: "col" "Topic")
+                                                          (th 'scope: "col" "Grade Level")
+                                                          (th 'scope: "col" "Availability")))
+                                               (tr (td (strong "Tech Skills (for new students)")) (td "3rd-10th") (td "M-F 3-4pm (new students must start here)"))
+                                               (tr (td (strong "Scratch"))                        (td "3rd-10th") (td "M-Th 2-5pm | Friday 3-4pm"))
+                                               (tr (td (strong "Virtual Engineering"))            (td "3rd-10th") (td "M-F 4-5pm"))
+                                               (tr (td (strong "WeScheme"))                       (td "3rd-10th") (td "M,W,F 2-5pm | T,Th 2-4pm"))
+                                               (tr (td (strong "DrRacket"))                       (td "3rd-10th") (td "M,W,F 3-5pm | T,Th 2-4pm"))
+                                               (tr (td (strong "Python"))                         (td "3rd-10th") (td "M,W,F 2-3pm | T,Th 4-5pm"))
+                                               (tr (td (strong "Web Design & Development"))       (td "3rd-10th") (td "M,W,F 2-3pm | T,Th 4-5pm"))
+                                               (tr (td (strong "LearnToMod (Minecraft Modding)")) (td "3rd-10th") (td "Friday 2-5pm"))
+                                               (tr (td (strong "Coding Adventures"))              (td "K-2nd")    (td "Only available on " (a href: "https://outschool.com/teachers/MetaCoders" "Outschool")))
+                                               )))
+                                 (div class: "carousel-item"
+                                       (card-body class: "table-responsive"
+                                        (table class: "table table-sm table-bordered bg-white table-striped text-left mx-auto"
+                                               (thead (tr (th 'scope: "col" "Time (PT)")
+                                                          (th 'scope: "col" "Monday")
+                                                          (th 'scope: "col" "Tuesday")
+                                                          (th 'scope: "col" "Wednesday")
+                                                          (th 'scope: "col" "Thursday")
+                                                          (th 'scope: "col" "Friday")))
+                                               (tr (td (strong "2:00pm"))
+                                                   (td (ul (li "Scratch")
+                                                           (li "WeScheme")
+                                                           (li "Python")
+                                                           (li "Web Design")))
+                                                   (td (ul (li "Scratch")
+                                                           (li "WeScheme")
+                                                           (li "DrRacket")))
+                                                   (td (ul (li "Scratch")
+                                                           (li "WeScheme")
+                                                           (li "Python")
+                                                           (li "Web Design")))
+                                                   (td (ul (li "Scratch")
+                                                           (li "WeScheme")
+                                                           (li "DrRacket")))
+                                                   (td (ul (li "Scratch")
+                                                           (li "WeScheme")
+                                                           (li "Python")
+                                                           (li "Web Design")
+                                                           (li "LearnToMod Minecraft")))
+                                                   )
+                                               (tr (td (strong "3:00pm"))
+                                                   (td (ul (li "Tech Skills (new students start here)")
+                                                           (li "Scratch")
+                                                           (li "WeScheme")
+                                                           (li "DrRacket")))
+                                                   (td (ul (li "Tech Skills (new students start here)")
+                                                           (li "Scratch")
+                                                           (li "WeScheme")
+                                                           (li "DrRacket")))
+                                                   (td (ul (li "Tech Skills (new students start here)")
+                                                           (li "Scratch")
+                                                           (li "WeScheme")
+                                                           (li "DrRacket")))
+                                                   (td (ul (li "Tech Skills (new students start here)")
+                                                           (li "Scratch")
+                                                           (li "WeScheme")
+                                                           (li "DrRacket")))
+                                                   (td (ul (li "Tech Skills (new students start here)")
+                                                           (li "Scratch")
+                                                           (li "WeScheme")
+                                                           (li "DrRacket")
+                                                           (li "LearnToMod Minecraft")))
+                                                   )
+                                               (tr (td (strong "4:00pm"))
+                                                   (td (ul (li "Scratch")
+                                                           (li "Virtual Engineering")
+                                                           (li "WeScheme")
+                                                           (li "DrRacket")
+                                                           (li "Web Design")))
+                                                   (td (ul (li "Scratch")
+                                                           (li "Virtual Engineering")
+                                                           (li "Python")
+                                                           (li "Web Design")))
+                                                   (td (ul (li "Scratch")
+                                                           (li "Virtual Engineering")
+                                                           (li "WeScheme")
+                                                           (li "DrRacket")
+                                                           (li "Web Design")))
+                                                   (td (ul (li "Scratch")
+                                                           (li "Virtual Engineering")
+                                                           (li "Python")
+                                                           (li "Web Design")))
+                                                   (td (ul (li "Virtual Engineering")
+                                                           (li "WeScheme")
+                                                           (li "DrRacket")
+                                                           (li "LearnToMod Minecraft")))
+                                                   )
+                                               )))))))))
 
 (define (learn-more-button)
   "Learn More! Scroll down."
