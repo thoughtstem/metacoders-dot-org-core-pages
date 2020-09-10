@@ -112,7 +112,7 @@
                      (p (b "Schedule: " ) "M-Th 2-5pm & F 3-4pm")
                      ""))
            #:card-color 'primary
-           #:level 'K-10th
+           #:level '3rd-10th
            #:coming-soon #f))
   
   (define (endless-runner)
