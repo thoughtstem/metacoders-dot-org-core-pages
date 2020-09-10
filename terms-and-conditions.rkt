@@ -100,6 +100,7 @@
       )
     (b "Subscriptions")
     (p "Due to the discounts associated with subscriptions, customers must purchase a minimum of 3 months to qualify.  If a subscription is cancelled before the 3 month time period, a $19.99 fee will be charged.")
+    (p "Cancellations can only be tendered if a request is made up to 15 days after the monthly payment date.")
     ))
 
 (define (terms-for-phonecalls-texts)
