@@ -197,23 +197,28 @@
                             (div class: "card border-warning carousel-inner" ;style: (properties 'min-height: 250)
                                  (div class: "carousel-item active"
                                        (card-body
-                                        (table class: "table table-sm table-bordered bg-white table-striped text-left mx-auto"
-                                               (thead (tr (th 'scope: "col" "Topic")
+                                        (table class: "table table-bordered bg-white table-striped text-left align-middle mx-auto"
+                                               (thead class: "text-center"
+                                                      (tr (th 'scope: "col" "Topic")
                                                           (th 'scope: "col" "Grade Level")
                                                           (th 'scope: "col" "Availability")))
-                                               (tr (td (strong "Tech Skills (for new students)")) (td "3rd-10th") (td "M-F 3-4pm (new students must start here)"))
+                                               (tr class: "align-middle"
+                                                   (td (strong "Tech Skills")
+                                                       (br)    "(new students must start here)")
+                                                   (td class: "align-middle" "3rd-10th")
+                                                   (td class: "align-middle" "M-F 3-4pm"))
                                                (tr (td (strong "Scratch"))                        (td "3rd-10th") (td "M-Th 2-5pm | Friday 3-4pm"))
                                                (tr (td (strong "Virtual Engineering"))            (td "3rd-10th") (td "M-F 4-5pm"))
                                                (tr (td (strong "WeScheme"))                       (td "3rd-10th") (td "M,W,F 2-5pm | T,Th 2-4pm"))
                                                (tr (td (strong "DrRacket"))                       (td "3rd-10th") (td "M,W,F 3-5pm | T,Th 2-4pm"))
                                                (tr (td (strong "Python"))                         (td "3rd-10th") (td "M,W,F 2-3pm | T,Th 4-5pm"))
                                                (tr (td (strong "Web Design & Development"))       (td "3rd-10th") (td "M,W,F 2-3pm | T,Th 4-5pm"))
-                                               (tr (td (strong "LearnToMod (Minecraft Modding)")) (td "3rd-10th") (td "Friday 2-5pm"))
+                                               (tr (td (strong "LearnToMod Minecraft")) (td "3rd-10th") (td "Friday 2-5pm"))
                                                (tr (td (strong "Coding Adventures"))              (td "K-2nd")    (td "Only available on " (a href: "https://outschool.com/teachers/MetaCoders" "Outschool")))
                                                )))
                                  (div class: "carousel-item"
                                        (card-body class: "table-responsive"
-                                        (table class: "table table-sm table-bordered bg-white table-striped text-left mx-auto"
+                                        (table class: "table table-bordered bg-white table-striped text-left mx-auto"
                                                (thead (tr (th 'scope: "col" "Time (PT)")
                                                           (th 'scope: "col" "Monday")
                                                           (th 'scope: "col" "Tuesday")
