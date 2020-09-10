@@ -34,7 +34,6 @@
           (genentech-credit)
           (scholarship-application)
           (customer-testimonial-section)
-          (topics-section)
           )))
 
 (define (jumbotron-header-section)
@@ -46,62 +45,111 @@
     #:alt-tag "Student playing a game he coded."))
 
 
+
+;;VERSION ONE
+;;All text
+
 (define (scholarship-details)
-  (jumbotron class: "mb-0 bg-white"
+  (jumbotron class: "mb-0 pb-3 bg-white"
              (container
-              (p class: "text-center" "MetaCoders is excited to offer " (b "200 scholarships") " for K-8th students in San Diego County. This program is part of an initiative to bring more coding education and opportunities to young people of color, young women, and girls. Each recipient will recieve 10 hours of high-quality coding education all taught online and in real time by MetaCoders Coding Coaches -- completely free!")
+              (p class: "text-center" "MetaCoders is excited to offer " (b "200 scholarships") " for K-8th students in San Diego County. This program is part of an initiative to bring more coding education to communities that are under-represented in computer science. Each recipient will receive 10 hours of high-quality coding education all taught online and in real time by MetaCoders Coding Coaches -- completely free!")
               (row class: "align-items-center"
-                   (div class: "col-lg-6 col-md-8 col-sm-12"
-                    (h4 "Who Can Apply?")
-                    (p "This opportunity is availble to students in the Vista and Oceanside Unified School Districts who identify as persons of color and/or female. This diversity scholarship is specifically for members of the communities that are under-represented in computer science fields.")
-                    (h4 "How Do I Apply?")
+                   (div class: "col-md-12 col-lg-8"
+                    (h5 "Who Can Apply?")
+                    (p "This opportunity is available to students in the Vista and Oceanside Unified School Districts who identify as persons of color and/or female.")
+                    (h5 "How Do I Apply?")
                     (p "Please fill out the form below. Scholarships will be awarded on a rolling basis beginning September 21 and scholarship credits may be used through January 22, 2021.  For the greatest chance of receiving a scholarship, apply today!")
-                    (h4 "What Hardware Do I Need?")
-                    (p "Students must have access to a laptop or desktop (with Windows or macOS) or a Chromebook. Our classes are taught completely online through the video conferencing software Zoom. Students will need access to the internet, a microphone, and a webcam."))
-                   
-                   (div class: "col-lg-6 col-md-4 col-sm-12"
+                    (h5 "What Do I Learn?")
+                    (p "Scholarship awardees will receive 10 hours of coding education in our Virtual Coding Club. Visit " (a href: "https://metacoders.org/coding-club.html" "metacoders.org/coding-club")" for more information on topics and times.")
+                    (h5 "What Hardware Do I Need?")
+                    (p "Students must have access to a laptop, desktop (with Windows or macOS), or a Chromebook with access to the internet, a microphone, and a webcam."))                   
+                   (div class: "col-8 col-md-6 col-lg-4 mx-auto"
                     (picture 
                      (source type: "image/webp" srcset: (prefix/pathify proud-coder-webp-path))
                      (source type: "image/jpeg" srcset: (prefix/pathify proud-coder-path))
                      (img src: (prefix/pathify proud-coder-path) 
                           class: "img-fluid rounded d-block w-100"
-                          alt: "A young student proudly shows off his code.")))))))
+                          alt: "A young student proudly shows off his code."))))
+                    )))
 
 (define (scholarship-about)
-  (jumbotron class: "mb-0"
+  (jumbotron class: "mb-0 py-3"
              (container
               (row class: "align-items-center"
-                   (div class: "col-lg-6 col-md-4 col-sm-12"
+                   (div class: "col-8 col-md-6 col-lg-4 py-md-0 py-lg-3 mx-auto"
                     (picture 
                      (source type: "image/webp" srcset: (prefix/pathify 3-teens-smiling-while-coding-webp-path))
                      (source type: "image/jpeg" srcset: (prefix/pathify 3-teens-smiling-while-coding-path))
                      (img src: (prefix/pathify 3-teens-smiling-while-coding-path) 
                           class: "img-fluid rounded d-block w-100"
                           alt: "Three teen girls happily learning coding.")))
-                   (div class: "col-lg-6 col-md-8 col-sm-12 mt-3"
+                   (div class: "col-md-12 col-lg-8 mt-2"
                     (h4 "Everyone Can Code")
                     (p "Computer science has a major diversity problem. People of color and women are incredibly underrepresented in CS careers, college degree programs, and K-12 level educational opportunities. The image of a software developer as white and male is more than just a stereotype: it is the reality of our education system and workforce. We need more diversity in this field not just for equality of opportunity, but to bring new ideas and keep innovating in the ever-growing technology sector!")
                     (p "MetaCoders partners with companies like Genentech to actively break down the barriers standing in the way of people of color, women, and girls by making coding classes accessible to as many students as possible. Scholarships and active outreach to schools and communities help us bring coding education to students who may not have access to such programs in their schools. MetaCoders also provides role models; our team of staff and volunteers is diverse in age, gender, race and ethnicity, showing students first-hand that " (b "anyone can be a coder.")))))))
-                     
+;;END VERSION ONE
+
+;;VERSION TWO
+;;Cut the fluff
+#|
+(define (scholarship-details)
+  (jumbotron class: "mb-0 pb-3 bg-white"
+             (container
+              (p class: "text-center" "MetaCoders is excited to offer " (b "200 scholarships") " for K-8th students in San Diego County. This program is part of an initiative to bring more coding education and opportunities to members of the communities that are under-represented in computer science. Each recipient will receive 10 hours of high-quality coding education all taught online and in real time by MetaCoders Coding Coaches -- completely free!")
+              (row class: "align-items-center"
+                   (div class: "col-md-10 col-lg-6 mx-auto"
+                    (h5 "Who Can Apply?")
+                    (p "This opportunity is available to students in the Vista and Oceanside Unified School Districts who identify as persons of color and/or female.")
+                    (h5 "How Do I Apply?")
+                    (p "Please fill out the form below. Scholarships will be awarded on a rolling basis beginning September 21 and scholarship credits may be used through January 22, 2021.  For the greatest chance of receiving a scholarship, apply today!")
+                    )                   
+                   (div class: "col-8 col-md-6 col-lg-4 mx-auto"
+                    (picture 
+                     (source type: "image/webp" srcset: (prefix/pathify proud-coder-webp-path))
+                     (source type: "image/jpeg" srcset: (prefix/pathify proud-coder-path))
+                     (img src: (prefix/pathify proud-coder-path) 
+                          class: "img-fluid rounded d-block w-100"
+                          alt: "A young student proudly shows off his code."))))
+                    )))
+
+(define (scholarship-about)
+  (jumbotron class: "mb-0 py-3"
+             (container
+              (row class: "align-items-center"
+                   (div class: "col-8 col-md-6 col-lg-4 py-md-0 py-lg-3 mx-auto"
+                        (picture 
+                         (source type: "image/webp" srcset: (prefix/pathify 3-teens-smiling-while-coding-webp-path))
+                         (source type: "image/jpeg" srcset: (prefix/pathify 3-teens-smiling-while-coding-path))
+                         (img src: (prefix/pathify 3-teens-smiling-while-coding-path) 
+                              class: "img-fluid rounded d-block w-100"
+                              alt: "Three teen girls happily learning coding.")))
+                   (div class: "col-md-10 col-lg-6 mx-auto mt-2 my-lg-0"
+                        (h5 "What Do I Learn?")
+                        (p "Scholarship awardees will receive 10 hours of coding education in our Virtual Coding Club. Visit " (a href: "https://metacoders.org/coding-club.html" "metacoders.org/coding-club")" for more information on topics and times.")
+                        (h5 "What Hardware Do I Need?")
+                        (p "Students must have access to a laptop, desktop (with Windows or macOS), or a Chromebook with access to the internet, a microphone, and a webcam."))))))
+|#
+;; END VERSION TWO
+
                     
 
 (define (genentech-credit)
-  (jumbotron class: "my-0 bg-white"
-             (container 
+  (jumbotron class: "my-0 py-3 bg-white"
+             (container
               (h2 class: "text-center" "Funding for this Scholarship Generously Provided by")
               (a href: "https://www.gene.com/"
                  (picture 
                   (source type: "image/webp" srcset: (prefix/pathify genentech-logo-webp-path))
                   (source type: "image/jpeg" srcset: (prefix/pathify genentech-logo-path))
                   (img src: (prefix/pathify genentech-logo-path)
-                       class: "img-fluid rounded d-block w-50 mx-auto"
+                       class: "img-fluid rounded d-block w-25 mx-auto"
                        alt: "Genentech logo"))))))
 
 
 (define (topics-section)
   (jumbotron class: "mb-0"
              (container
-               (h2 class: "text-center" "What Can Your Students Learn?" )
+               (h2 class: "text-center" "What Can Your Students Learn?")
                (br)
                (h5 class: "text-center" "The following topics can run on Chromebooks, macOS, or Windows and require no installation.")
                (p class: "text-center" "Code it all in a free online coding editor; no installation required!")
