@@ -197,7 +197,7 @@
                             (div class: "card border-warning carousel-inner" ;style: (properties 'min-height: 250)
                                  (div class: "carousel-item active"
                                        (card-body
-                                        (table class: "table table-bordered bg-white table-striped text-left align-middle mx-auto"
+                                        (table class: "table table-bordered bg-white table-striped text-left mx-auto"
                                                (thead class: "text-center"
                                                       (tr (th 'scope: "col" "Topic")
                                                           (th 'scope: "col" "Grade Level")
@@ -219,7 +219,8 @@
                                  (div class: "carousel-item"
                                        (card-body class: "table-responsive"
                                         (table class: "table table-bordered bg-white table-striped text-left mx-auto"
-                                               (thead (tr (th 'scope: "col" "Time (PT)")
+                                               (thead class: "text-center"
+                                                      (tr (th 'scope: "col" "Time (PT)")
                                                           (th 'scope: "col" "Monday")
                                                           (th 'scope: "col" "Tuesday")
                                                           (th 'scope: "col" "Wednesday")
@@ -247,23 +248,23 @@
                                                            (li "LearnToMod Minecraft")))
                                                    )
                                                (tr (td (strong "3:00pm"))
-                                                   (td (ul (li "Tech Skills (new students start here)")
+                                                   (td (ul (li "Tech Skills")
                                                            (li "Scratch")
                                                            (li "WeScheme")
                                                            (li "DrRacket")))
-                                                   (td (ul (li "Tech Skills (new students start here)")
+                                                   (td (ul (li "Tech Skills")
                                                            (li "Scratch")
                                                            (li "WeScheme")
                                                            (li "DrRacket")))
-                                                   (td (ul (li "Tech Skills (new students start here)")
+                                                   (td (ul (li "Tech Skills")
                                                            (li "Scratch")
                                                            (li "WeScheme")
                                                            (li "DrRacket")))
-                                                   (td (ul (li "Tech Skills (new students start here)")
+                                                   (td (ul (li "Tech Skills")
                                                            (li "Scratch")
                                                            (li "WeScheme")
                                                            (li "DrRacket")))
-                                                   (td (ul (li "Tech Skills (new students start here)")
+                                                   (td (ul (li "Tech Skills")
                                                            (li "Scratch")
                                                            (li "WeScheme")
                                                            (li "DrRacket")
