@@ -95,7 +95,7 @@
            #:coming-soon #f))
   
   (define (web-design)
-    (topic "Web Design" 
+    (topic "Web Design & Development" 
            (card-img-top class: "border-bottom" style: card-img-top-style src: (prefix/pathify web-development-img-path))
            "Create websites using a combination of HTML and CSS! Students will learn about the different tags in HTML by formatting their text, adding images and links to their websites. They will also focus on adding different styles, layouts, colors, and fonts to their website using CSS."
            #:schedule (and show-time?
