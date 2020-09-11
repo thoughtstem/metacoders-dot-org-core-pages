@@ -80,11 +80,11 @@
                (br)
                (h5 class: "text-center" "The following topics can run on Chromebooks, macOS, or Windows and require no installation.")
                (p class: "text-center" "Code it all in a free online coding editor; no installation required!")
-               (apply (curry responsive-row #:columns 3) (map display-topic (noinstall-topics #:show-time? #t)))
+               (apply (curry responsive-row #:columns 3 #:d-flex? #t #:justify? #t) (map display-topic (noinstall-topics #:show-time? #t)))
                (hr)
                (h5 class: "text-center" "The following topics require software to be installed on macOS or Windows.")
                (p class: "text-center" "Detailed instructions are sent upon credit purchase or upon request.")
-               (apply (curry responsive-row #:columns 3) (map display-topic (install-topics #:show-time? #t)))
+               (apply (curry responsive-row #:columns 3 #:d-flex? #t #:justify? #t) (map display-topic (install-topics #:show-time? #t)))
                )
              ))
 
