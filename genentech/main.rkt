@@ -53,6 +53,7 @@
   (jumbotron class: "mb-0 pb-3 bg-white"
              (container
               (p class: "text-center" "MetaCoders is excited to offer " (b "200 scholarships") " for K-8th students in San Diego County. This program is part of an initiative to bring more coding education to communities that are under-represented in computer science. Each recipient will receive 10 hours of high-quality coding education all taught online and in real time by MetaCoders Coding Coaches -- completely free!")
+              (hr)
               (row class: "align-items-center"
                    (div class: "col-md-12 col-lg-8"
                     (h5 "Who Can Apply?")
@@ -134,16 +135,18 @@
                     
 
 (define (genentech-credit)
-  (jumbotron class: "my-0 py-3 bg-white"
+  (jumbotron class: "my-0 py-4 bg-white"
              (container
               (h2 class: "text-center" "Funding for this Scholarship Generously Provided by")
               (a href: "https://www.gene.com/"
                  (picture 
                   (source type: "image/webp" srcset: (prefix/pathify genentech-logo-webp-path))
                   (source type: "image/jpeg" srcset: (prefix/pathify genentech-logo-path))
-                  (img src: (prefix/pathify genentech-logo-path)
-                       class: "img-fluid rounded d-block w-25 mx-auto"
-                       alt: "Genentech logo"))))))
+                  (row
+                   (col class: "col-sm-8 col-md-6 mx-auto my-4"
+                    (img src: (prefix/pathify genentech-logo-path)
+                       class: "img-fluid rounded d-block mx-auto"
+                       alt: "Genentech logo"))))))))
 
 
 (define (topics-section)
