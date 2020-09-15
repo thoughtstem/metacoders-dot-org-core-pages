@@ -165,6 +165,14 @@
                       (tr (td (strong "Schedule: ")) (td "Weekdays 2pm - 5pm PT"))
                       (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27"))))))))
 
+(define tech-skills-img
+  (picture 
+   (source type: "image/webp" srcset: (prefix/pathify tech-skills-webp-path))
+   (source type: "image/jpeg" srcset: (prefix/pathify tech-skills-path))
+   (img src: (prefix/pathify tech-skills-path) 
+        class: "img-fluid"
+        alt: "Tech Skills logo")))
+
 (define (schedule-toggle)
   (div class: "btn-group btn-group-toggle w-100"
        style: (properties border-radius: "0.18rem 0.18rem 0 0")
