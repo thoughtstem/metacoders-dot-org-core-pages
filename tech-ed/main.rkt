@@ -164,6 +164,7 @@
   (enclose
    (card
     class: "border-primary mb-2"
+    style: (properties 'overflow: "hidden")
     (card-header class: "p-0 bg-primary"
      (button-link class: "btn-block bg-transparent m-0 text-white text-left"
                   on-click: (call 'toggle)
@@ -177,24 +178,8 @@
        @js{$("#"+@toToggle).toggle()}))))
 
 
-(define (faq-section)
-  (jumbotron class: "mb-0 text-center"
-              (container
-                (h2 class: "text-center" "Frequently Asked Questions")
-                (br)
-                (accordion-card-faq #:header (h4 class: "mb-0" "General")
-                                (ol
-                                  (li (b "Do I need to install anything in order to participate?") " Our classes are taught through the video conferencing software Zoom which can be accessed directly through your internet browser or through their free downloadable application. For the smoothest experience, we recommend installing Zoom, but it is not required. Additionally, some of our class topics will require installing software. If your class requires software to be installed, you will receive an email with instructions in advance of the class.")
-                                  (li (b "Is there a minimum experience level required for these classes?") " Our Tech Ed for Lifelong Learners are designed to be accessible for students of all levels. Our classes are run entirely online using the video conferencing software Zoom and students do need to be able to log on to the class. Once online, we will take care of the rest!")
-                                  (li (b "Can I still sign up for a class that starts today?") " Yes, you can! Classes remain open until the start time of the first session.") 
-                                  (li (b "What equipment do I need in order to participate?") " All you need to participate in our Tech Ed for Lifelong Learner courses is a computer, a keyboard, and an internet connection! Our classes are taught through the video conferencing software Zoom which can be accessed directly through your internet browser or through their free downloadable application. For the smoothest experience, we recommend installing Zoom, but it is not required. Additionally, some of our class topics will require installing software. If your class requires software to be installed, you will receive an email with instructions in advance of the class.") 
-                                  (li (b "Can two people in the same household sign up as one student?") " Students who live within the same household can share a computer and join our class with one enrollment.  However, if you will log in from two separate devices, we ask that each student sign up separately.") 
-                                  (li (b "Do you record Tech Ed for Lifelong Learners classes?") " Yes, in order to provide the highest level of quality for our students while creating a safe online community, we record many sessions. Some screen recordings will also be used for marketing purposes. If sessions are used for marketing purposes, we will ensure that no identifying information like names or locations are shown. You can review our Video Publishing and Privacy policy in our " (a href:"https://metacoders.org/terms-and-conditions.html" "Terms and Conditions") ".")
-                                  (li (b "Can you create a custom class for me and my friends/community?") " Yes, we are happy to create custom classes that suit your interests and schedule!  Email us at " (a href:"mailto: contact@metacoders.org" "contact@metacoders.org") " for more information.") 
-                                  )
-                                )
-                )
-              ))
+
+            
 
 (define (faq-section2)
   (jumbotron class: "mb-0 text-center"
