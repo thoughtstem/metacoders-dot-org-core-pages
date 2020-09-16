@@ -169,49 +169,49 @@
 (define CPX-img
   (picture 
    (source type: "image/webp" srcset: (prefix/pathify CPX-webp-path))
-   (source type: "image/jpeg" srcset: (prefix/pathify CPX-path))
+   (source type: "image/png" srcset: (prefix/pathify CPX-path))
    (img src: (prefix/pathify CPX-path) 
         class: "img-fluid"
         alt: "Virtual Engineering logo")))
 (define racket-img
   (picture 
    (source type: "image/webp" srcset: (prefix/pathify drracket-webp-path))
-   (source type: "image/jpeg" srcset: (prefix/pathify drracket-path))
+   (source type: "image/png" srcset: (prefix/pathify drracket-path))
    (img src: (prefix/pathify drracket-path) 
         class: "img-fluid"
         alt: "Racket logo")))
 (define LTM-img
   (picture 
    (source type: "image/webp" srcset: (prefix/pathify LTM-webp-path))
-   (source type: "image/jpeg" srcset: (prefix/pathify LTM-path))
+   (source type: "image/png" srcset: (prefix/pathify LTM-path))
    (img src: (prefix/pathify LTM-path) 
         class: "img-fluid"
         alt: "Learn To Mod logo")))
 (define python-img
   (picture 
    (source type: "image/webp" srcset: (prefix/pathify python-webp-path))
-   (source type: "image/jpeg" srcset: (prefix/pathify python-path))
+   (source type: "image/png" srcset: (prefix/pathify python-path))
    (img src: (prefix/pathify python-path) 
         class: "img-fluid"
         alt: "Python logo")))
 (define scratch-img
   (picture 
    (source type: "image/webp" srcset: (prefix/pathify scratch-webp-path))
-   (source type: "image/jpeg" srcset: (prefix/pathify scratch-path))
+   (source type: "image/png" srcset: (prefix/pathify scratch-path))
    (img src: (prefix/pathify scratch-path) 
         class: "img-fluid"
         alt: "Scratch logo")))
 (define tech-skills-img
   (picture 
    (source type: "image/webp" srcset: (prefix/pathify tech-skills-webp-path))
-   (source type: "image/jpeg" srcset: (prefix/pathify tech-skills-path))
+   (source type: "image/png" srcset: (prefix/pathify tech-skills-path))
    (img src: (prefix/pathify tech-skills-path) 
         class: "img-fluid"
         alt: "Tech Skills logo")))
 (define web-img
   (picture 
    (source type: "image/webp" srcset: (prefix/pathify web-webp-path))
-   (source type: "image/jpeg" srcset: (prefix/pathify web-path))
+   (source type: "image/png" srcset: (prefix/pathify web-path))
    (img src: (prefix/pathify web-path) 
         class: "img-fluid"
         alt: "Web Design logo")))
