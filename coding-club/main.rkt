@@ -165,6 +165,42 @@
                       (tr (td (strong "Schedule: ")) (td "Weekdays 2pm - 5pm PT"))
                       (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27"))))))))
 
+;Topics Images
+(define CPX-img
+  (picture 
+   (source type: "image/webp" srcset: (prefix/pathify CPX-webp-path))
+   (source type: "image/jpeg" srcset: (prefix/pathify CPX-path))
+   (img src: (prefix/pathify CPX-path) 
+        class: "img-fluid"
+        alt: "Virtual Engineering logo")))
+(define racket-img
+  (picture 
+   (source type: "image/webp" srcset: (prefix/pathify drracket-webp-path))
+   (source type: "image/jpeg" srcset: (prefix/pathify drracket-path))
+   (img src: (prefix/pathify drracket-path) 
+        class: "img-fluid"
+        alt: "Racket logo")))
+(define LTM-img
+  (picture 
+   (source type: "image/webp" srcset: (prefix/pathify LTM-webp-path))
+   (source type: "image/jpeg" srcset: (prefix/pathify LTM-path))
+   (img src: (prefix/pathify LTM-path) 
+        class: "img-fluid"
+        alt: "Learn To Mod logo")))
+(define python-img
+  (picture 
+   (source type: "image/webp" srcset: (prefix/pathify python-webp-path))
+   (source type: "image/jpeg" srcset: (prefix/pathify python-path))
+   (img src: (prefix/pathify python-path) 
+        class: "img-fluid"
+        alt: "Python logo")))
+(define scratch-img
+  (picture 
+   (source type: "image/webp" srcset: (prefix/pathify scratch-webp-path))
+   (source type: "image/jpeg" srcset: (prefix/pathify scratch-path))
+   (img src: (prefix/pathify scratch-path) 
+        class: "img-fluid"
+        alt: "Scratch logo")))
 (define tech-skills-img
   (picture 
    (source type: "image/webp" srcset: (prefix/pathify tech-skills-webp-path))
@@ -172,6 +208,13 @@
    (img src: (prefix/pathify tech-skills-path) 
         class: "img-fluid"
         alt: "Tech Skills logo")))
+(define web-img
+  (picture 
+   (source type: "image/webp" srcset: (prefix/pathify web-webp-path))
+   (source type: "image/jpeg" srcset: (prefix/pathify web-path))
+   (img src: (prefix/pathify web-path) 
+        class: "img-fluid"
+        alt: "Web Design logo")))
 
 (define (schedule-toggle)
   (div class: "btn-group btn-group-toggle w-100"
@@ -209,12 +252,12 @@
                                                (thead class: "text-center"
                                                       (tr (th 'scope: "col" "Topic")
                                                           (th 'scope: "col" "Grade Level")
-                                                          (th 'scope: "col" "Availability")))
+                                                          (th 'scope: "col" "Availability" (br) (i "(All times in PT)"))))
                                                (tr class: "align-middle"
                                                    (td (strong "Tech Skills")
                                                        (br)    "(new students must start here)")
                                                    (td class: "align-middle" "3rd-10th")
-                                                   (td class: "align-middle" "M-F 3-4pm"))
+                                                   (td class: "align-middle" "M-F 3-4pm "))
                                                (tr (td (strong "Scratch"))                        (td "3rd-10th") (td "M-Th 2-5pm | Friday 3-4pm"))
                                                (tr (td (strong "Virtual Engineering"))            (td "3rd-10th") (td "M-F 4-5pm"))
                                                (tr (td (strong "WeScheme"))                       (td "3rd-10th") (td "M,W,F 2-5pm | T,Th 2-4pm"))
@@ -228,13 +271,13 @@
                                        (card-body class: "table-responsive"
                                         (table class: "table table-bordered bg-white table-striped text-left mx-auto"
                                                (thead class: "text-center"
-                                                      (tr (th 'scope: "col" "Time (PT)")
+                                                      (tr (th 'scope: "col" style: "min-width:120px" "Time")
                                                           (th 'scope: "col" "Monday")
                                                           (th 'scope: "col" "Tuesday")
                                                           (th 'scope: "col" "Wednesday")
                                                           (th 'scope: "col" "Thursday")
                                                           (th 'scope: "col" "Friday")))
-                                               (tr (td (strong "2:00pm"))
+                                               (tr (td (strong "2:00pm PT"))
                                                    (td (ul (li "Scratch")
                                                            (li "WeScheme")
                                                            (li "Python")
@@ -255,7 +298,7 @@
                                                            (li "Web Design")
                                                            (li "LearnToMod Minecraft")))
                                                    )
-                                               (tr (td (strong "3:00pm"))
+                                               (tr (td (strong "3:00pm PT"))
                                                    (td (ul (li "Tech Skills")
                                                            (li "Scratch")
                                                            (li "WeScheme")
@@ -278,7 +321,7 @@
                                                            (li "DrRacket")
                                                            (li "LearnToMod Minecraft")))
                                                    )
-                                               (tr (td (strong "4:00pm"))
+                                               (tr (td (strong "4:00pm PT"))
                                                    (td (ul (li "Scratch")
                                                            (li "Virtual Engineering")
                                                            (li "WeScheme")
