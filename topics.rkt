@@ -105,7 +105,7 @@
            #:coming-soon #f))
 
   (define (virtual-engineering)
-    (topic "Virtual Engineering" 
+    (topic "Coding & Electronics" 
            (card-video-top src: cpx-makecode-mp4-path)
            "Learn about electronics and coding without a physical board! Using a web-based code editor for physical computing, students will be able to program the buttons, lights, and sensors of a virtual Circuit Playground Express (CPX) board. Students can use the drag and drop block-based interface or jump into Javascript."
            #:schedule (and show-time?

@@ -157,7 +157,7 @@
 (define (fall-schedule)
   (row
    (div class: "col-lg-8 col-xl-6 mx-auto"
-        (card class: "border-warning mx-2"
+        (card class: "border-warning"
               (card-header class: "h5 bg-warning text-white" "Fall 2020")
               (card-body
                (table class: "table table-sm table-borderless text-left"
@@ -165,56 +165,39 @@
                       (tr (td (strong "Schedule: ")) (td "Weekdays 2pm - 5pm PT"))
                       (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27"))))))))
 
-;Topics Images
-(define CPX-img
+;Topics Icons
+(define (topic-icon png-path alt-text)
   (picture 
-   (source type: "image/webp" srcset: (prefix/pathify CPX-webp-path))
-   (source type: "image/png" srcset: (prefix/pathify CPX-path))
-   (img src: (prefix/pathify CPX-path) 
-        class: "img-fluid"
-        alt: "Virtual Engineering logo")))
-(define racket-img
-  (picture 
-   (source type: "image/webp" srcset: (prefix/pathify drracket-webp-path))
-   (source type: "image/png" srcset: (prefix/pathify drracket-path))
-   (img src: (prefix/pathify drracket-path) 
-        class: "img-fluid"
-        alt: "Racket logo")))
-(define LTM-img
-  (picture 
-   (source type: "image/webp" srcset: (prefix/pathify LTM-webp-path))
-   (source type: "image/png" srcset: (prefix/pathify LTM-path))
-   (img src: (prefix/pathify LTM-path) 
-        class: "img-fluid"
-        alt: "Learn To Mod logo")))
-(define python-img
-  (picture 
-   (source type: "image/webp" srcset: (prefix/pathify python-webp-path))
-   (source type: "image/png" srcset: (prefix/pathify python-path))
-   (img src: (prefix/pathify python-path) 
-        class: "img-fluid"
-        alt: "Python logo")))
-(define scratch-img
-  (picture 
-   (source type: "image/webp" srcset: (prefix/pathify scratch-webp-path))
-   (source type: "image/png" srcset: (prefix/pathify scratch-path))
-   (img src: (prefix/pathify scratch-path) 
-        class: "img-fluid"
-        alt: "Scratch logo")))
-(define tech-skills-img
-  (picture 
-   (source type: "image/webp" srcset: (prefix/pathify tech-skills-webp-path))
-   (source type: "image/png" srcset: (prefix/pathify tech-skills-path))
-   (img src: (prefix/pathify tech-skills-path) 
-        class: "img-fluid"
-        alt: "Tech Skills logo")))
-(define web-img
-  (picture 
-   (source type: "image/webp" srcset: (prefix/pathify web-webp-path))
-   (source type: "image/png" srcset: (prefix/pathify web-path))
-   (img src: (prefix/pathify web-path) 
-        class: "img-fluid"
-        alt: "Web Design logo")))
+   (source type: "image/webp" srcset: (prefix/pathify (png-path->webp-path png-path))))
+   (source type: "image/png" srcset: (prefix/pathify png-path))
+   (img src: (prefix/pathify png-path)
+        style: (properties height: 24)
+        class: "m-1"
+        alt: alt-text))
+
+(define cpx-icon
+  (topic-icon cpx-icon-path "Coding & Electronics logo"))
+
+(define drracket-icon
+  (topic-icon drracket-icon-path "Racket logo"))
+
+(define ltm-icon
+  (topic-icon ltm-icon-path "Learn To Mod logo"))
+
+(define python-icon
+  (topic-icon python-icon-path "Python logo"))
+
+(define scratch-icon
+  (topic-icon scratch-icon-path "Scratch logo"))
+
+(define tech-skills-icon
+  (topic-icon tech-skills-icon-path "Tech Skills logo"))
+
+(define web-icon
+  (topic-icon web-icon-path "Web Design logo"))
+
+(define wescheme-icon
+  (topic-icon wescheme-icon-path "WeScheme logo"))
 
 (define (schedule-toggle)
   (div class: "btn-group btn-group-toggle w-100"
@@ -240,110 +223,123 @@
               "BY DAY")))
 
 (define (topics-schedule)
-  (row
-   (div class: "mx-auto"
-             (div (schedule-toggle)
-                  (carousel id: "schedule-carousel"
-                            class: "slide"
-                            (div class: "card border-warning carousel-inner" ;style: (properties 'min-height: 250)
-                                 (div class: "carousel-item active"
-                                       (card-body
-                                        (table class: "table table-bordered bg-white table-striped text-left mx-auto"
-                                               (thead class: "text-center"
-                                                      (tr (th 'scope: "col" "Topic")
-                                                          (th 'scope: "col" "Grade Level")
-                                                          (th 'scope: "col" "Availability" (br) (i "(All times in PT)"))))
-                                               (tr class: "align-middle"
-                                                   (td (strong "Tech Skills")
-                                                       (br)    "(new students must start here)")
-                                                   (td class: "align-middle" "3rd-10th")
-                                                   (td class: "align-middle" "M-F 3-4pm "))
-                                               (tr (td (strong "Scratch"))                        (td "3rd-10th") (td "M-Th 2-5pm | Friday 3-4pm"))
-                                               (tr (td (strong "Virtual Engineering"))            (td "3rd-10th") (td "M-F 4-5pm"))
-                                               (tr (td (strong "WeScheme"))                       (td "3rd-10th") (td "M,W,F 2-5pm | T,Th 2-4pm"))
-                                               (tr (td (strong "DrRacket"))                       (td "3rd-10th") (td "M,W,F 3-5pm | T,Th 2-4pm"))
-                                               (tr (td (strong "Python"))                         (td "3rd-10th") (td "M,W,F 2-3pm | T,Th 4-5pm"))
-                                               (tr (td (strong "Web Design & Development"))       (td "3rd-10th") (td "M,W,F 2-3pm | T,Th 4-5pm"))
-                                               (tr (td (strong "LearnToMod Minecraft")) (td "3rd-10th") (td "Friday 2-5pm"))
-                                               (tr (td (strong "Coding Adventures"))              (td "K-2nd")    (td "Only available on " (a href: "https://outschool.com/teachers/MetaCoders" "Outschool")))
-                                               )))
-                                 (div class: "carousel-item"
-                                       (card-body class: "table-responsive"
-                                        (table class: "table table-bordered bg-white table-striped text-left mx-auto"
-                                               (thead class: "text-center"
-                                                      (tr (th 'scope: "col" style: "min-width:120px" "Time")
-                                                          (th 'scope: "col" "Monday")
-                                                          (th 'scope: "col" "Tuesday")
-                                                          (th 'scope: "col" "Wednesday")
-                                                          (th 'scope: "col" "Thursday")
-                                                          (th 'scope: "col" "Friday")))
-                                               (tr (td (strong "2:00pm PT"))
-                                                   (td (ul (li "Scratch")
-                                                           (li "WeScheme")
-                                                           (li "Python")
-                                                           (li "Web Design")))
-                                                   (td (ul (li "Scratch")
-                                                           (li "WeScheme")
-                                                           (li "DrRacket")))
-                                                   (td (ul (li "Scratch")
-                                                           (li "WeScheme")
-                                                           (li "Python")
-                                                           (li "Web Design")))
-                                                   (td (ul (li "Scratch")
-                                                           (li "WeScheme")
-                                                           (li "DrRacket")))
-                                                   (td (ul (li "Scratch")
-                                                           (li "WeScheme")
-                                                           (li "Python")
-                                                           (li "Web Design")
-                                                           (li "LearnToMod Minecraft")))
-                                                   )
-                                               (tr (td (strong "3:00pm PT"))
-                                                   (td (ul (li "Tech Skills")
-                                                           (li "Scratch")
-                                                           (li "WeScheme")
-                                                           (li "DrRacket")))
-                                                   (td (ul (li "Tech Skills")
-                                                           (li "Scratch")
-                                                           (li "WeScheme")
-                                                           (li "DrRacket")))
-                                                   (td (ul (li "Tech Skills")
-                                                           (li "Scratch")
-                                                           (li "WeScheme")
-                                                           (li "DrRacket")))
-                                                   (td (ul (li "Tech Skills")
-                                                           (li "Scratch")
-                                                           (li "WeScheme")
-                                                           (li "DrRacket")))
-                                                   (td (ul (li "Tech Skills")
-                                                           (li "Scratch")
-                                                           (li "WeScheme")
-                                                           (li "DrRacket")
-                                                           (li "LearnToMod Minecraft")))
-                                                   )
-                                               (tr (td (strong "4:00pm PT"))
-                                                   (td (ul (li "Scratch")
-                                                           (li "Virtual Engineering")
-                                                           (li "WeScheme")
-                                                           (li "DrRacket")))
-                                                   (td (ul (li "Scratch")
-                                                           (li "Virtual Engineering")
-                                                           (li "Python")
-                                                           (li "Web Design")))
-                                                   (td (ul (li "Scratch")
-                                                           (li "Virtual Engineering")
-                                                           (li "WeScheme")
-                                                           (li "DrRacket")))
-                                                   (td (ul (li "Scratch")
-                                                           (li "Virtual Engineering")
-                                                           (li "Python")
-                                                           (li "Web Design")))
-                                                   (td (ul (li "Virtual Engineering")
-                                                           (li "WeScheme")
-                                                           (li "DrRacket")
-                                                           (li "LearnToMod Minecraft")))
-                                                   )
-                                               )))))))))
+  (div (schedule-toggle)
+       (carousel id: "schedule-carousel"
+                 class: "slide"
+                 (div class: "card border-warning carousel-inner" ;style: (properties 'min-height: 250)
+                      (div class: "carousel-item active"
+                           (card-body
+                            (table class: "table table-bordered bg-white table-striped text-left mx-auto"
+                                   (thead class: "text-center"
+                                          (tr (th 'scope: "col" 'colspan: 2 "Topic")
+                                              (th 'scope: "col" "Grade Level")
+                                              (th 'scope: "col" "Availability" (br) (i "(All times in PT)"))))
+                                   (tr (td class: "align-middle" tech-skills-icon)
+                                       (td (strong "Tech Skills")
+                                           (br)    "(new students must start here)")
+                                       (td class: "align-middle" "3rd-10th")
+                                       (td class: "align-middle" "M-F 3-4pm "))
+                                   (tr (td scratch-icon)  (td (strong "Scratch"))                  (td "3rd-10th") (td "M-Th 2-5pm | Friday 3-4pm"))
+                                   (tr (td cpx-icon    )  (td (strong "Coding & Electronics"))      (td "3rd-10th") (td "M-F 4-5pm"))
+                                   (tr (td wescheme-icon) (td (strong "WeScheme"))                 (td "3rd-10th") (td "M,W,F 2-5pm | T,Th 2-4pm"))
+                                   (tr (td drracket-icon) (td (strong "DrRacket"))                 (td "3rd-10th") (td "M,W,F 3-5pm | T,Th 2-4pm"))
+                                   (tr (td python-icon)   (td (strong "Python"))                   (td "3rd-10th") (td "M,W,F 2-3pm | T,Th 4-5pm"))
+                                   (tr (td web-icon)      (td (strong "Web Design & Development")) (td "3rd-10th") (td "M,W,F 2-3pm | T,Th 4-5pm"))
+                                   (tr (td ltm-icon)      (td (strong "LearnToMod Minecraft"))     (td "3rd-10th") (td "Friday 2-5pm"))
+                                   (tr (td scratch-icon)  (td (strong "Coding Adventures"))        (td "K-2nd")    (td "Only available on " (a href: "https://outschool.com/teachers/MetaCoders" "Outschool")))
+                                   )))
+                      (div class: "carousel-item"
+                           (card-body class: "table-responsive"
+                                      (table class: "table table-hover bg-light table-bordered text-left mx-auto"
+                                             (thead class: "text-center"
+                                                    (tr (th 'scope: "col" style: "min-width:120px" "Time")
+                                                        (th 'scope: "col" "Monday")
+                                                        (th 'scope: "col" "Tuesday")
+                                                        (th 'scope: "col" "Wednesday")
+                                                        (th 'scope: "col" "Thursday")
+                                                        (th 'scope: "col" "Friday")))
+                                             (tr (td (strong "2:00pm PT"))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li scratch-icon  "Scratch")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li python-icon   "Python")
+                                                         (li web-icon      "Web Design")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li scratch-icon "Scratch")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li drracket-icon "DrRacket")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li scratch-icon "Scratch")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li python-icon "Python")
+                                                         (li web-icon "Web Design")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li scratch-icon "Scratch")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li drracket-icon "DrRacket")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li scratch-icon "Scratch")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li python-icon "Python")
+                                                         (li web-icon "Web Design")
+                                                         (li ltm-icon "LearnToMod Minecraft")))
+                                                 )
+                                             (tr (td (strong "3:00pm PT"))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li tech-skills-icon "Tech Skills")
+                                                         (li scratch-icon "Scratch")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li drracket-icon "DrRacket")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li tech-skills-icon "Tech Skills")
+                                                         (li scratch-icon "Scratch")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li drracket-icon "DrRacket")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li tech-skills-icon "Tech Skills")
+                                                         (li scratch-icon "Scratch")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li drracket-icon "DrRacket")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li tech-skills-icon "Tech Skills")
+                                                         (li scratch-icon "Scratch")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li drracket-icon "DrRacket")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li tech-skills-icon "Tech Skills")
+                                                         (li scratch-icon "Scratch")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li drracket-icon "DrRacket")
+                                                         (li ltm-icon "LearnToMod Minecraft")))
+                                                 )
+                                             (tr (td (strong "4:00pm PT"))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li scratch-icon "Scratch")
+                                                         (li cpx-icon "Coding & Electronics")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li drracket-icon "DrRacket")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li scratch-icon "Scratch")
+                                                         (li cpx-icon "Coding & Electronics")
+                                                         (li python-icon "Python")
+                                                         (li web-icon "Web Design")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li scratch-icon "Scratch")
+                                                         (li cpx-icon "Coding & Electronics")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li drracket-icon "DrRacket")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li scratch-icon "Scratch")
+                                                         (li cpx-icon "Coding & Electronics")
+                                                         (li python-icon "Python")
+                                                         (li web-icon "Web Design")))
+                                                 (td (ul class: "list-unstyled"
+                                                         (li cpx-icon "Coding & Electronics")
+                                                         (li wescheme-icon "WeScheme")
+                                                         (li drracket-icon "DrRacket")
+                                                         (li ltm-icon "LearnToMod Minecraft")))
+                                                 )
+                                             )))))))
 
 (define (learn-more-button)
   "Learn More! Scroll down."
