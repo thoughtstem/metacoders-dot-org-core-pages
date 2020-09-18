@@ -119,11 +119,11 @@
         (apply (curry responsive-row #:columns 3 #:padding 2 #:justify? #t) (credit-button-list))
         ))
     (br)
-    (card class: "bg-transparent border-0"
-      (card-body
-        (h3 class: "text-center" "Credit Subscriptions")
-        (apply (curry responsive-row #:columns 3 #:padding 2 #:justify? #t) (credit-button-list #:type 'subscription))
-        ))
+    ;(card class: "bg-transparent border-0"
+    ;  (card-body
+    ;    (h3 class: "text-center" "Credit Subscriptions")
+    ;    (apply (curry responsive-row #:columns 3 #:padding 2 #:justify? #t) (credit-button-list #:type 'subscription))
+    ;    ))
     (a name:"topics"))
   )
 
@@ -136,9 +136,9 @@
        (credits-buy-button   20   1 0 "sku_Hp2excpd8TsP6O" KEY)
        (credits-buy-button   95   5 0 "sku_Hp2fvDejxx74qp" KEY)
        (credits-buy-button  180  10 0 "sku_Hp2gncz7BjbzxZ" KEY)
-       (credits-buy-button  320  20 0 "sku_Hp2gbaJErzCgMC" KEY)
-       (credits-buy-button  750  50 0 "sku_Hp2gRBh6YfVjNy" KEY)
-       (credits-buy-button 1300 100 0 "sku_Hp2gYZM84N9bg0" KEY)
+       ;(credits-buy-button  320  20 0 "sku_Hp2gbaJErzCgMC" KEY)
+       ;(credits-buy-button  750  50 0 "sku_Hp2gRBh6YfVjNy" KEY)
+       ;(credits-buy-button 1300 100 0 "sku_Hp2gYZM84N9bg0" KEY)
        ) 
      ]
     [(eq? type 'subscription)
