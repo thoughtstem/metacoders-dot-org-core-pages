@@ -35,7 +35,7 @@
                            right: 0
                            float: "left"))
              (container class: "m-0 p-0"
-               (div id: "carouselExampleFade" class: "carousel slide carousel-fade" 'data-ride: "carousel"
+               (div id: "carouselTestimonials" class: "carousel slide carousel-fade" 'data-ride: "carousel"
                     (div class: "carousel-inner w-75 mx-auto text-left"
                          (div class: "carousel-item text-white active"
                               (h2 "\"My daughter looks forward to each and every class. They keep her engaged and often she continues to experiment with the code after class is over. I would recommend to any student at all interested in technology as this is the way to get them introduced at a young age.\"")
@@ -86,14 +86,56 @@
                               (p class: "text-right" "Parent of a 13 and 15 year-old")
                               )
                          )
-                    (a class: "carousel-control-prev" href: "#carouselExampleFade" role: "button" 'data-slide: "prev"
+                    (a class: "carousel-control-prev" href: "#carouselTestimonials" role: "button" 'data-slide: "prev"
                        (span class: "carousel-control-prev-icon" 'aria-hidden: "true")
                        (span class: "sr-only" "Previous")
                        )
-                    (a class: "carousel-control-next" href: "#carouselExampleFade" role: "button" 'data-slide: "next"
+                    (a class: "carousel-control-next" href: "#carouselTestimonials" role: "button" 'data-slide: "next"
                        (span class: "carousel-control-next-icon" 'aria-hidden: "true")
                        (span class: "sr-only" "Next")
                        )
                     )
+               @script/inline{
+$.fn.carouselHeights = function() {
+
+    var items = $(this), //grab all slides
+        heights = [], //create empty array to store height values
+        tallest; //create variable to make note of the tallest slide
+
+    var normalizeHeights = function() {
+
+        items.each(function() { //add heights to array
+            heights.push($(this).height()); 
+        });
+        tallest = Math.max.apply(null, heights); //cache largest value
+        items.each(function() {
+            $(this).css('min-height',tallest + 'px');
+        });
+    };
+
+    normalizeHeights();
+
+    $(window).on('resize orientationchange', function () {
+        //reset vars
+        tallest = 0;
+        heights.length = 0;
+
+        items.each(function() {
+            $(this).css('min-height','0'); //reset min-height
+        }); 
+        normalizeHeights(); //run it again 
+    });
+
+};
+ 
+jQuery(function($){
+
+    $(window).on('load', function(){
+        $('#carouselTestimonials .carousel-item').carouselHeights();
+    });
+
+});
+                              
+                              }
                )
              ))

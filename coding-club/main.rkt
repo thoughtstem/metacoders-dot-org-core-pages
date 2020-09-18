@@ -167,13 +167,16 @@
 
 ;Topics Icons
 (define (topic-icon png-path alt-text)
+  
+  (define webp-path (png-path->webp-path png-path))
+  
   (picture 
-   (source type: "image/webp" srcset: (prefix/pathify (png-path->webp-path png-path))))
+   (source type: "image/webp" srcset: (prefix/pathify webp-path))
    (source type: "image/png" srcset: (prefix/pathify png-path))
    (img src: (prefix/pathify png-path)
         style: (properties height: 24)
         class: "m-1"
-        alt: alt-text))
+        alt: alt-text)))
 
 (define cpx-icon
   (topic-icon cpx-icon-path "Coding & Electronics logo"))
