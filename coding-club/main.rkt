@@ -158,12 +158,13 @@
   (row
    (div class: "col-lg-8 col-xl-6 mx-auto"
         (card class: "border-warning"
-              (card-header class: "h5 bg-warning text-white" "Fall 2020")
+              (card-header class: "h5 bg-warning text-white" "Fall 2020 - Session 1")
               (card-body
                (table class: "table table-sm table-borderless text-left"
-                      (tr (td (strong "Session Dates: ")) (td "August 24th - December 18th"))
+                      (tr (td (strong "Session Dates: ")) (td "August 24th - October 23rd"))
                       (tr (td (strong "Schedule: ")) (td "Weekdays 2pm - 5pm PT"))
-                      (tr (td (strong "No Coding Club: ")) (td "Monday 9/7, Thursday 11/26, & Friday 11/27"))))))))
+                      (tr (td (strong "No Coding Club: ")) (td "Monday 9/7"))
+                      ))))))
 
 ;Topics Icons
 (define (topic-icon png-path alt-text)
