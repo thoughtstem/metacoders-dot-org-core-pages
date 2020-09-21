@@ -28,8 +28,8 @@
           (include-p5-js)
           (jumbotron-header-section)
           (updated-list-value-prop)
-          (class-schedule)
-          (contact-us)
+          ;(class-schedule)
+          ;(contact-us)
           (faq-section2)
           )))
 
