@@ -11,16 +11,10 @@
 
 (define (jumbotron-header-section)
   (mc-jumbotron-header
-    #:title "A Different Kind of Coding Education"
-    #:tagline (list "Cutting-edge learning science, with grass-roots community support to prepare kids for the future." 
-                   (br)
-                   (div
-                     (a href: "/coding-club.html" style: "padding-right: 10px;"
-                        (button-primary style: (properties margin-top: 30) "Join Our Online Classes"))
-                     (a href: "http://eepurl.com/dtmTTT" style: "padding-left: 10px;"
-                        (button type: "button" class: "btn btn-warning" style: (properties margin-top: 30)
-                                (i class: "fas fa-envelope")
-                                "  Join Our Mailing List")))
+    #:title "Out of Business Due to COVID-19"
+    #:tagline (list "MetaCoders will no longer be running online or in-person coding classes for the foreseeable future."
+                    (br)
+                    "This website is being maintained for legacy purposes."
                     )
     #:percent-height "80vh"
     #:image-path homepage-banner-path
